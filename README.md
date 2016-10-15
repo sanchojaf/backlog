@@ -49,6 +49,21 @@ puts declarative(15)#=> FizzBuzz
 ```
 Las dos versiones dan error
 
+### Añadir el concepto de Resource en la categoria de Connectors. [Mac]
+
+Para poder lograr una mayor correspondencia entre los conceptos de Connectors y una especificacion formal de API (como Sagger) es importante introducir el concepto de Resource
+
+Se debe concluir la implementacion iniciada en la rama
+
+add_new_model_resource
+
+Queda pendiente:
+
+* Los Webhooks no necesitan tener asociado un Data Type, en su lugar los webhooks pertencen a un Resource y el Resource tiene un data type.
+
+* Los Webhooks no necesitan tener asociado un path, en su lugar los webhooks pertencen a un Resource y el Resource tiene un path.
+
+
 ### Actualizar la pagina actual de la documentacion del API. [Mary] 
 
 Actualizar la documentacion del API, en correspondencia con el Swagger.
@@ -91,6 +106,12 @@ Actualizar el script que lee las especificaciones en Guru API que ya incluyen el
 Intalar Odoo 9 y probar cada una de las ingegraciones con Odoo 9.
 
 Como parte de la actualizacion revisar la documentacion.
+
+
+### Permitir importar diferentes tipos de API Spec. [Mac] 
+
+Esta tarea esta inciada por parte de Mary, se 
+(Swagger, RAML, I/O Docs, Google Discovery, WADL, API, API Blueprint)
 
 ### Usando el API de Cenit generar los modulos de ingracion de Odoo. [Pacheco]
 
@@ -138,7 +159,36 @@ y es un subdirectorio con la siguiente estructura
     - wizard.xml
   - __init__.py
   - __openerp__.py
-  
+    
+
+### API Connection ⇔  Swagger Spec [Pacheco]
+
+
+La Ideas es que un Swagger Spec se pueda hacer corresponder con un API Connection y sus conceptos relacionados de Resources y Webhooks
+
+Revisar la siguiente presentacion para tener mas elementos relacionados con esta tarea
+
+https://docs.google.com/presentation/d/1U7npFSNCPMDZDrDZyPNuP9blxEZmcxFGkDDvTFm2nqw/edit?usp=sharing
+
+
+* API Connections 
+  * Resources
+    * Webhooks
+
+Lo que es lo mismo que:
+* Webhooks belogs_to Resource
+* Resource belogs_to API Connection 
+
+nota: el nombre de webhooks no es el mas apropiado, pero de momento seguiremos usando se puede enteder como Metodo o Operacion, y incluye la especificaicon del Metodo HTTP y ademas de los parametros.
+
+
+En lo posible vamos a tratar de tener resultado parciales que podamos desplegar.
+
+1. Tener una nueva accion que sea Swagger que permita abrir como read only la conversion a swagger del API Connection
+
+2. Mas adelante debemos poder editar el Swagger y su edicion debe modificar la configuracion de API Connection, o sea existir una sincronizacion entre los modelos en la base de datos y el fichero Swagger.
+
+3. Agregar una vista del swagger similar a la de Swagger Editor, una variante es ver si es posible embeber el Swagger Editor en Cenit 
 
 ### Adicionar en el menú superior indicador para storages. [Aneli]
 
@@ -150,6 +200,10 @@ Un boton more, inmediatamente a la derecha de las primeras 4 acciones.
 Este boton debe permitir desplegar el resto de las acciones.
 
 (Opcional) al lado del boton se puede mostrar entre parentisis la cantidad de accciones adicionales que hay.
+
+### Activar el modelo de Confirmable
+
+Para poder activar el modulo confirmable es necesario migrar los datos y a todos los usuarios existente asignarle a confirmed_at  Date.today-1 
 
 ### Mejorar y expandir el uso de los tags. [Aneli]
 
@@ -212,4 +266,10 @@ Ya en Cenit se soportan las url con slug y ademas de las id, en adicion seria co
 
 Todas las url tienen el prefijo 'setup~' que lo toma rails_admin de la carpeta setup. eliminar este prefijo que no cumple funcion.
 
+### Redireccionar los link de notificaciones a filtros. [Aneli]
 
+En el menu superior aparece un icon de las notificaciones y asociado con el icon diferentes numeros relacionados con el tipo de notificacion, cuando se le da click a uno de los numeros esta redireccionando a las notificaciones, pero no a las notificaciones filtradas por el tipo de notificacion del numero.
+
+### Cambiar el nombre del modelo Account por Tennant. [Mac].
+
+Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant"
