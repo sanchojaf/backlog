@@ -94,23 +94,24 @@ Como parte de la actualizacion revisar la documentacion.
 
 ### Usando el API de Cenit generar los modulos de ingracion de Odoo. [Pacheco]
 
-Actualmente en Cenit tenemos unas 276 integraciones, de estas integraciones unas 10 las hemos adecuado a Odoo.
+Actualmente en Cenit tenemos unas 276 integraciones, de estas integraciones unas 10 las hemos adecuado a modulos de integracion Cenit Odoo, lo cual permite a Odoo integrarse con terceros sistemas a traves de Cenit.
 
-La mayoria de los clientes que han llegado a Cenit han sido a partir de conocer estas integraciones con Odoo.
-
-De modo que seria bueno tener una manera programatica que nos permita generar de forma automatica el modulo de integracion con Odoo.
-
-Esta generacion automatica se puede hacer a partir de la informacion de un Shared Collection que se obtiene a traves del API.
-
-De modo podemos crear una gema ruby que lea el API de cenit y genere el directorio corrrespondiente a una integracion en Odoo.
-
-Esa logica se puede annadir a esta gema
-
-https://github.com/cenit-io/cenit_cmd
+La mayoria de los clientes que han llegado a Cenit han sido a partir de conocer estas integraciones en Odoo.
 
 En esta URL se pueden ver los modulos publicado Odoo apps
 
 - https://www.odoo.com/apps/modules/browse?search=cenit
+
+De modo que seria bueno tener una manera programatica que nos permita generar de forma automatica el modulo correspondiente de integracion en Odoo para cada una de las shared collection que tenemos.
+
+Esta generacion automatica se puede hacer a partir de la informacion de un Shared Collection que se obtiene a traves del API.
+
+Un proyecto similar hicimos hace un tiempo, con gema cenit_cmd, una gema que generaba el directorio de nuevas gemas en ruby a partir de un shared collections al final lo qeu se genera es una coleccion de ficheros y carpetas.
+
+Del mismo modo podemos crear una gema ruby que lea el API de cenit y genere el directorio corrrespondiente a una integracion en Odoo o annadir esta logica dentro de la misma gema cenit_cmd
+
+https://github.com/cenit-io/cenit_cmd
+
 
 En este repo estan los modulos actuales de las integraciones en Odoo.
 
@@ -174,6 +175,10 @@ Hacerlo abriendo los elementos hojas del sidebar lateral de navegación, ir abri
 
 Cambiar la vista por default de index de rails_admin, para que las columnas que se corresponden con una relación has_many mostrando los 3 primeros elementos de la lista y luego un número con la cantidad total de elementos
 
+### Incluir un link a los webhooks en show de los shared collections. [Aneli]
+
+Cuando un shared collection tiene muchos webhooks, desde el show no es posible revisarlos todos. Por ejemplo en caso de Gmail, solo se muestran 35 de un total de 56. Sería conveniente un link que al darle click redireccione a la pagina de los webhooks y estos aparezcan filtrados, mostrando solo los que pertenecen al Flow.
+
 ### Adicionar estadisticas de los monitors en el dashboard. [Mac]
 
 En el dashboad se muestran 3 regtangulos con los monitors:
@@ -198,3 +203,13 @@ Ya esta implementado Multiples cuentas por usuario.
 Permitir múltiples usuarios por cuenta,  se debe tener al menos dos roles dentro de account, el role de  owner de la cuenta y  una con otro Rol (que en el futuro limite por ejemplo la vista de factura, o de adicionar usuarios y cambiar los roles dentro del tenant, etc)
 
 El rol Owner tendria acceso en  el dashboard al area de administración
+
+### Usar las url con slug como url por default en lugar del ID. [Mac]
+
+Ya en Cenit se soportan las url con slug y ademas de las id, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
+
+### Eliminar ‘setup~’ prefijo de las url. [Mac]
+
+Todas las url tienen el prefijo 'setup~' que lo toma rails_admin de la carpeta setup. eliminar este prefijo que no cumple funcion.
+
+
