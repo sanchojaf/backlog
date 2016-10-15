@@ -82,15 +82,62 @@ y sobre escriba el json:
 
     /public/openapi/v1/swagger.json
     
-### Crear el Shared Collection de Cenit a partir de Guru API. [Marry]
+### Crear el Shared Collection de Cenit a partir de Guru API. [Mary]
 
 Actualizar el script que lee las especificaciones en Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit como otro cualquiera.
 
-### Probar y actualizar las integracion de Cenit con Odoo 9. [Marry]
+### Probar y actualizar las integracion de Cenit con Odoo 9. [Mary]
 
 Intalar Odoo 9 y probar cada una de las ingegraciones con Odoo 9.
 
 Como parte de la actualizacion revisar la documentacion.
+
+### Usando el API de Cenit generar los modulos de ingracion de Odoo. [Pacheco]
+
+Actualmente en Cenit tenemos unas 276 integraciones, de estas integraciones unas 10 las hemos adecuado a Odoo.
+
+La mayoria de los clientes que han llegado a Cenit han sido a partir de conocer estas integraciones con Odoo.
+
+De modo que seria bueno tener una manera programatica que nos permita generar de forma automatica el modulo de integracion con Odoo.
+
+Esta generacion automatica se puede hacer a partir de la informacion de un Shared Collection que se obtiene a traves del API.
+
+De modo podemos crear una gema ruby que lea el API de cenit y genere el directorio corrrespondiente a una integracion en Odoo.
+
+Esa logica se puede annadir a esta gema
+
+https://github.com/cenit-io/cenit_cmd
+
+En esta URL se pueden ver los modulos publicado Odoo apps
+
+- https://www.odoo.com/apps/modules/browse?search=cenit
+
+En este repo estan los modulos actuales de las integraciones en Odoo.
+
+- https://github.com/cenit-io/odoo-integrations
+
+Por ejemplo, la integracion particular de Twilio, se puede encontrar en
+
+- https://github.com/cenit-io/odoo-integrations/tree/8.0/cenit_twilio
+
+y es un subdirectorio con la siguiente estructura
+
+- cenit_twilio/
+  - models/
+    * __init__.py
+    * config.py
+  - secuirity/
+    * ir.model.access.csv
+  - static/
+    * description/
+      - index.html
+      - ...
+  - view/
+    - config.xml
+    - wizard.xml
+  - __init__.py
+  - __openerp__.py
+  
 
 ### Adicionar en el menú superior indicador para storages. [Aneli]
 
