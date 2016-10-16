@@ -120,26 +120,21 @@ Es importante trabajar en esta integracion con Spree. Es una tegnologia que domi
 Esta tarea esta inciada por parte de Mary, se 
 (Swagger, RAML, I/O Docs, Google Discovery, WADL, API, API Blueprint)
 
-### Usando el API de Cenit generar los modulos de ingracion de Odoo. [Pacheco]
+### Usando el API de Cenit generar los modulos de integracion de Odoo. [Pacheco]
 
 Actualmente en Cenit tenemos unas 276 integraciones, de estas integraciones unas 10 las hemos adecuado a modulos de integracion Cenit Odoo, lo cual permite a Odoo integrarse con terceros sistemas a traves de Cenit.
 
 La mayoria de los clientes que han llegado a Cenit han sido a partir de conocer estas integraciones en Odoo.
 
-En esta URL se pueden ver los modulos publicado Odoo apps
+En esta URL se pueden ver los modulos publicados en Odoo apps
 
 - https://www.odoo.com/apps/modules/browse?search=cenit
 
-De modo que seria bueno tener una manera programatica que nos permita generar de forma automatica el modulo correspondiente de integracion en Odoo para cada una de las shared collection que tenemos.
+Daniel incio un proyecto en python que de forma programatica permite generar un addons de Odoo correspondiente a la integracion por un shared collection en Cenit.
 
-Esta generacion automatica se puede hacer a partir de la informacion de un Shared Collection que se obtiene a traves del API.
+- https://github.com/cenit-io/odoo-cenit-collection-bundler
 
-Un proyecto similar hicimos hace un tiempo, con gema cenit_cmd, una gema que generaba el directorio de nuevas gemas en ruby a partir de un shared collections al final lo qeu se genera es una coleccion de ficheros y carpetas.
-
-Del mismo modo podemos crear una gema ruby que lea el API de cenit y genere el directorio corrrespondiente a una integracion en Odoo o annadir esta logica dentro de la misma gema cenit_cmd
-
-https://github.com/cenit-io/cenit_cmd
-
+Esta generacion automatica se puede hacer a partir de la informacion de un Shared Collection que se obtiene a traves del API. El proyecto no se ha actualizado en mas de un anno, durante ese tiempo se ha modificado el API.
 
 En este repo estan los modulos actuales de las integraciones en Odoo.
 
@@ -149,7 +144,7 @@ Por ejemplo, la integracion particular de Twilio, se puede encontrar en
 
 - https://github.com/cenit-io/odoo-integrations/tree/8.0/cenit_twilio
 
-y es un subdirectorio con la siguiente estructura
+y es un sub-directorio con la siguiente estructura
 
 - cenit_twilio/
   - models/
@@ -208,7 +203,7 @@ Este boton debe permitir desplegar el resto de las acciones.
 
 (Opcional) al lado del boton se puede mostrar entre parentisis la cantidad de accciones adicionales que hay.
 
-### Activar el modelo de Confirmable
+### Activar el modelo de Confirmable. [Mac]
 
 Para poder activar el modulo confirmable es necesario migrar los datos y a todos los usuarios existente asignarle a confirmed_at  Date.today-1 
 
@@ -351,7 +346,7 @@ I ) Incluir este concepto como un primer nivel en la navegación
  
  Generar los SDK correspondientes al API de Cenit para los principales leguajes de programacion
 
-### Subdominios para las aplicaciones
+### Subdominios para las aplicaciones. [Pacheco]
 
 Para que las aplicaciones tegan mayor valor de uso, es importante que se pueeda asociar un dominio o subdominio propios.
 
