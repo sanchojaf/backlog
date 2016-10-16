@@ -294,7 +294,7 @@ II)  La otra parte de la propuesta es en lugar de tener Records en la navegació
 
 III) Cuando no se este logueado que en el menú lateral aparezca Objects y Files pero que no se puedan expandir.
 
-### Mejorar navegación e interfaz de las Transformaciones
+### Mejorar navegación e interfaz de las Transformaciones. [Aneli, Mac]
 
 Las transformaciones es uno de los conceptos principales que hemos desarrollado y en expresividad es comparable con los algoritmo u otros conceptos que tenemos.
 Aun pueden ser usado como una parte impotante en los Flujos, la idea es que tengan valor en si mismo, y puedan ser usando de forma independiente.
