@@ -107,6 +107,13 @@ Intalar Odoo 9 y probar cada una de las ingegraciones con Odoo 9.
 
 Como parte de la actualizacion revisar la documentacion.
 
+### Crear una integracion de Magento basada en el Swagger. [Mary]
+
+Encontramos el Swagger de Magento y fue annadido a Guru API, de modo que debemos actualizar la sincronizazcion de las shard collections para poder contar con esta integracion de Magento y posteriormente agregarla a las Integraciones disponibles para Odoo.
+
+### Crear Integracion para Spree Ecommerce. [Mary]
+
+Es importante trabajar en esta integracion con Spree. Es una tegnologia que dominamos y podemos tener potenciales clientes. Hay muchas pruebas que podemos realizar con Spree, similares a las que realizamos para Odoo.
 
 ### Permitir importar diferentes tipos de API Spec. [Mac] 
 
@@ -258,6 +265,22 @@ Permitir múltiples usuarios por cuenta,  se debe tener al menos dos roles dentr
 
 El rol Owner tendria acceso en  el dashboard al area de administración
 
+### Crear una nueva cuenta con dos tenants predefinidos TEST y LIVE. [Mac]
+
+Test, Live
+
+Los ultimos cambios en Cenit permiten que asociado a un usuario podamos tener varios Tenants 
+
+Estos tenant son espacios de trabajo independientes que se pueden utilizar con diferentes fines:
+
+En el caso de OSSE los tenants corresponden a sus empresas clientes, cada tenant tendra los documento de factura electronica correspondiente a una empresa.
+
+Otros lo pueden usar como un ambiente de trabajo, ejemplo: Test, Live
+
+Para promover esta funcionalidad en Cenit conviene que cuando se lance una nueva cuenta en Cenit, esten predeterminado dos tenants, correspondientes a los ambientes: Test y Live. Siendo Live el ambiente predeterminado. 
+
+Dando la opcion adicional que se pueda crear un tenant nuevo.
+
 ### Usar las url con slug como url por default en lugar del ID. [Mac]
 
 Ya en Cenit se soportan las url con slug y ademas de las id, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
@@ -319,8 +342,70 @@ I ) Incluir este concepto como un primer nivel en la navegación
  III) Incluir la ventana de test que se implemento al principio
  
  
- ### El email y el pdf de OSSE no soporta tildes. [Mac]
+### El email y el pdf de OSSE no soporta tildes. [Mac]
  
  Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
  
  
+### Generar los SDK para ruby, python, node.js. [Pacheco]
+ 
+ Generar los SDK correspondientes al API de Cenit para los principales leguajes de programacion
+
+### Subdominios para las aplicaciones
+
+Para que las aplicaciones tegan mayor valor de uso, es importante que se pueeda asociar un dominio o subdominio propios.
+
+- www.userdomain.com
+- www.sub.userdomain.com
+
+Para esto debemos desplegar las aplicaciones en un sudominio de cenit.io, preferentemente generado alearotiamente, de modo que no tengamos colisiones con los subdominios que deben ser reservados a cenit. Ejemplo
+
+- https://polar-wave-7672.cenit.io
+
+Para esto tenemos que asociar un certificado wildcard con el dominio cenit.io
+
+Hay que ver como es posible configurar Nginx para que dinamicamicamente pueda responder a estos dominios o subdominios propios
+
+Por ejemplo para una web como mytriptomoon, podria tener una aplicacion para la autenticacion con varios provedores de identidad usando cenit, que desee que se visualice en:
+
+https://signin.mytriptomoon.com
+
+### Agregar a la navegacion Ecommerce. [Mac]
+
+Las motivaciones de este cambio son para hacer mas evidente las posibilidades que tiene Cenit para el mundo Ecommerce. Cenit es una plataforma genérica de integración, y técnicamente las funcionalidades para el tema ecommerce son similares a otros dominios de aplicación, pero es importante diferenciar ese segmento. Similar a Google Analitic, que permiten monitorear la actividad en el sitio web, definiendo eventos customizados de acciones específicas en la web que se desean monitorear, mas allá de la funcionalidad genérica tiene una seccion especifica para Ecommerce.
+
+Propongo que en el menu de navegacion tengamos explicitamente un item para Ecommerce, y como segundo nivel tendriamos: Customers, Products, Orders, Shipments, Payments. Los modelos de ese namespace estarian pre-instalados en cada nuevo tenant que se lance.
+
+* Ecommerce
+  * Customers
+  * Products
+  * Orders
+  * Payments
+  * Shipments
+
+Aunque se permitia cargar otros modelos tendriamos una biblioteca "oficial" de Ecommerce, de modo que siempre que los modelos sean algunos de los oficiales se pueda sacar provecho de ello y contar con funcionalidades Out the box para estos modelos.
+
+Es importante notar que MondoDB permite que cuando persista una orden en particular, pueda tener tener campos dinamicos, o sea atributos adicionales a los especificados originalmente en el modelo, lo que brinda flexibilidad a los mapeos, de hecho esos atributos dinamicos pueden ser incluso anidados.
+
+En los SDK que desarrollemos podemos tener facilidades para el push de estos modelos hacia Cenit. O una plataforma ecommerce como Spree o Magento, puede tener una extension para la sincronizacion de estos modelos. Por ejemplo cualquiera de estos Store, con una extencion puede implementar una logica de push automatico que se ejecute automaticamente que se cree una nueva orden, lo cual tiene ventajas a la hora de lanzar eventos sin que se tenga que esperarar por una instancia del scheduler periodico cada 20 minutos.
+Veamos algunos ejemplos:
+
+En el caso de Sathechi, las ordenes de cada uno de los marketplace es traducida a los Shipments de Shipstation.
+lo ideal es que exista integraciones de:
+
+- Order Fancy <-> Order Ecommerce
+- Order OverStock <-> Order Ecommerce
+- Order Shipstation <-> Order Ecommerce
+
+La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de Order Ecomerce queda disponible por transitividad para todos los modelos Order que sean posible transformarce en Order Ecommerce.
+
+Escenario 1:
+
+Si de momento en lugar de enviar a Shipstation, lo que interesa es hacer el envio a Shipwire, el esfuerzo se debe reducir a transformar la Order (o el Shipment de Shipwire) en la Order de ecommerce
+
+Escenario 2:
+
+Si tenemos una funcionalidad que a partir de un Order se genere un Invoice pdf con un template prawn
+Aunque del punto de vista de implementacion, no debe cambiar mucho, ya que deben ser modelos que se carguen dinamicamente, el hecho de que tengan una UI propia, permite agregar actions que se puedan visualizar desde el mismo dashboard.
+
+Podriamos tener en el API una descripcion explicita para estos modelos, de modo que la curva de aprendizaje para que alguien logre subir una Orden a Cenit sea menor.
