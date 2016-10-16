@@ -274,7 +274,7 @@ En el menu superior aparece un icon de las notificaciones y asociado con el icon
 
 Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant"
 
-### definir un Segmento en los Datos asociado a un Data Event
+### Definir un Segmento en los Datos asociado a un Data Event. [Mac]
 
 Por ejemplo si se define un evento de Placed Order para las ordenes con status Placed
 Que automáticamente en la navegacion del menu lateral se cree un subnivel para Placed Orders
@@ -282,3 +282,38 @@ Que automáticamente en la navegacion del menu lateral se cree un subnivel para 
 Donde podamos inspeccionar este subconjunto de las ordenes, y tenga solamente los flujos asociados con ellas (en caso que existan flujos definidos)
 
 Una misma orden puede estar en varios segmentos.
+
+### Los Récords por default deben ser visibles en la navegación. [Mac]
+
+I)
+Aun cuando hay casos como X12 que tienen cientos de de modelos, la mayoría de los shared collections que tenemos tiene pocos modelos.
+
+El sidebar tiene hoy implementado un scroll que hace que no sea tan engorroso la navegación, además tendremos la opción de poderlos eliminar del menú si se desea. Incluso podemos agregar un acción sobre la lista, por ejemplo si se instala X12 se podría tener una opción en el collection (o en otro lugar mas visible) que permita eliminar todos los modelos de la navegación de records,
+
+II)  La otra parte de la propuesta es en lugar de tener Records en la navegación sustituirlo por dos conceptos Objects y Files, correspondiendo a JSON Data Types y File Data Types.
+
+III) Cuando no se este logueado que en el menú lateral aparezca Objects y Files pero que no se puedan expandir.
+
+### Mejorar navegación e interfaz de las Transformaciones
+
+Las transformaciones es uno de los conceptos principales que hemos desarrollado y en expresividad es comparable con los algoritmo u otros conceptos que tenemos.
+Aun pueden ser usado como una parte impotante en los Flujos, la idea es que tengan valor en si mismo, y puedan ser usando de forma independiente.
+
+I ) Incluir este concepto como un primer nivel en la navegación
+
+* Transformations 
+  * Render (type exporter)
+    * HTML (html.erb, liquid)
+    * JSON (json.rabl)
+    * XML (xml.rabl, xslt)
+    * JS (js.erb)
+    * PDF (pdf.prawn)
+    * CSV (csv.erb)
+    * Text (txt.erb)
+  * Parser (type importer)
+  * Convert
+  * Updater
+
+ IV) Mejorar la UI a partir del hecho que cada una corresponderá a un tipo particular de transformations  a diferencia de como estábamos trabajando hasta ahora.
+
+ III) Incluir la ventana de test que se implemento al principio
