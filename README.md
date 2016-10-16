@@ -409,3 +409,111 @@ Si tenemos una funcionalidad que a partir de un Order se genere un Invoice pdf c
 Aunque del punto de vista de implementacion, no debe cambiar mucho, ya que deben ser modelos que se carguen dinamicamente, el hecho de que tengan una UI propia, permite agregar actions que se puedan visualizar desde el mismo dashboard.
 
 Podriamos tener en el API una descripcion explicita para estos modelos, de modo que la curva de aprendizaje para que alguien logre subir una Orden a Cenit sea menor.
+
+
+### Algoritmos remotos. [Pacheco]
+
+Cenit Algorithms
+
+En Cenit podemos pensar en dos tipos de algoritmos, local or remote, 
+
+Los algoritmos locales: son los que tenemos actualmente, tiene full acceso a la bd de cenit, de momento solo soportados en ruby, y no permiten referencias a bibliotecas. Deben poderse ejecutar de forma sincrona o asincrona
+
+Algoritmos remotos: la comunicación con cenit sería mediante el api, y debe ser programada, soportados múltiples lenguajes mediante la tecnología del buildpacks,  permiten incluir referencias a bibliotecas. Deben ser siempre ejecutados de forma asíncrona.
+
+Cada ejecución del algoritmo es representada por una tarea asíncrona en Cenit.
+
+De forma opcional el output es definido por un DataType. Cada ejecución del algoritmo puede tener un set de objetos del data type (con cenit, pueden ser exportados como JSON, XML, CSV, etc)
+
+
+Algoritmos remotos
+
+Un algoritmo por default no tendría nada para la comunicación con los modelos de Cenit. Pero para lograr esto podemos en el template (un gist) agregar una secuencia de pasos comentados, que permitan leer los parametros del algoritmo desde cenit, mediante un push (HTTP Post) retornar el resultado del algoritmo a cenit.
+
+Del mismo modo puede estar comentadas otras operaciones con el API de cenit. En caso que se desee leer objetos del setup(conectores, tareas etc)
+
+Por ejemplo el template para ruby, tendría el Gemfile, Gemfile.lock y un algorithm.rb, un template similar al que crea morph.io, por ejemplo:
+https://github.com/sanchojaf/city_test3/blob/master/scraper.rb
+
+Como el algoritmo puede ser público es importante que las credenciales se suban al buildpack como variables de ambiente.
+
+
+Input
+
+curl GET -H "X-User-Access-Key: N63563526" -H "X-User-Access-Token: TYQTWY454521QQ12" \
+https://www.cenit.io/api/v1/algo/#namespace/#algo_name/input
+
+Json 
+
+```Json
+-> {
+    "input": ["transformer","retransform"],
+}
+```
+
+Output
+
+```bash
+curl -H "Content-Type: application/json"\
+     -H "X-User-Access-Key: N446264203"\
+     -H "X-User-Access-Token: 5T6YJqGYJgE5cULq6WQ_"\
+     -X POST -d '{“output": json_result}'\
+     https://www.cenit.io/api/v1/algo/#namespace/#algo_name/output
+```
+
+Con ejecución del curl anterior desde el algoritmo, podemos en cenit, garantizar que el algoritmo esté asociado con cada uno de los output. (mostrándolo similar a como lo hace cenit)
+
+Del mismo modo el algoritmo puede realizar un push a cualquier otro modelo de cenit, o invocando otras acciones del API de cenit.
+
+
+En función del lenguaje que se seleccione para el algoritmo, pondremos una alternativa de curl para el lenguaje específico (Ruby, Python, Node.js), por ejemplo en el caso de Python algo como.
+
+
+Version de python
+
+```Ruby
+import json,httplib
+connection = httplib.HTTPSConnection( https://www.cenithub.com/api/v1', 443)
+connection.connect()
+connection.request('GET', 'algo/#namespace/#algo_name/input', json.dumps({
+       "input":  ["transformer","retransform"],
+), {
+       "X-User-Access-Key": "${APPLICATION_ID}",
+       "X-User-Access-Token": "${REST_API_KEY}",
+       "Content-Type": "application/json"
+     })
+result = json.loads(connection.getresponse().read())
+print result
+```
+
+Modificar los parametros de entrada y la salida de los algoritmos
+
+Por cada parámetro de entrada, debemos:
+Eliminar la descripcion del parámetro (el algoritmo tiene una descripcion donde se puede describir los parametros), ademas el nombre debe ser suficiente para que se entienda de qué es el parámetro.
+Especificar si el parámetro corresponde a una lista o un solo elemento, por default asumir que es un solo elemento
+Poder asociar de forma opcional un Validator. El Validator puede ser un schema o cualquier otro tipo de validador.
+Permitir definir un valor por default del parámetro. 
+Especificar si el parámetro es obligatorio u opcional (por default obligatorio). 
+
+El algoritmo debe tener un área que sea Sample, donde se pueda asociar un conjunto de valores correspondiente a cada uno de los  parametros de entrada. 
+
+En la pestaña Run en lugar de tener un textarea para el imput, se debe cargar un field imput por cada parámetro de entrada con el label que sea el name del parámetro, debe poder cargar el valor por default en caso que esté’ definido, si el parámetro es una lista, se deben poder entrar los valores de entrada separado por signo de coma.
+
+Si el algoritmo tiene un sample definido, En el Run debe aparecer un checkbox que sea ‘load sample’ por default en false. Si se marca en true todos los parametros de entrada  toman los valores correspondientes definidos en el sample..
+
+Debe existir un tiempo maximo de ejecucion para el algoritmo síncrono, y un tiempo máximo para el asíncrono (en este último se debe permitir un tiempo mayor de ejecución). Esa información de los tiempos máximos debe aparecer como una info en el Run,
+
+(La funcionalidad a continuación podemos dejarla para más adelante)
+En relación con la salida de los algoritmos, cuando se seleccione validar la salida, se debe poder seleccionar varios Validators, los validators pueden ser un schema o cualquier otro validator, si está seleccionado un Data Type de salida, y se marca validar se puede cargar ese mismo esquema como un primer validator, pero el usuario puede eliminarlo si lo desea.
+
+Agregar un nuevo action para mostrar el output de la última ejecución visualmente similar a la página a la que se llega cuando se le da click al icon de records de el  output más reciente que se muestra en show. La idea es que la última ejecución este’ más jerarquizada que el resto de las ejecución y que sea sencillo inspeccionarla, exportar los datos, etc
+
+
+Sobre el el modelo Algorithm Output:
+Almacenar el valor de los parametros de entrada.
+Hay que buscar la manera de poder salvar el inicio de la ejecución y la duración.
+
+Hay una herramienta q es una variante open source ligera de heroku, se llama dokku. Heroku hizo open source los buldpacks, la mayoria de las plataforma de computo azure, google cloud. Permite desplegar una app a partir del buildpack. En cenit queremos correr buildpaks en diferentes lengiajes. Eso seria prinero para los algoritmos en cenit. Scripts con referencias a bibliotecas, ruby, python, node.js pero tambien para un concepto de aplicaciones q tenemos en cenit, hoy son aplicaciones sinatras pero podrian ser un aplicacion web definida por buildpack
+
+Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer un despliegue de una app programatixamente
+
