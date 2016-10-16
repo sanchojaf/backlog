@@ -273,3 +273,12 @@ En el menu superior aparece un icon de las notificaciones y asociado con el icon
 ### Cambiar el nombre del modelo Account por Tennant. [Mac].
 
 Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant"
+
+### definir un Segmento en los Datos asociado a un Data Event
+
+Por ejemplo si se define un evento de Placed Order para las ordenes con status Placed
+Que automáticamente en la navegacion del menu lateral se cree un subnivel para Placed Orders
+
+Donde podamos inspeccionar este subconjunto de las ordenes, y tenga solamente los flujos asociados con ellas (en caso que existan flujos definidos)
+
+Una misma orden puede estar en varios segmentos.
