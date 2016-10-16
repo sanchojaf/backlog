@@ -317,3 +317,10 @@ I ) Incluir este concepto como un primer nivel en la navegación
  IV) Mejorar la UI a partir del hecho que cada una corresponderá a un tipo particular de transformations  a diferencia de como estábamos trabajando hasta ahora.
 
  III) Incluir la ventana de test que se implemento al principio
+ 
+ 
+ ### El email y el pdf de OSSE no soporta tildes. [Mac]
+ 
+ Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
+ 
+ 
