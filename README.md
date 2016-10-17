@@ -1,6 +1,6 @@
 # backlog
 
-### Cenit local no esta salvando correctamente los objetos. [Mac]
+### 35. Cenit local no esta salvando correctamente los objetos. [Mac]
 
 En mi instancia local de Cenit, cuando creo los namespace no aparecen luego en el listado del index
 
@@ -8,7 +8,7 @@ Lo mismo me paso creando un JSON Data Type, cuando doy save aparentemente salva 
 
 Cree una cuenta nueva y paso lo mismo, previendo que mi cuenta estuviese corrupta.
 
-### Errores en los algoritmo en produccion. [Mac]
+### 34. Errores en los algoritmo en produccion. [Mac]
 
 1. En las entrada de los algorimo *Array* no aparece como un tipo valido
 
@@ -49,7 +49,7 @@ puts declarative(15)#=> FizzBuzz
 ```
 Las dos versiones dan error
 
-### Añadir el concepto de Resource en la categoria de Connectors. [Mac]
+### 33. Añadir el concepto de Resource en la categoria de Connectors. [Mac]
 
 Para poder lograr una mayor correspondencia entre los conceptos de Connectors y una especificacion formal de API (como Sagger) es importante introducir el concepto de Resource
 
@@ -64,7 +64,7 @@ Queda pendiente:
 * Los Webhooks no necesitan tener asociado un path, en su lugar los webhooks pertencen a un Resource y el Resource tiene un path.
 
 
-### Actualizar la pagina actual de la documentacion del API. [Mary] 
+### 32. Actualizar la pagina actual de la documentacion del API. [Mary] 
 
 Actualizar la documentacion del API, en correspondencia con el Swagger.
 
@@ -83,7 +83,7 @@ Para actualizar la pagina de documentacion se debe modificar dos ficheros JS:
 
 Esta actualizacion debe ser temporal porque debemos lograr que la pagina de documentacion del API se genere automaticamente a partir del fichero Swagger.
 
-### Crear tarea que genere el swagger.json a partir del swagger.yml [Mary]
+### 31. Crear tarea que genere el swagger.json a partir del swagger.yml [Mary]
 
 La generacion del swagger.json debe ser programatica'de modo que cada vez que se modifique el swagger.yml sea posible correr un rake task como
 
@@ -97,30 +97,30 @@ y sobre escriba el json:
 
     /public/openapi/v1/swagger.json
     
-### Crear el Shared Collection de Cenit a partir de Guru API. [Mary]
+### 30. Crear el Shared Collection de Cenit a partir de Guru API. [Mary]
 
 Actualizar el script que lee las especificaciones en Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit como otro cualquiera.
 
-### Probar y actualizar las integracion de Cenit con Odoo 9. [Mary]
+### 29. Probar y actualizar las integracion de Cenit con Odoo 9. [Mary]
 
 Intalar Odoo 9 y probar cada una de las ingegraciones con Odoo 9.
 
 Como parte de la actualizacion revisar la documentacion.
 
-### Crear una integracion de Magento basada en el Swagger. [Mary]
+### 28. Crear una integracion de Magento basada en el Swagger. [Mary]
 
 Encontramos el Swagger de Magento y fue annadido a Guru API, de modo que debemos actualizar la sincronizazcion de las shard collections para poder contar con esta integracion de Magento y posteriormente agregarla a las Integraciones disponibles para Odoo.
 
-### Crear Integracion para Spree Ecommerce. [Mary]
+### 27. Crear Integracion para Spree Ecommerce. [Mary]
 
 Es importante trabajar en esta integracion con Spree. Es una tegnologia que dominamos y podemos tener potenciales clientes. Hay muchas pruebas que podemos realizar con Spree, similares a las que realizamos para Odoo.
 
-### Permitir importar diferentes tipos de API Spec. [Mac] 
+### 26. Permitir importar diferentes tipos de API Spec. [Mac] 
 
 Esta tarea esta inciada por parte de Mary, se 
 (Swagger, RAML, I/O Docs, Google Discovery, WADL, API, API Blueprint)
 
-### Usando el API de Cenit generar los modulos de integracion de Odoo. [Pacheco]
+### 25. Usando el API de Cenit generar los modulos de integracion de Odoo. [Pacheco]
 
 Actualmente en Cenit tenemos unas 276 integraciones, de estas integraciones unas 10 las hemos adecuado a modulos de integracion Cenit Odoo, lo cual permite a Odoo integrarse con terceros sistemas a traves de Cenit.
 
@@ -163,7 +163,7 @@ y es un sub-directorio con la siguiente estructura
   - __openerp__.py
     
 
-### API Connection ⇔  Swagger Spec [Pacheco]
+### 24. API Connection ⇔  Swagger Spec [Pacheco]
 
 
 La Ideas es que un Swagger Spec se pueda hacer corresponder con un API Connection y sus conceptos relacionados de Resources y Webhooks
@@ -192,22 +192,22 @@ En lo posible vamos a tratar de tener resultado parciales que podamos desplegar.
 
 3. Agregar una vista del swagger similar a la de Swagger Editor, una variante es ver si es posible embeber el Swagger Editor en Cenit 
 
-### Adicionar en el menú superior indicador para storages. [Aneli]
+### 23. Adicionar en el menú superior indicador para storages. [Aneli]
 
 Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por adicionar a los storage.
 
-### Limitar el listado de acciones a 4 y luego un boton que diga more. [Aneli]
+### 22. Limitar el listado de acciones a 4 y luego un boton que diga more. [Aneli]
 
 Un boton more, inmediatamente a la derecha de las primeras 4 acciones. 
 Este boton debe permitir desplegar el resto de las acciones.
 
 (Opcional) al lado del boton se puede mostrar entre parentisis la cantidad de accciones adicionales que hay.
 
-### Activar el modelo de Confirmable. [Mac]
+### 21. Activar el modelo de Confirmable. [Mac]
 
 Para poder activar el modulo confirmable es necesario migrar los datos y a todos los usuarios existente asignarle a confirmed_at  Date.today-1 
 
-### Mejorar y expandir el uso de los tags. [Aneli]
+### 20. Mejorar y expandir el uso de los tags. [Aneli]
 
 Los tags fueron adicionados por Daniel para los Algoritmos. Pero usan la interfaz por default de rails_admin para las relaciones Many to Many.
 
@@ -215,7 +215,7 @@ Los tags fueron adicionados por Daniel para los Algoritmos. Pero usan la interfa
 
 2. Adicionar los tags a otros modelos como las Collecciones y los Shared Collections, revisar que otros modelos se pueden beneficiar de esto.
 
-### Mejorar el tour. [Aneli]
+### 19. Mejorar el tour. [Aneli]
 
 Del tour se hizo una primera implementacion en el portal anterior de Cenit por parte de Daniel, se puede ver aqui
 
@@ -227,15 +227,15 @@ Y en repo
 
 Hacerlo abriendo los elementos hojas del sidebar lateral de navegación, ir abriendo los niveles y cerrando en la medida que el tour avanza.
 
-### Cambiar  los has_many en los index mostrando la cantidad. [Aneli]
+### 18. Cambiar  los has_many en los index mostrando la cantidad. [Aneli]
 
 Cambiar la vista por default de index de rails_admin, para que las columnas que se corresponden con una relación has_many mostrando los 3 primeros elementos de la lista y luego un número con la cantidad total de elementos
 
-### Incluir un link a los webhooks en show de los shared collections. [Aneli]
+### 17. Incluir un link a los webhooks en show de los shared collections. [Aneli]
 
 Cuando un shared collection tiene muchos webhooks, desde el show no es posible revisarlos todos. Por ejemplo en caso de Gmail, solo se muestran 35 de un total de 56. Sería conveniente un link que al darle click redireccione a la pagina de los webhooks y estos aparezcan filtrados, mostrando solo los que pertenecen al Flow.
 
-### Adicionar estadisticas de los monitors en el dashboard. [Mac]
+### 16. Adicionar estadisticas de los monitors en el dashboard. [Mac]
 
 En el dashboad se muestran 3 regtangulos con los monitors:
 
@@ -245,14 +245,14 @@ En el dashboad se muestran 3 regtangulos con los monitors:
 
 Cada uno debe mostrar la cantidad correspondiente
 
-### Push asincronos. [Mac]
+### 15. Push asincronos. [Mac]
 
 Un push a Cenit mediante el API debe ser procesado de forma asíncrona, en el momento del push se debe retornar el ID de una Tarea, de modo que posteriormente se pueda indagar por el estado de la ejecución de la tarea.
 Por ejemplo la tarea que se devuelva asociada a un push, puede estar relacionada con otras tareas.
 
 Una tarea puede generar otras subtareas y se necesita recuperar ese arbol de dependencias para poder saber si todo se termino correctamente
 
-### Permitir múltiples usuarios por cuenta. [Mac]
+### 14. Permitir múltiples usuarios por cuenta. [Mac]
 
 Ya esta implementado Multiples cuentas por usuario.
 
@@ -260,7 +260,7 @@ Permitir múltiples usuarios por cuenta,  se debe tener al menos dos roles dentr
 
 El rol Owner tendria acceso en  el dashboard al area de administración
 
-### Crear una nueva cuenta con dos tenants predefinidos TEST y LIVE. [Mac]
+### 13. Crear una nueva cuenta con dos tenants predefinidos TEST y LIVE. [Mac]
 
 Test, Live
 
@@ -276,23 +276,23 @@ Para promover esta funcionalidad en Cenit conviene que cuando se lance una nueva
 
 Dando la opcion adicional que se pueda crear un tenant nuevo.
 
-### Usar las url con slug como url por default en lugar del ID. [Mac]
+### 12. Usar las url con slug como url por default en lugar del ID. [Mac]
 
 Ya en Cenit se soportan las url con slug y ademas de las id, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
 
-### Eliminar ‘setup~’ prefijo de las url. [Mac]
+### 11. Eliminar ‘setup~’ prefijo de las url. [Mac]
 
 Todas las url tienen el prefijo 'setup~' que lo toma rails_admin de la carpeta setup. eliminar este prefijo que no cumple funcion.
 
-### Redireccionar los link de notificaciones a filtros. [Aneli]
+### 10. Redireccionar los link de notificaciones a filtros. [Aneli]
 
 En el menu superior aparece un icon de las notificaciones y asociado con el icon diferentes numeros relacionados con el tipo de notificacion, cuando se le da click a uno de los numeros esta redireccionando a las notificaciones, pero no a las notificaciones filtradas por el tipo de notificacion del numero.
 
-### Cambiar el nombre del modelo Account por Tennant. [Mac].
+### 9. Cambiar el nombre del modelo Account por Tennant. [Mac].
 
 Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant"
 
-### Definir un Segmento en los Datos asociado a un Data Event. [Mac]
+### 8. Definir un Segmento en los Datos asociado a un Data Event. [Mac]
 
 Por ejemplo si se define un evento de Placed Order para las ordenes con status Placed
 Que automáticamente en la navegacion del menu lateral se cree un subnivel para Placed Orders
@@ -301,7 +301,7 @@ Donde podamos inspeccionar este subconjunto de las ordenes, y tenga solamente lo
 
 Una misma orden puede estar en varios segmentos.
 
-### Los Récords por default deben ser visibles en la navegación. [Mac]
+### 7. Los Récords por default deben ser visibles en la navegación. [Mac]
 
 I)
 Aun cuando hay casos como X12 que tienen cientos de de modelos, la mayoría de los shared collections que tenemos tiene pocos modelos.
@@ -312,7 +312,7 @@ II)  La otra parte de la propuesta es en lugar de tener Records en la navegació
 
 III) Cuando no se este logueado que en el menú lateral aparezca Objects y Files pero que no se puedan expandir.
 
-### Mejorar navegación e interfaz de las Transformaciones. [Aneli, Mac]
+### 6. Mejorar navegación e interfaz de las Transformaciones. [Aneli, Mac]
 
 Las transformaciones es uno de los conceptos principales que hemos desarrollado y en expresividad es comparable con los algoritmo u otros conceptos que tenemos.
 Aun pueden ser usado como una parte impotante en los Flujos, la idea es que tengan valor en si mismo, y puedan ser usando de forma independiente.
@@ -337,16 +337,16 @@ I ) Incluir este concepto como un primer nivel en la navegación
  III) Incluir la ventana de test que se implemento al principio
  
  
-### El email y el pdf de OSSE no soporta tildes. [Mac]
+### 5. El email y el pdf de OSSE no soporta tildes. [Mac]
  
  Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
  
  
-### Generar los SDK para ruby, python, node.js. [Pacheco]
+### 4. Generar los SDK para ruby, python, node.js. [Pacheco]
  
  Generar los SDK correspondientes al API de Cenit para los principales leguajes de programacion
 
-### Subdominios para las aplicaciones. [Pacheco]
+### 3. Subdominios para las aplicaciones. [Pacheco]
 
 Para que las aplicaciones tegan mayor valor de uso, es importante que se pueeda asociar un dominio o subdominio propios.
 
@@ -365,7 +365,7 @@ Por ejemplo para una web como mytriptomoon, podria tener una aplicacion para la 
 
 https://signin.mytriptomoon.com
 
-### Agregar a la navegacion Ecommerce. [Mac]
+### 2. Agregar a la navegacion Ecommerce. [Mac]
 
 Las motivaciones de este cambio son para hacer mas evidente las posibilidades que tiene Cenit para el mundo Ecommerce. Cenit es una plataforma genérica de integración, y técnicamente las funcionalidades para el tema ecommerce son similares a otros dominios de aplicación, pero es importante diferenciar ese segmento. Similar a Google Analitic, que permiten monitorear la actividad en el sitio web, definiendo eventos customizados de acciones específicas en la web que se desean monitorear, mas allá de la funcionalidad genérica tiene una seccion especifica para Ecommerce.
 
@@ -406,7 +406,7 @@ Aunque del punto de vista de implementacion, no debe cambiar mucho, ya que deben
 Podriamos tener en el API una descripcion explicita para estos modelos, de modo que la curva de aprendizaje para que alguien logre subir una Orden a Cenit sea menor.
 
 
-### Algoritmos remotos. [Pacheco]
+### 1. Algoritmos remotos. [Pacheco]
 
 Cenit Algorithms
 
