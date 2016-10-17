@@ -276,21 +276,25 @@ Se debe tener al menos dos roles dentro de account, el role de  owner de la cuen
 
 El rol Owner tendria acceso en  el dashboard al area de administración
 
-### 13. Crear una nueva cuenta con dos tenants predefinidos TEST y LIVE. [Mac]
+### 13. Revisar solapamientos entre Tenant y Namespace y entre Collection y Namespace. [Mac]
 
-Test, Live
+El Namespace como elemento base de los shared cross: 
 
-Los ultimos cambios en Cenit permiten que asociado a un usuario podamos tener varios Tenants 
+Con la idea de simplificar toda la gestión de los namespace y su repetición en todos los formularios, podemos revisar la posibilidad de unificar los conceptos actuales de Tenants y Namespace siguiendo un poco el estilo de Github con las Organizaciones.
 
-Estos tenant son espacios de trabajo independientes que se pueden utilizar con diferentes fines:
+Cuando uno se crea una cuenta en github, tiene por una especie de ‘organización por default’ asociado al user_name, luego tiene la posibilidad de crear nuevas Organizaciones. Las Organizaciones hacen la funcionalidad de gestión modular, similar a la de un namespace, cada repo queda asociado a una organización (o la que llamamos organización por default del usuario). Esta lógica de Organización en Github permite además gestionar permisos y asociar usuarios, define el acceso por API. Cuando a un repo se le hace un fork, se puede decir que es equivalente a cambio de namespace.
 
-En el caso de OSSE los tenants corresponden a sus empresas clientes, cada tenant tendra los documento de factura electronica correspondiente a una empresa.
+Si unificamos en cenit los conceptos de Tenant y Namespace, podemos quedarnos solo con Tenant, manteniendo la lógica actual de crear un tenant por default asociado a una nueva cuenta, y luego se da la posibilidad de crear nuevos tenant. Si el tenant a la vez lo entendemos como un namespace, no es necesario en cada formulario tener un campo que especifique el namespace. Esto junto con la nuevas opciones de la UI que simplifican la forma en que se cambia de tenant a otro debe hacer que queden mas intuitivas y fácil estos conceptos a los usuarios.  
 
-Otros lo pueden usar como un ambiente de trabajo, ejemplo: Test, Live
+ Cuando a un Shared Collection se le haga pull, sería una especie de ‘fork’ quedando el collection dentro del namespace especificado por el tenant.
 
-Para promover esta funcionalidad en Cenit conviene que cuando se lance una nueva cuenta en Cenit, esten predeterminado dos tenants, correspondientes a los ambientes: Test y Live. Siendo Live el ambiente predeterminado. 
+Por último en cuanto agreguemos la posibilidad de subdominio podemos, asociar cada tenant a un subdominio de cenit, con lo que la funcionalidad multi-tenant debe quedar mas explicita. 
 
-Dando la opcion adicional que se pueda crear un tenant nuevo.
+El namespace como funcion de modularidad:
+
+Otra pregunta podria ser: "Si ya tenemos el concepto de Collection para que necesitamos los Namespace?"
+
+En cuanto a la logica actual, donde el namespace es lo que permite identificar que los diferentes modelos son relativos a un mismo Collection como Facebook, creo podemos usar el name de collection para sustituir ese uso de los namespace. Cualquier modelo nuevo que se cree podria pertener a un Collection. Cuando tengamos implementado el menu de Objetos, el primer nivel de navegacion podria ser el Collection
 
 ### 12. Usar las url con slug como url por default en lugar del ID. [Mac]
 
