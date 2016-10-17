@@ -1,6 +1,28 @@
 # backlog
 
-### 35. Cenit local no esta salvando correctamente los objetos. [Mac]
+### 36. Menu lateral de Objetos. [Pacheco, Aneli]
+
+Propuesta: Cuando se de click a un elemento hoja de este menu lateral actual, debe cambiar a un menu de objectos relacionado con el elemento seleccionado.
+
+Por ejemplo si vamos a API Connectors, y le damos click a un connection en particular el menu contextual de objetos podria lucir como el siguiente jerarquia:
+
+- PetStore (Collection Name)
+  - PetStore API - v1 (API Connection Name)
+    - /pet/findByTags (Resouce Name)
+      - Get FindByID (Webhook Name)
+  ...    
+- Uber (Collection Name)
+  - Uber Rest API - v1 (API Connection Name)
+  ...
+  
+Tendriamos un boton flotante con un over que permita cambiar del menu contextual de objetos al menu standard.  
+
+Revisar la parte final de esta presentacion.
+
+- https://docs.google.com/presentation/d/1U7npFSNCPMDZDrDZyPNuP9blxEZmcxFGkDDvTFm2nqw/edit?usp=sharing
+
+
+### 35. :bug: Cenit local no esta salvando correctamente los objetos. [Mac]
 
 En mi instancia local de Cenit, cuando creo los namespace no aparecen luego en el listado del index
 
@@ -8,7 +30,7 @@ Lo mismo me paso creando un JSON Data Type, cuando doy save aparentemente salva 
 
 Cree una cuenta nueva y paso lo mismo, previendo que mi cuenta estuviese corrupta.
 
-### 34. Errores en los algoritmo en produccion. [Mac]
+### 34. :bug: Errores en los algoritmo en produccion. [Mac]
 
 1. En las entrada de los algorimo *Array* no aparece como un tipo valido
 
