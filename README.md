@@ -63,6 +63,8 @@ Queda pendiente:
 
 * Los Webhooks no necesitan tener asociado un path, en su lugar los webhooks pertencen a un Resource y el Resource tiene un path.
 
+* Crear el Script para la migracion de los datos.
+
 
 ### 32. Actualizar la pagina actual de la documentacion del API. [Mary] 
 
