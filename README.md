@@ -30,7 +30,7 @@ Lo mismo me paso creando un JSON Data Type, cuando doy save aparentemente salva 
 
 Cree una cuenta nueva y paso lo mismo, previendo que mi cuenta estuviese corrupta.
 
-### 34. :bug: Errores en los algoritmo en produccion. [Mac]
+### 34. :bug: Errores en los algoritmos en produccion. [Mac]
 
 1. En las entrada de los algorimo *Array* no aparece como un tipo valido
 
