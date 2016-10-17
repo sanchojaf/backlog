@@ -294,7 +294,8 @@ El namespace como funcion de modularidad:
 
 Otra pregunta podria ser: "Si ya tenemos el concepto de Collection para que necesitamos los Namespace?"
 
-En cuanto a la logica actual, donde el namespace es lo que permite identificar que los diferentes modelos son relativos a un mismo Collection como Facebook, creo podemos usar el name de collection para sustituir ese uso de los namespace. Cualquier modelo nuevo que se cree podria pertener a un Collection. Cuando tengamos implementado el menu de Objetos, el primer nivel de navegacion podria ser el Collection
+En cuanto a la logica actual, donde el namespace es lo que permite identificar que los diferentes modelos son relativos a un mismo Collection como Facebook, creo podemos usar el name de collection para sustituir ese uso de los namespace. Cualquier modelo nuevo que se cree podria pertener a un Collection. Cuando tengamos implementado el menu de Objetos, el primer nivel de navegacion podria ser el Collection, revisar la propuesta del menu lateral de objetos en esta presentacion (https://docs.google.com/presentation/d/1U7npFSNCPMDZDrDZyPNuP9blxEZmcxFGkDDvTFm2nqw/edit?usp=sharing) 
+
 
 ### 12. Usar las url con slug como url por default en lugar del ID. [Mac]
 
