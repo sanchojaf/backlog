@@ -87,7 +87,7 @@ Esta actualizacion debe ser temporal porque debemos lograr que la pagina de docu
 
 ### 31. Crear tarea que genere el swagger.json a partir del swagger.yml [Mary]
 
-La generacion del swagger.json debe ser programatica'de modo que cada vez que se modifique el swagger.yml sea posible correr un rake task como
+La generacion del swagger.json debe ser programatica de modo que cada vez que se modifique el swagger.yml sea posible ejecutar un *rake task* como
 
     rake openapi:ymltojson
 
@@ -95,23 +95,27 @@ Que lea el yaml:
 
     /public/openapi/v1/swagger.yaml
 
-y sobre escriba el json:
+y sobreescriba el json:
 
     /public/openapi/v1/swagger.json
     
-### 30. Crear el Shared Collection de Cenit a partir de Guru API. [Mary]
+### 30. Crear el Shared Collection de Cenit a partir del spec en el directorio de Guru API. [Mary]
 
-Actualizar el script que lee las especificaciones en Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit como otro cualquiera.
+Actualizar el script que lee las especificaciones del directorio de Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit, con la misma logica que se genera cualquier otro spec.
 
 ### 29. Probar y actualizar las integracion de Cenit con Odoo 9. [Mary]
 
-Intalar Odoo 9 y probar cada una de las ingegraciones con Odoo 9.
+Instalar Odoo 9 y probar cada una de las integraciones con Odoo 9.
 
 Como parte de la actualizacion revisar la documentacion.
 
 ### 28. Crear una integracion de Magento basada en el Swagger. [Mary]
 
-Encontramos el Swagger de Magento y fue annadido a Guru API, de modo que debemos actualizar la sincronizazcion de las shard collections para poder contar con esta integracion de Magento y posteriormente agregarla a las Integraciones disponibles para Odoo.
+El Swagger de Magento y fue adicionado al directorio de Guru API, de modo que debemos actualizar la sincronizazcion de las shard collections para poder adicionar el shared collection de Magento a Cenit basado en esa spec. 
+
+Hacer un pull request a Guru  API annadiendo a la spec los temas de seguridad con OAuth 1 que soporta Magento.
+
+Posteriormente agregarla a las Integraciones disponibles para Odoo.
 
 ### 27. Crear Integracion para Spree Ecommerce. [Mary]
 
@@ -119,24 +123,33 @@ Es importante trabajar en esta integracion con Spree. Es una tegnologia que domi
 
 ### 26. Permitir importar diferentes tipos de API Spec. [Mac] 
 
-Esta tarea esta inciada por parte de Mary, se 
-(Swagger, RAML, I/O Docs, Google Discovery, WADL, API, API Blueprint)
+Permitir importar diferentes tipos de especificaciones formales de API:
+
+* Swagger
+* RAML
+* I/O Docs
+* Google Discovery
+* WADL, 
+* API Blueprint
+
+Esta tarea esta inciada por parte de Mary, pero esta pendiente de revisar a partir de los ultimos cambios que se han realizado en Cenit.
+
 
 ### 25. Usando el API de Cenit generar los modulos de integracion de Odoo. [Pacheco]
 
-Actualmente en Cenit tenemos unas 276 integraciones, de estas integraciones unas 10 las hemos adecuado a modulos de integracion Cenit Odoo, lo cual permite a Odoo integrarse con terceros sistemas a traves de Cenit.
+Actualmente en Cenit tenemos mas de 2270 integraciones, de estas integraciones unas 10 las hemos adecuado a modulos de integracion Cenit Odoo, lo cual permite a Odoo integrarse con terceros sistemas a traves de Cenit.
 
 La mayoria de los clientes que han llegado a Cenit han sido a partir de conocer estas integraciones en Odoo.
 
-En esta URL se pueden ver los modulos publicados en Odoo apps
+En esta URL se pueden ver los modulos publicados en Odoo Apps
 
 - https://www.odoo.com/apps/modules/browse?search=cenit
 
-Daniel incio un proyecto en python que de forma programatica permite generar un addons de Odoo correspondiente a la integracion por un shared collection en Cenit.
+Daniel incio un proyecto en Python que de forma programatica permite generar un addons de Odoo correspondiente a un shared collection en Cenit.
 
 - https://github.com/cenit-io/odoo-cenit-collection-bundler
 
-Esta generacion automatica se puede hacer a partir de la informacion de un Shared Collection que se obtiene a traves del API. El proyecto no se ha actualizado en mas de un anno, durante ese tiempo se ha modificado el API.
+Esta generacion automatica se puede hacer a partir de la informacion que se obtiene de Shared Collection a traves del API. El proyecto no se ha actualizado en mas de un anno, durante ese tiempo se ha modificado el API.
 
 En este repo estan los modulos actuales de las integraciones en Odoo.
 
@@ -168,31 +181,30 @@ y es un sub-directorio con la siguiente estructura
 ### 24. API Connection ⇔  Swagger Spec [Pacheco]
 
 
-La Ideas es que un Swagger Spec se pueda hacer corresponder con un API Connection y sus conceptos relacionados de Resources y Webhooks
+La propuesta es que un Swagger Spec se pueda corresponder con un API Connection y sus conceptos relacionados de Resources y Webhooks
 
 Revisar la siguiente presentacion para tener mas elementos relacionados con esta tarea
 
 https://docs.google.com/presentation/d/1U7npFSNCPMDZDrDZyPNuP9blxEZmcxFGkDDvTFm2nqw/edit?usp=sharing
 
-
-* API Connections 
-  * Resources
-    * Webhooks
+* Connectors
+  * API Connections 
+    * Resources
+      * Webhooks
 
 Lo que es lo mismo que:
-* Webhooks belogs_to Resource
-* Resource belogs_to API Connection 
+* Webhook *belogs_to* Resource
+* Resource *belogs_to* API Connection 
 
-nota: el nombre de webhooks no es el mas apropiado, pero de momento seguiremos usando se puede enteder como Metodo o Operacion, y incluye la especificaicon del Metodo HTTP y ademas de los parametros.
+nota: el nombre de webhooks no es el mas apropiado, pero de momento seguiremos usandolo, se puede enteder como Metodo o Operacion e incluye la especificaicon del Metodo HTTP y ademas la posibilidad de especificar parametros.
 
+En lo posible vamos a tratar de tener resultados parciales que podamos ir desplegando.
 
-En lo posible vamos a tratar de tener resultado parciales que podamos desplegar.
+1. Tener una nueva accion (tag) que sea *Swagger*, que muestre la conversion a swagger del API Connection en modo de solo lectura. 
 
-1. Tener una nueva accion que sea Swagger que permita abrir como read only la conversion a swagger del API Connection
+2. Mas adelante, debemos poder editar el Swagger y su edicion debe modificar la configuracion del API Connection correspondiente, o sea debe haber una sincronizacion entre el modelo API Connection (y sus referencias a Resources y Webhoks)  con el fichero Swagger.
 
-2. Mas adelante debemos poder editar el Swagger y su edicion debe modificar la configuracion de API Connection, o sea existir una sincronizacion entre los modelos en la base de datos y el fichero Swagger.
-
-3. Agregar una vista del swagger similar a la de Swagger Editor, una variante es ver si es posible embeber el Swagger Editor en Cenit 
+3. Agregar a la vista del Swagger la opcion de visualizar el Swagger similar a Swagger Editor (http://editor.swagger.io/). Una variante es ver si es posible embeber el Swagger Editor en Cenit como alternativa a implementarlo desde cero.
 
 ### 23. Adicionar en el menú superior indicador para storages. [Aneli]
 
@@ -211,11 +223,11 @@ Para poder activar el modulo confirmable es necesario migrar los datos y a todos
 
 ### 20. Mejorar y expandir el uso de los tags. [Aneli]
 
-Los tags fueron adicionados por Daniel para los Algoritmos. Pero usan la interfaz por default de rails_admin para las relaciones Many to Many.
+Los tags fueron adicionados por Daniel para los Algoritmos. Pero usan la interfaz por default de rails_admin para las relaciones Many to Many con dos text area uno al lado del otro, donde es posible seleccionar los tag y pasarlo a la otra area..
 
-1. Mejorar la interfaz de los tags, para que sea un imput de múltiples tag con autocompletamiento. Existen librerias Jquery para esto.
+1. Mejorar la interfaz de los tags, para que sea un imput de múltiples tag con autocompletamiento. Revisar las librerias de JQuery existentes.
 
-2. Adicionar los tags a otros modelos como las Collecciones y los Shared Collections, revisar que otros modelos se pueden beneficiar de esto.
+2. Adicionar los tags a otros modelos como las Collecciones y los Shared Collections, revisar que otros modelos se pueden beneficiar de esto, pero la intencion es que sea un patron que podamos relacionar con todos los modelos que necesitan funcionalidades que faciliten el *discovery*.
 
 ### 19. Mejorar el tour. [Aneli]
 
@@ -227,38 +239,40 @@ Y en repo
 
 - https://github.com/cenit-io/cenit-portal
 
-Hacerlo abriendo los elementos hojas del sidebar lateral de navegación, ir abriendo los niveles y cerrando en la medida que el tour avanza.
+Luego esa implementacion se paso ha Cenit, se puede ver un link en el menu lateral derecho, pero en estos momento no esta funcional.
 
-### 18. Cambiar  los has_many en los index mostrando la cantidad. [Aneli]
+La propuesta es ir abriendo los elementos hojas del sidebar lateral de navegación, e ir expandiendo los niveles y colapsando en la medida que el tour avanza.
+
+### 18. Cambiar los has_many en los index mostrando solo los primeros elementos y la cantidad. [Aneli]
 
 Cambiar la vista por default de index de rails_admin, para que las columnas que se corresponden con una relación has_many mostrando los 3 primeros elementos de la lista y luego un número con la cantidad total de elementos
 
-### 17. Incluir un link a los webhooks en show de los shared collections. [Aneli]
+### 17. En el Show de los Shared Collections incluir un link a la lista de todos los Webhooks. [Aneli]
 
-Cuando un shared collection tiene muchos webhooks, desde el show no es posible revisarlos todos. Por ejemplo en caso de Gmail, solo se muestran 35 de un total de 56. Sería conveniente un link que al darle click redireccione a la pagina de los webhooks y estos aparezcan filtrados, mostrando solo los que pertenecen al Flow.
+Cuando un Shared Collections que tiene muchos Webhooks, en el Show aparecen listado solo una parte de los Webhooks. Por ejemplo en caso de Gmail, solo se muestran 35 de un total de 56. Sería conveniente tener un link que al darle click redireccione a la pagina donde se listen todos los webhooks que pertenecen al Shared Collection.
 
 ### 16. Adicionar estadisticas de los monitors en el dashboard. [Mac]
 
-En el dashboad se muestran 3 regtangulos con los monitors:
+En el dashboad se muestran 3 rectangulos con los *monitors*:
 
 * running task
 * autorizactions
 * notifications
 
-Cada uno debe mostrar la cantidad correspondiente
+Cada uno debe mostrar la cantidad correspondiente. Esto cuando se este logueado y cuando no.
 
 ### 15. Push asincronos. [Mac]
 
-Un push a Cenit mediante el API debe ser procesado de forma asíncrona, en el momento del push se debe retornar el ID de una Tarea, de modo que posteriormente se pueda indagar por el estado de la ejecución de la tarea.
-Por ejemplo la tarea que se devuelva asociada a un push, puede estar relacionada con otras tareas.
+Un push a Cenit mediante el API debe ser procesado de forma asíncrona, en el momento del push se debe retornar el *id* de una Tarea, de modo que posteriormente se pueda revisar el estado de la ejecución de la tarea.
+Por ejemplo la tarea que se retorna asociada a un push puede estar relacionada con otras tareas.
 
 Una tarea puede generar otras subtareas y se necesita recuperar ese arbol de dependencias para poder saber si todo se termino correctamente
 
 ### 14. Permitir múltiples usuarios por cuenta. [Mac]
 
-Ya esta implementado Multiples cuentas por usuario.
+Ya esta implementado la logica para poder tener multiples tenants por usuario, queda pendiente permitir múltiples usuarios por tenant.
 
-Permitir múltiples usuarios por cuenta,  se debe tener al menos dos roles dentro de account, el role de  owner de la cuenta y  una con otro Rol (que en el futuro limite por ejemplo la vista de factura, o de adicionar usuarios y cambiar los roles dentro del tenant, etc)
+Se debe tener al menos dos roles dentro de account, el role de  owner de la cuenta y  una con otro Rol (que en el futuro limite por ejemplo la vista de factura, o de adicionar usuarios y cambiar los roles dentro del tenant, etc)
 
 El rol Owner tendria acceso en  el dashboard al area de administración
 
