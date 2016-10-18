@@ -1,5 +1,9 @@
 # backlog
 
+### 37.Algunos logos de Shared Collection no salen porque no se esta usando el backgroud. [Mary]
+
+Algunos logos usan color blanco y tienen asociado un color de background, al parercer en los shared collections no estamos usando el background por lo que los logos no se ven bien o nada, ejemplo: infermedica, Jirafe Event API, NeoWs, watchful.
+
 ### 36. Menu lateral de Objetos. [Pacheco, Aneli]
 
 Propuesta: Cuando se de click a un elemento hoja de este menu lateral actual, debe cambiar a un menu de objectos relacionado con el elemento seleccionado.
