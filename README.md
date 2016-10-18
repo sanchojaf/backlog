@@ -21,15 +21,6 @@ Revisar la parte final de esta presentacion.
 
 - https://docs.google.com/presentation/d/1U7npFSNCPMDZDrDZyPNuP9blxEZmcxFGkDDvTFm2nqw/edit?usp=sharing
 
-
-### 35. :bug: Cenit local no esta salvando correctamente los objetos. [Mac]
-
-En mi instancia local de Cenit, cuando creo los namespace no aparecen luego en el listado del index
-
-Lo mismo me paso creando un JSON Data Type, cuando doy save aparentemente salva satisfactoriamente, pero luego el listado aparece vacio.
-
-Cree una cuenta nueva y paso lo mismo, previendo que mi cuenta estuviese corrupta.
-
 ### 34. :bug: Errores en los algoritmos en produccion. [Mac]
 
 1. En las entrada de los algorimo *Array* no aparece como un tipo valido
@@ -555,3 +546,13 @@ Hay una herramienta q es una variante open source ligera de heroku, se llama dok
 
 Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer un despliegue de una app programatixamente
 
+
+# done
+
+### 35. :bug: ~~Cenit local no esta salvando correctamente los objetos.~~ [Mac]
+
+En mi instancia local de Cenit, cuando creo los namespace no aparecen luego en el listado del index
+
+Lo mismo me paso creando un JSON Data Type, cuando doy save aparentemente salva satisfactoriamente, pero luego el listado aparece vacio.
+
+Cree una cuenta nueva y paso lo mismo, previendo que mi cuenta estuviese corrupta.
