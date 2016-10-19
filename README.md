@@ -1,5 +1,9 @@
 # backlog
 
+### 38. En el dashboard sustituir el listado de acciones de cada modelo por 3 puntos verticals. [Aneli]
+
+En el dashboard asociado con cada modelo, aparece el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes.
+
 ### 37.Usar el background color en el logo de los shared collections. [Mary]
 
 Algunos logos usan color blanco y tienen asociado un color de background, al parercer en los shared collections no estamos usando el background por lo que los logos no se ven bien o nada, ejemplo: infermedica, Jirafe Event API, NeoWs, watchful.
