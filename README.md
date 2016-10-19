@@ -1,6 +1,6 @@
 # backlog
 
-### 37.Algunos logos de Shared Collection no salen porque no se esta usando el backgroud. [Mary]
+### 37.Usar el background color en el logo de los shared collections. [Mary]
 
 Algunos logos usan color blanco y tienen asociado un color de background, al parercer en los shared collections no estamos usando el background por lo que los logos no se ven bien o nada, ejemplo: infermedica, Jirafe Event API, NeoWs, watchful.
 
@@ -82,40 +82,6 @@ Queda pendiente:
 
 * Crear el Script para la migracion de los datos.
 
-
-### 32. Actualizar la pagina actual de la documentacion del API. [Mary] 
-
-Actualizar la documentacion del API, en correspondencia con el Swagger.
-
-La URL de documentacion del API es:
-
-- http://cenit-io.github.io/docs/api/
-
-La URL del Swagger es:
-
-- https://cenit.io/openapi/v1/swagger.json
-
-Para actualizar la pagina de documentacion se debe modificar dos ficheros JS:
-
-- https://github.com/cenit-io/docs/blob/gh-pages/api/api_project.js
-- https://github.com/cenit-io/docs/blob/gh-pages/api/api_data.js
-
-Esta actualizacion debe ser temporal porque debemos lograr que la pagina de documentacion del API se genere automaticamente a partir del fichero Swagger.
-
-### 31. Crear tarea que genere el swagger.json a partir del swagger.yml [Mary]
-
-La generacion del swagger.json debe ser programatica de modo que cada vez que se modifique el swagger.yml sea posible ejecutar un *rake task* como
-
-    rake openapi:ymltojson
-
-Que lea el yaml:
-
-    /public/openapi/v1/swagger.yaml
-
-y sobreescriba el json:
-
-    /public/openapi/v1/swagger.json
-    
 ### 30. Crear el Shared Collection de Cenit a partir del spec en el directorio de Guru API. [Mary]
 
 Actualizar el script que lee las especificaciones del directorio de Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit, con la misma logica que se genera cualquier otro spec.
@@ -552,6 +518,39 @@ Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer u
 
 
 # done
+
+### 32. ~~Actualizar la pagina actual de la documentacion del API.~~ [Mary] 
+
+Actualizar la documentacion del API, en correspondencia con el Swagger.
+
+La URL de documentacion del API es:
+
+- http://cenit-io.github.io/docs/api/
+
+La URL del Swagger es:
+
+- https://cenit.io/openapi/v1/swagger.json
+
+Para actualizar la pagina de documentacion se debe modificar dos ficheros JS:
+
+- https://github.com/cenit-io/docs/blob/gh-pages/api/api_project.js
+- https://github.com/cenit-io/docs/blob/gh-pages/api/api_data.js
+
+Esta actualizacion debe ser temporal porque debemos lograr que la pagina de documentacion del API se genere automaticamente a partir del fichero Swagger.
+
+### 31. ~~Crear tarea que genere el swagger.json a partir del swagger.yml~~ [Mary]
+
+La generacion del swagger.json debe ser programatica de modo que cada vez que se modifique el swagger.yml sea posible ejecutar un *rake task* como
+
+    rake openapi:ymltojson
+
+Que lea el yaml:
+
+    /public/openapi/v1/swagger.yaml
+
+y sobreescriba el json:
+
+    /public/openapi/v1/swagger.json
 
 ### 35. :bug: ~~Cenit local no esta salvando correctamente los objetos.~~ [Mac]
 
