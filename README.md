@@ -1,5 +1,30 @@
 # backlog
 
+### 46. Integracion de Shipstation con la Colleccion generica Ecommerce. [Mary]
+
+Shipstation es la integracion que mas nos han solicitado. Aqui tenemos el caso real de Satechi con los diferentes marketplaces.
+
+Ademas tenemso la integracion con Odoo que tambien fue una solicitud real de un cliente, en lo que trabajo Daniel.
+
+ver tareas: 45, 27 y 2
+
+### 45. Integracion de Odoo con la Colleccion generica Ecommerce. [Mary]
+
+Si tenemos una integracion generica entre Odoo y la Colleccion Ecommerce. Esto puede ayudar a simplificar mucho la integracion con Ecommerce reales como es el caso actual de Magento.
+
+Todo las integraciones con Odoo que sean ecommerce podrian ser una customizacion de esta integacion generica entre Odoo y la Colleccion Ecommerce.
+
+Por demas estas integraciones son de las importantes que aparecen cuando se visita Odoo Apps
+
+ver tareas: 46, 27 y 2
+
+- https://www.odoo.com/apps/modules
+
+Ahi se puede ver Magento y Woocommerce, como los addons que mas vendidos.
+
+Para probar este flujo se puede usar, Magento y Spree, para tener dos casos iniciales.
+
+
 ### 44. Eliminar concepto de Connection Role. [Mac]
 
 Eliminar concepto de *Connection Role* haciendo los cambios pertientes en los modelos que lo referencian, como es el casso de los *FLows*.
@@ -58,10 +83,10 @@ Estos modos de ejecución no tienen que ser exclusivos
 
 En estos momento hay algo equivalente, mediante la definición de un callback al terminar un flujo, la diferencia básica, es que, en el flujo nuevo es donde se define el flujo previo, esto permite que cuando se termine de ejecutar un flujo ‘B’, se pueda ejecutar múltiples flujos, en caso de abajo ‘B’ y ‘C’.
 
-- A 
-  - \--- B
-  - \----C
-    - \-----D
+- \---A 
+  - \---B
+  - \---C
+    - \---D
 
 A- se define como flujo previo en ‘B’ y ‘C’ 
 
@@ -176,6 +201,8 @@ Posteriormente agregarla a las Integraciones disponibles para Odoo.
 ### 27. Crear Integracion para Spree Ecommerce. [Mary]
 
 Es importante trabajar en esta integracion con Spree. Es una tegnologia que dominamos y podemos tener potenciales clientes. Hay muchas pruebas que podemos realizar con Spree, similares a las que realizamos para Odoo.
+
+ver tareas: 46, 45 y 2
 
 ### 26. Permitir importar diferentes tipos de API Spec. [Mac] 
 
@@ -356,9 +383,9 @@ Otra pregunta podria ser: "Si ya tenemos el concepto de Collection para que nece
 En cuanto a la logica actual, donde el namespace es lo que permite identificar que los diferentes modelos son relativos a un mismo Collection como Facebook, creo podemos usar el name de collection para sustituir ese uso de los namespace. Cualquier modelo nuevo que se cree podria pertener a un Collection. Cuando tengamos implementado el menu de Objetos, el primer nivel de navegacion podria ser el Collection, revisar la propuesta del menu lateral de objetos en esta presentacion (https://docs.google.com/presentation/d/1U7npFSNCPMDZDrDZyPNuP9blxEZmcxFGkDDvTFm2nqw/edit?usp=sharing) 
 
 
-### 12. Usar las url con slug como url por default en lugar del ID. [Mac]
+### 12. Usar las URL con Slug como URL predeterminada en lugar del ID. [Mac]
 
-Ya en Cenit se soportan las url con slug y ademas de las id, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
+Ya en Cenit se soportan las URL con Slug y ademas de las id -que son la URL que contruye Rails Admin por default-, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
 
 ### 11. Eliminar ‘setup~’ prefijo de las url. [Mac]
 
@@ -485,10 +512,11 @@ Aunque del punto de vista de implementacion, no debe cambiar mucho, ya que deben
 
 Podriamos tener en el API una descripcion explicita para estos modelos, de modo que la curva de aprendizaje para que alguien logre subir una Orden a Cenit sea menor.
 
+ver tareas: 46, 45 y 27
 
 ### 1. Algoritmos remotos. [Pacheco]
 
-Cenit Algorithms
+**Cenit Algorithms**
 
 En Cenit podemos pensar en dos tipos de algoritmos, local or remote, 
 
@@ -501,22 +529,25 @@ Cada ejecución del algoritmo es representada por una tarea asíncrona en Cenit.
 De forma opcional el output es definido por un DataType. Cada ejecución del algoritmo puede tener un set de objetos del data type (con cenit, pueden ser exportados como JSON, XML, CSV, etc)
 
 
-Algoritmos remotos
+**Algoritmos remotos**
 
 Un algoritmo por default no tendría nada para la comunicación con los modelos de Cenit. Pero para lograr esto podemos en el template (un gist) agregar una secuencia de pasos comentados, que permitan leer los parametros del algoritmo desde cenit, mediante un push (HTTP Post) retornar el resultado del algoritmo a cenit.
 
 Del mismo modo puede estar comentadas otras operaciones con el API de cenit. En caso que se desee leer objetos del setup(conectores, tareas etc)
 
 Por ejemplo el template para ruby, tendría el Gemfile, Gemfile.lock y un algorithm.rb, un template similar al que crea morph.io, por ejemplo:
-https://github.com/sanchojaf/city_test3/blob/master/scraper.rb
+
+- https://github.com/sanchojaf/city_test3/blob/master/scraper.rb
 
 Como el algoritmo puede ser público es importante que las credenciales se suban al buildpack como variables de ambiente.
 
 
 Input
 
+```bash
 curl GET -H "X-User-Access-Key: N63563526" -H "X-User-Access-Token: TYQTWY454521QQ12" \
 https://www.cenit.io/api/v1/algo/#namespace/#algo_name/input
+```
 
 Json 
 
@@ -561,37 +592,9 @@ result = json.loads(connection.getresponse().read())
 print result
 ```
 
-Modificar los parametros de entrada y la salida de los algoritmos
-
-Por cada parámetro de entrada, debemos:
-Eliminar la descripcion del parámetro (el algoritmo tiene una descripcion donde se puede describir los parametros), ademas el nombre debe ser suficiente para que se entienda de qué es el parámetro.
-Especificar si el parámetro corresponde a una lista o un solo elemento, por default asumir que es un solo elemento
-Poder asociar de forma opcional un Validator. El Validator puede ser un schema o cualquier otro tipo de validador.
-Permitir definir un valor por default del parámetro. 
-Especificar si el parámetro es obligatorio u opcional (por default obligatorio). 
-
-El algoritmo debe tener un área que sea Sample, donde se pueda asociar un conjunto de valores correspondiente a cada uno de los  parametros de entrada. 
-
-En la pestaña Run en lugar de tener un textarea para el imput, se debe cargar un field imput por cada parámetro de entrada con el label que sea el name del parámetro, debe poder cargar el valor por default en caso que esté’ definido, si el parámetro es una lista, se deben poder entrar los valores de entrada separado por signo de coma.
-
-Si el algoritmo tiene un sample definido, En el Run debe aparecer un checkbox que sea ‘load sample’ por default en false. Si se marca en true todos los parametros de entrada  toman los valores correspondientes definidos en el sample..
-
-Debe existir un tiempo maximo de ejecucion para el algoritmo síncrono, y un tiempo máximo para el asíncrono (en este último se debe permitir un tiempo mayor de ejecución). Esa información de los tiempos máximos debe aparecer como una info en el Run,
-
-(La funcionalidad a continuación podemos dejarla para más adelante)
-En relación con la salida de los algoritmos, cuando se seleccione validar la salida, se debe poder seleccionar varios Validators, los validators pueden ser un schema o cualquier otro validator, si está seleccionado un Data Type de salida, y se marca validar se puede cargar ese mismo esquema como un primer validator, pero el usuario puede eliminarlo si lo desea.
-
-Agregar un nuevo action para mostrar el output de la última ejecución visualmente similar a la página a la que se llega cuando se le da click al icon de records de el  output más reciente que se muestra en show. La idea es que la última ejecución este’ más jerarquizada que el resto de las ejecución y que sea sencillo inspeccionarla, exportar los datos, etc
-
-
-Sobre el el modelo Algorithm Output:
-Almacenar el valor de los parametros de entrada.
-Hay que buscar la manera de poder salvar el inicio de la ejecución y la duración.
-
 Hay una herramienta q es una variante open source ligera de heroku, se llama dokku. Heroku hizo open source los buldpacks, la mayoria de las plataforma de computo azure, google cloud. Permite desplegar una app a partir del buildpack. En cenit queremos correr buildpaks en diferentes lengiajes. Eso seria prinero para los algoritmos en cenit. Scripts con referencias a bibliotecas, ruby, python, node.js pero tambien para un concepto de aplicaciones q tenemos en cenit, hoy son aplicaciones sinatras pero podrian ser un aplicacion web definida por buildpack
 
 Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer un despliegue de una app programatixamente
-
 
 # done
 
