@@ -4,12 +4,27 @@ Orden recomendado:
 
 - Pacheco: 25, 24, 36, 40, 1, 3, 4
 
-- Mary: 29, 37, 46, 28, 45, 27, 30
+- Mary: 48, 29, 37, 46, 28, 45, 27, 30
 
 - Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 23, 22, 42
 
-- Mac: 34, 21, 33, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
+- Mac: 34, 49, 21, 33, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
 
+### 49. Actualizar los conceptos que aparecen en el API. [Mac]
+
+La documentacion del API esta publica en 
+
+https://cenit-io.github.io/openapi/
+
+lo que corresponde al repo de github 
+
+https://github.com/cenit-io/openapi
+
+Ahi cada concepto tiene una definicion, que se debe actualizar.
+
+### 48. validar la rama snippet_code con las cosas de OSSE. [Mary]
+
+Esta nueva rama snippet_code tiene cambios de fondo que debemos revisar bien con las coass de OSSE y Satechi, para evitar romper algo en produccion.
 
 ### 47. Habilitar que las notificaciones se envíen por email o SMS. [Mac]
 
