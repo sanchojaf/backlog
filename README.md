@@ -1,5 +1,24 @@
 # backlog
 
+Orden recomendado: 
+
+- Pacheco: 25, 24, 36, 40, 1, 3, 4
+
+- Mary: 29, 37, 46, 28, 45, 27, 30
+
+- Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 23, 22, 42
+
+- Mac: 34, 21, 33, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
+
+
+### 47. Habilitar que las notificaciones se envíen por email o SMS. [Mac]
+
+- Poder seleccionar el nivel de notificaciones que serán enviada por email y/o SMS.
+- Por default deben ser solo errores o warning
+- Tener  la opción de enviar por SMS independiente del envio por email.
+- El envío por SMS estaría deshabilitado por default
+- Posibilidad de especificar mas de un email, o mas de sms 
+
 ### 46. Integracion de Shipstation con la Colleccion generica Ecommerce. [Mary]
 
 Shipstation es la integracion que mas nos han solicitado. Aqui tenemos el caso real de Satechi con los diferentes marketplaces.
@@ -16,14 +35,13 @@ Todo las integraciones con Odoo que sean ecommerce podrian ser una customizacion
 
 Por demas estas integraciones son de las importantes que aparecen cuando se visita Odoo Apps
 
-ver tareas: 46, 27 y 2
-
 - https://www.odoo.com/apps/modules
 
 Ahi se puede ver Magento y Woocommerce, como los addons que mas vendidos.
 
 Para probar este flujo se puede usar, Magento y Spree, para tener dos casos iniciales.
 
+ver tareas: 46, 27 y 2
 
 ### 44. Eliminar concepto de Connection Role. [Mac]
 
@@ -387,7 +405,7 @@ En cuanto a la logica actual, donde el namespace es lo que permite identificar q
 
 Ya en Cenit se soportan las URL con Slug y ademas de las id -que son la URL que contruye Rails Admin por default-, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
 
-### 11. Eliminar ‘setup~’ prefijo de las url. [Mac]
+### 11. Eliminar ‘setup~’ prefijo de las url. [Aneli]
 
 Todas las url tienen el prefijo 'setup~' que lo toma rails_admin de la carpeta setup. eliminar este prefijo que no cumple funcion.
 
@@ -410,14 +428,11 @@ Una misma orden puede estar en varios segmentos.
 
 ### 7. Los Récords por default deben ser visibles en la navegación. [Mac]
 
-I)
-Aun cuando hay casos como X12 que tienen cientos de de modelos, la mayoría de los shared collections que tenemos tiene pocos modelos.
+I)  En lugar de tener *Records* en la navegación sustituirlo por dos conceptos *Objects* y *Files*, correspondiendo a *JSON Data Types* y *File Data Types* respectivamente.
 
-El sidebar tiene hoy implementado un scroll que hace que no sea tan engorroso la navegación, además tendremos la opción de poderlos eliminar del menú si se desea. Incluso podemos agregar un acción sobre la lista, por ejemplo si se instala X12 se podría tener una opción en el collection (o en otro lugar mas visible) que permita eliminar todos los modelos de la navegación de records,
+II) Cuando no se este logueado que puedan aparecer *Objects* y *Files*.
 
-II)  La otra parte de la propuesta es en lugar de tener Records en la navegación sustituirlo por dos conceptos Objects y Files, correspondiendo a JSON Data Types y File Data Types.
-
-III) Cuando no se este logueado que en el menú lateral aparezca Objects y Files pero que no se puedan expandir.
+III) Debajo de *Objects* un action que sea 'link a JSON Data Type', y debajo de Files un action que sea 'link a File Data Type', se mostraria tanto cuando se este logueado que cuando no se este logueado, de modo que se pueda usar como parte del tours, cuando se este logueado si aparecen mas sub-niveles, siempre la accion seria el primer elemento en la lista de sub-niveles.
 
 ### 6. Mejorar navegación e interfaz de las Transformaciones. [Aneli, Mac]
 
@@ -439,19 +454,18 @@ I ) Incluir este concepto como un primer nivel en la navegación
   * Convert
   * Updater
 
- IV) Mejorar la UI a partir del hecho que cada una corresponderá a un tipo particular de transformations  a diferencia de como estábamos trabajando hasta ahora.
+IV) Mejorar la UI a partir del hecho que cada una corresponderá a un tipo particular de transformations  a diferencia de como estábamos trabajando hasta ahora.
 
- III) Incluir la ventana de test que se implemento al principio
+III) Incluir la ventana de test que se implemento al principio
  
  
 ### 5. El email y el pdf de OSSE no soporta tildes. [Mac]
  
- Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
- 
+Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
  
 ### 4. Generar los SDK para ruby, python, node.js. [Pacheco]
  
- Generar los SDK correspondientes al API de Cenit para los principales leguajes de programacion
+Generar los SDK correspondientes al API de Cenit para los principales leguajes de programacion
 
 ### 3. Subdominios para las aplicaciones. [Pacheco]
 
