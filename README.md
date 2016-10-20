@@ -1,5 +1,74 @@
 # backlog
 
+### 44. Eliminar concepto de Connection Role. [Mac]
+
+Eliminar concepto de *Connection Role* haciendo los cambios pertientes en los modelos que lo referencian, como es el casso de los *FLows*.
+
+Luego de esta tarea se debe actualizar las integraciones en Odoo.
+
+### 43. Definir el Cenit Collection Format como un JSON Schema. [Mac]
+
+En todas las colecciones poner un link que permita visualizar el JSON ‘oficial’ de la colección, que se debe corresponder con el Cenit Collection Format.
+
+### 42. Mejorar la interfaz de los wizards. [Aneli]
+
+Los Wizard debemos usarlo solo donde sea impresindible, ya que se aleja de la forma comun de los EDIT que es la propuesta por RailsAdmin.
+
+Donde se justifique el uso de Wizards podemos mejorar la forma en que lo estamos presentando.
+
+- Es conveniente tener un nombre por cada paso, 
+- que pueda mostrar los pasos (arriba o abajo)
+- que se muestre cual es el paso activo
+
+En este link se puede ver un ejemplo:
+
+- https://drive.google.com/file/d/0B-ltzH-m3LxTZXpvaFM4N18xZUk/view?usp=sharing
+
+### 41. Adicionar los logs de Activity, basado en el history. [Mac]
+
+RailsAdmin tiene extensión para visualizar el historial de actividades para aquellos modelos que sean decorados, este historial aparece en una vista asociada al modelo y en el dashboard. Esa extensión la estamos usando para gestionar las versiones de cross sharing.
+
+Es importante excluir algunos modelos de esta opción como los logs porque tienen una frecuencia muy alta de ocurrencia con relación a otros modelos, es el caso por ejemplo de las tareas y las notificaciones
+
+### 40. Accion que genere cURL para acciones que existen en el API. [Pacheco]
+
+Similar a algoritmia.com, que tiene varios link para usar la api según el sdk, de momento para nosotros es suficiente con tener cURL, la idea es tener una accion en el admin de cenit (para aquellas accionees que corresponden a metodos que existen en el API), donde al dar click la accion aparezca el codigo cURL y se pueda copiar y pegar en una consola y funcione, para esto el curl incluira las credenciales correspondiente al tenant.
+
+Por ejemplo vean el curl en
+
+- https://algorithmia.com/algorithms/nlp/Summarizer
+
+```shell
+curl -X POST -d '<INPUT>' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/nlp/Summarizer/0.1.3
+```
+
+### 39. Lanzar un flujo al termina la ejecución (de la tarea) de un flujo previo. [Mac]
+
+Permitir que un modo de ejecutar un flujo sea lanzarlo luego de terminada la ejecución de un flujo previo.
+Este cambio debe ser suficiente para poder enlazar los flujos y definir ‘dataflows’.
+
+Es importante notar que actualmente los Flow se puede combinar mediante eventos, pero esta alternativa podria ser una manera mas sencilla de relacionar data flows.
+
+De modo que un flujo se podría lanzar de 3 maneras:
+Mediante los triggers (data event o schedulers)
+De forma manual
+Definiendo un flujo previo (el flujo actual se lanzaría al terminar la ejecución del flujo previo)
+
+Estos modos de ejecución no tienen que ser exclusivos
+
+En estos momento hay algo equivalente, mediante la definición de un callback al terminar un flujo, la diferencia básica, es que, en el flujo nuevo es donde se define el flujo previo, esto permite que cuando se termine de ejecutar un flujo ‘B’, se pueda ejecutar múltiples flujos, en caso de abajo ‘B’ y ‘C’.
+
+- A 
+  - \--- B
+  - \----C
+    - \-----D
+
+A- se define como flujo previo en ‘B’ y ‘C’ 
+
+C- se define como flujo previo en ‘D’ 
+
+Es importante notar que ‘B’  podría ser un flujo que lo único que defina sea un traslator de tipo algoritmo, donde la salida del flujo sean datos.
+
 ### 38. En el dashboard sustituir el listado de acciones de cada modelo por 3 puntos verticals. [Aneli]
 
 En el dashboard asociado con cada modelo, aparece el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes.
@@ -121,6 +190,9 @@ Permitir importar diferentes tipos de especificaciones formales de API:
 
 Esta tarea esta inciada por parte de Mary, pero esta pendiente de revisar a partir de los ultimos cambios que se han realizado en Cenit.
 
+Para la transformacion a Swagger se uso 
+
+- https://github.com/APIs-guru/api-spec-converter
 
 ### 25. Usando el API de Cenit generar los modulos de integracion de Odoo. [Pacheco]
 
