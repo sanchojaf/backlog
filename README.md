@@ -2,25 +2,44 @@
 
 Orden recomendado: 
 
-- Pacheco: 25, 24, 36, 40, 1, 3, 4
+- Pacheco: 24, 36, 40, 1, 3, 4
 
-- Mary: 48, 29, 37, 46, 28, 45, 27, 30
+- Mary: 48, 29, 50, 37, 46, 28, 45, 27, 30
 
 - Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 23, 22, 42
 
-- Mac: 34, 49, 21, 33, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
+- Mac: 34, 21, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
 
-### 49. Actualizar los conceptos que aparecen en el API. [Mac]
+### 51. Generar automaticamente el swagger del API de Cenit. [Mac]
 
-La documentacion del API esta publica en 
+A partir de la nueva implementacion de DataTypes asociados con modelos del setup, donde ademas pueden ser asociados data events con esos modelos. Hacer una generacion automatica del swagger.yml que corresponde al API de Cenit, de modo que podamos mantener sincronizado el API con el codigo  de Cenit.
 
-https://cenit-io.github.io/openapi/
+### 50. Validar la herramienta cenit2odoo. [Mary]
 
-lo que corresponde al repo de github 
+Pacheco hizo una reimplementacion de a la herramienta de generacion de addons de Odoo a partir de un shared collection en Cenit.
 
-https://github.com/cenit-io/openapi
+Revisar en detalle la generacion de los addons y compararla con los que estan actualmente.
 
-Ahi cada concepto tiene una definicion, que se debe actualizar.
+Abajo una primera prueba con twitter, para comprobar el resultado de la generacion automatica, se puede ver en una nueva rama compare_auto_generate_twitter_integration del repo de cenit-io/odoo-integrations, la comparacion de esa rama con la version 9.0 se puede ver en el siguiente link
+
+https://github.com/cenit-io/odoo-integrations/pull/16
+
+Se puede ver las diferencia, es importante notar que este twitter original se le hizo ajustes manuales, con lo cual no podemos esperar que todo este en la generacion automatica, pero si ver de las cosas que no estan que otra cosa puede ser generada a partir de la informacion que hay en el shared collection de cenit.
+
+https://github.com/cenit-io/odoo-integrations/pull/16/files?diff=split
+
+Lo mas importante a revisar son las cosas que se eliminan en el pull request, o sea todo lo qeu esta en rojo, porque no fue generado automaticamente.
+
+Ademas aparecen algunos comentarios.
+
+Lo mismo de Twitter esta para shipstacion, en la rama
+
+compare_auto_generated_mailchimp_integration
+
+el diff se puede ver en 
+
+https://github.com/cenit-io/odoo-integrations/pull/17/files?diff=split
+
 
 ### 48. validar la rama snippet_code con las cosas de OSSE. [Mary]
 
@@ -254,51 +273,7 @@ Para la transformacion a Swagger se uso
 
 - https://github.com/APIs-guru/api-spec-converter
 
-### 25. Usando el API de Cenit generar los modulos de integracion de Odoo. [Pacheco]
-
-Actualmente en Cenit tenemos mas de 2270 integraciones, de estas integraciones unas 10 las hemos adecuado a modulos de integracion Cenit Odoo, lo cual permite a Odoo integrarse con terceros sistemas a traves de Cenit.
-
-La mayoria de los clientes que han llegado a Cenit han sido a partir de conocer estas integraciones en Odoo.
-
-En esta URL se pueden ver los modulos publicados en Odoo Apps
-
-- https://www.odoo.com/apps/modules/browse?search=cenit
-
-Daniel incio un proyecto en Python que de forma programatica permite generar un addons de Odoo correspondiente a un shared collection en Cenit.
-
-- https://github.com/cenit-io/odoo-cenit-collection-bundler
-
-Esta generacion automatica se puede hacer a partir de la informacion que se obtiene de Shared Collection a traves del API. El proyecto no se ha actualizado en mas de un anno, durante ese tiempo se ha modificado el API.
-
-En este repo estan los modulos actuales de las integraciones en Odoo.
-
-- https://github.com/cenit-io/odoo-integrations
-
-Por ejemplo, la integracion particular de Twilio, se puede encontrar en
-
-- https://github.com/cenit-io/odoo-integrations/tree/8.0/cenit_twilio
-
-y es un sub-directorio con la siguiente estructura
-
-- cenit_twilio/
-  - models/
-    * __init__.py
-    * config.py
-  - secuirity/
-    * ir.model.access.csv
-  - static/
-    * description/
-      - index.html
-      - ...
-  - view/
-    - config.xml
-    - wizard.xml
-  - __init__.py
-  - __openerp__.py
-    
-
 ### 24. API Connection ⇔  Swagger Spec [Pacheco]
-
 
 La propuesta es que un Swagger Spec se pueda corresponder con un API Connection y sus conceptos relacionados de Resources y Webhooks
 
@@ -323,7 +298,7 @@ En lo posible vamos a tratar de tener resultados parciales que podamos ir desple
 
 2. Mas adelante, debemos poder editar el Swagger y su edicion debe modificar la configuracion del API Connection correspondiente, o sea debe haber una sincronizacion entre el modelo API Connection (y sus referencias a Resources y Webhoks)  con el fichero Swagger.
 
-3. Agregar a la vista del Swagger la opcion de visualizar el Swagger similar a Swagger Editor (http://editor.swagger.io/). Una variante es ver si es posible embeber el Swagger Editor en Cenit como alternativa a implementarlo desde cero.
+3. Agregar a la vista del Swagger la opcion de visualizar el Swagger similar a Swagger Editor (http://editor.swagger.io/). Una variante es ver si es posible embeber el Swagger Editor en Cenit, en ese caso Cenit deberia tener una variable de configuracion con la URL de la aplicacion del swagger editor, si no se especifica valor, debe funcionar con fue descrito en 1) y 2).
 
 ### 23. Adicionar en el menú superior indicador para storages. [Aneli]
 
@@ -625,7 +600,51 @@ Hay una herramienta q es una variante open source ligera de heroku, se llama dok
 
 Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer un despliegue de una app programatixamente
 
+####################################################################################################
+
 # done
+
+### 25. ~~Usando el API de Cenit generar los modulos de integracion de Odoo.~~ [Pacheco]
+
+Actualmente en Cenit tenemos mas de 2270 integraciones, de estas integraciones unas 10 las hemos adecuado a modulos de integracion Cenit Odoo, lo cual permite a Odoo integrarse con terceros sistemas a traves de Cenit.
+
+La mayoria de los clientes que han llegado a Cenit han sido a partir de conocer estas integraciones en Odoo.
+
+En esta URL se pueden ver los modulos publicados en Odoo Apps
+
+- https://www.odoo.com/apps/modules/browse?search=cenit
+
+Daniel incio un proyecto en Python que de forma programatica permite generar un addons de Odoo correspondiente a un shared collection en Cenit.
+
+- https://github.com/cenit-io/odoo-cenit-collection-bundler
+
+Esta generacion automatica se puede hacer a partir de la informacion que se obtiene de Shared Collection a traves del API. El proyecto no se ha actualizado en mas de un anno, durante ese tiempo se ha modificado el API.
+
+En este repo estan los modulos actuales de las integraciones en Odoo.
+
+- https://github.com/cenit-io/odoo-integrations
+
+Por ejemplo, la integracion particular de Twilio, se puede encontrar en
+
+- https://github.com/cenit-io/odoo-integrations/tree/8.0/cenit_twilio
+
+y es un sub-directorio con la siguiente estructura
+
+- cenit_twilio/
+  - models/
+    * __init__.py
+    * config.py
+  - secuirity/
+    * ir.model.access.csv
+  - static/
+    * description/
+      - index.html
+      - ...
+  - view/
+    - config.xml
+    - wizard.xml
+  - __init__.py
+  - __openerp__.py
 
 ### 32. ~~Actualizar la pagina actual de la documentacion del API.~~ [Mary] 
 
@@ -667,3 +686,15 @@ En mi instancia local de Cenit, cuando creo los namespace no aparecen luego en e
 Lo mismo me paso creando un JSON Data Type, cuando doy save aparentemente salva satisfactoriamente, pero luego el listado aparece vacio.
 
 Cree una cuenta nueva y paso lo mismo, previendo que mi cuenta estuviese corrupta.
+
+### 49. ~~Actualizar los conceptos que aparecen en el API.~~ [Mac]
+
+La documentacion del API esta publica en 
+
+https://cenit-io.github.io/openapi/
+
+lo que corresponde al repo de github 
+
+https://github.com/cenit-io/openapi
+
+Ahi cada concepto tiene una definicion, que se debe actualizar.
