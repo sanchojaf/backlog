@@ -2,13 +2,54 @@
 
 Orden recomendado: 
 
-- Pacheco: 24, 36, 40, 1, 3, 4
+- Pacheco: 24, 53, 36, 40, 1, 3, 4
 
 - Mary: 48, 29, 50, 37, 46, 28, 45, 27, 30
 
 - Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 23, 22, 42
 
 - Mac: 34, 21, 52, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
+
+### 53. Modelos para soportar API SPec sincronizacion con Sagger. [Pacheco]
+
+Para formalizar un API Connection vamos a seguir en lo posible las convenciones de [Studio Restlet](https://studio.restlet.com)
+
+
+El API Connection (actualmente Connection en la navegación) puede quedar definido mediante la asociación de los nuevos conceptos:
+
+* Section
+* Resources
+* Operaciones
+* Representation
+
+Seccion es un espacio de nombre que permite agrupar un grupo de Resources (Ejemplo: todos los resource relacionados con User) puede tener asociado varios Representation
+
+[Link new Section](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-sections)
+
+
+Un Resource corresponde a un path en específico (Ejemplo: /user/{userlogin} ) y se asocia a un grupo de Representation y de Operations
+
+[Link new resource](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-resource)
+
+Una operation corresponde HTTP Method con los parámetros correspondiente, y la relación son un Resource.
+
+[Link new operation POST](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/resources/~2Fpet~2FfindByStatus/operations/POST)
+
+Un representation es un Wrapper de un JSON Data Type (en la navegacion Definition/Data Type/Object Type) 
+
+[Link new Representation](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-representation)
+
+Nota: Los webhooks no lo vamos a modificar, mas adelante se movera a Worflows, para mas detale ver tarea [52]( https://github.com/sanchojaf/backlog#52-concepto-de-notificación-paradigma-pushnotification-mac)
+
+Una version inicial de los modelos es en esta rama
+
+[add_new_model_resource](https://github.com/cenit-io/cenit/tree/add_new_model_resource)
+
+los cambios se pueden ver bien en el 
+
+[pull reuquest](https://github.com/cenit-io/cenit/pull/964/files)
+
+La idea es sincronizar el swagger de la tarea [24] con estos modelos. 
 
 ### 52. Concepto de Notificación (paradigma Push/Notification). [Mac]
 
