@@ -6,9 +6,13 @@ Orden recomendado:
 
 - Mary: 48, 29, 50, 37, 46, 28, 45, 27, 30
 
-- Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 23, 22, 42
+- Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
 
 - Mac: 34, 21, 52, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
+
+### 54. Migrar a rails_admin 1.0. [Aneli]
+
+Rails Admin hizo el release de la version 1.0, por lo que es un buen momento para hacer un upgrade de Cenit. Es importante revisar todas las vistas que tenemos customizadas en Cenit.
 
 ### 53. Modelos para soportar API SPec sincronizacion con Sagger. [Pacheco]
 
