@@ -4,7 +4,7 @@ Orden recomendado:
 
 - Pacheco: 24, 53, 36, 40, 1, 3, 4
 
-- Mary: 55, 29, 50, 37, 46, 28, 45, 27, 30
+- Mary: 55, 29, 50, 37, 56, 46, 28, 45, 27, 30
 
 - Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
 
@@ -49,11 +49,11 @@ La documentacion del API, puedes encontrarla aqui
 
 un manera sencilla de ver todas las rutas del api es
 
-    rake db:routes
+    rake routes
 
 Puedes imprimirlas para un fichero, 
 
-rake db:routes > tmp/routes.txt
+    rake routes > tmp/routes.txt
 
 y luego ahi revisar las rutas del api.
 
