@@ -10,6 +10,57 @@ Orden recomendado:
 
 - Mac: 34, 21, 52, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
 
+### 56. Crear Shared Collection de Spree. [Mary]
+
+Pasos para crear lanzar una tienda de Spree con productos de ejemplo
+
+```bash
+git clone git@github.com:spree/spree.git
+cd spree
+bundle
+bundle exec rake sandbox
+cd sandbox 
+rails s
+```
+
+luego para entrar a la administracion
+
+    localhost:3000/admin
+
+```
+  user: spree@example.com
+  pass: spree123
+```
+
+Ahi se puede ir a Users por el menu lateral izquierdo
+
+y entrar al edit de spree@example.com
+
+ahi se muestran las credencials del api, ejemplo
+
+```
+API Access: 
+KEY:  cf86f7785b4b7a4d22ae86af18b3e9bc8ee7baa283e1a893
+```
+
+La documentacion del API, puedes encontrarla aqui
+
+[Doccumentacion del API](http://guides.spreecommerce.org/api/)
+
+un manera sencilla de ver todas las rutas del api es
+
+    rake db:routes
+
+Puedes imprimirlas para un fichero, 
+
+rake db:routes > tmp/routes.txt
+
+y luego ahi revisar las rutas del api.
+
+aqui estan las rutas en un gist
+
+[link rutas del api de spree](https://gist.github.com/sanchojaf/29e7845987bfe22b81c6437b9692a00a)
+
 ### 55. Publicar shared collections de Store. [Mary]
 
 Es importante poder publicar todas las shared collection de Store que sea posible, aunque la implementacion del API no sea completa.
