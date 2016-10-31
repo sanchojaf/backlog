@@ -4,23 +4,76 @@ Orden recomendado:
 
 - Pacheco: 24, 53, 36, 40, 1, 3, 4
 
-- Mary: 55, 29, 50, 37, 56, 46, 28, 45, 27, 30
+- Mary: 55, 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
 - Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
 
 - Mac: 34, 21, 52, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
+
+
+### 57. Crear Shared Collection de Oscar. [Mary]
+
+```bash
+$ git clone https://github.com/django-oscar/django-oscar.git
+$ cd django-oscar
+$ mkvirtualenv oscar  # needs virtualenvwrapper
+(oscar) $ make sandbox
+(oscar) $ sites/sandbox/manage.py runserver
+```
+
+Si no tienes instalado mkvirtualenv
+
+```bash
+$ virtualenv oscar
+$ source ./oscar/bin/activate
+(oscar) $
+```
+
+luego para entrar a la administracion
+
+    http://localhost:8000/
+    
+y click en login, el super usuario tiene las siguientes credenciales
+
+```
+username: superuser
+email: superuser@example.com
+password: testing
+```
+
+O puedes lanzar una aplicacion de sandbox con el API
+
+```
+$ mkvirtualenv oscarapi
+$ git clone https://github.com/django-oscar/django-oscar-api.git
+$ cd django-oscar-api
+$ make sandbox
+
+# run the server
+$ python sandbox/manage.py runserver
+```
+
+    http://localhost:8000/api
+
+[Sandbox documentacion](http://django-oscar.readthedocs.io/en/releases-1.1/internals/sandbox.html) 
+
+El API es una aplicacion independiente que hay que instalar
+
+https://github.com/django-oscar/django-oscar-api
+
+
 
 ### 56. Crear Shared Collection de Spree. [Mary]
 
 Pasos para crear lanzar una tienda de Spree con productos de ejemplo
 
 ```bash
-git clone git@github.com:spree/spree.git
-cd spree
-bundle
-bundle exec rake sandbox
-cd sandbox 
-rails s
+$ git clone git@github.com:spree/spree.git
+$ cd spree
+$ bundle
+$ bundle exec rake sandbox
+$ cd sandbox 
+$ rails s
 ```
 
 luego para entrar a la administracion
