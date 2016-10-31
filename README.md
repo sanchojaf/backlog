@@ -4,11 +4,20 @@ Orden recomendado:
 
 - Pacheco: 24, 53, 36, 40, 1, 3, 4
 
-- Mary: 48, 29, 50, 37, 46, 28, 45, 27, 30
+- Mary: 55, 29, 50, 37, 46, 28, 45, 27, 30
 
 - Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
 
 - Mac: 34, 21, 52, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
+
+### 55. Publicar shared collections de Store. [Mary]
+
+Es importante poder publicar todas las shared collection de Store que sea posible, aunque la implementacion del API no sea completa.
+
+* Houzz
+* Walmart
+* Odoo
+* Magento
 
 ### 54. Migrar a rails_admin 1.0. [Aneli]
 
@@ -144,11 +153,6 @@ compare_auto_generated_mailchimp_integration
 el diff se puede ver en 
 
 https://github.com/cenit-io/odoo-integrations/pull/17/files?diff=split
-
-
-### 48. validar la rama snippet_code con las cosas de OSSE. [Mary]
-
-Esta nueva rama snippet_code tiene cambios de fondo que debemos revisar bien con las coass de OSSE y Satechi, para evitar romper algo en produccion.
 
 ### 47. Habilitar que las notificaciones se envíen por email o SMS. [Mac]
 
@@ -708,6 +712,10 @@ Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer u
 ####################################################################################################
 
 # done
+
+### 48. ~~validar la rama snippet_code con las cosas de OSSE.~~ [Mary]
+
+Esta nueva rama snippet_code tiene cambios de fondo que debemos revisar bien con las coass de OSSE y Satechi, para evitar romper algo en produccion.
 
 ### 25. ~~Usando el API de Cenit generar los modulos de integracion de Odoo.~~ [Pacheco]
 
