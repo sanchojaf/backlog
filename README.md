@@ -691,15 +691,17 @@ https://signin.mytriptomoon.com
 
 ### 2. Agregar a la navegacion Ecommerce. [Mac]
 
-Las motivaciones de este cambio son para hacer mas evidente las posibilidades que tiene Cenit para el mundo Ecommerce. Cenit es una plataforma genérica de integración, y técnicamente las funcionalidades para el tema ecommerce son similares a otros dominios de aplicación, pero es importante diferenciar ese segmento. Similar a Google Analitic, que permiten monitorear la actividad en el sitio web, definiendo eventos customizados de acciones específicas en la web que se desean monitorear, mas allá de la funcionalidad genérica tiene una seccion especifica para Ecommerce.
+Las motivaciones de este cambio son para hacer mas evidente las posibilidades que tiene Cenit para el mundo Ecommerce. Cenit es una plataforma genérica de integración, y técnicamente las funcionalidades para el tema ecommerce son similares a otros dominios de aplicación, pero es importante diferenciar este segmento. 
 
-Propongo que en el menu de navegacion tengamos explicitamente un item para Ecommerce, y como segundo nivel tendriamos: Customers, Products, Orders, Shipments, Payments. Los modelos de ese namespace estarian pre-instalados en cada nuevo tenant que se lance.
+En el menu de navegacion ya tengamos explicitamente un item para Ecommerce, y como elementos de segundo nivel tendriamos: Customers, Products, Cart, Orders, Shipments. 
+
+Los modelos de ese namespace estarian pre-instalados en cada nuevo tenant que se lance y su definicion debe corresponder al repo (https://github.com/cenit-io/ecommerce)[https://github.com/cenit-io/ecommerce] 
 
 * Ecommerce
   * Customers
   * Products
+  * Carts
   * Orders
-  * Payments
   * Shipments
 
 Aunque se permitia cargar otros modelos tendriamos una biblioteca "oficial" de Ecommerce, de modo que siempre que los modelos sean algunos de los oficiales se pueda sacar provecho de ello y contar con funcionalidades Out the box para estos modelos.
