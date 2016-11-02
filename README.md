@@ -693,13 +693,14 @@ https://signin.mytriptomoon.com
 
 Las motivaciones de este cambio son para hacer mas evidente las posibilidades que tiene Cenit para el mundo Ecommerce. Cenit es una plataforma genérica de integración, y técnicamente las funcionalidades para el tema ecommerce son similares a otros dominios de aplicación, pero es importante diferenciar este segmento. 
 
-En el menu de navegacion ya tengamos explicitamente un item para Ecommerce, y como elementos de segundo nivel tendriamos: Customers, Products, Cart, Orders, Shipments. 
+En el menu de navegacion ya tengamos explicitamente un item para Ecommerce, y como elementos de segundo nivel tendriamos: Customers, Products, Inventory, Cart, Orders, Shipments. 
 
 Los modelos de ese namespace estarian pre-instalados en cada nuevo tenant que se lance y su definicion debe corresponder al repo (https://github.com/cenit-io/ecommerce)[https://github.com/cenit-io/ecommerce] 
 
 * Ecommerce
   * Customers
   * Products
+  * Inventory
   * Carts
   * Orders
   * Shipments
