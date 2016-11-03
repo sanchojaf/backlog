@@ -8,8 +8,24 @@ Orden recomendado:
 
 - Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
 
-- Mac: 34, 21, 52, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 8, 47
+- Mac: 34, 58, 21, 52, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+
+### 58. Cambios a partir del nuevo concepto de Query. [Mac]
+
+Se introdujo el nuevo concepto de Query en tab Compute. Que permite:
+
+* Asociar a un Data Type un filtro o query. 
+* El filtro se define con la mismo UI que se usa en Observer, que es a su vez similar a la de rails_admin asociada a los filtros de las vistas index.
+* En el show aparece un nuevo 'link to segment', que abre la vista de index correspondinte con el filtro aplicado. 
+
+I) A partir de estos cambios es conveniete refactorizar Observer, de modo que en lugar de tener un campo data type y triggers, tenga asociado una Query.
+
+II) Es conveniente adicionar a Query la accion 'Navigation Link'.
+
+Por ejemplo si se define una Query de *Placed Order* para las ordenes con status Placed y se activa la accion 'Navigation Link'
+
+Que automáticamente en la navegacion del menu lateral izquierdo se cree un nuevo subnivel para Placed Orders, debajo de Orders. Este nuevo subnivel en el menu, seria iden al enlace 'link_to_segment' creado en el show de Query
 
 ### 57. Crear Shared Collection de Oscar. [Mary]
 
@@ -620,15 +636,6 @@ En el menu superior aparece un icon de las notificaciones y asociado con el icon
 
 Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant"
 
-### 8. Definir un Segmento en los Datos asociado a un Data Event. [Mac]
-
-Por ejemplo si se define un evento de Placed Order para las ordenes con status Placed
-Que automáticamente en la navegacion del menu lateral se cree un subnivel para Placed Orders
-
-Donde podamos inspeccionar este subconjunto de las ordenes, y tenga solamente los flujos asociados con ellas (en caso que existan flujos definidos)
-
-Una misma orden puede estar en varios segmentos.
-
 ### 7. Los Récords por default deben ser visibles en la navegación. [Mac]
 
 I)  En lugar de tener *Records* en la navegación sustituirlo por dos conceptos *Objects* y *Files*, correspondiendo a *JSON Data Types* y *File Data Types* respectivamente.
@@ -819,6 +826,15 @@ Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer u
 ####################################################################################################
 
 # done
+
+### 8. ~~Definir un Segmento en los Datos asociado a un Data Event.~~ [Mac]
+
+Por ejemplo si se define un evento de Placed Order para las ordenes con status Placed
+Que automáticamente en la navegacion del menu lateral se cree un subnivel para Placed Orders
+
+Donde podamos inspeccionar este subconjunto de las ordenes, y tenga solamente los flujos asociados con ellas (en caso que existan flujos definidos)
+
+Una misma orden puede estar en varios segmentos.
 
 ### 48. ~~validar la rama snippet_code con las cosas de OSSE.~~ [Mary]
 
