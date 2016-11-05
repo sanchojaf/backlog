@@ -17,15 +17,9 @@ Se introdujo el nuevo concepto de Query en tab Compute. Que permite:
 
 * Asociar a un Data Type un filtro o query. 
 * El filtro se define con la mismo UI que se usa en Observer, que es a su vez similar a la de rails_admin asociada a los filtros de las vistas index.
-* En el show aparece un nuevo 'link to segment', que abre la vista de index correspondinte con el filtro aplicado. 
+* En el show aparece un nuevo 'Segment', que abre la vista de index correspondinte con el filtro aplicado. 
 
-I) A partir de estos cambios es conveniete refactorizar Observer, de modo que en lugar de tener un campo data type y triggers, tenga asociado una Query.
-
-II) Es conveniente adicionar a Query la accion 'Navigation Link'.
-
-Por ejemplo si se define una Query de *Placed Order* para las ordenes con status Placed y se activa la accion 'Navigation Link'
-
-Que automáticamente en la navegacion del menu lateral izquierdo se cree un nuevo subnivel para Placed Orders, debajo de Orders. Este nuevo subnivel en el menu, seria iden al enlace 'link_to_segment' creado en el show de Query
+A partir de estos cambios es conveniete refactorizar Observer, de modo que en lugar de tener un campo data type y triggers, tenga asociado una Query.
 
 ### 57. Crear Shared Collection de Oscar. [Mary]
 
