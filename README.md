@@ -527,12 +527,13 @@ En lo posible vamos a tratar de tener resultados parciales que podamos ir desple
 
 Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por adicionar a los storage.
 
-### 22. Limitar el listado de acciones a 4 y luego un boton que diga more. [Aneli]
+### 22. Limitar el listado de acciones a 2 y luego un boton que diga 'Avtions'. [Aneli]
 
-Un boton more, inmediatamente a la derecha de las primeras 4 acciones. 
+En las paginas de index, adicionar un boton 'Actions', inmediatamente a la derecha de 'Add New', o se tendriamos, 'List', 'Add New' y luego 'Actions'
+
 Este boton debe permitir desplegar el resto de las acciones.
 
-(Opcional) al lado del boton se puede mostrar entre parentisis la cantidad de accciones adicionales que hay.
+En las otras vistas que no son Idnex aplicar una logica similar.
 
 ### 21. Activar el modelo de Confirmable. [Mac]
 
