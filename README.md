@@ -527,7 +527,7 @@ En lo posible vamos a tratar de tener resultados parciales que podamos ir desple
 
 Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por adicionar a los storage.
 
-### 22. Limitar el listado de acciones a 2 y luego un boton que diga 'Avtions'. [Aneli]
+### 22. Limitar el listado de acciones a 2 y luego un boton que diga 'Actions'. [Aneli]
 
 En las paginas de index, adicionar un boton 'Actions', inmediatamente a la derecha de 'Add New', o se tendriamos, 'List', 'Add New' y luego 'Actions'
 
