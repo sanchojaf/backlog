@@ -2,14 +2,50 @@
 
 Orden recomendado: 
 
-- Pacheco: 24, 53, 36, 40, 1, 3, 4
+- Pacheco: 24, 59, 36, 1, 3
 
 - Mary: 55, 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli: 6, 19, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
+- Aneli: 4, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
 
-- Mac: 34, 58, 21, 52, 33, 51, 5, 7, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+- Mac: 53, 34, 58, 21, 52, 33, 51, 5, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+### 59. Cenit CodeGen para la generación de SDKs
+
+En lugar de hacer repos independiente con los diferentes SDK, podemos hacer un proyecto de Cenit CodeGen, para la generación automática de las SDK de cenit
+
+Similar al proyecto CodeGen de Swagger
+
+	https://github.com/swagger-api/swagger-codegen
+
+Basado en el Swagger de Cenit con las customizaciones que sean necesarias.
+
+Esta generación podemos hacerlo en dos variantes:
+ 
+Desde cero, usando node.js como en cenit2oddoo o quizas usando ruby.
+O con un fork o clone de swagger-codegen (que está basado en Java)
+
+Es importante notar que la especificación Swagger del API de Cenit será generada automáticamente por Cenit, en lo que está trabajando Mac. De modo que no sera necesario actualizar el swagger.yml de forma manual como estamos haciendo hasta ahora.
+
+Los 3 primeros SDK deben ser:
+
+* Ruby 
+* Python
+* JS
+
+Cada SDK generada por el proyecto Cenit CodeGen, tendria un repo independiente. La generación de repos es una de las funcionalidades que tiene el proyecto swagger-codegen
+
+Como referencia adicional, seria muy bueno poder revisar las SDK de Parser.io y poderlas comparar con nuestra generacion.
+
+* Parse JS https://github.com/ParsePlatform/Parse-SDK-JS 
+* Parse Python https://github.com/milesrichardson/ParsePy
+
+En el caso de Parse, es muy importante los SWK para móviles y IoT, que luego debemos adicionar como un 2do grupo de SDK para poder cubrir la posibilidad de que se pueda hacer push a cenit desde dispositivos móviles
+
+* Parse iOS https://github.com/ParsePlatform/Parse-SDK-iOS-OSX
+* Parse Androi https://github.com/ParsePlatform/Parse-SDK-Android
+* Parse Arduino https://github.com/ParsePlatform/Parse-SDK-Arduino
+* Parse Embedded C  https://github.com/parseplatform/parse-embedded-sdks 
 
 ### 58. Cambios a partir del nuevo concepto de Query. [Mac]
 
@@ -137,7 +173,7 @@ Es importante poder publicar todas las shared collection de Store que sea posibl
 
 Rails Admin hizo el release de la version 1.0, por lo que es un buen momento para hacer un upgrade de Cenit. Es importante revisar todas las vistas que tenemos customizadas en Cenit.
 
-### 53. Modelos para soportar API SPec sincronizacion con Sagger. [Pacheco]
+### 53. Modelos para soportar API SPec sincronizacion con Sagger. [Mac]
 
 Para formalizar un API Connection vamos a seguir en lo posible las convenciones de [Studio Restlet](https://studio.restlet.com)
 
@@ -242,32 +278,6 @@ Webhooks are "user-defined HTTP callbacks".[2] They are usually triggered by som
 
 A partir de la nueva implementacion de DataTypes asociados con modelos del setup, donde ademas pueden ser asociados data events con esos modelos. Hacer una generacion automatica del swagger.yml que corresponde al API de Cenit, de modo que podamos mantener sincronizado el API con el codigo  de Cenit.
 
-### 50. Validar la herramienta cenit2odoo. [Mary]
-
-Pacheco hizo una reimplementacion de a la herramienta de generacion de addons de Odoo a partir de un shared collection en Cenit.
-
-Revisar en detalle la generacion de los addons y compararla con los que estan actualmente.
-
-Abajo una primera prueba con twitter, para comprobar el resultado de la generacion automatica, se puede ver en una nueva rama compare_auto_generate_twitter_integration del repo de cenit-io/odoo-integrations, la comparacion de esa rama con la version 9.0 se puede ver en el siguiente link
-
-https://github.com/cenit-io/odoo-integrations/pull/16
-
-Se puede ver las diferencia, es importante notar que este twitter original se le hizo ajustes manuales, con lo cual no podemos esperar que todo este en la generacion automatica, pero si ver de las cosas que no estan que otra cosa puede ser generada a partir de la informacion que hay en el shared collection de cenit.
-
-https://github.com/cenit-io/odoo-integrations/pull/16/files?diff=split
-
-Lo mas importante a revisar son las cosas que se eliminan en el pull request, o sea todo lo qeu esta en rojo, porque no fue generado automaticamente.
-
-Ademas aparecen algunos comentarios.
-
-Lo mismo de Twitter esta para shipstacion, en la rama
-
-compare_auto_generated_mailchimp_integration
-
-el diff se puede ver en 
-
-https://github.com/cenit-io/odoo-integrations/pull/17/files?diff=split
-
 ### 47. Habilitar que las notificaciones se envíen por email o SMS. [Mac]
 
 - Poder seleccionar el nivel de notificaciones que serán enviada por email y/o SMS.
@@ -330,18 +340,6 @@ RailsAdmin tiene extensión para visualizar el historial de actividades para aqu
 
 Es importante excluir algunos modelos de esta opción como los logs porque tienen una frecuencia muy alta de ocurrencia con relación a otros modelos, es el caso por ejemplo de las tareas y las notificaciones
 
-### 40. Accion que genere cURL para acciones que existen en el API. [Pacheco]
-
-Similar a algoritmia.com, que tiene varios link para usar la api según el sdk, de momento para nosotros es suficiente con tener cURL, la idea es tener una accion en el admin de cenit (para aquellas accionees que corresponden a metodos que existen en el API), donde al dar click la accion aparezca el codigo cURL y se pueda copiar y pegar en una consola y funcione, para esto el curl incluira las credenciales correspondiente al tenant.
-
-Por ejemplo vean el curl en
-
-- https://algorithmia.com/algorithms/nlp/Summarizer
-
-```shell
-curl -X POST -d '<INPUT>' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/nlp/Summarizer/0.1.3
-```
-
 ### 39. Lanzar un flujo al termina la ejecución (de la tarea) de un flujo previo. [Mac]
 
 Permitir que un modo de ejecutar un flujo sea lanzarlo luego de terminada la ejecución de un flujo previo.
@@ -368,10 +366,6 @@ A- se define como flujo previo en ‘B’ y ‘C’
 C- se define como flujo previo en ‘D’ 
 
 Es importante notar que ‘B’  podría ser un flujo que lo único que defina sea un traslator de tipo algoritmo, donde la salida del flujo sean datos.
-
-### 38. En el dashboard sustituir el listado de acciones de cada modelo por 3 puntos verticals. [Aneli]
-
-En el dashboard asociado con cada modelo, aparece el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes.
 
 ### 37.Usar el background color en el logo de los shared collections. [Mary]
 
@@ -459,12 +453,6 @@ Queda pendiente:
 
 Actualizar el script que lee las especificaciones del directorio de Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit, con la misma logica que se genera cualquier otro spec.
 
-### 29. Probar y actualizar las integracion de Cenit con Odoo 9. [Mary]
-
-Instalar Odoo 9 y probar cada una de las integraciones con Odoo 9.
-
-Como parte de la actualizacion revisar la documentacion.
-
 ### 28. Crear una integracion de Magento basada en el Swagger. [Mary]
 
 El Swagger de Magento y fue adicionado al directorio de Guru API, de modo que debemos actualizar la sincronizazcion de las shard collections para poder adicionar el shared collection de Magento a Cenit basado en esa spec. 
@@ -547,20 +535,6 @@ Los tags fueron adicionados por Daniel para los Algoritmos. Pero usan la interfa
 
 2. Adicionar los tags a otros modelos como las Collecciones y los Shared Collections, revisar que otros modelos se pueden beneficiar de esto, pero la intencion es que sea un patron que podamos relacionar con todos los modelos que necesitan funcionalidades que faciliten el *discovery*.
 
-### 19. Mejorar el tour. [Aneli]
-
-Del tour se hizo una primera implementacion en el portal anterior de Cenit por parte de Daniel, se puede ver aqui
-
-- https://cenit-portal.herokuapp.com/
-
-Y en repo
-
-- https://github.com/cenit-io/cenit-portal
-
-Luego esa implementacion se paso ha Cenit, se puede ver un link en el menu lateral derecho, pero en estos momento no esta funcional.
-
-La propuesta es ir abriendo los elementos hojas del sidebar lateral de navegación, e ir expandiendo los niveles y colapsando en la medida que el tour avanza.
-
 ### 18. Cambiar los has_many en los index mostrando solo los primeros elementos y la cantidad. [Aneli]
 
 Cambiar la vista por default de index de rails_admin, para que las columnas que se corresponden con una relación has_many mostrando los 3 primeros elementos de la lista y luego un número con la cantidad total de elementos
@@ -629,48 +603,17 @@ En el menu superior aparece un icon de las notificaciones y asociado con el icon
 
 ### 9. Cambiar el nombre del modelo Account por Tennant. [Mac].
 
-Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant"
-
-### 7. Los Récords por default deben ser visibles en la navegación. [Mac]
-
-I)  En lugar de tener *Records* en la navegación sustituirlo por dos conceptos *Objects* y *Files*, correspondiendo a *JSON Data Types* y *File Data Types* respectivamente.
-
-II) Cuando no se este logueado que puedan aparecer *Objects* y *Files*.
-
-III) Debajo de *Objects* un action que sea 'link a JSON Data Type', y debajo de Files un action que sea 'link a File Data Type', se mostraria tanto cuando se este logueado que cuando no se este logueado, de modo que se pueda usar como parte del tours, cuando se este logueado si aparecen mas sub-niveles, siempre la accion seria el primer elemento en la lista de sub-niveles.
-
-### 6. Mejorar navegación e interfaz de las Transformaciones. [Aneli, Mac]
-
-Las transformaciones es uno de los conceptos principales que hemos desarrollado y en expresividad es comparable con los algoritmo u otros conceptos que tenemos.
-Aun pueden ser usado como una parte impotante en los Flujos, la idea es que tengan valor en si mismo, y puedan ser usando de forma independiente.
-
-I ) Incluir este concepto como un primer nivel en la navegación
-
-* Transformations 
-  * Render (type exporter)
-    * HTML (html.erb, liquid)
-    * JSON (json.rabl)
-    * XML (xml.rabl, xslt)
-    * JS (js.erb)
-    * PDF (pdf.prawn)
-    * CSV (csv.erb)
-    * Text (txt.erb)
-  * Parser (type importer)
-  * Convert
-  * Updater
-
-IV) Mejorar la UI a partir del hecho que cada una corresponderá a un tipo particular de transformations  a diferencia de como estábamos trabajando hasta ahora.
-
-III) Incluir la ventana de test que se implemento al principio
- 
+Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant" 
  
 ### 5. El email y el pdf de OSSE no soporta tildes. [Mac]
  
 Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
- 
-### 4. Generar los SDK para ruby, python, node.js. [Pacheco]
- 
-Generar los SDK correspondientes al API de Cenit para los principales leguajes de programacion
+
+### 4. En todas las tablas sustituir el listado de acciones por 3 puntos verticals. [Aneli]
+
+Similar la solucion que se hizo en la tarea #38 para dashboard 
+
+En el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes, pensar ademas como mostrar como un subnivel si una apcion se define como un pop-up.
 
 ### 3. Subdominios para las aplicaciones. [Pacheco]
 
@@ -763,7 +706,6 @@ Por ejemplo el template para ruby, tendría el Gemfile, Gemfile.lock y un algori
 
 Como el algoritmo puede ser público es importante que las credenciales se suban al buildpack como variables de ambiente.
 
-
 Input
 
 ```bash
@@ -822,6 +764,73 @@ Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer u
 
 # done
 
+- Pacheco: 40, 25
+
+- Mary: 48, 32, 50
+
+- Aneli: 6, 19, 38
+
+- Mac: 8, 35, 49, 7
+
+### 40. ~~Accion que genere cURL para acciones que existen en el API~~. [Pacheco]
+
+Similar a algoritmia.com, que tiene varios link para usar la api según el sdk, de momento para nosotros es suficiente con tener cURL, la idea es tener una accion en el admin de cenit (para aquellas accionees que corresponden a metodos que existen en el API), donde al dar click la accion aparezca el codigo cURL y se pueda copiar y pegar en una consola y funcione, para esto el curl incluira las credenciales correspondiente al tenant.
+
+Por ejemplo vean el curl en
+
+- https://algorithmia.com/algorithms/nlp/Summarizer
+
+```shell
+curl -X POST -d '<INPUT>' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/nlp/Summarizer/0.1.3
+```
+
+### 19. ~~Mejorar el tour~~. [Aneli]
+
+Del tour se hizo una primera implementacion en el portal anterior de Cenit por parte de Daniel, se puede ver aqui
+
+- https://cenit-portal.herokuapp.com/
+
+Y en repo
+
+- https://github.com/cenit-io/cenit-portal
+
+Luego esa implementacion se paso ha Cenit, se puede ver un link en el menu lateral derecho, pero en estos momento no esta funcional.
+
+La propuesta es ir abriendo los elementos hojas del sidebar lateral de navegación, e ir expandiendo los niveles y colapsando en la medida que el tour avanza.
+
+
+### 6. ~~Mejorar navegación e interfaz de las Transformaciones~~. [Aneli, Mac]
+
+Las transformaciones es uno de los conceptos principales que hemos desarrollado y en expresividad es comparable con los algoritmo u otros conceptos que tenemos.
+Aun pueden ser usado como una parte impotante en los Flujos, la idea es que tengan valor en si mismo, y puedan ser usando de forma independiente.
+
+I ) Incluir este concepto como un primer nivel en la navegación
+
+* Transformations 
+  * Render (type exporter)
+    * HTML (html.erb, liquid)
+    * JSON (json.rabl)
+    * XML (xml.rabl, xslt)
+    * JS (js.erb)
+    * PDF (pdf.prawn)
+    * CSV (csv.erb)
+    * Text (txt.erb)
+  * Parser (type importer)
+  * Convert
+  * Updater
+
+IV) Mejorar la UI a partir del hecho que cada una corresponderá a un tipo particular de transformations  a diferencia de como estábamos trabajando hasta ahora.
+
+III) Incluir la ventana de test que se implemento al principio
+
+### 7. ~~Los Récords por default deben ser visibles en la navegación~~. [Mac]
+
+I)  En lugar de tener *Records* en la navegación sustituirlo por dos conceptos *Objects* y *Files*, correspondiendo a *JSON Data Types* y *File Data Types* respectivamente.
+
+II) Cuando no se este logueado que puedan aparecer *Objects* y *Files*.
+
+III) Debajo de *Objects* un action que sea 'link a JSON Data Type', y debajo de Files un action que sea 'link a File Data Type', se mostraria tanto cuando se este logueado que cuando no se este logueado, de modo que se pueda usar como parte del tours, cuando se este logueado si aparecen mas sub-niveles, siempre la accion seria el primer elemento en la lista de sub-niveles.
+
 ### 8. ~~Definir un Segmento en los Datos asociado a un Data Event.~~ [Mac]
 
 Por ejemplo si se define un evento de Placed Order para las ordenes con status Placed
@@ -834,6 +843,36 @@ Una misma orden puede estar en varios segmentos.
 ### 48. ~~validar la rama snippet_code con las cosas de OSSE.~~ [Mary]
 
 Esta nueva rama snippet_code tiene cambios de fondo que debemos revisar bien con las coass de OSSE y Satechi, para evitar romper algo en produccion.
+
+### 50. ~~Validar la herramienta cenit2odoo~~. [Mary]
+
+Pacheco hizo una reimplementacion de a la herramienta de generacion de addons de Odoo a partir de un shared collection en Cenit.
+
+Revisar en detalle la generacion de los addons y compararla con los que estan actualmente.
+
+Abajo una primera prueba con twitter, para comprobar el resultado de la generacion automatica, se puede ver en una nueva rama compare_auto_generate_twitter_integration del repo de cenit-io/odoo-integrations, la comparacion de esa rama con la version 9.0 se puede ver en el siguiente link
+
+https://github.com/cenit-io/odoo-integrations/pull/16
+
+Se puede ver las diferencia, es importante notar que este twitter original se le hizo ajustes manuales, con lo cual no podemos esperar que todo este en la generacion automatica, pero si ver de las cosas que no estan que otra cosa puede ser generada a partir de la informacion que hay en el shared collection de cenit.
+
+https://github.com/cenit-io/odoo-integrations/pull/16/files?diff=split
+
+Lo mas importante a revisar son las cosas que se eliminan en el pull request, o sea todo lo qeu esta en rojo, porque no fue generado automaticamente.
+
+Ademas aparecen algunos comentarios.
+
+Lo mismo de Twitter esta para shipstacion, en la rama
+
+compare_auto_generated_mailchimp_integration
+
+el diff se puede ver en 
+
+https://github.com/cenit-io/odoo-integrations/pull/17/files?diff=split
+
+### 38. ~~En el dashboard sustituir el listado de acciones de cada modelo por 3 puntos verticals~~. [Aneli]
+
+En el dashboard asociado con cada modelo, aparece el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes.
 
 ### 25. ~~Usando el API de Cenit generar los modulos de integracion de Odoo.~~ [Pacheco]
 
@@ -909,6 +948,12 @@ Que lea el yaml:
 y sobreescriba el json:
 
     /public/openapi/v1/swagger.json
+    
+### 29. ~~Probar y actualizar las integracion de Cenit con Odoo 9~~. [Mary]
+
+Instalar Odoo 9 y probar cada una de las integraciones con Odoo 9.
+
+Como parte de la actualizacion revisar la documentacion.
 
 ### 35. :bug: ~~Cenit local no esta salvando correctamente los objetos.~~ [Mac]
 
