@@ -10,7 +10,7 @@ Orden recomendado:
 
 - Mac: 53, 34, 58, 21, 52, 33, 51, 5, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
-### 59. Cenit CodeGen para la generación de SDKs
+### 59. Cenit CodeGen para la generación de SDKs [Pacheco]
 
 En lugar de hacer repos independiente con los diferentes SDK, podemos hacer un proyecto de Cenit CodeGen, para la generación automática de las SDK de cenit
 
