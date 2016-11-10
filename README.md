@@ -12,35 +12,37 @@ Orden recomendado:
 
 ### 59. Cenit CodeGen para la generación de SDKs [Pacheco]
 
-En lugar de hacer repos independiente con los diferentes SDK, podemos hacer un proyecto de Cenit CodeGen, para la generación automática de las SDK de cenit
+En lugar de tener proyectos independiente con los diferentes SDK, podemos tener un proyecto Cenit-CodeGen, para la generación automática de las SDKs de Cenit.
 
-Similar al proyecto CodeGen de Swagger
+Con bastante similitudes al proyecto CodeGen de Swagger
 
 	https://github.com/swagger-api/swagger-codegen
 
-Basado en el Swagger de Cenit con las customizaciones que sean necesarias.
+Que basado en un Swagger Spec genera el codigo correspondiente de un grupo de SDK.
+
+En nuestro caso sacariamos ventaja de ser un caso particular para Cenit, generando a partir del Swagger de Cenit, y de cuaquier otro elemento que necesitamos para los cambios que sean necesarios para nuestros SDKs.
 
 Esta generación podemos hacerlo en dos variantes:
  
-Desde cero, usando node.js como en cenit2oddoo o quizas usando ruby.
-O con un fork o clone de swagger-codegen (que está basado en Java)
+* Desde cero, usando node.js como en cenit2oddoo o quizas usando ruby.
+* O con un fork o clone del repo swagger-codegen (que está basado en Java)
 
-Es importante notar que la especificación Swagger del API de Cenit será generada automáticamente por Cenit, en lo que está trabajando Mac. De modo que no sera necesario actualizar el swagger.yml de forma manual como estamos haciendo hasta ahora.
+Es importante notar que la especificación Swagger del API de Cenit será generada automáticamente por Cenit, en lo que está trabajando Mac. De modo que no será necesario en el futuro actualizar el swagger.yml de forma manual como estamos haciendo hasta ahora.
 
 Los 3 primeros SDK deben ser:
 
 * Ruby 
 * Python
-* JS
+* JS (node.js)
 
-Cada SDK generada por el proyecto Cenit CodeGen, tendria un repo independiente. La generación de repos es una de las funcionalidades que tiene el proyecto swagger-codegen
+Cada SDK del proyecto Cenit CodeGen, seria generado hacia un repo independiente. La generación de repos es una de las funcionalidades que tiene el proyecto swagger-codegen
 
-Como referencia adicional, seria muy bueno poder revisar las SDK de Parser.io y poderlas comparar con nuestra generacion.
+Como referencia adicional, seria muy bueno poder revisar los SDK de Parser.io y poderlos comparar con nuestra generacion.
 
 * Parse JS https://github.com/ParsePlatform/Parse-SDK-JS 
 * Parse Python https://github.com/milesrichardson/ParsePy
 
-En el caso de Parse, es muy importante los SWK para móviles y IoT, que luego debemos adicionar como un 2do grupo de SDK para poder cubrir la posibilidad de que se pueda hacer push a cenit desde dispositivos móviles
+En el caso de Parse, es muy importante los SDK para móviles y dispositivos de IoT, que luego debemos adicionar como un 2do grupo de SDK para poder cubrir la posibilidad de que se pueda hacer push a Cenit desde dispositivos móviles
 
 * Parse iOS https://github.com/ParsePlatform/Parse-SDK-iOS-OSX
 * Parse Androi https://github.com/ParsePlatform/Parse-SDK-Android
