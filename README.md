@@ -28,6 +28,8 @@ Orden recomendado:
 
 9. Se podra Invitar, definiendo el Role del nuevo usuario, por default tomara el Role del usuario que invita.
 
+Nota: Una forma mas granulada de gestion de permisos es asociarlos a las acciones del modelo, pero podemos dejarlo como una variante avanzanda que desarrollemos mas adelante.
+
 ### 59. Cenit CodeGen para la generación de SDKs [Pacheco]
 
 En lugar de tener proyectos independiente con los diferentes SDK, podemos tener un proyecto Cenit-CodeGen, para la generación automática de las SDKs de Cenit.
