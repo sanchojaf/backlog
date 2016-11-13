@@ -8,7 +8,25 @@ Orden recomendado:
 
 - Aneli: 4, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
 
-- Mac: 53, 34, 58, 21, 52, 33, 51, 5, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+- Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+
+### 60. Control de Acceso basado en Roles (ACLs) para Users y Connections. [Mac]
+
+1. Cada Usuario tiene asociado un Role.
+
+2. Cada Coneccion debe tener un Role, por default tomara el role del Usario que la crea.
+
+2. Un Role se definira con dos conjuntos de permisos: Permisos de Lectura, Permisos de Escritura.
+
+3. Cada Permiso estara asociado a un Data Type, de cualquier tipo: Inner Type, Object Type o File Type.
+
+5. Un usuario podra crear nuevos roles (excepto, que no tenga acceso al modelo Role).
+
+6. Los roles (excepto Super-Admin) debe tener un Role Padre, por default sera el Role del usuario.
+
+7. Un Role solo podran restrigir los permisos del Role Padre.
+
+9. Se podra Invitar, definiendo el Role del nuevo usuario, por default tomara el Role del usuario que invita.
 
 ### 59. Cenit CodeGen para la generación de SDKs [Pacheco]
 
