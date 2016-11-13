@@ -2,13 +2,21 @@
 
 Orden recomendado: 
 
-- Pacheco: 24, 59, 36, 1, 3
+- Pacheco: 24, 59, 61, 36, 1, 3
 
 - Mary: 55, 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
 - Aneli: 4, 18, 17, 11, 10, 20, 38, 54, 23, 22, 42
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+
+### 61. Salvar los ficheros en AWS S3. [Pacheco]
+ 
+Actualmente los ficheros que son Files Data Types, son almacenados en MongoDB.
+ 
+Aunque es una variante rapida y sencilla para almacenar los ficheros, no es la forma mas escalable para guardar grandes volumenes de ficheros.
+ 
+Si eliminar la opcion de almacenar en la base de datos, seria conveniente poder adicionar AWS S3 como una opcion de almacenamiento, que ademas se la opcion que configuremos para produccion en el server.
 
 ### 60. Control de Acceso basado en Roles (ACLs) para Users y Connections. [Mac]
 
