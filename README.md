@@ -16,19 +16,19 @@ Orden recomendado:
 
 2. Cada Coneccion debe tener un Role, por default tomara el role del Usario que la crea.
 
-2. Un Role se definira con dos conjuntos de permisos: Permisos de Lectura, Permisos de Escritura.
+3. Un Role se definira con dos conjuntos de permisos: Permisos de Lectura, Permisos de Escritura.
 
-3. Cada Permiso estara asociado a un Data Type, de cualquier tipo: Inner Type, Object Type o File Type.
+4. Cada Permiso estara asociado a un Data Type, de cualquier tipo: Inner Type, Object Type o File Type.
 
-5. Un usuario podra crear nuevos roles (excepto, que no tenga acceso al modelo Role).
+5. Como opcion avanzada el Permiso listara las acciones del Data Type, las cuales pueden ser activadas o desactivas.  
 
-6. Los roles (excepto Super-Admin) debe tener un Role Padre, por default sera el Role del usuario.
+6. Un usuario podra crear nuevos roles (excepto, que no tenga acceso al modelo Role).
 
-7. Un Role solo podran restrigir los permisos del Role Padre.
+7. Los roles (excepto Super-Admin) debe tener un Role Padre, por default sera el Role del usuario.
+
+8. Un Role solo podran restrigir los permisos del Role Padre.
 
 9. Se podra Invitar, definiendo el Role del nuevo usuario, por default tomara el Role del usuario que invita.
-
-Nota: Una forma mas granulada de gestion de permisos es asociarlos a las acciones del modelo, pero podemos dejarlo como una variante avanzanda que desarrollemos mas adelante.
 
 ### 59. Cenit CodeGen para la generación de SDKs [Pacheco]
 
