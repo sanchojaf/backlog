@@ -10,6 +10,90 @@ Orden recomendado:
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+### 62. Completar las categorias y tags de las Shared Collections. [Aneli, Mac]
+
+En el menu lateral:
+
+* que aparezca primero My Collections y Luego Shared Collections.
+
+* Agregar un subnivel a las Shared Collections, con las categorias de las Shared Collection
+
+
+Tomaremos de base este listado de categorias que aparece en APIs-guru, que fue un trabajo que hicimos junto con ellos.
+
+	https://github.com/APIs-guru/openapi-directory/blob/master/resources/categories.yaml
+
+  * Analytics
+  * Backend
+  * Cloud
+  * Collaboration
+  * Customer Relation
+  * Developer Tools
+  * eCommerce
+  * Education
+  * Email
+  * Enterprise
+  * Financial
+  * Frontend
+  * Forms
+  * Hosting
+  * IoT
+  * Location
+  * Machine Learning
+  * Marketing
+  * Media
+  * Messaging
+  * Monitoring
+  * Open Data
+  * Payment
+  * Project Management
+  * Search
+  * Social
+  * Support
+  * Telecom
+  * Text
+  * Time Management
+  * Tools
+
+En Guru API, esta definido el nombre y la definicion de la categoria.
+
+Cada fichero path.yaml en api guru, tiene la categoria correspondiente al API. Ejemplo:
+
+   https://github.com/APIs-guru/openapi-directory/blob/master/APIs/backupify.com/patch.yaml#L8-L9
+
+Tener en public un fichero, categories.yaml local, donde podamos completar las categorias que no estan en guru api.
+
+Valorar (Con Mac) la posibilidad de que se pueda asociar mas de una categoria.
+
+La diferencia entre Categoria y Tag que vamos a seguir es que la categoria es un diccionario que debe cambiar muy poco, y cada categoria debe reflejar al menos catidad minimas de Shared Collections. En corresondencia con la definicion de Guru API.
+
+
+    # List of categories to be used in `x-apisguru-categories`.
+    #
+    # Intention is to have list of categories that can fitted as sidebar on a single page.
+    # With this constrain in mind we can't have ideal fit for each API, instead we
+    # choose approach of open-ended categories.
+    #
+    # Rules:
+    #  - categories names consist of following symbols 'a-z_'.
+    #  - for each category user-friendly title and description provided.
+    #  - removal of category is breaking change.
+    #
+    # Warning: Future addition of categories is possible, but it should be proven that
+    # significant amount of APIs don't fit any of existing categories.
+  
+
+Los Tags ademas es un concepto que asociaremos a otros modelos en Cenit.
+
+Los tag pueden ser terminos propios de cada shared collection.
+
+Completar los tags de las shared collection, en princio con los que aparecen en guru api en el path.yml. Ejemplo:
+
+    
+    https://github.com/APIs-guru/openapi-directory/blob/master/APIs/backupify.com/patch.yaml#L11-L16
+
+Tener en un fichero publico para los tags, tags.yaml, donde podamos completar las tags que no estan en guru api para las shared collections.
+
 ### 61. Salvar los ficheros en AWS S3. [Pacheco]
  
 Actualmente los ficheros que son Files Data Types, son almacenados en MongoDB.
