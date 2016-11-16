@@ -4,11 +4,11 @@ Orden recomendado:
 
 - Pacheco: 24, 59, 61, 36, 1, 3
 
-- Mary: 55, 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
+- Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
 - Aneli: 4, 18, 17, 62, 11, 10, 20, 38, 54, 23, 22
 
-- Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+- Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
 ### 62. Completar las categorias y tags de las Shared Collections. [Aneli, Mac]
 
@@ -273,15 +273,6 @@ y luego ahi revisar las rutas del api.
 aqui estan las rutas en un gist
 
 [link rutas del api de spree](https://gist.github.com/sanchojaf/29e7845987bfe22b81c6437b9692a00a)
-
-### 55. Publicar shared collections de Store. [Mary]
-
-Es importante poder publicar todas las shared collection de Store que sea posible, aunque la implementacion del API no sea completa.
-
-* Houzz
-* Walmart
-* Odoo
-* Magento
 
 ### 54. Migrar a rails_admin 1.0. [Aneli]
 
@@ -734,50 +725,6 @@ Por ejemplo para una web como mytriptomoon, podria tener una aplicacion para la 
 
 https://signin.mytriptomoon.com
 
-### 2. Agregar a la navegacion Ecommerce. [Mac]
-
-Las motivaciones de este cambio son para hacer mas evidente las posibilidades que tiene Cenit para el mundo Ecommerce. Cenit es una plataforma genérica de integración, y técnicamente las funcionalidades para el tema ecommerce son similares a otros dominios de aplicación, pero es importante diferenciar este segmento. 
-
-En el menu de navegacion ya tengamos explicitamente un item para Ecommerce, y como elementos de segundo nivel tendriamos: Customers, Products, Inventory, Cart, Orders, Shipments. 
-
-Los modelos de ese namespace estarian pre-instalados en cada nuevo tenant que se lance y su definicion debe corresponder al repo (https://github.com/cenit-io/ecommerce)[https://github.com/cenit-io/ecommerce] 
-
-* Ecommerce
-  * Customers
-  * Products
-  * Inventory
-  * Carts
-  * Orders
-  * Shipments
-
-Aunque se permitia cargar otros modelos tendriamos una biblioteca "oficial" de Ecommerce, de modo que siempre que los modelos sean algunos de los oficiales se pueda sacar provecho de ello y contar con funcionalidades Out the box para estos modelos.
-
-Es importante notar que MondoDB permite que cuando persista una orden en particular, pueda tener tener campos dinamicos, o sea atributos adicionales a los especificados originalmente en el modelo, lo que brinda flexibilidad a los mapeos, de hecho esos atributos dinamicos pueden ser incluso anidados.
-
-En los SDK que desarrollemos podemos tener facilidades para el push de estos modelos hacia Cenit. O una plataforma ecommerce como Spree o Magento, puede tener una extension para la sincronizacion de estos modelos. Por ejemplo cualquiera de estos Store, con una extencion puede implementar una logica de push automatico que se ejecute automaticamente que se cree una nueva orden, lo cual tiene ventajas a la hora de lanzar eventos sin que se tenga que esperarar por una instancia del scheduler periodico cada 20 minutos.
-Veamos algunos ejemplos:
-
-En el caso de Sathechi, las ordenes de cada uno de los marketplace es traducida a los Shipments de Shipstation.
-lo ideal es que exista integraciones de:
-
-- Order Fancy <-> Order Ecommerce
-- Order OverStock <-> Order Ecommerce
-- Order Shipstation <-> Order Ecommerce
-
-La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de Order Ecomerce queda disponible por transitividad para todos los modelos Order que sean posible transformarce en Order Ecommerce.
-
-Escenario 1:
-
-Si de momento en lugar de enviar a Shipstation, lo que interesa es hacer el envio a Shipwire, el esfuerzo se debe reducir a transformar la Order (o el Shipment de Shipwire) en la Order de ecommerce
-
-Escenario 2:
-
-Si tenemos una funcionalidad que a partir de un Order se genere un Invoice pdf con un template prawn
-Aunque del punto de vista de implementacion, no debe cambiar mucho, ya que deben ser modelos que se carguen dinamicamente, el hecho de que tengan una UI propia, permite agregar actions que se puedan visualizar desde el mismo dashboard.
-
-Podriamos tener en el API una descripcion explicita para estos modelos, de modo que la curva de aprendizaje para que alguien logre subir una Orden a Cenit sea menor.
-
-ver tareas: 46, 45 y 27
 
 ### 1. Algoritmos remotos. [Pacheco]
 
@@ -866,12 +813,66 @@ Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer u
 
 - Pacheco: 40, 25
 
-- Mary: 48, 32, 50
+- Mary: 55, 48, 32, 50
 
 - Aneli: 42, 6, 19, 38
 
-- Mac: 8, 35, 49, 7
+- Mac: 2, 8, 35, 49, 7
 
+
+### 2. ~~Agregar a la navegacion Ecommerce~~. [Mac]
+
+Las motivaciones de este cambio son para hacer mas evidente las posibilidades que tiene Cenit para el mundo Ecommerce. Cenit es una plataforma genérica de integración, y técnicamente las funcionalidades para el tema ecommerce son similares a otros dominios de aplicación, pero es importante diferenciar este segmento. 
+
+En el menu de navegacion ya tengamos explicitamente un item para Ecommerce, y como elementos de segundo nivel tendriamos: Customers, Products, Inventory, Cart, Orders, Shipments. 
+
+Los modelos de ese namespace estarian pre-instalados en cada nuevo tenant que se lance y su definicion debe corresponder al repo (https://github.com/cenit-io/ecommerce)[https://github.com/cenit-io/ecommerce] 
+
+* Ecommerce
+  * Customers
+  * Products
+  * Inventory
+  * Carts
+  * Orders
+  * Shipments
+
+Aunque se permitia cargar otros modelos tendriamos una biblioteca "oficial" de Ecommerce, de modo que siempre que los modelos sean algunos de los oficiales se pueda sacar provecho de ello y contar con funcionalidades Out the box para estos modelos.
+
+Es importante notar que MondoDB permite que cuando persista una orden en particular, pueda tener tener campos dinamicos, o sea atributos adicionales a los especificados originalmente en el modelo, lo que brinda flexibilidad a los mapeos, de hecho esos atributos dinamicos pueden ser incluso anidados.
+
+En los SDK que desarrollemos podemos tener facilidades para el push de estos modelos hacia Cenit. O una plataforma ecommerce como Spree o Magento, puede tener una extension para la sincronizacion de estos modelos. Por ejemplo cualquiera de estos Store, con una extencion puede implementar una logica de push automatico que se ejecute automaticamente que se cree una nueva orden, lo cual tiene ventajas a la hora de lanzar eventos sin que se tenga que esperarar por una instancia del scheduler periodico cada 20 minutos.
+Veamos algunos ejemplos:
+
+En el caso de Sathechi, las ordenes de cada uno de los marketplace es traducida a los Shipments de Shipstation.
+lo ideal es que exista integraciones de:
+
+- Order Fancy <-> Order Ecommerce
+- Order OverStock <-> Order Ecommerce
+- Order Shipstation <-> Order Ecommerce
+
+La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de Order Ecomerce queda disponible por transitividad para todos los modelos Order que sean posible transformarce en Order Ecommerce.
+
+Escenario 1:
+
+Si de momento en lugar de enviar a Shipstation, lo que interesa es hacer el envio a Shipwire, el esfuerzo se debe reducir a transformar la Order (o el Shipment de Shipwire) en la Order de ecommerce
+
+Escenario 2:
+
+Si tenemos una funcionalidad que a partir de un Order se genere un Invoice pdf con un template prawn
+Aunque del punto de vista de implementacion, no debe cambiar mucho, ya que deben ser modelos que se carguen dinamicamente, el hecho de que tengan una UI propia, permite agregar actions que se puedan visualizar desde el mismo dashboard.
+
+Podriamos tener en el API una descripcion explicita para estos modelos, de modo que la curva de aprendizaje para que alguien logre subir una Orden a Cenit sea menor.
+
+ver tareas: 46, 45 y 27
+
+### 55. ~~Publicar shared collections de Store~~. [Mary]
+
+Es importante poder publicar todas las shared collection de Store que sea posible, aunque la implementacion del API no sea completa.
+
+* Houzz
+* Walmart
+* Odoo
+* Magento
 
 ### 42. ~~Mejorar la interfaz de los wizards~~. [Aneli]
 
