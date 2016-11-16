@@ -6,7 +6,7 @@ Orden recomendado:
 
 - Mary: 55, 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli: 4, 18, 17, 62, 11, 10, 20, 38, 54, 23, 22, 42
+- Aneli: 4, 18, 17, 62, 11, 10, 20, 38, 54, 23, 22
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 2, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
@@ -433,20 +433,6 @@ Luego de esta tarea se debe actualizar las integraciones en Odoo.
 ### 43. Definir el Cenit Collection Format como un JSON Schema. [Mac]
 
 En todas las colecciones poner un link que permita visualizar el JSON ‘oficial’ de la colección, que se debe corresponder con el Cenit Collection Format.
-
-### 42. Mejorar la interfaz de los wizards. [Aneli]
-
-Los Wizard debemos usarlo solo donde sea impresindible, ya que se aleja de la forma comun de los EDIT que es la propuesta por RailsAdmin.
-
-Donde se justifique el uso de Wizards podemos mejorar la forma en que lo estamos presentando.
-
-- Es conveniente tener un nombre por cada paso, 
-- que pueda mostrar los pasos (arriba o abajo)
-- que se muestre cual es el paso activo
-
-En este link se puede ver un ejemplo:
-
-- https://drive.google.com/file/d/0B-ltzH-m3LxTZXpvaFM4N18xZUk/view?usp=sharing
 
 ### 41. Adicionar los logs de Activity, basado en el history. [Mac]
 
@@ -882,9 +868,24 @@ Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer u
 
 - Mary: 48, 32, 50
 
-- Aneli: 6, 19, 38
+- Aneli: 42, 6, 19, 38
 
 - Mac: 8, 35, 49, 7
+
+
+### 42. ~~Mejorar la interfaz de los wizards~~. [Aneli]
+
+Los Wizard debemos usarlo solo donde sea impresindible, ya que se aleja de la forma comun de los EDIT que es la propuesta por RailsAdmin.
+
+Donde se justifique el uso de Wizards podemos mejorar la forma en que lo estamos presentando.
+
+- Es conveniente tener un nombre por cada paso, 
+- que pueda mostrar los pasos (arriba o abajo)
+- que se muestre cual es el paso activo
+
+En este link se puede ver un ejemplo:
+
+- https://drive.google.com/file/d/0B-ltzH-m3LxTZXpvaFM4N18xZUk/view?usp=sharing
 
 ### 40. ~~Accion que genere cURL para acciones que existen en el API~~. [Pacheco]
 
