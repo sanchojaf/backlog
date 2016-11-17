@@ -615,7 +615,7 @@ En las paginas de index, adicionar un boton 'Actions', inmediatamente a la derec
 
 Este boton debe permitir desplegar el resto de las acciones.
 
-En las otras vistas que no son Idnex aplicar una logica similar.
+En las otras vistas que no son Index aplicar una logica similar.
 
 ### 21. Activar el modelo de Confirmable. [Mac]
 
@@ -806,24 +806,16 @@ Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer u
 
 - Mary: 55, 48, 32, 50
 
-- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 22
+- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23
 
 - Mac: 2, 8, 35, 49, 7
 
-### 22. ~~ Limitar el listado de acciones a 2 y luego un boton que diga 'Actions'. ~~[Aneli]
-
-En las paginas de index, adicionar un boton 'Actions', inmediatamente a la derecha de 'Add New', o se tendriamos, 'List', 'Add New' y luego 'Actions'
-
-Este boton debe permitir desplegar el resto de las acciones.
-
-En las otras vistas que no son Idnex aplicar una logica similar.
-
-### 23. ~~Adicionar en el menú superior indicador para storages.~~ [Aneli]
+### 23. ~~Adicionar en el menú superior indicador para storages~~. [Aneli]
 
 Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por adicionar a los storage.
 
 
-### 10.~~ Redireccionar los link de notificaciones a filtros. ~~[Aneli]
+### 10. ~~Redireccionar los link de notificaciones a filtros~~. [Aneli]
 
 En el menu superior aparece un icon de las notificaciones y asociado con el icon diferentes numeros relacionados con el tipo de notificacion, cuando se le da click a uno de los numeros esta redireccionando a las notificaciones, pero no a las notificaciones filtradas por el tipo de notificacion del numero.
 
@@ -831,15 +823,15 @@ En el menu superior aparece un icon de las notificaciones y asociado con el icon
 
 Todas las url tienen el prefijo 'setup~' que lo toma rails_admin de la carpeta setup. eliminar este prefijo que no cumple funcion.
 
-### 17. ~~En el Show de los Shared Collections incluir un link a la lista de todos los Webhooks. ~~[Aneli]
+### 17. ~~En el Show de los Shared Collections incluir un link a la lista de todos los Webhooks~~. [Aneli]
 
 Cuando un Shared Collections que tiene muchos Webhooks, en el Show aparecen listado solo una parte de los Webhooks. Por ejemplo en caso de Gmail, solo se muestran 35 de un total de 56. Sería conveniente tener un link que al darle click redireccione a la pagina donde se listen todos los webhooks que pertenecen al Shared Collection.
 
-### 18. ~~Cambiar los has_many en los index mostrando solo los primeros elementos y la cantidad. ~~[Aneli]
+### 18. ~~Cambiar los has_many en los index mostrando solo los primeros elementos y la cantidad~~. [Aneli]
 
 Cambiar la vista por default de index de rails_admin, para que las columnas que se corresponden con una relación has_many mostrando los 3 primeros elementos de la lista y luego un número con la cantidad total de elementos
 
-### 4. ~~En todas las tablas sustituir el listado de acciones por 3 puntos verticals. ~~[Aneli]
+### 4. ~~En todas las tablas sustituir el listado de acciones por 3 puntos verticals~~. [Aneli]
 
 Similar la solucion que se hizo en la tarea #38 para dashboard 
 
