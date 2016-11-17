@@ -6,9 +6,22 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli:  22, 62,  20, 54, 63, 64
+- Aneli:  22, 62,  20, 54, 63, 64, 65
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+
+
+### 65. En 'send to flow', mostrar la tabla o la cantidad de elementos a los que aplica. [Aneli]
+
+En la accion send to flow es conveniente que se mueste debajo la tabla de los elementos a los que va a aplicarse la accion.
+
+En caso qeu la tabla no sea lo mejor, mostrar la cantidad de elementos.
+
+Esto es para evitar que una accion de flow se aplique a elementos que no se desea. 
+
+Pensar ademas como mejorar el siguiente escenario.
+
+Cuando usuario marca algunas filas y luego va directamente a 'send to flow' en lugar de tomar las filas marcadas, se toman todas las filas, ya no se uso la accion 'Selected Items', seria bueno mejorar la experiencia de usuario en este caso, quizas mostrando un warning, o seleccionando los elementos marcado que una opcion para seleccionar todos si era la intencion.
 
 ### 64. Usar el mismo estilo de codigo en Show que en los Edit. [Aneli]
 
