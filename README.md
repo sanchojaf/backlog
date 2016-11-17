@@ -6,10 +6,13 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli: 4, 18, 17, 62, 11, 10, 20, 38, 54, 23, 22
+- Aneli:  62,  20, 54, 63
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+### 63.Lanzar el Tour automáticamente. [Aneli]
+
+Que el tour se lance automaticamente, la primera vez que alguien se loguea, o se conecta desde un IP.
 ### 62. Completar las categorias y tags de las Shared Collections. [Aneli, Mac]
 
 En el menu lateral:
@@ -626,13 +629,9 @@ Los tags fueron adicionados por Daniel para los Algoritmos. Pero usan la interfa
 
 2. Adicionar los tags a otros modelos como las Collecciones y los Shared Collections, revisar que otros modelos se pueden beneficiar de esto, pero la intencion es que sea un patron que podamos relacionar con todos los modelos que necesitan funcionalidades que faciliten el *discovery*.
 
-### 18. Cambiar los has_many en los index mostrando solo los primeros elementos y la cantidad. [Aneli]
 
-Cambiar la vista por default de index de rails_admin, para que las columnas que se corresponden con una relación has_many mostrando los 3 primeros elementos de la lista y luego un número con la cantidad total de elementos
 
-### 17. En el Show de los Shared Collections incluir un link a la lista de todos los Webhooks. [Aneli]
 
-Cuando un Shared Collections que tiene muchos Webhooks, en el Show aparecen listado solo una parte de los Webhooks. Por ejemplo en caso de Gmail, solo se muestran 35 de un total de 56. Sería conveniente tener un link que al darle click redireccione a la pagina donde se listen todos los webhooks que pertenecen al Shared Collection.
 
 ### 16. Adicionar estadisticas de los monitors en el dashboard. [Mac]
 
@@ -684,13 +683,9 @@ En cuanto a la logica actual, donde el namespace es lo que permite identificar q
 
 Ya en Cenit se soportan las URL con Slug y ademas de las id -que son la URL que contruye Rails Admin por default-, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
 
-### 11. Eliminar ‘setup~’ prefijo de las url. [Aneli]
 
-Todas las url tienen el prefijo 'setup~' que lo toma rails_admin de la carpeta setup. eliminar este prefijo que no cumple funcion.
 
-### 10. Redireccionar los link de notificaciones a filtros. [Aneli]
 
-En el menu superior aparece un icon de las notificaciones y asociado con el icon diferentes numeros relacionados con el tipo de notificacion, cuando se le da click a uno de los numeros esta redireccionando a las notificaciones, pero no a las notificaciones filtradas por el tipo de notificacion del numero.
 
 ### 9. Cambiar el nombre del modelo Account por Tennant. [Mac].
 
@@ -700,11 +695,7 @@ Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cu
  
 Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
 
-### 4. En todas las tablas sustituir el listado de acciones por 3 puntos verticals. [Aneli]
 
-Similar la solucion que se hizo en la tarea #38 para dashboard 
-
-En el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes, pensar ademas como mostrar como un subnivel si una apcion se define como un pop-up.
 
 ### 3. Subdominios para las aplicaciones. [Pacheco]
 
@@ -815,9 +806,44 @@ Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer u
 
 - Mary: 55, 48, 32, 50
 
-- Aneli: 42, 6, 19, 38
+- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 22
 
 - Mac: 2, 8, 35, 49, 7
+
+### 22. ~~ Limitar el listado de acciones a 2 y luego un boton que diga 'Actions'. ~~[Aneli]
+
+En las paginas de index, adicionar un boton 'Actions', inmediatamente a la derecha de 'Add New', o se tendriamos, 'List', 'Add New' y luego 'Actions'
+
+Este boton debe permitir desplegar el resto de las acciones.
+
+En las otras vistas que no son Idnex aplicar una logica similar.
+
+### 23. ~~Adicionar en el menú superior indicador para storages.~~ [Aneli]
+
+Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por adicionar a los storage.
+
+
+### 10.~~ Redireccionar los link de notificaciones a filtros. ~~[Aneli]
+
+En el menu superior aparece un icon de las notificaciones y asociado con el icon diferentes numeros relacionados con el tipo de notificacion, cuando se le da click a uno de los numeros esta redireccionando a las notificaciones, pero no a las notificaciones filtradas por el tipo de notificacion del numero.
+
+### 11. ~~Eliminar ‘setup~’ prefijo de las url.~~ [Aneli]
+
+Todas las url tienen el prefijo 'setup~' que lo toma rails_admin de la carpeta setup. eliminar este prefijo que no cumple funcion.
+
+### 17. ~~En el Show de los Shared Collections incluir un link a la lista de todos los Webhooks. ~~[Aneli]
+
+Cuando un Shared Collections que tiene muchos Webhooks, en el Show aparecen listado solo una parte de los Webhooks. Por ejemplo en caso de Gmail, solo se muestran 35 de un total de 56. Sería conveniente tener un link que al darle click redireccione a la pagina donde se listen todos los webhooks que pertenecen al Shared Collection.
+
+### 18. ~~Cambiar los has_many en los index mostrando solo los primeros elementos y la cantidad. ~~[Aneli]
+
+Cambiar la vista por default de index de rails_admin, para que las columnas que se corresponden con una relación has_many mostrando los 3 primeros elementos de la lista y luego un número con la cantidad total de elementos
+
+### 4. ~~En todas las tablas sustituir el listado de acciones por 3 puntos verticals. ~~[Aneli]
+
+Similar la solucion que se hizo en la tarea #38 para dashboard 
+
+En el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes, pensar ademas como mostrar como un subnivel si una apcion se define como un pop-up.
 
 
 ### 2. ~~Agregar a la navegacion Ecommerce~~. [Mac]
