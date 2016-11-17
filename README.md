@@ -6,11 +6,15 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli:  22, 62,  20, 54, 63
+- Aneli:  22, 62,  20, 54, 63, 64
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
-### 63.Lanzar el Tour automáticamente. [Aneli]
+### 64. Usar el mismo estilo de codigo en Show que en los Edit. [Aneli]
+
+La propuesta es poder utilizar el mismo estilo de codemirror para el codigo en las vistas Show que en las vistas Edit, con la diferencia de que el codigo en los Show no puede ser Editable.
+
+### 63. Lanzar el Tour automáticamente. [Aneli]
 
 Que el tour se lance automaticamente, la primera vez que alguien se loguea, o se conecta desde un IP.
 ### 62. Completar las categorias y tags de las Shared Collections. [Aneli, Mac]
