@@ -10,6 +10,23 @@ Orden recomendado:
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+### 66 Mejorar la URL predeterminada de los Object Types. [Aneli]
+
+
+La URL actual de los Object Type, luce como esta
+
+	http://localhost:3000/dt581c7a75334c4a68d5000006
+
+Esa URL corresponde al object type:  'Basic | OrderTotals'
+
+La url deberia ser similar a la que usamos en el api
+	
+	http://127.0.0.1:3000/api/v2/basic/order_total
+	
+, o sea:
+
+	http://localhost:3000/basic/order_total
+	
 
 ### 65. En 'send to flow', mostrar la tabla o la cantidad de elementos a los que aplica. [Aneli]
 
