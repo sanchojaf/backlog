@@ -2,14 +2,62 @@
 
 Orden recomendado: 
 
-- Pacheco: 24, 59, 61, 36, 1, 3
+- Pacheco: 69, 24, 59, 61, 36, 1, 3
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli:  67, 22, 62,  20, 54, 63, 64, 65, 66
+- Aneli:  67, 22, 62,  20, 54, 63, 64, 65, 66, 68
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+
+### 69. Mejoras a la acccion REST API. [Pacheco]
+
+Como complemento a lo que ya esta podriamos tener una primera version
+
+de codigo para Python, Ruby y JS aun sin tener los clientes SDK correspondientes.
+
+Podemos usar bibliotecas HTTP de cada lenguaje.
+
+Ejemplo de cURL en Parse (retrieving a user):
+
+```bath
+curl -X GET \
+  -H "X-Parse-Application-Id: ${APPLICATION_ID}" \
+  -H "X-Parse-REST-API-Key: ${REST_API_KEY}" \
+  https://api.parse.com/1/users/g7y9tkhB7O
+```
+
+Ejemplo en Python usando biblioteca HTTP (retrieving a user):
+
+```Python
+import json,httplib
+connection = httplib.HTTPSConnection('api.parse.com', 443)
+connection.connect()
+connection.request('GET', '/1/users/g7y9tkhB7O', '', {
+       "X-Parse-Application-Id": "${APPLICATION_ID}",
+       "X-Parse-REST-API-Key": "${REST_API_KEY}"
+     })
+result = json.loads(connection.getresponse().read())
+print result
+```
+
+ver el ejemplo aqui
+
+	http://parseplatform.github.io/docs/rest/guide/#retrieving-users
+
+
+De modo que la seccion donde ahora se muestra el cURL, podriamos tener 4 tabs: cURL (predeterminado), Ruby, Python, JS. 
+
+Cada uno con el codigo correspondiente.
+
+Agregar como una ultima seccion un boton run, que permita ejecutar el request y mostrar el response debajo, con un scroll.
+
+### 68. Vistas de index embebidas deben mostrar las acciones con los 3 puntos verticales. [Aneli]
+
+En las vistas de index embebidas como la que se usa en el show de los cross_shared_collections, las acciones asociada a cada fila, se deben mostrar con los 3 puntos verticales, de modo que sea uniforme con el resto de la plataforma.
+
+En caso de la accion Filters, revisar como se puede convertir en una vista embebida, e igualmente mostrar las acciones.
 
 ### 67. Mejorar la URL predeterminada de los Object Types. [Aneli]
 
