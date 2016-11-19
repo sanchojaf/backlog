@@ -10,6 +10,7 @@ Orden recomendado:
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+
 ### 67. Mejorar la URL predeterminada de los Object Types. [Aneli]
 
 
@@ -25,8 +26,18 @@ La url deberia ser similar a la que usamos en el api
 	
 , o sea la URL en el admin, deberia ser:
 
-	http://localhost:3000/basic/order_total
+	http://localhost:3000/basic/order_totals
+
+Por ejemplo los modelos de Ecommerce, deben quedar como 
 	
+	http://localhost:3000/ecommerce/orders
+
+
+Eliminar del breadcrumb el termino 'Dashboard' y usar '/' para separar el namespace del nombre
+
+deria sera
+    
+    Ecommerce / Orders
 
 ### 66. Adicionar un Save Filter [Aneli]
 
