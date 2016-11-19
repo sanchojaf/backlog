@@ -6,11 +6,11 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli:  22, 62,  20, 54, 63, 64, 65
+- Aneli:  67, 22, 62,  20, 54, 63, 64, 65, 66
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
-### 66 Mejorar la URL predeterminada de los Object Types. [Aneli]
+### 67. Mejorar la URL predeterminada de los Object Types. [Aneli]
 
 
 La URL actual de los Object Type, luce como esta
@@ -23,10 +23,20 @@ La url deberia ser similar a la que usamos en el api
 	
 	http://127.0.0.1:3000/api/v2/basic/order_total
 	
-, o sea:
+, o sea la URL en el admin, deberia ser:
 
 	http://localhost:3000/basic/order_total
 	
+
+### 66. Adicionar un Save Filter [Aneli]
+
+El modelo Query fue renombrado como Filter, por varias razones:
+
+1- Para usar el mismo nombre que usa rails_admin, al final es persistir los filtros actuales que ellos tienen en las vistas
+
+2- Para reservar el termino Query, al nuevo API [GraphQL](http://graphql.org/)
+
+Con este nuevo nombre es mas intuitivo poder hacer la funcionalidad de salvar un filtro dinamico cuando se adicione a una vista cualquiera. O sea esta seria una forma alternativa a la forma actual (que es el al modelo Filter y crear un nuevo filter). En las vistas de rails_admin por default viene un Add Filter, una vez selecionado Add Filter apareceria un boton asociado 'Save' para poder persistir el filtro.
 
 ### 65. En 'send to flow', mostrar la tabla o la cantidad de elementos a los que aplica. [Aneli]
 
