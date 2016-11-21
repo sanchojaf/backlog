@@ -802,7 +802,7 @@ Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enc
 
 ### 3. Subdominios para las aplicaciones. [Pacheco]
 
-Para que las aplicaciones tegan mayor valor de uso, es importante que se pueeda asociar un dominio o subdominio propios.
+Para que las aplicaciones tegan mayor valor de uso, es importante que se pueda asociar un dominio o subdominio propios.
 
 - www.userdomain.com
 - www.sub.userdomain.com
@@ -824,20 +824,64 @@ https://signin.mytriptomoon.com
 
 **Cenit Algorithms**
 
+La posibilidad de definir algoritmos es una de las principales funcionalidades que tenemos en cenit.
+
+Tenemos dos limitaciones principales:
+
+* hoy solo podemos definir codigo ruby (en particular, seria conveniente tener Scripts en JS que es mas universal)
+* seria conveniente poder adicionar bibliotecas (en el caso de ruby serian gemas)
+
+Lo mas importante es que para cada uno de esos leguajes  podemos manejar referencia a las bibliotecas  correspondientes de cada lenguaje. Lo cual daria un salto significativo a lo que se puede expresar con una algoritmo. Practicamente 'cualquier cosa', porque una biblioteca puede tener previamente programado funcionalidades que es casi imposible programarlas desde cero mediante el metodo actual.
+
+Podemos usar un enfoque similar al proyecto open source Morph 
+
+https://github.com/openaustralia/morph  
+
+el sitio oficinal del proyecto es 
+
+https://morph.io/
+
+La documentacion se puede revisar aqui.
+
+https://morph.io/documentation
+
+Como logra morph manejar esos lenguajes y ademas gestionar la posibilidad de incluir bibliotecas.
+
+La funcionalidad esta desarrollada sobre un proyecto open source de heroku, que son los Buildpacks, heroku tiene    Buildpacks por default para los principapes lenguajes de programacion que soportados oficialmente por heroku, y ademas hay collecciones de Buildpacks customizadas hecha por la comunidad.
+
+Los pasos serian, 
+
+* probar morph con el sitio
+* revisar el codigo de morph
+* familiarizarnos con Buildpacks
+* tener un server que nos permita correr los builpacks o hacerlo sobre heroku
+
+En ruby por ejemplo, ademas del script lo unico adicional que debemos definir es un Gemfile y Gemfile.lock y luego debe funcionar
+
+Esto ademas termina de redondear la potencialidad del concepto de aplicaciones en Cenit, con esto una applicacion en Cenit, puede ser completamente equivalente a una app en sinatra (incluso mas adelante posibilitando el acceso a una db). 
+
+
+
+Hay una herramienta q es una variante open source ligera de heroku, se llama Dokku. Heroku hizo open source los buldpacks, la mayoria de las plataforma de computo azure, google cloud. Permite desplegar una app a partir del buildpack. En cenit queremos correr buildpaks en diferentes lengiajes. Eso seria prinero para los algoritmos en cenit. Scripts con referencias a bibliotecas, ruby, python, node.js pero tambien para un concepto de aplicaciones q tenemos en cenit, hoy son aplicaciones sinatras pero podrian ser un aplicacion web definida por buildpack
+
+Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer un despliegue de una app programatixamente
+
+Aunque el condigo de Morph incluye la logica para poder correr los buildpack, parece que es mejor opcion hacerla sobre Dokku, es una comunidad mas activa, y el alcanse del proyecto, es mas general ya que no se limita solamente a los scrappers.
+
 En Cenit podemos pensar en dos tipos de algoritmos, local or remote, 
 
 Los algoritmos locales: son los que tenemos actualmente, tiene full acceso a la bd de cenit, de momento solo soportados en ruby, y no permiten referencias a bibliotecas. Deben poderse ejecutar de forma sincrona o asincrona
 
-Algoritmos remotos: la comunicación con cenit sería mediante el api, y debe ser programada, soportados múltiples lenguajes mediante la tecnología del buildpacks,  permiten incluir referencias a bibliotecas. Deben ser siempre ejecutados de forma asíncrona.
+Algoritmos remotos: la comunicación con cenit sería mediante el api, y debe ser programada, soportados múltiples lenguajes mediante la tecnología del buildpacks de Heroku, permiten incluir referencias a bibliotecas. Deben ser siempre ejecutados de forma asíncrona.
 
-Cada ejecución del algoritmo es representada por una tarea asíncrona en Cenit.
+Cada ejecución del algoritmo debe ser representada por una tarea asíncrona en Cenit.
 
 De forma opcional el output es definido por un DataType. Cada ejecución del algoritmo puede tener un set de objetos del data type (con cenit, pueden ser exportados como JSON, XML, CSV, etc)
 
 
 **Algoritmos remotos**
 
-Un algoritmo por default no tendría nada para la comunicación con los modelos de Cenit. Pero para lograr esto podemos en el template (un gist) agregar una secuencia de pasos comentados, que permitan leer los parametros del algoritmo desde cenit, mediante un push (HTTP Post) retornar el resultado del algoritmo a cenit.
+Un algoritmo por default no tendría nada para la comunicación con los modelos de Cenit. Pero para lograr esto, podemos en el template (un gist) agregar una secuencia de pasos comentados, que permitan leer los parametros del algoritmo desde cenit, mediante un push (HTTP Post) retornar el resultado del algoritmo a cenit.
 
 Del mismo modo puede estar comentadas otras operaciones con el API de cenit. En caso que se desee leer objetos del setup(conectores, tareas etc)
 
@@ -897,9 +941,7 @@ result = json.loads(connection.getresponse().read())
 print result
 ```
 
-Hay una herramienta q es una variante open source ligera de heroku, se llama dokku. Heroku hizo open source los buldpacks, la mayoria de las plataforma de computo azure, google cloud. Permite desplegar una app a partir del buildpack. En cenit queremos correr buildpaks en diferentes lengiajes. Eso seria prinero para los algoritmos en cenit. Scripts con referencias a bibliotecas, ruby, python, node.js pero tambien para un concepto de aplicaciones q tenemos en cenit, hoy son aplicaciones sinatras pero podrian ser un aplicacion web definida por buildpack
 
-Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer un despliegue de una app programatixamente
 
 ####################################################################################################
 
