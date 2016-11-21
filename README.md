@@ -854,19 +854,19 @@ Los pasos serian,
 * probar morph con el sitio
 * revisar el codigo de morph
 * familiarizarnos con Buildpacks
-* tener un server que nos permita correr los builpacks o hacerlo sobre heroku
+* tener un server que nos permita correr los builpacks
 
 En ruby por ejemplo, ademas del script lo unico adicional que debemos definir es un Gemfile y Gemfile.lock y luego debe funcionar
 
 Esto ademas termina de redondear la potencialidad del concepto de aplicaciones en Cenit, con esto una applicacion en Cenit, puede ser completamente equivalente a una app en sinatra (incluso mas adelante posibilitando el acceso a una db). 
 
+En una 2da etapa cuando tengamos funcionando la alternativa de morph, podemos evaluar correr los buildpack sobre Dokku.
 
+Dokku es una variante open source ligera de heroku, se llama Dokku. 
 
-Hay una herramienta q es una variante open source ligera de heroku, se llama Dokku. Heroku hizo open source los buldpacks, la mayoria de las plataforma de computo azure, google cloud. Permite desplegar una app a partir del buildpack. En cenit queremos correr buildpaks en diferentes lengiajes. Eso seria prinero para los algoritmos en cenit. Scripts con referencias a bibliotecas, ruby, python, node.js pero tambien para un concepto de aplicaciones q tenemos en cenit, hoy son aplicaciones sinatras pero podrian ser un aplicacion web definida por buildpack
+Dokku tiene un deamon. Seria trabajar en un api para dokku. Donde se pueda hacer un despliegue de una app programaticamente
 
-Dokku tiene un deamon. Seria trabar en un api para dokku. Donde se pueda hacer un despliegue de una app programatixamente
-
-Aunque el condigo de Morph incluye la logica para poder correr los buildpack, parece que es mejor opcion hacerla sobre Dokku, es una comunidad mas activa, y el alcanse del proyecto, es mas general ya que no se limita solamente a los scrappers.
+Aunque el condigo de Morph incluye la logica para poder correr los buildpack, parece que es mejor opcion hacerla sobre Dokku, es una comunidad mas activa, y el alcanse del proyecto, es mas general ya que no se limita solamente a los scrappers. Pero podria ser una 2da etapa, luego de tener algo funcional con la variante de Morph.
 
 En Cenit podemos pensar en dos tipos de algoritmos, local or remote, 
 
