@@ -81,7 +81,7 @@ Por ejemplo los modelos de Ecommerce, deben quedar como
 	http://localhost:3000/ecommerce/orders
 
 
-Eliminar del breadcrumb el termino 'Dashboard' y usar '/' para separar el namespace del nombre
+Usar '/' para separar el namespace del nombre
 
 deria sera
     
