@@ -6,7 +6,7 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli:  67, 22, 62,  20, 54, 63, 64, 65, 66, 68
+- Aneli:  62,  20, 54, 63, 64, 66
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
@@ -53,39 +53,6 @@ Cada uno con el codigo correspondiente.
 
 Agregar como una ultima seccion un boton run, que permita ejecutar el request y mostrar el response debajo, con un scroll.
 
-### 68. Vistas de index embebidas deben mostrar las acciones con los 3 puntos verticales. [Aneli]
-
-En las vistas de index embebidas como la que se usa en el show de los cross_shared_collections, las acciones asociada a cada fila, se deben mostrar con los 3 puntos verticales, de modo que sea uniforme con el resto de la plataforma.
-
-En caso de la accion Filters, revisar como se puede convertir en una vista embebida, e igualmente mostrar las acciones.
-
-### 67. Mejorar la URL predeterminada de los Object Types. [Aneli]
-
-
-La URL actual de los Object Type, luce como esta
-
-	http://localhost:3000/dt581c7a75334c4a68d5000006
-
-Esa URL corresponde al object type:  'Basic | OrderTotals'
-
-La url deberia ser similar a la que usamos en el api
-	
-	http://127.0.0.1:3000/api/v2/basic/order_total
-	
-, o sea la URL en el admin, deberia ser:
-
-	http://localhost:3000/basic/order_totals
-
-Por ejemplo los modelos de Ecommerce, deben quedar como 
-	
-	http://localhost:3000/ecommerce/orders
-
-
-Usar '/' para separar el namespace del nombre
-
-deria sera
-    
-    Ecommerce / Orders
 
 ### 66. Adicionar un Save Filter [Aneli]
 
@@ -97,17 +64,6 @@ El modelo Query fue renombrado como Filter, por varias razones:
 
 Con este nuevo nombre es mas intuitivo poder hacer la funcionalidad de salvar un filtro dinamico cuando se adicione a una vista cualquiera. O sea esta seria una forma alternativa a la forma actual (que es el al modelo Filter y crear un nuevo filter). En las vistas de rails_admin por default viene un Add Filter, una vez selecionado Add Filter apareceria un boton asociado 'Save' para poder persistir el filtro.
 
-### 65. En 'send to flow', mostrar la tabla o la cantidad de elementos a los que aplica. [Aneli]
-
-En la accion send to flow es conveniente que se mueste debajo la tabla de los elementos a los que va a aplicarse la accion.
-
-En caso qeu la tabla no sea lo mejor, mostrar la cantidad de elementos.
-
-Esto es para evitar que una accion de flow se aplique a elementos que no se desea. 
-
-Pensar ademas como mejorar el siguiente escenario.
-
-Cuando usuario marca algunas filas y luego va directamente a 'send to flow' en lugar de tomar las filas marcadas, se toman todas las filas, ya no se uso la accion 'Selected Items', seria bueno mejorar la experiencia de usuario en este caso, quizas mostrando un warning, o seleccionando los elementos marcado que una opcion para seleccionar todos si era la intencion.
 
 ### 64. Usar el mismo estilo de codigo en Show que en los Edit. [Aneli]
 
@@ -712,13 +668,6 @@ En lo posible vamos a tratar de tener resultados parciales que podamos ir desple
 
 Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por adicionar a los storage.
 
-### 22. Limitar el listado de acciones a 2 y luego un boton que diga 'Actions'. [Aneli]
-
-En las paginas de index, adicionar un boton 'Actions', inmediatamente a la derecha de 'Add New', o se tendriamos, 'List', 'Add New' y luego 'Actions'
-
-Este boton debe permitir desplegar el resto de las acciones.
-
-En las otras vistas que no son Index aplicar una logica similar.
 
 ### 21. Activar el modelo de Confirmable. [Mac]
 
@@ -951,9 +900,63 @@ print result
 
 - Mary: 55, 48, 32, 50
 
-- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23
+- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68
 
 - Mac: 2, 8, 35, 49, 7
+
+### 68. ~~ Vistas de index embebidas deben mostrar las acciones con los 3 puntos verticales.~~ [Aneli]
+
+En las vistas de index embebidas como la que se usa en el show de los cross_shared_collections, las acciones asociada a cada fila, se deben mostrar con los 3 puntos verticales, de modo que sea uniforme con el resto de la plataforma.
+
+En caso de la accion Filters, revisar como se puede convertir en una vista embebida, e igualmente mostrar las acciones.
+
+### 65. ~~ En 'send to flow', mostrar la tabla o la cantidad de elementos a los que aplica. ~~ [Aneli]
+
+En la accion send to flow es conveniente que se mueste debajo la tabla de los elementos a los que va a aplicarse la accion.
+
+En caso qeu la tabla no sea lo mejor, mostrar la cantidad de elementos.
+
+Esto es para evitar que una accion de flow se aplique a elementos que no se desea. 
+
+Pensar ademas como mejorar el siguiente escenario.
+
+Cuando usuario marca algunas filas y luego va directamente a 'send to flow' en lugar de tomar las filas marcadas, se toman todas las filas, ya no se uso la accion 'Selected Items', seria bueno mejorar la experiencia de usuario en este caso, quizas mostrando un warning, o seleccionando los elementos marcado que una opcion para seleccionar todos si era la intencion.
+
+### 22.~~ Limitar el listado de acciones a 2 y luego un boton que diga 'Actions'. ~~[Aneli]
+
+En las paginas de index, adicionar un boton 'Actions', inmediatamente a la derecha de 'Add New', o se tendriamos, 'List', 'Add New' y luego 'Actions'
+
+Este boton debe permitir desplegar el resto de las acciones.
+
+En las otras vistas que no son Index aplicar una logica similar.
+
+### 67.~~ Mejorar la URL predeterminada de los Object Types. ~~[Aneli]
+
+
+La URL actual de los Object Type, luce como esta
+
+	http://localhost:3000/dt581c7a75334c4a68d5000006
+
+Esa URL corresponde al object type:  'Basic | OrderTotals'
+
+La url deberia ser similar a la que usamos en el api
+	
+	http://127.0.0.1:3000/api/v2/basic/order_total
+	
+, o sea la URL en el admin, deberia ser:
+
+	http://localhost:3000/basic/order_totals
+
+Por ejemplo los modelos de Ecommerce, deben quedar como 
+	
+	http://localhost:3000/ecommerce/orders
+
+
+Usar '/' para separar el namespace del nombre
+
+deria sera
+    
+    Ecommerce / Orders
 
 ### 23. ~~Adicionar en el menú superior indicador para storages~~. [Aneli]
 
