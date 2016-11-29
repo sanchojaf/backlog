@@ -904,13 +904,13 @@ print result
 
 - Mac: 2, 8, 35, 49, 7
 
-### 68. ~~ Vistas de index embebidas deben mostrar las acciones con los 3 puntos verticales.~~ [Aneli]
+### 68. ~~Vistas de index embebidas deben mostrar las acciones con los 3 puntos verticales~~. [Aneli]
 
 En las vistas de index embebidas como la que se usa en el show de los cross_shared_collections, las acciones asociada a cada fila, se deben mostrar con los 3 puntos verticales, de modo que sea uniforme con el resto de la plataforma.
 
 En caso de la accion Filters, revisar como se puede convertir en una vista embebida, e igualmente mostrar las acciones.
 
-### 65. ~~ En 'send to flow', mostrar la tabla o la cantidad de elementos a los que aplica. ~~ [Aneli]
+### 65. ~~En 'send to flow', mostrar la tabla o la cantidad de elementos a los que aplica~~.  [Aneli]
 
 En la accion send to flow es conveniente que se mueste debajo la tabla de los elementos a los que va a aplicarse la accion.
 
@@ -922,7 +922,7 @@ Pensar ademas como mejorar el siguiente escenario.
 
 Cuando usuario marca algunas filas y luego va directamente a 'send to flow' en lugar de tomar las filas marcadas, se toman todas las filas, ya no se uso la accion 'Selected Items', seria bueno mejorar la experiencia de usuario en este caso, quizas mostrando un warning, o seleccionando los elementos marcado que una opcion para seleccionar todos si era la intencion.
 
-### 22.~~ Limitar el listado de acciones a 2 y luego un boton que diga 'Actions'. ~~[Aneli]
+### 22. ~~Limitar el listado de acciones a 2 y luego un boton que diga 'Actions'~~. [Aneli]
 
 En las paginas de index, adicionar un boton 'Actions', inmediatamente a la derecha de 'Add New', o se tendriamos, 'List', 'Add New' y luego 'Actions'
 
@@ -930,7 +930,7 @@ Este boton debe permitir desplegar el resto de las acciones.
 
 En las otras vistas que no son Index aplicar una logica similar.
 
-### 67.~~ Mejorar la URL predeterminada de los Object Types. ~~[Aneli]
+### 67. ~~Mejorar la URL predeterminada de los Object Types~~. [Aneli]
 
 
 La URL actual de los Object Type, luce como esta
