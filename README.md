@@ -11,6 +11,24 @@ Orden recomendado:
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
 
+### 71. Agregar graficos de visualizacion de los modelos. [Aneli]
+
+Agregar graficos de visualizacion de los modelos usando 
+
+https://github.com/cenit-io/rails_admin_dynamic_charts
+
+Es posible que sea necesario hacer cambios en la gema.
+
+Por otra parte los graficios deben poder renderearse invocando una tarea de background, de modo que no se quede la pagina cargango.
+
+Deberian mostrar toda las filas y no solo las correspondientes a la pagina actual.
+
+### 70. Implementar una ventana flotante de contact us. [Aneli]
+
+esta rama tiene la logica adelantada pero no esta funcionando.
+
+	https://github.com/cenit-io/cenit/tree/add_contact_us
+
 ### 69. Mejoras a la acccion REST API. [Pacheco]
 
 Como complemento a lo que ya esta podriamos tener una primera version
