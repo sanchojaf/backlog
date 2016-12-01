@@ -10,6 +10,39 @@ Orden recomendado:
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+### 72. Mejoras a la implementacion pre-liminar de Membership. [Mac]
+
+Una primera implementacion de Membership esta actualmente en la rama:
+
+https://github.com/cenit-io/cenit/tree/invite_a_user
+
+Membership es un nuevo modelo que permite la asociación many_to_many entre Users y Accounts, o sea permite gestionar los miembros (distintos al owner) de una cuenta.
+
+Ese modelo esta decorado con Rolify, con lo cual se pueden asociar roles a los miembros, roles que van a ser especificos para ese modulo en cuestion.
+
+Cuando se adiciona un nuevo miembro a una cuenta,  se envia una invitacion por correo.
+
+Quedan algunos puntos pendientes.
+
+* Restringir los roles asociados a membership a: Admin, ReadOnly.
+
+* Valorar si es viable pasar Membership para Setup y aplicarle el scope del tenant. Es importante notar que este modulo se utiliza aceptar una invitacion y con lo que ademas se queda logueado un usuario.
+
+* Revisar bien los permisos en Ability, en particular para: Account, Membership, Tenant, Role(estos ultimos para los roles usandos en membership)
+
+* Modificar el correo, para que aparezca el nombre del modulo al que se envita
+
+app/views/devise/mailer/invitation_instructions.html.erb
+
+
+* Mejorar el disenno del correo, de modo que sea similar a otros correos que tenemos.
+
+* Cambiar el mensaje luego de adicionar a un Membership, usar el texto de devise_invitable.en.yml
+
+```yml
+   invitations:
+      send_instructions: "An invitation email has been sent to %{email}."
+```
 
 ### 71. Agregar graficos de visualizacion de los modelos. [Aneli]
 
