@@ -6,7 +6,7 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli:  71, 70, 62,  20, 54, 63, 64, 66
+- Aneli:  71, 70, 54
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
@@ -103,109 +103,6 @@ De modo que la seccion donde ahora se muestra el cURL, podriamos tener 4 tabs: c
 Cada uno con el codigo correspondiente.
 
 Agregar como una ultima seccion un boton run, que permita ejecutar el request y mostrar el response debajo, con un scroll.
-
-
-### 66. Adicionar un Save Filter [Aneli]
-
-El modelo Query fue renombrado como Filter, por varias razones:
-
-1- Para usar el mismo nombre que usa rails_admin, al final es persistir los filtros actuales que ellos tienen en las vistas
-
-2- Para reservar el termino Query, al nuevo API [GraphQL](http://graphql.org/)
-
-Con este nuevo nombre es mas intuitivo poder hacer la funcionalidad de salvar un filtro dinamico cuando se adicione a una vista cualquiera. O sea esta seria una forma alternativa a la forma actual (que es el al modelo Filter y crear un nuevo filter). En las vistas de rails_admin por default viene un Add Filter, una vez selecionado Add Filter apareceria un boton asociado 'Save' para poder persistir el filtro.
-
-
-### 64. Usar el mismo estilo de codigo en Show que en los Edit. [Aneli]
-
-La propuesta es poder utilizar el mismo estilo de codemirror para el codigo en las vistas Show que en las vistas Edit, con la diferencia de que el codigo en los Show no puede ser Editable.
-
-### 63. Lanzar el Tour automáticamente. [Aneli]
-
-Que el tour se lance automaticamente, la primera vez que alguien se loguea, o se conecta desde un IP.
-### 62. Completar las categorias y tags de las Shared Collections. [Aneli, Mac]
-
-En el menu lateral:
-
-* que aparezca primero My Collections y Luego Shared Collections.
-
-* Agregar un subnivel a las Shared Collections, con las categorias de las Shared Collection
-
-
-Tomaremos de base este listado de categorias que aparece en APIs-guru, que fue un trabajo que hicimos junto con ellos.
-
-	https://github.com/APIs-guru/openapi-directory/blob/master/resources/categories.yaml
-
-  * Analytics
-  * Backend
-  * Cloud
-  * Collaboration
-  * Customer Relation
-  * Developer Tools
-  * eCommerce
-  * Education
-  * Email
-  * Enterprise
-  * Financial
-  * Frontend
-  * Forms
-  * Hosting
-  * IoT
-  * Location
-  * Machine Learning
-  * Marketing
-  * Media
-  * Messaging
-  * Monitoring
-  * Open Data
-  * Payment
-  * Project Management
-  * Search
-  * Social
-  * Support
-  * Telecom
-  * Text
-  * Time Management
-  * Tools
-
-En Guru API, esta definido el nombre y la definicion de la categoria.
-
-Cada fichero path.yaml en api guru, tiene la categoria correspondiente al API. Ejemplo:
-
-   https://github.com/APIs-guru/openapi-directory/blob/master/APIs/backupify.com/patch.yaml#L8-L9
-
-Tener en public un fichero, categories.yaml local, donde podamos completar las categorias que no estan en guru api.
-
-Valorar (Con Mac) la posibilidad de que se pueda asociar mas de una categoria.
-
-La diferencia entre Categoria y Tag que vamos a seguir es que la categoria es un diccionario que debe cambiar muy poco, y cada categoria debe reflejar al menos catidad minimas de Shared Collections. En corresondencia con la definicion de Guru API.
-
-
-    # List of categories to be used in `x-apisguru-categories`.
-    #
-    # Intention is to have list of categories that can fitted as sidebar on a single page.
-    # With this constrain in mind we can't have ideal fit for each API, instead we
-    # choose approach of open-ended categories.
-    #
-    # Rules:
-    #  - categories names consist of following symbols 'a-z_'.
-    #  - for each category user-friendly title and description provided.
-    #  - removal of category is breaking change.
-    #
-    # Warning: Future addition of categories is possible, but it should be proven that
-    # significant amount of APIs don't fit any of existing categories.
-  
-
-Los Tags ademas es un concepto que asociaremos a otros modelos en Cenit.
-
-Los tag pueden ser terminos propios de cada shared collection.
-
-Completar los tags de las shared collection, en princio con los que aparecen en guru api en el path.yml. Ejemplo:
-
-    
-    https://github.com/APIs-guru/openapi-directory/blob/master/APIs/backupify.com/patch.yaml#L11-L16
-
-Tener en un fichero publico para los tags, tags.yaml, donde podamos completar las tags que no estan en guru api para las shared collections.
 
 ### 61. Salvar los ficheros en AWS S3. [Pacheco]
  
@@ -724,18 +621,6 @@ Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por
 
 Para poder activar el modulo confirmable es necesario migrar los datos y a todos los usuarios existente asignarle a confirmed_at  Date.today-1 
 
-### 20. Mejorar y expandir el uso de los tags. [Aneli]
-
-Los tags fueron adicionados por Daniel para los Algoritmos. Pero usan la interfaz por default de rails_admin para las relaciones Many to Many con dos text area uno al lado del otro, donde es posible seleccionar los tag y pasarlo a la otra area..
-
-1. Mejorar la interfaz de los tags, para que sea un imput de múltiples tag con autocompletamiento. Revisar las librerias de JQuery existentes.
-
-2. Adicionar los tags a otros modelos como las Collecciones y los Shared Collections, revisar que otros modelos se pueden beneficiar de esto, pero la intencion es que sea un patron que podamos relacionar con todos los modelos que necesitan funcionalidades que faciliten el *discovery*.
-
-
-
-
-
 ### 16. Adicionar estadisticas de los monitors en el dashboard. [Mac]
 
 En el dashboad se muestran 3 rectangulos con los *monitors*:
@@ -951,9 +836,121 @@ print result
 
 - Mary: 55, 48, 32, 50
 
-- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68
+- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 64, 62
 
-- Mac: 2, 8, 35, 49, 7
+- Mac: 2, 8, 35, 49, 7, 62
+
+### 20. ~~Mejorar y expandir el uso de los tags.~~ [Aneli]
+
+Los tags fueron adicionados por Daniel para los Algoritmos. Pero usan la interfaz por default de rails_admin para las relaciones Many to Many con dos text area uno al lado del otro, donde es posible seleccionar los tag y pasarlo a la otra area..
+
+1. Mejorar la interfaz de los tags, para que sea un imput de múltiples tag con autocompletamiento. Revisar las librerias de JQuery existentes.
+
+2. Adicionar los tags a otros modelos como las Collecciones y los Shared Collections, revisar que otros modelos se pueden beneficiar de esto, pero la intencion es que sea un patron que podamos relacionar con todos los modelos que necesitan funcionalidades que faciliten el *discovery*.
+
+
+### 62. ~~Completar las categorias y tags de las Shared Collections.~~ [Aneli, Mac]
+
+En el menu lateral:
+
+* que aparezca primero My Collections y Luego Shared Collections.
+
+* Agregar un subnivel a las Shared Collections, con las categorias de las Shared Collection
+
+
+Tomaremos de base este listado de categorias que aparece en APIs-guru, que fue un trabajo que hicimos junto con ellos.
+
+	https://github.com/APIs-guru/openapi-directory/blob/master/resources/categories.yaml
+
+  * Analytics
+  * Backend
+  * Cloud
+  * Collaboration
+  * Customer Relation
+  * Developer Tools
+  * eCommerce
+  * Education
+  * Email
+  * Enterprise
+  * Financial
+  * Frontend
+  * Forms
+  * Hosting
+  * IoT
+  * Location
+  * Machine Learning
+  * Marketing
+  * Media
+  * Messaging
+  * Monitoring
+  * Open Data
+  * Payment
+  * Project Management
+  * Search
+  * Social
+  * Support
+  * Telecom
+  * Text
+  * Time Management
+  * Tools
+
+En Guru API, esta definido el nombre y la definicion de la categoria.
+
+Cada fichero path.yaml en api guru, tiene la categoria correspondiente al API. Ejemplo:
+
+   https://github.com/APIs-guru/openapi-directory/blob/master/APIs/backupify.com/patch.yaml#L8-L9
+
+Tener en public un fichero, categories.yaml local, donde podamos completar las categorias que no estan en guru api.
+
+Valorar (Con Mac) la posibilidad de que se pueda asociar mas de una categoria.
+
+La diferencia entre Categoria y Tag que vamos a seguir es que la categoria es un diccionario que debe cambiar muy poco, y cada categoria debe reflejar al menos catidad minimas de Shared Collections. En corresondencia con la definicion de Guru API.
+
+
+    # List of categories to be used in `x-apisguru-categories`.
+    #
+    # Intention is to have list of categories that can fitted as sidebar on a single page.
+    # With this constrain in mind we can't have ideal fit for each API, instead we
+    # choose approach of open-ended categories.
+    #
+    # Rules:
+    #  - categories names consist of following symbols 'a-z_'.
+    #  - for each category user-friendly title and description provided.
+    #  - removal of category is breaking change.
+    #
+    # Warning: Future addition of categories is possible, but it should be proven that
+    # significant amount of APIs don't fit any of existing categories.
+  
+
+Los Tags ademas es un concepto que asociaremos a otros modelos en Cenit.
+
+Los tag pueden ser terminos propios de cada shared collection.
+
+Completar los tags de las shared collection, en princio con los que aparecen en guru api en el path.yml. Ejemplo:
+
+    
+    https://github.com/APIs-guru/openapi-directory/blob/master/APIs/backupify.com/patch.yaml#L11-L16
+
+Tener en un fichero publico para los tags, tags.yaml, donde podamos completar las tags que no estan en guru api para las shared collections.
+
+### 64. ~~Usar el mismo estilo de codigo en Show que en los Edit.~~[Aneli]
+
+La propuesta es poder utilizar el mismo estilo de codemirror para el codigo en las vistas Show que en las vistas Edit, con la diferencia de que el codigo en los Show no puede ser Editable.
+
+### 63. ~~Lanzar el Tour automáticamente~~. [Aneli]
+
+Que el tour se lance automaticamente, la primera vez que alguien se loguea, o se conecta desde un IP.
+
+### 66. ~~Adicionar un Save Filter~~. [Aneli]
+
+El modelo Query fue renombrado como Filter, por varias razones:
+
+1- Para usar el mismo nombre que usa rails_admin, al final es persistir los filtros actuales que ellos tienen en las vistas
+
+2- Para reservar el termino Query, al nuevo API [GraphQL](http://graphql.org/)
+
+Con este nuevo nombre es mas intuitivo poder hacer la funcionalidad de salvar un filtro dinamico cuando se adicione a una vista cualquiera. O sea esta seria una forma alternativa a la forma actual (que es el al modelo Filter y crear un nuevo filter). En las vistas de rails_admin por default viene un Add Filter, una vez selecionado Add Filter apareceria un boton asociado 'Save' para poder persistir el filtro.
+
 
 ### 68. ~~Vistas de index embebidas deben mostrar las acciones con los 3 puntos verticales~~. [Aneli]
 
