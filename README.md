@@ -6,7 +6,7 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli:  71, 70, 54
+- Aneli:  71, 70, 54, 64
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
@@ -103,6 +103,14 @@ De modo que la seccion donde ahora se muestra el cURL, podriamos tener 4 tabs: c
 Cada uno con el codigo correspondiente.
 
 Agregar como una ultima seccion un boton run, que permita ejecutar el request y mostrar el response debajo, con un scroll.
+
+### 64. Usar el mismo estilo de codigo en Show que en los Edit. [Aneli]
+
+Esta tarea esta bastante adelantada. Solo completar el trabajo con otros modelos a los que se le puede aplicar. Schemas, Json Data Type, a los diferentes tipos de transformations. 
+
+La propuesta es poder utilizar el mismo estilo de codemirror para el codigo en las vistas Show que en las vistas Edit, con la diferencia de que el codigo en los Show no puede ser Editable.
+
+
 
 ### 61. Salvar los ficheros en AWS S3. [Pacheco]
  
@@ -836,7 +844,7 @@ print result
 
 - Mary: 55, 48, 32, 50
 
-- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 64, 62
+- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62
 
 - Mac: 2, 8, 35, 49, 7, 62
 
@@ -932,10 +940,6 @@ Completar los tags de las shared collection, en princio con los que aparecen en 
     https://github.com/APIs-guru/openapi-directory/blob/master/APIs/backupify.com/patch.yaml#L11-L16
 
 Tener en un fichero publico para los tags, tags.yaml, donde podamos completar las tags que no estan en guru api para las shared collections.
-
-### 64. ~~Usar el mismo estilo de codigo en Show que en los Edit.~~[Aneli]
-
-La propuesta es poder utilizar el mismo estilo de codemirror para el codigo en las vistas Show que en las vistas Edit, con la diferencia de que el codigo en los Show no puede ser Editable.
 
 ### 63. ~~Lanzar el Tour automáticamente~~. [Aneli]
 
