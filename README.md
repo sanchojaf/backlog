@@ -8,7 +8,7 @@ Orden recomendado:
 
 - Aneli:  71, 54, 64
 
-- Mac: 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+- Mac: 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
 ### 72. Mejoras a la implementacion preliminar de Membership. [Mac]
 
@@ -493,22 +493,6 @@ puts declarative(15)#=> FizzBuzz
 ```
 Las dos versiones dan error
 
-### 33. Añadir el concepto de Resource en la categoria de Connectors. [Mac]
-
-Para poder lograr una mayor correspondencia entre los conceptos de Connectors y una especificacion formal de API (como Sagger) es importante introducir el concepto de Resource
-
-Se debe concluir la implementacion iniciada en la rama
-
-add_new_model_resource
-
-Queda pendiente:
-
-* Los Webhooks no necesitan tener asociado un Data Type, en su lugar los webhooks pertencen a un Resource y el Resource tiene un data type.
-
-* Los Webhooks no necesitan tener asociado un path, en su lugar los webhooks pertencen a un Resource y el Resource tiene un path.
-
-* Crear el Script para la migracion de los datos.
-
 ### 30. Crear el Shared Collection de Cenit a partir del spec en el directorio de Guru API. [Mary]
 
 Actualizar el script que lee las especificaciones del directorio de Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit, con la misma logica que se genera cualquier otro spec.
@@ -629,9 +613,6 @@ En cuanto a la logica actual, donde el namespace es lo que permite identificar q
 ### 12. Usar las URL con Slug como URL predeterminada en lugar del ID. [Mac]
 
 Ya en Cenit se soportan las URL con Slug y ademas de las id -que son la URL que contruye Rails Admin por default-, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
-
-
-
 
 
 ### 9. Cambiar el nombre del modelo Account por Tennant. [Mac].
@@ -797,7 +778,7 @@ print result
 
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
-- Mac: 2, 8, 35, 49, 7, 62, 53
+- Mac: 2, 8, 35, 49, 7, 62, 53, 33
 
 ### 70. ~~Implementar una ventana flotante de contact us~~. [Aneli]
 
@@ -1035,6 +1016,21 @@ Similar la solucion que se hizo en la tarea #38 para dashboard
 
 En el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes, pensar ademas como mostrar como un subnivel si una apcion se define como un pop-up.
 
+### 33. ~~Añadir el concepto de Resource en la categoria de Connectors~~. [Mac]
+
+Para poder lograr una mayor correspondencia entre los conceptos de Connectors y una especificacion formal de API (como Sagger) es importante introducir el concepto de Resource
+
+Se debe concluir la implementacion iniciada en la rama
+
+add_new_model_resource
+
+Queda pendiente:
+
+* Los Webhooks no necesitan tener asociado un Data Type, en su lugar los webhooks pertencen a un Resource y el Resource tiene un data type.
+
+* Los Webhooks no necesitan tener asociado un path, en su lugar los webhooks pertencen a un Resource y el Resource tiene un path.
+
+* Crear el Script para la migracion de los datos.
 
 ### 2. ~~Agregar a la navegacion Ecommerce~~. [Mac]
 
