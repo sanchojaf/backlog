@@ -8,7 +8,7 @@ Orden recomendado:
 
 - Aneli:  71, 54, 64
 
-- Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+- Mac: 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
 ### 72. Mejoras a la implementacion preliminar de Membership. [Mac]
 
@@ -18,22 +18,21 @@ https://github.com/cenit-io/cenit/tree/invite_a_user
 
 Membership es un nuevo modelo que permite la asociación many_to_many entre Users y Accounts, o sea permite gestionar los miembros (distintos al owner) de una cuenta.
 
-Ese modelo esta decorado con Rolify, con lo cual se pueden asociar roles a los miembros, roles que van a ser especificos para ese modulo en cuestion.
+Ese modelo esta decorado con Rolify, con lo cual se pueden asociar roles a los miembros, roles que van a ser especificos para ese tenant en cuestion.
 
-Cuando se adiciona un nuevo miembro a una cuenta,  se envia una invitacion por correo.
+Cuando se adiciona un nuevo miembro a una cuenta, se envia una invitacion por correo.
 
 Quedan algunos puntos pendientes.
 
 * Restringir los roles asociados a membership a: Admin, ReadOnly.
 
-* Valorar si es viable pasar Membership para Setup y aplicarle el scope del tenant. Es importante notar que este modulo se utiliza aceptar una invitacion y con lo que ademas se queda logueado un usuario.
+* Valorar si es viable pasar Membership para Setup y aplicarle el scope del tenant. Es importante notar que este modelo se utiliza para aceptar una invitacion con lo que ademas queda logueado el usuario.
 
 * Revisar bien los permisos en Ability, en particular para: Account, Membership, Tenant, Role(estos ultimos para los roles usandos en membership)
 
 * Modificar el correo, para que aparezca el nombre del modulo al que se envita
 
 app/views/devise/mailer/invitation_instructions.html.erb
-
 
 * Mejorar el disenno del correo, de modo que sea similar a otros correos que tenemos.
 
@@ -288,47 +287,6 @@ aqui estan las rutas en un gist
 ### 54. Migrar a rails_admin 1.0. [Aneli]
 
 Rails Admin hizo el release de la version 1.0, por lo que es un buen momento para hacer un upgrade de Cenit. Es importante revisar todas las vistas que tenemos customizadas en Cenit.
-
-### 53. Modelos para soportar API SPec sincronizacion con Sagger. [Mac]
-
-Para formalizar un API Connection vamos a seguir en lo posible las convenciones de [Studio Restlet](https://studio.restlet.com)
-
-
-El API Connection (actualmente Connection en la navegación) puede quedar definido mediante la asociación de los nuevos conceptos:
-
-* Section
-* Resources
-* Operaciones
-* Representation
-
-Seccion es un espacio de nombre que permite agrupar un grupo de Resources (Ejemplo: todos los resource relacionados con User) puede tener asociado varios Representation
-
-[Link new Section](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-sections)
-
-
-Un Resource corresponde a un path en específico (Ejemplo: /user/{userlogin} ) y se asocia a un grupo de Representation y de Operations
-
-[Link new resource](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-resource)
-
-Una operation corresponde HTTP Method con los parámetros correspondiente, y la relación son un Resource.
-
-[Link new operation POST](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/resources/~2Fpet~2FfindByStatus/operations/POST)
-
-Un representation es un Wrapper de un JSON Data Type (en la navegacion Definition/Data Type/Object Type) 
-
-[Link new Representation](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-representation)
-
-Nota: Los webhooks no lo vamos a modificar, mas adelante se movera a Worflows, para mas detale ver tarea [52]( https://github.com/sanchojaf/backlog#52-concepto-de-notificación-paradigma-pushnotification-mac)
-
-Una version inicial de los modelos es en esta rama
-
-[add_new_model_resource](https://github.com/cenit-io/cenit/tree/add_new_model_resource)
-
-los cambios se pueden ver bien en el 
-
-[pull reuquest](https://github.com/cenit-io/cenit/pull/964/files)
-
-La idea es sincronizar el swagger de la tarea [24] con estos modelos. 
 
 ### 52. Concepto de Notificación (paradigma Push/Notification). [Mac]
 
@@ -839,7 +797,7 @@ print result
 
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
-- Mac: 2, 8, 35, 49, 7, 62
+- Mac: 2, 8, 35, 49, 7, 62, 53
 
 ### 70. ~~Implementar una ventana flotante de contact us~~. [Aneli]
 
@@ -954,12 +912,12 @@ El modelo Query fue renombrado como Filter, por varias razones:
 
 Con este nuevo nombre es mas intuitivo poder hacer la funcionalidad de salvar un filtro dinamico cuando se adicione a una vista cualquiera. O sea esta seria una forma alternativa a la forma actual (que es el al modelo Filter y crear un nuevo filter). En las vistas de rails_admin por default viene un Add Filter, una vez selecionado Add Filter apareceria un boton asociado 'Save' para poder persistir el filtro.
 
-
 ### 68. ~~Vistas de index embebidas deben mostrar las acciones con los 3 puntos verticales~~. [Aneli]
 
 En las vistas de index embebidas como la que se usa en el show de los cross_shared_collections, las acciones asociada a cada fila, se deben mostrar con los 3 puntos verticales, de modo que sea uniforme con el resto de la plataforma.
 
 En caso de la accion Filters, revisar como se puede convertir en una vista embebida, e igualmente mostrar las acciones.
+
 
 ### 65. ~~En 'send to flow', mostrar la tabla o la cantidad de elementos a los que aplica~~.  [Aneli]
 
@@ -972,6 +930,47 @@ Esto es para evitar que una accion de flow se aplique a elementos que no se dese
 Pensar ademas como mejorar el siguiente escenario.
 
 Cuando usuario marca algunas filas y luego va directamente a 'send to flow' en lugar de tomar las filas marcadas, se toman todas las filas, ya no se uso la accion 'Selected Items', seria bueno mejorar la experiencia de usuario en este caso, quizas mostrando un warning, o seleccionando los elementos marcado que una opcion para seleccionar todos si era la intencion.
+
+### 53. ~~Modelos para soportar API SPec sincronizacion con Sagger~~. [Mac]
+
+Para formalizar un API Connection vamos a seguir en lo posible las convenciones de [Studio Restlet](https://studio.restlet.com)
+
+
+El API Connection (actualmente Connection en la navegación) puede quedar definido mediante la asociación de los nuevos conceptos:
+
+* Section
+* Resources
+* Operaciones
+* Representation
+
+Seccion es un espacio de nombre que permite agrupar un grupo de Resources (Ejemplo: todos los resource relacionados con User) puede tener asociado varios Representation
+
+[Link new Section](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-sections)
+
+
+Un Resource corresponde a un path en específico (Ejemplo: /user/{userlogin} ) y se asocia a un grupo de Representation y de Operations
+
+[Link new resource](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-resource)
+
+Una operation corresponde HTTP Method con los parámetros correspondiente, y la relación son un Resource.
+
+[Link new operation POST](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/resources/~2Fpet~2FfindByStatus/operations/POST)
+
+Un representation es un Wrapper de un JSON Data Type (en la navegacion Definition/Data Type/Object Type) 
+
+[Link new Representation](https://studio.restlet.com/apis/28d83b4d-85d0-4b6e-b070-40896102f6b8/new-representation)
+
+Nota: Los webhooks no lo vamos a modificar, mas adelante se movera a Worflows, para mas detale ver tarea [52]( https://github.com/sanchojaf/backlog#52-concepto-de-notificación-paradigma-pushnotification-mac)
+
+Una version inicial de los modelos es en esta rama
+
+[add_new_model_resource](https://github.com/cenit-io/cenit/tree/add_new_model_resource)
+
+los cambios se pueden ver bien en el 
+
+[pull reuquest](https://github.com/cenit-io/cenit/pull/964/files)
+
+La idea es sincronizar el swagger de la tarea [24] con estos modelos. 
 
 ### 22. ~~Limitar el listado de acciones a 2 y luego un boton que diga 'Actions'~~. [Aneli]
 
