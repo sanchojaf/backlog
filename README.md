@@ -10,7 +10,7 @@ Orden recomendado:
 
 - Mac: 53, 34, 58, 21, 60, 52, 33, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
-### 72. Mejoras a la implementacion pre-liminar de Membership. [Mac]
+### 72. Mejoras a la implementacion preliminar de Membership. [Mac]
 
 Una primera implementacion de Membership esta actualmente en la rama:
 
@@ -103,7 +103,6 @@ Agregar como una ultima seccion un boton run, que permita ejecutar el request y 
 Esta tarea esta bastante adelantada. Solo completar el trabajo con otros modelos a los que se le puede aplicar. Schemas, Json Data Type, a los diferentes tipos de transformations. 
 
 La propuesta es poder utilizar el mismo estilo de codemirror para el codigo en las vistas Show que en las vistas Edit, con la diferencia de que el codigo en los Show no puede ser Editable.
-
 
 
 ### 61. Salvar los ficheros en AWS S3. [Pacheco]
