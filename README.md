@@ -788,6 +788,45 @@ print result
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
 
+### 74. ~~Ejecucion de remota de los algoritmos de Cenit~~. [Mac]
+
+Con la gema cenit-algorithms que se encuentra en github en:
+
+https://github.com/cenit-io/cenit-algorithms
+
+es posible ejecutar de forma remota algoritmos en Cenit.
+
+Tan sencillo como:
+
+```Batch
+$ gem install cenit-algorithms
+
+$ irb
+> require 'cenit/algorithms'
+
+> Cenit::Algorithms('Number Theory').factorial(5)  # 120
+
+> Cenit::Algorithms('Number Theory').gcd(20, 15)   # 5
+```
+
+Los algoritmos disponibles se pueden ver en:
+
+https://cenit.io/algorithm
+
+Si se desea agregar la posibilidad de ejecutar algoritmos en un proyecto en Rails, se debe incluir la gema en el Gemfile
+
+	gem 'cenit-algorithms'
+	
+Que viene mas adelante:
+
+* La posibilidad de que se puede ejecutar los algoritmos desde los SDK, para que pueda ser posible correrlo desde otros lenguajes.
+
+* Los algoritmos en Cenit actualmente son en Ruby, se esta trabajando en extender esta posibilidad a otros lenguajes.
+
+* Si la ejecucion del algortimo tarda mucho, se deberia retonar una tarea, en la cual se pueda ir chequeando el status.
+
+* Hay que revisar como esto puede impactar los planes de precio de Cenit.
+
 ### 70. ~~Implementar una ventana flotante de contact us~~. [Aneli]
 
 esta rama tiene la logica adelantada pero no esta funcionando.
