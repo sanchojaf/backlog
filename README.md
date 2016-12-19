@@ -8,7 +8,15 @@ Orden recomendado:
 
 - Aneli:  71, 54, 64
 
-- Mac: 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+- Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+
+### 73. Hacer los modelos Shared visibles sin autenticacion para el index y el show. [Mac]
+
+Para los objetos que son compartidos (cross shared) deberian ser visibles las acciones de index y show sin necesidad de autenticarse.
+
+Esto debería aplicarse igual para el API.
+
+Mostrar el icon de la cantidad en verde de forma que permita diferenciar visualmente los objetos compartidos del resto de los objetos que se muestran con la cantidad en azul.
 
 ### 72. Mejoras a la implementacion preliminar de Membership. [Mac]
 
