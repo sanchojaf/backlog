@@ -10,6 +10,15 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
 
+### 75. Diferenciar visualmente los shared cross del resto de los objectos. [Mac]
+
+Visualmente debemos hacer mas evidente a los usarios la diferencia entre lo que es shared cross y lo que no, de manera que se confunda lo menos posible. 
+
+Una primera accion puedes ser
+
+Mostrar el icon de la cantidad en verde de forma que permita diferenciar visualmente los objetos compartidos del resto de los objetos que se muestran con la cantidad en azul.
+
+Pensar en otros recursos que ayuden a esta diferenciacion
 
 ### 73. Crear docker de cenit que pueda usar OSSE. [Pacheco]
 
@@ -32,14 +41,6 @@ Imagen: https://hub.docker.com/r/_/rabbitmq/
 
 Rails(+ Nginx, Unicorn)
 repo: https://github.com/litslink/rails-nginx-unicorn
-
-### 73. Hacer los modelos Shared visibles sin autenticacion para el index y el show. [Mac]
-
-Para los objetos que son compartidos (cross shared) deberian ser visibles las acciones de index y show sin necesidad de autenticarse.
-
-Esto debería aplicarse igual para el API.
-
-Mostrar el icon de la cantidad en verde de forma que permita diferenciar visualmente los objetos compartidos del resto de los objetos que se muestran con la cantidad en azul.
 
 ### 72. Mejoras a la implementacion preliminar de Membership. [Mac]
 
@@ -810,6 +811,13 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+
+### 73. ~~Hacer los modelos Shared visibles sin autenticacion para el index y el show~~. [Mac]
+
+Para los objetos que son compartidos (cross shared) deberian ser visibles las acciones de index y show sin necesidad de autenticarse.
+
+Esto debería aplicarse igual para el API.
 
 ### 74. ~~Ejecucion de remota de los algoritmos de Cenit~~. [Mac]
 
