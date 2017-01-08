@@ -8,7 +8,24 @@ Orden recomendado:
 
 - Aneli:  71, 54, 64
 
-- Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+- Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
+
+
+### 79. Agregar Shared collection del UBL. [Mac]
+
+En caso de Universal Business Language (UBL) esta cagada una version para el trabajo con OSSE, pero al incio de este trabajo se habia logrado cargar parcialmente la definicion original de UBL. Seria conveninete poder retomar y cargar de la manera mas completa posible UBL para publicarlo como un Shared Collection.
+
+Diseñados para representar documentos empresariales tales como órdenes de venta o facturas. Ha sido desarrollado por un comité técnico de la organización OASIS, con la participación de varias organizaciones relacionadas con los estándares de datos en la industria. UBL está pensada para integrarse directamente en las prácticas empresariales, legales, auditoras o de gestión de registros actualmente vigentes.
+
+### 78. Agregar Shared collection de OTA. [Mac]
+
+Con anterioridad se lograr cargar el estándar de interoperabilidad de Viajes Open Travel Alliance(OTA), seria conveniente retomarlo y publicarlo como un shared collection.
+
+revisar tarea: # 76
+
+### 77. Agregar Shared Collection de X12. [Mac]
+
+Este fue uno de los primeros estándares de EDI que se lograron cargar en Cenit, seria conveniente retomar este trabajo y publicarlo como Shared Collection.
 
 
 ### 76. Caso de estudio, OTA, EAN (Expedia API), Sandbox Innovation API (Amadeus). [Pacheco]
