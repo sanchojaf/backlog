@@ -2,13 +2,35 @@
 
 Orden recomendado: 
 
-- Pacheco: 69, 24, 59, 61, 36, 1, 3
+- Pacheco: 69, 24, 59, 61, 36, 1, 3, 76
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
 - Aneli:  71, 54, 64
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47
+
+
+### 76. Caso de estudio, OTA, EAN (Expedia API), Sandbox Innovation API (Amadeus). [Pacheco]
+
+Con el propósito de aprovechar el conocimiento que tenemos en el equipo en temas de reservación de viajes, y poder contar con un nuevo caso de uso que muestre las potencialidades de Cenit
+
+Podemos crear un esquema que permita que diferentes fuentes primarias que provean productos de viajes puedan ser transformadas al estándar de interoperabilidad Open Travel Alliance (OTA).
+
+Inicialmente podemos probar con dos de las APIs más usadas que son además gratis, EAN de Expedia que es una API de Hoteles y con el Sandbox Innovation API de Amadeus, este último aunque tienen datos solo de prueba tiene el beneficio de contar con diferentes tipos de productos de Viaje: Flight, Hotel, Car, Rail.
+
+Este trabajo está adelantando porque ya se ha logrado cargar OTA con anterioridad. 
+
+Para completar este trabajo vamos a crear una web de reservación de viaje de ejemplo, en un primer momento solo con las cosas de Hoteles. Modificando las gemas de Spree Travel correspondiente y usando el template de Travelo.
+
+Si esta prueba de concepto es satisfactoria, se pueden extender las fuentes primarias, agregando el mapeo correspondiente a OTA, mientras que lo demás debe mantenerse igual.
+
+[OTA Introducction](https://docs.google.com/document/d/1UYXfECD7tO8scwMH6DbHfqXX7avJGij-3XSUOCVqlWY/edit?usp=sharing)
+
+[Expedia-EAN](http://developer.ean.com/spec/)
+
+[Amadeus Travel Innovation Sandbox](https://sandbox.amadeus.com/api-catalog)
+
 
 ### 75. Diferenciar visualmente los shared cross del resto de los objectos. [Mac]
 
