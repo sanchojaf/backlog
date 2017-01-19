@@ -10,7 +10,11 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
-### 81. mensajes internos en cenit, usando el message de MIME. [Aneli]
+### 82. Mejorar el index de los Task y eliminar del menu a Flow executions. [Mac]
+
+Ahora están visible los Flow executions porque tienen la ventaja que es posible ver el Flujo asociado, desde el index y así es más fácil localizar el flujo y luego las notificaciones asociadas. Pero la solución correcta sería dejar solo los Task, y en el primer campo en lugar de visualizar el tipo, que se visualice el objeto correspondiente, si es una tarea de tipo Flow Execution, se vería del mismo modo que la primera columna de Flow Execution, el tipo como tal podría ponerse en una 2da columna o no ponerse.
+
+### 81. Mensajes internos en cenit, usando el message de MIME. [Aneli]
 
 Ver la posibilidad de que el Mime con Message se instale por default en los tenants.
 
