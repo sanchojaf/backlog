@@ -6,9 +6,27 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
 
-- Aneli:  71, 54, 64
+- Aneli:  71, 54, 64, 81
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
+
+### 81. mensajes internos en cenit, usando el message de MIME. [Aneli]
+
+Ver la posibilidad de que el Mime con Message se instale por default en los tenants.
+
+La lógica por default sería para una mensajería interna
+
+Luego por ejemplo todas las notificaciones de error se pueden mostrar como mensajes internos
+
+En el link siguiente aparece arriba el icon de Mails, es importante notar el dropdown que se despliega
+
+[templete 1](http://wrapbootstrap.com/preview/WB09JXK43)
+
+Ahí se mostrarán los mensajes más recientes, si alguien da ver más, entonces se mostrarán todos los mensajes. Ver en el template la pagina donde se muestran todos los emails
+
+Podemos en principio usarlo para las notificaciones de error, pero luego se puede usar para otros propósitos, notificar novedades, o mensajes entre los clientes u otras funciones
+
+en el menú podemos tener un botón (en forma de interruptor) para activar el flujo con gmail si el correo corresponde con Gmail (esto se puede extender a otros tipos de proveedores de correos, o a otras integraciones de notificación como Twilio)
 
 ### 80. Cenit Notebooks. [Pacheco]
 
