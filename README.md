@@ -10,6 +10,11 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+
+### 83. Mostrar el index de los modelos de Ecommerce sin necesidad de loguearse. [Mac]
+
+En caso de los Objetos de Ecommerce, sería conveniente que se pueda mostrar el index, sin necesidad de loguearse, de ese modo se pueden ver los campo y además puede aparecer el link al API. El index sai no se esta logueado debe aparecer vacio.
+
 ### 82. Mejorar el index de los Task y eliminar del menu a Flow executions. [Mac]
 
 Ahora están visible los Flow executions porque tienen la ventaja que es posible ver el Flujo asociado, desde el index y así es más fácil localizar el flujo y luego las notificaciones asociadas. Pero la solución correcta sería dejar solo los Task, y en el primer campo en lugar de visualizar el tipo, que se visualice el objeto correspondiente, si es una tarea de tipo Flow Execution, se vería del mismo modo que la primera columna de Flow Execution, el tipo como tal podría ponerse en una 2da columna o no ponerse.
