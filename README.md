@@ -4,18 +4,29 @@ Orden recomendado:
 
 - Pacheco: 69, 24, 59, 61, 36, 1, 3, 76, 80
 
-- Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30
+- Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30, 85, 86, 87
 
 - Aneli:  71, 54, 64, 81
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
 
-### 84. Adicionar las integrations a las API's de IBM Watshon. [Mary]
+### 87. Adicionar las integrations a las API's de IBM Watshon. [Mary]
 
 Los swagger specs estan disponibles en el siguiente enlacce.
 
 [specs](https://watson-api-explorer.mybluemix.net/)
+
+### 86. Adicionar Expedia Mobile API. [Mary]
+
+[spec](https://www.expedia.com/static/mobile/swaggerui/)
+
+Proponer la adicion de Guru API
+
+
+### 85. Instalar cada una de las shared collections que no son de Guru APIs. [Mary]
+
+Actualizar las integraciones propias que se han hecho que no estan en Guru API, para poder luego instalarlas en un tenant de forma independiente.
 
 ### 83. Mostrar el index de los modelos de Ecommerce sin necesidad de loguearse. [Mac]
 
@@ -899,6 +910,12 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+### 84. ~~Adicionar el Sandbox API Innovation de Amadeus~~. [Mary]
+
+El Swagger esta disponible en esta URL
+
+[spec](https://github.com/amadeus-travel-innovation-sandbox/sandbox-content/blob/master/swagger.yml)
 
 
 ### 73. ~~Hacer los modelos Shared visibles sin autenticacion para el index y el show~~. [Mac]
