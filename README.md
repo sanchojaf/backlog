@@ -775,6 +775,99 @@ Por ejemplo para una web como mytriptomoon, podria tener una aplicacion para la 
 
 https://signin.mytriptomoon.com
 
+### 2. Especializacion de Cenit en el dominio Ecommerce. [Mary]
+
+Estos cambios buscan la especialización de Cenit en el dominio Ecommerce. 
+Cenit es una plataforma genérica de integración, técnicamente las funcionalidades para Ecommerce son similares a otros dominios de aplicación, pero es importante posicionarnos en este segmento.
+En el menú de navegación ya tenemos explícitamente los items para Ecommerce.
+
+* Ecommerce
+  * Customers
+  * Products
+  * Inventory
+  * Carts
+  * Orders
+  * Shipments
+  
+Aunque es posible cargar otros modelos esta es nuestra biblioteca "oficial" de Ecommerce, para estos modelos contaremos con funcionalidades Out the box.
+
+**Campos dinámicos**
+
+Es importante notar que MongoDB permite el uso de campos dinámicos, por ejemplo cuando se salva un objeto de tipo Orden, este objeto puede tener campos adicionales a los definidos en el Object Type (o schema), lo que brinda flexibilidad en los mapeos,  estos atributos dinámicos pueden ser incluso anidados.
+
+**Mapeo de Shared Collection con los modelos de Ecommerce**
+La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de los modelos del namespace Ecommerce quedan disponible por transitividad a otros modelos que se puedan mapear a los de Ecommerce.
+
+
+**Caso de Estudio de Satechi:**
+
+En el caso de Sathechi, las órdenes de cada uno de los marketplace es traducida a una Orden de Shipstation. lo ideal es que exista integraciones de:
+
+* Order OverStock ⇔ Order Cenit-Ecommerce
+* Order Fancy ⇔ Order Cenit-Ecommerce
+* Order Houzz ⇔ Order Cenit-Ecommerce
+
+además
+
+* Order Shipstation ⇔ Order Cenit-Ecommerce
+
+Cada una de estas integraciones se pueden empaquetar en las shared collections respectivas:
+
+* OverStock ⇔ Cenit Ecommerce 
+* Fancy ⇔ Cenit Ecommerce
+* Houzz ⇔ Cenit Ecommerce
+* Shipstation ⇔ Cenit Ecommerce
+
+El shared collection OverStock ⇔ Cenit Ecommerce, para evitar duplicaciones dependerá de las shared collections básicas OverStock y Ecommerce. De igual modo el resto de las shared collections.
+
+De esta manera se podrían hacer los flujos:
+
+* Order OverStock ⇔ Order Ecommerce ⇔ Order Shipstation
+* Order Fancy ⇔ Order Ecommerce ⇔ Order Shipstation
+* Order Houzz  ⇔ Order Ecommerce ⇔ Order Shipstation
+
+Con estos nuevos flujos se pueden crear nuevas  shared collections:
+
+* OverStock ⇔ Cenit Ecommerce ⇔ Shipstation
+* Fancy ⇔ Cenit Ecommerce ⇔ Shipstation
+* Houzz ⇔ Cenit Ecommerce ⇔ Shipstation
+
+Para evitar duplicaciones en estas nuevas shared collections a su vez dependerán de las anteriores, por ejemplo  
+
+* OverStock ⇔ Cenit Ecommerce ⇔ Shipstation, 
+
+dependerá de las shared collections: 
+
+* OverStock ⇔ Cenit Ecommerce y Shipstation ⇔ Cenit Ecommerce.
+
+Si en lugar de enviar a Shipstation, lo que interesa es hacer el envio a Shipwire, el esfuerzo se debe reducir al mapeo de los modelos de Ecommerce a Shipwire.
+
+**Caso de Estudio de Odoo:**
+
+    \_ Cenit Base
+           \_ Twitter connector
+           \_ Gmail Connector
+           \_ ….
+           \_  E-commerce Connector
+                       \_ Magento connector
+                       \_ Prestashop Connector
+                       \_ Spree Connector
+                       \_ …. 
+
+
+Los módulos de Facebook, Twitter y otros, pueden depender unicamente del modulo connector base (Cenit Base).
+Mientras que módulos como Magento, Prestashop, Spree, etc, pueden depender de un módulo Ecommerce que extiende las funcionalidades del módulo Connector. 
+
+Es importante notar que estos módulos de Magento, Prestashop, deben ser generados a partir de los shared collections: 
+
+* Magento ⇔ Cenit Ecommerce
+* Prestashop ⇔ Cenit Ecommerce
+
+La regla para la generación automática sería algo asi como:
+
+Si existe el shared collection Magento, y uno Magento ⇔ Cenit E Commerce, usar este último para la generación automática del módulo homónimo en Odoo.
+
+
 
 ### 1. Algoritmos remotos. [Pacheco]
 
@@ -1215,52 +1308,6 @@ Queda pendiente:
 
 * Crear el Script para la migracion de los datos.
 
-### 2. ~~Agregar a la navegacion Ecommerce~~. [Mac]
-
-Las motivaciones de este cambio son para hacer mas evidente las posibilidades que tiene Cenit para el mundo Ecommerce. Cenit es una plataforma genérica de integración, y técnicamente las funcionalidades para el tema ecommerce son similares a otros dominios de aplicación, pero es importante diferenciar este segmento. 
-
-En el menu de navegacion ya tengamos explicitamente un item para Ecommerce, y como elementos de segundo nivel tenemos: Customers, Products, Inventory, Cart, Orders, Shipments. 
-
-Los modelos de ese namespace estab pre-instalados en cada nuevo tenant que se lance y su definicion debe corresponder al repo (https://github.com/cenit-io/ecommerce)[https://github.com/cenit-io/ecommerce] 
-
-* Ecommerce
-  * Customers
-  * Products
-  * Inventory
-  * Carts
-  * Orders
-  * Shipments
-
-Aunque se permiten cargar otros modelos tenemos una biblioteca "oficial" de Ecommerce, de modo que siempre que los modelos sean algunos de los oficiales se pueda sacar provecho de ello y contar con funcionalidades Out the box para estos modelos.
-
-Es importante notar que MondoDB permite que cuando persista una orden en particular, pueda tener campos dinamicos, o sea atributos adicionales a los especificados originalmente en el modelo, lo que brinda flexibilidad a los mapeos, de hecho esos atributos dinamicos pueden ser incluso anidados.
-
-En los SDK que desarrollemos tendremos facilidades para el push de estos modelos hacia Cenit. O una plataforma ecommerce como Spree o Magento, puede tener una extension para la sincronizacion de estos modelos. Por ejemplo cualquiera de estos Store, con una extencion puede implementar una logica de push automatico que se ejecute automaticamente que se cree una nueva orden, lo cual tiene ventajas a la hora de lanzar eventos sin que se tenga que esperarar por una instancia del scheduler periodico cada 20 minutos.
-
-Aunque del punto de vista de implementacion no hay mucho cambios, ya que son modelos que se carguan dinamicamente como otros modelos en Cenit, el hecho de que tengan una UI propia, permite agregar actions que se puedan visualizar desde el mismo dashboard.
-
-Podemos tener en el API una descripcion explicita para estos modelos, de modo que la curva de aprendizaje para que alguien logre subir una Orden a Cenit sea menor.
-
-La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de Order Ecomerce queda disponible por transitividad para todos los modelos Order que sean posible transformarce en Order Ecommerce.
-
-Veamos algunos ejemplos:
-
-En el caso de Sathechi, las ordenes de cada uno de los marketplace es traducida a los Shipments de Shipstation.
-lo ideal es que exista integraciones de:
-
-- Order Fancy <-> Order Ecommerce
-- Order OverStock <-> Order Ecommerce
-- Order Shipstation <-> Order Ecommerce
-
-Escenario 1:
-
-Si en lugar de enviar a Shipstation, lo que interesa es hacer el envio a Shipwire, el esfuerzo se debe reducir a transformar la Order (o el Shipment de Shipwire) en la Order de ecommerce
-
-Escenario 2:
-
-Si tenemos una funcionalidad que a partir de un Order genere un Invoice pdf con un template prawn.
-
-ver tareas: 46, 45 y 27
 
 ### 55. ~~Publicar shared collections de Store~~. [Mary]
 
