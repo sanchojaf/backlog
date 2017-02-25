@@ -10,6 +10,39 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+### 88. Cenit centrado en los datos.
+
+Unas de las cosas en que Cénit tiene mayor potencial, es en la posibilidad de a partir de la creación de un Data Type  (Object Type), generar dinámicamente un grupo de funcionalidades alrededor del Data Type.
+
+
+Con la creación del Data Type, tenemos hoy:
+
+* Interfaces de Usuario (UI) que cubre un CRUD.
+* Las otras funcionalidades de rails_admin, para buscar, filtrar.
+* Los translator, de import y export que se pueden mejorar (incluyendo por ejemplo CSV).
+* Funcionalidades en el API.
+* Documentación del API, con el boton REST API.
+* Opcionalmente la posibilidad de incluir un link en el menú de navegación. 
+
+
+Qué otras cosas podemos adicionar de forma automática.
+
+* Crear automáticamente los eventos de datos para el create_at y el update_at
+* Podemos adicionar un template de webhooks, para los dos eventos create_at y update_at .
+* La documentación de los webhooks se puede incluir dentro de la descripción automática del api que aparece en el botón REST * API, similar a como se hace en la especificación 3.0 de Swagger donde ellos adicionaron la especificación de webhooks.
+* Deberíamos tener unos templates sencillos de notificaciones, para de forma similar a los webhooks poder notificar el cambio por diferentes vías, por ejemplo: email,  notificación interna (Cenit), u otros canales de notificación que se puedan activar por medio de una integración, como twitter, twilio
+ 
+
+Al botón REST API, podemos añadirle la posibilidad de abrir un swagger spec con el visor correspondiente, mas adelante podemos agregar una spec en RAML.
+
+Asociados a los rest API también se está trabajando en poder abrirlos con un Notebook para poder interactuar con el API e invocar los métodos.
+
+Para demostrar mejor estas funcionalidades a un usuario nuevo, podemos crear desde el dashboard, un link ‘Add Object Type’
+
+Ese link debe posibilitar crear un Object Type, o seleccionar uno, y desde ahí poder decidir si lo visualizamos o no  en la navegación.
+
+Con ese shortcut para crear un Object Type podemos hacer un animación de los pasos en js, donde se muestren los pasos, de la creación del Object Type, y como quedan out the box las diferentes funcionalidades alrededor de data type.
+
 
 ### 87. Adicionar las integrations a las API's de IBM Watshon. [Mary]
 
