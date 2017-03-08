@@ -10,6 +10,37 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+### 89. Datasets en Cenit. [Pacheco]
+
+La idea es usando un modelo similar a los Object Type poder tener una interfaz de Usuario que facilite las operaciones de Datasets, en muchos casos donde los datos originales son csv, spreadsheet u otros tipos simples de datos.
+
+Una vez cargado el spreadsheet Cenit le añade valor agregado al dataset, con el acceso al API, la interfaz de usuario con el CRUD, y las otras funcionalidades out the box con que Cenit cuenta. Por ejemplo hay veces que los usuarios quieren a partir de un spreadsheet en google crear un API, este tipo de funcionalidades sería relativamente sencilla hacerla con Cenit. 
+
+Por ejemplo en aplicaciones de análisis de datos, es usual probar algoritmos contra Datasets que estén disponibles, en particular con la funcionalidad de Notebook, hay muchos ejemplos que se suelen hacer usando datasets.
+
+Por ejemplo en el caso del sitio de Jupiter, ellos proporcionan esta facilidad de datasets
+
+https://try.jupyter.org/
+
+Crear un nuevo modelo Dataset Type que herede de Data Type.
+
+Tener un nuevo modelo es básicamente para poder separar la lógica en la UI, de las acciones que se le puede aplicar, y que aparezca diferenciado en la navegación.
+
+
+En el menú lateral tendríamos un elemento que sea Datasets, debajo de Objects y antes de Files
+
+Al abrir el menú debe aparecer un primer link que sea Add Dataset
+
+Este link abrirá una vista donde sea cómodo crear un nuevo Dataset, en principio, permitir cargar un csv, se asumirá que la primera fila corresponde a un header de la tabla.
+
+Mas adelante vamos a adicionar otras opciones como cargar un spreadsheet de google drive o de otras fuentes.
+
+Al cargar el csv se debe crear en un mismo paso el Dataset Type (idem a cómo se crea un Object Type, se asumirá que los campos todos son string) y los objects correspondiente a cada fila del CSV
+
+Cargar y compartir los datasets que aparecen en Jupiter.
+
+https://try.jupyter.org/
+
 ### 88. Cenit centrado en los datos.
 
 Unas de las cosas en que Cénit tiene mayor potencial, es en la posibilidad de a partir de la creación de un Data Type  (Object Type), generar dinámicamente un grupo de funcionalidades alrededor del Data Type.
