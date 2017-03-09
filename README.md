@@ -10,6 +10,31 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+### 90. Cloud functions y Celulas de Codigo de los Notebooks. [Pacheco]
+
+Con la lógica de algoritmos remotos que se rabajo se puede hacer compatibilizar con los notebooks
+
+
+Los Notebook tiene como elemento básico un ‘cell’
+
+
+La Cell puede ser de documentación o un código, las células de tio codigo es bastante cercano a lo de los algoritmos remotos implementados por Pacheco.
+
+
+Con esto además tendríamos la ventaja de la gestión de las bibliotecas que se trabajó para los algoritmos remotos, con lo cual podemos tener una mayor uniformidad entre las cosas de Notebooks y de los algoritmos remotos.
+
+
+Con esto la ejecución de los notebooks podría ser  más eficiente porque tendríamos una app en heroku por cada lenguaje, como se hizo para los algoritmos remotos.
+
+
+Mientras que en el caso de los algoritmos remotos si usamos la Células de Código de los Notebooks podríamos mejorar la interfaz, y la interactividad ya se podria ejecutar desde el mismo edit.
+
+
+Además más adelante se podría incluir en un notebook un tipo de célula que sea la referencia a un algoritmos de cenit.
+
+
+O convertir un algoritmo remoto de cenit a un notebook.
+
 ### 89. Datasets en Cenit. [Pacheco]
 
 La idea es usando un modelo similar a los Object Type poder tener una interfaz de Usuario que facilite las operaciones de Datasets, en muchos casos donde los datos originales son csv, spreadsheet u otros tipos simples de datos.
