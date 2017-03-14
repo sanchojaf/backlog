@@ -10,6 +10,129 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+### 91. Cenit Automation Email | Templates: Email, Spreadsheet , PDF. [Pacheco]
+
+
+Una de las funcionalidades mas buscadas en las plataformas de Integración, como Cenit, que permite automatizar procesos de backoffice a partir de eventos en los datos, es la de Automation Email, sobre todo usado por marketing.
+
+Básicamente como a partir de un evento, se puede enviar un template de email a uno o multiples usuarios .
+
+
+ El correo que se está enviando en la integración que se le hizo a OSSE, cada vez que una factura es aprobada por la SUNAT hay varias cosas importantes.
+
+* El template HTML que se usa, 
+* Los datos generados en el cuerpo del correo
+* los metadatos del email generados dinámicamente (como el from address)
+* La autorización OAuth 2.0 con Gmail para que el correo se envíe desde la cuenta de Jose.
+* El pdf adjunto generado con un template prawn.
+
+
+Una de las funcionalidades mas buscadas en las plataformas de Integración, como Cenit, que permite automatizar procesos de backoffice a partir de eventos en los datos, es la de Automation Email, sobre todo usado para temas de marketing.
+
+La idea es ver como extraer estas funcionalidades similares a las que se hizo para Jose, y presentarlas de una formas mas simple e intuitiva, además de agregar algunos templates. 
+
+Podemos tomar como referencia a Mailchimp, Klavyo, tambien a 
+https://www.zoho.com/invoice pero los pimeros templates puede ser mas sencillo que lo de un invoice.
+
+Tenemos funcionalidades básicas, en el menú, los template aparecen ahora como Translations/Rederers
+
+si puedes revisa cómo se implementó esa integración para OSSE, y trata de leer y revisar sobre Automation Email
+para que revises si te parece factible
+también hemos hechos desde cenit, email que en lugar de pdf, envían un csv como adjunto, el mismo google spreadsheets tiene templates de spreadsheet 
+
+Para los templates del cuerpo de los  correos podemos buscar templates de email libres 
+por ejemplo aquí
+
+https://www.emailonacid.com/blog/article/email-development/600_free_email_templates
+
+
+Tenemos que concebir el envío de los correos con los invoice que estamos preparando para OSSE como un flujo generico en Cenit.
+
+Este es un caso de Uso muy interesante y puede interesarle a muchos usuarios.
+
+En otros proyectos de los que he trabajado he visto todo el trabajo que se pasa para generar los pdf de los invoice.
+
+En internet existen servicios como este https://www.zoho.com/invoice
+
+Donde se puede seleccionar un template pdf de un invoice y se puede enviar el correo con el invoice adjunto, pero es limitado porque te permite seleccionar entre un número de template, y luego al template hacerle modificaciones genéricas, y ademas es solo para invoices 
+
+Prawn
+https://github.com/fadhlirahim/prawn-examples/blob/master/examples/invoice.rb
+
+Pdf
+https://github.com/fadhlirahim/prawn-examples/blob/master/examples/invoice.pdf
+
+
+En nuestro caso una vez que tengamos el template generado con un prawn, podemos modificar cualquier cosa en el pdf, con lo cual es completamente customizable, pero además podemos generar otros documentos.
+
+* Invoice
+* Packing Slimp
+* Gift Card 
+* Tickets
+* Boletos
+* Codigos de barras.
+
+Como en Cenit cada uno de estos elementos puede definirse como un Data Type, a partir del JSON se puede definir el translator (llamaremos mas adelante Transform) que convierte el JSON, en el pdf correspondiente.
+
+La idea es que desde el API de cenit se pueda mandar a ejecutar el flujo del correo, especificando el Invoice, y como resultado llegue el correo con el Invoice adjunto.
+
+Templates de Spreadsheets (que pueden ser adjuntados)
+
+Google tiene los siguientes template de Spreadsheet.
+
+https://docs.google.com/spreadsheets/u/0/?ftv=1&tgif=c#
+
+Tienen templates en las categorías:
+
+* Personal
+* Work
+* Education
+
+
+Template PDF con prawn (que pueden ser adjuntados)
+
+Extendí esta gema con el propósito de tener ejemplos sencillo de pdf
+
+
+https://github.com/sanchojaf/prawn-examples
+
+Es una manera fácil de probar las cosas offline 
+antes de ponerlas en cenit, básicamente:
+
+1- hacer clone a la gema
+
+2- tener instalado `'prawn'` y `'prawn-table'` con
+ 
+`gem install 'prawn'`
+y
+`gem install 'prawn-table'`
+
+3- van a la carpeta examples y ahí a cada uno de los ejemplos
+
+`cd examples/invocice_00`
+
+son solo 3 ejemplo que van desde uno trivial a uno mas complejo,
+
+4- si les parece cómodo pueden agregar nuevos ejemplos a la gema
+prawn es el estilo que nos permite en cenit transformar el código ruby del translator en Pdf
+Importante Cuando estén en la carpeta
+
+`ruby invoice.rb`
+
+Eso genera el pdf tomando como entrada el json de la carpeta
+
+
+Referencias:
+
+https://mailchimp.com/features/automation/
+
+https://mailchimp.com/resources/guides/working-with-automation/html/
+
+https://www.klaviyo.com/features/overview
+
+https://www.zoho.com/invoice/tour/
+
+
 ### 90. Cloud functions y Celulas de Codigo de los Notebooks. [Pacheco]
 
 Con la lógica de algoritmos remotos que se rabajo se puede hacer compatibilizar con los notebooks
