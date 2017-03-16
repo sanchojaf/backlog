@@ -632,64 +632,46 @@ aqui estan las rutas en un gist
 Rails Admin hizo el release de la version 1.0, por lo que es un buen momento para hacer un upgrade de Cenit. Es importante revisar todas las vistas que tenemos customizadas en Cenit.
 
 ### 52. Concepto de Notificación (paradigma Push/Notification). [Mac]
-
+ 
 Nota: A lo que llamamos actualmente como Notifications, le debemos llamar System Notifications, de modo que este Notification es otro concepto
 
 Con algunos cambios menores podemos acercarnos a modelar el concepto de Notificación en el paradigma Push/Notification, usado sobre todo para aplicaciones móviles, con uso también en sistemas de marketing email, y otros sistema de notificación e integración.
 
 Por ejemplo en Marketing Email, se hacen flows para enviar correos a un Segmento específico de clientes.
 
-En la  siguiente imagen se pueden ver dos  ejemplos de flujos en [Klavyio](https://www.klaviyo.com) un sistema de Email Marketing, en el primer ejemplo se hace un flujo que envia un correo a un cliente que  abandonó el un checkout, o sea un flujo asociado con un evento  de cambio de estado de la orden.
+En la siguiente imagen se pueden ver dos ejemplos de flujos en [Klavyio](https://www.klaviyo.com)  un sistema de Email Marketing, en el primer ejemplo se hace un flujo que envía un correo a un cliente que abandonó el un checkout, o sea un flujo asociado con un evento de cambio de estado de la orden.
 
 [link imagen](https://drive.google.com/file/d/0B-ltzH-m3LxTbndPQzBoemNjVU0/view?usp=sharing)
 
-Estos sistema de notificación suelen incluir el envío por SMS y además de  webhooks como una opción de notificación. 
+Estos sistema de notificación suelen incluir el envío por SMS, Email y además de web-hooks como una opción de notificación.
+Las notificaciones quedarían de forma natural dentro de la sección de Workflows
 
-Las notificaciones quedarían de forma natural dentro de la sección de  Worflows
-
-
-* Workflows
-  * Triggers
-    * Data Events 
-    * Schedulers
-  * Flows
-  * Notifications
+* Notifications
     * Mobile Apps
     * Email
     * SMS
-    * Webhook
+    * Web-hook
 
-Con esto podemos resolver otro problema importante, la separación del concepto de Webhooks de los conceptos de API Connection. Haciendo un uso mas apropiado del concepto Webhook. Mientras que la definición de un API Connection quedaría completamente autocontenida, el mapeo entre API Spec y API Connection seria mas directo.
-
-
-El API Connection puede quedar completamente definido en términos de Resources y Operaciones (este sería un nuevo concepto). Un operation sería un HTTP Method con los parámetros correspondiente, y la relación son un Resource. 
-
-
-De manera que el webhook quedaría definido por el Connection (que aporta la URL básica), el Operation (que generalmente sera el HTTP POST ) el data type, la relación con el evento y los flows asociados. De modo que desde el Flow podemos ver el webhook asociado, y desde el webhooks podemos ver los flows donde este aparece, idem con los eventos. Esto facilitaria la navegación entre los elementos de worflows.
-
-
-Los tipos de notificaciones Email y SMS, deben tener un área de configuración donde se defina los servicios de Email y SMS que se van a usar, por ejemplo GMAIL y Twilio.
-
-* Configurations
-  * ...
-  * Email Config
-  * SMS Config
-
-Con los nuevos cambios que permiten definir eventos asociado a los Data Type de modelos del Setup, es posible hacer un flujo donde se envían System Notification por Email (o sea una notificacion de tipo Email)
-
-
-En una primera etapa podemos tener 3 tipos de notificación definidos: Webhooks, Email, SMS. Quedando pendiente las notificaciones a Mobile Apps. 
-
-Para que el envio de  notificaciones a Mobile Apps, tenga todo el sentido es necesario definir un SDK para Androi y iOS, una opcion es usar (o modificar) los SDK open source de (Parse.io SDKs)[https://parseplatform.github.io/#sdks]
-	
-Otro elemento que nos ayudaría a aproximarnos mejor al patrón de Push/Notification, es incluir al API de Cenit, una opción push genérica, aunque sea redundante con las opciones de POST que existe en el API, este endpoint Push, puede tener la ventaja de subir en un mismo payload un Json que incluya diferentes tipos de objetos. 
-
-Definiciones de Webhook (Referencias )
+Con esto podemos resolver otro problema importante, la separación del concepto de Webhooks de los conceptos de API Connection (El modelo de Webhooks actual lo vamos a deprecar, quedando solo con Operations, el nuevo web-hook, lo vamos a denotar en este documento con un guión intermedio). 
 
 A WebHook is an HTTP callback: an HTTP POST that occurs when something happens; a simple event-notification via HTTP POST. A web application implementing WebHooks will POST a message to a URL when certain things happen.
 
 Webhooks are "user-defined HTTP callbacks".[2] They are usually triggered by some event, such as pushing code to a repository[3] or a comment being posted to a blog.[4] When that event occurs, the source site makes an HTTP request to the URI configured for the webhook. Users can configure them to cause events on one site to invoke behaviour on another. The action taken may be anything. Common uses are to trigger builds with continuous integration systems[5] or to notify bug tracking systems.[6] Since they use HTTP, they can be integrated into web services without adding new infrastructure.[7] However, there are also ways to build a message queuing service on top of HTTP—some RESTful examples include IronMQ and RestMS.
 
+Los tipos de notificaciones Email y SMS, deben tener un área de configuración donde se defina los proveedores de Email y SMS que se van a usar, por ejemplo GMAIL y Twilio.
+
+* Configurations
+    * ...
+    * Email Config
+    * SMS Config
+
+Con los nuevos cambios que permiten definir eventos asociado a los Data Type de modelos del Setup, es posible hacer un flujo donde se envían System Notification por Email (o sea una Notificacion de tipo Email, como un caso particular de envio de email, pero para remarcar System Notification es un concepto diferente al concepto de Notificación al que se refiere este documento )
+
+En una primera etapa podemos tener 3 tipos de notificación definidos: Web-hooks, Email, SMS. Quedando pendiente las notificaciones a Mobile Apps.
+
+Para que el envío de notificaciones a Mobile Apps, tenga todo el sentido es necesario definir un SDK para Androi y iOS, una opción es usar (o modificar) los SDK open source de (Parse.io SDKs)[https://parseplatform.github.io/#sdks] que permitan hacer el push a Cenit de los datos.
+
+Es importante notar que para el Push, Cenit cuenta con el API PUSH que aunque sea redundante con las opciones de POST que existe en el REST API, la API Push, puede tener la ventaja de subir en un mismo payload un Json que incluya diferentes tipos de objetos.
 
 ### 51. Generar automaticamente el swagger del API de Cenit. [Mac]
 
