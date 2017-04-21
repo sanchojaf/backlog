@@ -727,19 +727,20 @@ Es importante excluir algunos modelos de esta opción como los logs porque tiene
 
 ### 39. Lanzar un flujo al termina la ejecución (de la tarea) de un flujo previo. [Mac]
 
-Permitir que un modo de ejecutar un flujo sea lanzarlo luego de terminada la ejecución de un flujo previo.
+Permitir que un modo de ejecutar un flujo sea lanzarlo luego de terminada la ejecución de uno o varios flujos previos.
+
 Este cambio debe ser suficiente para poder enlazar los flujos y definir ‘dataflows’.
 
-Es importante notar que actualmente los Flow se puede combinar mediante eventos, pero esta alternativa podria ser una manera mas sencilla de relacionar data flows.
+Es importante notar que actualmente los Flow se puede combinar mediante eventos, pero esta alternativa podría ser una manera mas sencilla de relacionar data flows.
 
 De modo que un flujo se podría lanzar de 3 maneras:
 Mediante los triggers (data event o schedulers)
 De forma manual
-Definiendo un flujo previo (el flujo actual se lanzaría al terminar la ejecución del flujo previo)
+Definiendo flujos previos (el flujo actual se lanzaría al terminar la ejecución del flujo previo)
 
 Estos modos de ejecución no tienen que ser exclusivos
 
-En estos momento hay algo equivalente, mediante la definición de un callback al terminar un flujo, la diferencia básica, es que, en el flujo nuevo es donde se define el flujo previo, esto permite que cuando se termine de ejecutar un flujo ‘B’, se pueda ejecutar múltiples flujos, en caso de abajo ‘B’ y ‘C’.
+En estos momento hay algo equivalente, mediante la definición de un callback al terminar un flujo, la diferencia básica, es que, en el flujo nuevo es donde se define los flujos previos, esto permite que cuando se termine de ejecutar un flujo ‘B’, se pueda ejecutar múltiples flujos, en caso de abajo ‘B’ y ‘C’.
 
 - \---A 
   - \---B
@@ -751,6 +752,57 @@ A- se define como flujo previo en ‘B’ y ‘C’
 C- se define como flujo previo en ‘D’ 
 
 Es importante notar que ‘B’  podría ser un flujo que lo único que defina sea un traslator de tipo algoritmo, donde la salida del flujo sean datos.
+
+Desde el punto de vista de abstracción es el nuevo flujo es el que debe tener conocimiento de los anteriores y no al revés.
+
+Como un segundo paso podemos trabajar en un UI, que pueda lucir como esta
+
+
+
+
+La ejecución por el Api de un DataFLow, devolverá un id de la tarea asíncrona, donde se pueda saber el estatus, de la ejecución del data flow completo
+
+```Bath
+cenit run DataFlow.json
+```
+
+Podria devolver algo como
+
+```Json
+{
+  "runId": "2d4af716-e31d-48ef-a434-16575303752d",
+  "statusURI": "https://cenit.io/run/status/2d4af716-e31d-48ef-a434-16575303752d"
+}
+```
+
+```Bath
+cenit run status "2d4af716-e31d-48ef-a434-16575303752d"
+```
+
+```Json
+{
+  "statuses": [
+    {
+      "jobId": "182330",
+      "name": "Transformation Schema",
+      "status": "Executing",
+      "startTime": "May 18, 2016 11:57:26 AM",
+      "endTime": "",
+      "outputURI": "has no output"
+    },
+    {
+      "jobId": "182330",
+      "name": "Send Email",
+      "status": "WaitCondition",
+      "startTime": "",
+      "endTime": "",
+      "outputURI": "Job didn't run, it has no output"
+    },
+  ],
+  "startIndex": 0,
+  "itemsPerPage": 25
+}
+```
 
 ### 37.Usar el background color en el logo de los shared collections. [Mary]
 
