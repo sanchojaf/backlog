@@ -266,23 +266,6 @@ Podemos en principio usarlo para las notificaciones de error, pero luego se pued
 
 en el menú podemos tener un botón (en forma de interruptor) para activar el flujo con gmail si el correo corresponde con Gmail (esto se puede extender a otros tipos de proveedores de correos, o a otras integraciones de notificación como Twilio)
 
-### 80. Cenit Notebooks. [Pacheco]
-
-Cenit Notebooks
-
-En varios momentos durante el proyecto hemos pensado cómo tener una manera de poder describir instrucciones en cenit, que a la vez sean posibles ejecutar.
-
-De hecho algunas cosas se lograron (por Mac) en ese sentido, como los readme de las shared collections o los post que se publicaron de Cenit.
-
-También lo analizamos en la competencia como en el caso de Mulesoft, donde en sus Notebooks pueden especificar ejemplos de cómo interactuar con las APIs.
-
-Esta funcionalidad la podemos usar como parte de una documentación mas orgánica dentro del propio cenit, donde se puede explicar como funciona cenit, teniendo además elementos que sean posibles ejecutar. Que es una de las piezas que no ha estado faltando, cómo lograr que la documentación sea un contenido propio de cenit y no un elemento aislado. 
-
-Hay un proyecto open source Jupyter Notebook que inicialmente fue desarrollado por la comunidad de python, y que ha tenido mucha aceptación por parte de la comunidad, que es justamente un notebook, actualmente se ha extendido a  varios lenguajes.
-
-“The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.”
-
-
 ### 79. Agregar Shared collection del UBL. [Mac]
 
 En caso de Universal Business Language (UBL) esta cagada una version para el trabajo con OSSE, pero al incio de este trabajo se habia logrado cargar parcialmente la definicion original de UBL. Seria conveninete poder retomar y cargar de la manera mas completa posible UBL para publicarlo como un Shared Collection.
@@ -1249,6 +1232,26 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+
+### 80. ~~Cenit Notebooks~~. [Pacheco]
+
+Cenit Notebooks
+
+En varios momentos durante el proyecto hemos pensado cómo tener una manera de poder describir instrucciones en cenit, que a la vez sean posibles ejecutar.
+
+De hecho algunas cosas se lograron (por Mac) en ese sentido, como los readme de las shared collections o los post que se publicaron de Cenit.
+
+También lo analizamos en la competencia como en el caso de Mulesoft, donde en sus Notebooks pueden especificar ejemplos de cómo interactuar con las APIs.
+
+Esta funcionalidad la podemos usar como parte de una documentación mas orgánica dentro del propio cenit, donde se puede explicar como funciona cenit, teniendo además elementos que sean posibles ejecutar. Que es una de las piezas que no ha estado faltando, cómo lograr que la documentación sea un contenido propio de cenit y no un elemento aislado. 
+
+Hay un proyecto open source Jupyter Notebook que inicialmente fue desarrollado por la comunidad de python, y que ha tenido mucha aceptación por parte de la comunidad, que es justamente un notebook, actualmente se ha extendido a  varios lenguajes.
+
+“The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.”
+
+
+
 
 ### 84. ~~Adicionar el Sandbox API Innovation de Amadeus~~. [Mary]
 
