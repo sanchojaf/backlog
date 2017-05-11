@@ -240,9 +240,6 @@ Proponer la adicion de Guru API
 
 Actualizar las integraciones propias que se han hecho que no estan en Guru API, para poder luego instalarlas en un tenant de forma independiente.
 
-### 83. Mostrar el index de los modelos de Ecommerce sin necesidad de loguearse. [Mac]
-
-En caso de los Objetos de Ecommerce, sería conveniente que se pueda mostrar el index, sin necesidad de loguearse, de ese modo se pueden ver los campo y además puede aparecer el link al API. El index sai no se esta logueado debe aparecer vacio.
 
 ### 82. Mejorar el index de los Task y eliminar del menu a Flow executions. [Mac]
 
@@ -1232,6 +1229,10 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+### 83. ~~Mostrar el index de los modelos de Ecommerce sin necesidad de loguearse~~. [Mac]
+
+En caso de los Objetos de Ecommerce, sería conveniente que se pueda mostrar el index, sin necesidad de loguearse, de ese modo se pueden ver los campo y además puede aparecer el link al API. El index sai no se esta logueado debe aparecer vacio.
 
 
 ### 80. ~~Cenit Notebooks~~. [Pacheco]
