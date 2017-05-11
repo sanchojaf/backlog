@@ -496,58 +496,6 @@ El API es una aplicacion independiente que hay que instalar
 https://github.com/django-oscar/django-oscar-api
 
 
-
-### 56. Crear Shared Collection de Spree. [Mary]
-
-Pasos para crear lanzar una tienda de Spree con productos de ejemplo
-
-```bash
-$ git clone git@github.com:spree/spree.git
-$ cd spree
-$ bundle
-$ bundle exec rake sandbox
-$ cd sandbox 
-$ rails s
-```
-
-luego para entrar a la administracion
-
-    localhost:3000/admin
-
-```
-  user: spree@example.com
-  pass: spree123
-```
-
-Ahi se puede ir a Users por el menu lateral izquierdo
-
-y entrar al edit de spree@example.com
-
-ahi se muestran las credencials del api, ejemplo
-
-```
-API Access: 
-KEY:  cf86f7785b4b7a4d22ae86af18b3e9bc8ee7baa283e1a893
-```
-
-La documentacion del API, puedes encontrarla aqui
-
-[Doccumentacion del API](http://guides.spreecommerce.org/api/)
-
-un manera sencilla de ver todas las rutas del api es
-
-    rake routes
-
-Puedes imprimirlas para un fichero, 
-
-    rake routes > tmp/routes.txt
-
-y luego ahi revisar las rutas del api.
-
-aqui estan las rutas en un gist
-
-[link rutas del api de spree](https://gist.github.com/sanchojaf/29e7845987bfe22b81c6437b9692a00a)
-
 ### 54. Migrar a rails_admin 1.0. [Aneli]
 
 Rails Admin hizo el release de la version 1.0, por lo que es un buen momento para hacer un upgrade de Cenit. Es importante revisar todas las vistas que tenemos customizadas en Cenit.
@@ -1170,6 +1118,58 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+### 56. ~~Crear Shared Collection de Spree.~~ [Mary]
+
+Pasos para crear lanzar una tienda de Spree con productos de ejemplo
+
+```bash
+$ git clone git@github.com:spree/spree.git
+$ cd spree
+$ bundle
+$ bundle exec rake sandbox
+$ cd sandbox 
+$ rails s
+```
+
+luego para entrar a la administracion
+
+    localhost:3000/admin
+
+```
+  user: spree@example.com
+  pass: spree123
+```
+
+Ahi se puede ir a Users por el menu lateral izquierdo
+
+y entrar al edit de spree@example.com
+
+ahi se muestran las credencials del api, ejemplo
+
+```
+API Access: 
+KEY:  cf86f7785b4b7a4d22ae86af18b3e9bc8ee7baa283e1a893
+```
+
+La documentacion del API, puedes encontrarla aqui
+
+[Doccumentacion del API](http://guides.spreecommerce.org/api/)
+
+un manera sencilla de ver todas las rutas del api es
+
+    rake routes
+
+Puedes imprimirlas para un fichero, 
+
+    rake routes > tmp/routes.txt
+
+y luego ahi revisar las rutas del api.
+
+aqui estan las rutas en un gist
+
+[link rutas del api de spree](https://gist.github.com/sanchojaf/29e7845987bfe22b81c6437b9692a00a)
+
 
 ### 64. ~~Usar el mismo estilo de codigo en Show que en los Edit~~. [Aneli]
 
