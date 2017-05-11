@@ -367,48 +367,6 @@ Por otra parte los graficios deben poder renderearse invocando una tarea de back
 
 Deberian mostrar toda las filas y no solo las correspondientes a la pagina actual.
 
-### 69. Mejoras a la acccion REST API. [Pacheco]
-
-Como complemento a lo que ya esta podriamos tener una primera version
-
-de codigo para Python, Ruby y JS aun sin tener los clientes SDK correspondientes.
-
-Podemos usar bibliotecas HTTP de cada lenguaje.
-
-Ejemplo de cURL en Parse (retrieving a user):
-
-```bath
-curl -X GET \
-  -H "X-Parse-Application-Id: ${APPLICATION_ID}" \
-  -H "X-Parse-REST-API-Key: ${REST_API_KEY}" \
-  https://api.parse.com/1/users/g7y9tkhB7O
-```
-
-Ejemplo en Python usando biblioteca HTTP (retrieving a user):
-
-```Python
-import json,httplib
-connection = httplib.HTTPSConnection('api.parse.com', 443)
-connection.connect()
-connection.request('GET', '/1/users/g7y9tkhB7O', '', {
-       "X-Parse-Application-Id": "${APPLICATION_ID}",
-       "X-Parse-REST-API-Key": "${REST_API_KEY}"
-     })
-result = json.loads(connection.getresponse().read())
-print result
-```
-
-ver el ejemplo aqui
-
-	http://parseplatform.github.io/docs/rest/guide/#retrieving-users
-
-
-De modo que la seccion donde ahora se muestra el cURL, podriamos tener 4 tabs: cURL (predeterminado), Ruby, Python, JS. 
-
-Cada uno con el codigo correspondiente.
-
-Agregar como una ultima seccion un boton run, que permita ejecutar el request y mostrar el response debajo, con un scroll.
-
 ### 64. Usar el mismo estilo de codigo en Show que en los Edit. [Aneli]
 
 Esta tarea esta bastante adelantada. Solo completar el trabajo con otros modelos a los que se le puede aplicar. Schemas, Json Data Type, a los diferentes tipos de transformations. 
@@ -1218,6 +1176,50 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+### 69. ~~Mejoras a la acccion REST API~~. [Pacheco]
+
+Como complemento a lo que ya esta podriamos tener una primera version
+
+de codigo para Python, Ruby y JS aun sin tener los clientes SDK correspondientes.
+
+Podemos usar bibliotecas HTTP de cada lenguaje.
+
+Ejemplo de cURL en Parse (retrieving a user):
+
+```bath
+curl -X GET \
+  -H "X-Parse-Application-Id: ${APPLICATION_ID}" \
+  -H "X-Parse-REST-API-Key: ${REST_API_KEY}" \
+  https://api.parse.com/1/users/g7y9tkhB7O
+```
+
+Ejemplo en Python usando biblioteca HTTP (retrieving a user):
+
+```Python
+import json,httplib
+connection = httplib.HTTPSConnection('api.parse.com', 443)
+connection.connect()
+connection.request('GET', '/1/users/g7y9tkhB7O', '', {
+       "X-Parse-Application-Id": "${APPLICATION_ID}",
+       "X-Parse-REST-API-Key": "${REST_API_KEY}"
+     })
+result = json.loads(connection.getresponse().read())
+print result
+```
+
+ver el ejemplo aqui
+
+	http://parseplatform.github.io/docs/rest/guide/#retrieving-users
+
+
+De modo que la seccion donde ahora se muestra el cURL, podriamos tener 4 tabs: cURL (predeterminado), Ruby, Python, JS. 
+
+Cada uno con el codigo correspondiente.
+
+Agregar como una ultima seccion un boton run, que permita ejecutar el request y mostrar el response debajo, con un scroll.
+
+
 
 
 ### 75. ~~Diferenciar visualmente los shared cross del resto de los objectos~~. [Mac]
