@@ -300,17 +300,6 @@ Si esta prueba de concepto es satisfactoria, se pueden extender las fuentes prim
 
 [Amadeus Travel Innovation Sandbox](https://sandbox.amadeus.com/api-catalog)
 
-
-### 75. Diferenciar visualmente los shared cross del resto de los objectos. [Mac]
-
-Visualmente debemos hacer mas evidente a los usarios la diferencia entre lo que es shared cross y lo que no, de manera que se confunda lo menos posible. 
-
-Una primera accion puedes ser
-
-Mostrar el icon de la cantidad en verde de forma que permita diferenciar visualmente los objetos compartidos del resto de los objetos que se muestran con la cantidad en azul.
-
-Pensar en otros recursos que ayuden a esta diferenciacion
-
 ### 73. Crear docker de cenit que pueda usar OSSE. [Pacheco]
 
 Crear 3 contenedores Docker
@@ -1229,6 +1218,17 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+
+### 75. ~~Diferenciar visualmente los shared cross del resto de los objectos~~. [Mac]
+
+Visualmente debemos hacer mas evidente a los usarios la diferencia entre lo que es shared cross y lo que no, de manera que se confunda lo menos posible. 
+
+Una primera accion puedes ser
+
+Mostrar el icon de la cantidad en verde de forma que permita diferenciar visualmente los objetos compartidos del resto de los objetos que se muestran con la cantidad en azul.
+
+Pensar en otros recursos que ayuden a esta diferenciacion
 
 ### 83. ~~Mostrar el index de los modelos de Ecommerce sin necesidad de loguearse~~. [Mac]
 
