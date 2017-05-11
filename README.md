@@ -367,12 +367,6 @@ Por otra parte los graficios deben poder renderearse invocando una tarea de back
 
 Deberian mostrar toda las filas y no solo las correspondientes a la pagina actual.
 
-### 64. Usar el mismo estilo de codigo en Show que en los Edit. [Aneli]
-
-Esta tarea esta bastante adelantada. Solo completar el trabajo con otros modelos a los que se le puede aplicar. Schemas, Json Data Type, a los diferentes tipos de transformations. 
-
-La propuesta es poder utilizar el mismo estilo de codemirror para el codigo en las vistas Show que en las vistas Edit, con la diferencia de que el codigo en los Show no puede ser Editable.
-
 
 ### 61. Salvar los ficheros en AWS S3. [Pacheco]
  
@@ -1176,6 +1170,13 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+### 64. ~~Usar el mismo estilo de codigo en Show que en los Edit~~. [Aneli]
+
+Esta tarea esta bastante adelantada. Solo completar el trabajo con otros modelos a los que se le puede aplicar. Schemas, Json Data Type, a los diferentes tipos de transformations. 
+
+La propuesta es poder utilizar el mismo estilo de codemirror para el codigo en las vistas Show que en las vistas Edit, con la diferencia de que el codigo en los Show no puede ser Editable.
+
 
 ### 69. ~~Mejoras a la acccion REST API~~. [Pacheco]
 
