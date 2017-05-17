@@ -10,6 +10,11 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+### 92. Adicionar NIMIO para la gestion de los ficheros estaticos. [Pacheco]
+
+https://docs.minio.io/
+
+
 ### 91. Cenit Automation Email | Templates: Email, Spreadsheet , PDF. [Pacheco]
 
 
