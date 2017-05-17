@@ -14,6 +14,7 @@ Orden recomendado:
 
 https://docs.minio.io/
 
+demo: https://play.minio.io:9000/
 
 ### 91. Cenit Automation Email | Templates: Email, Spreadsheet , PDF. [Pacheco]
 
