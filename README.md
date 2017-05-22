@@ -898,9 +898,7 @@ https://signin.mytriptomoon.com
 
 ### 2. Especializacion de Cenit en el dominio Ecommerce. [Mary]
 
-Estos cambios buscan la especialización de Cenit en el dominio Ecommerce. 
-Cenit es una plataforma genérica de integración, técnicamente las funcionalidades para Ecommerce son similares a otros dominios de aplicación, pero es importante posicionarnos en este segmento.
-En el menú de navegación ya tenemos explícitamente los items para Ecommerce.
+EEstos cambios buscan la especialización de Cenit en el dominio Ecommerce. Cenit es una plataforma genérica de integración, técnicamente las funcionalidades para Ecommerce son similares a otros dominios de aplicación, pero es importante posicionarnos en este segmento. En el menú lateral de navegación ya tenemos explícitamente los items para Ecommerce.
 
 * Ecommerce
   * Customers
@@ -910,58 +908,32 @@ En el menú de navegación ya tenemos explícitamente los items para Ecommerce.
   * Orders
   * Shipments
   
-Aunque es posible cargar otros modelos esta es nuestra biblioteca "oficial" de Ecommerce, para estos modelos contaremos con funcionalidades Out the box.
+Aunque es posible cargar otros modelos relacionados con Ecommerce esta es nuestra biblioteca "oficial", para estos modelos contaremos con funcionalidades predeterminadas en los tenants.
+Las integraciones E-Commerce serán shared collections predefinidas en Cenit para servicios de Storefronts, Marketplaces, Fulfilments y Accounting.
 
-**Campos dinámicos**
+Como elemento común tendrán el hecho que contengan un mapeo con modelos del namespace ECommerce de Cenit. Esto es importante para poder orquestar con facilidad varias integración de tipo ecommerce.
 
-Es importante notar que MongoDB permite el uso de campos dinámicos, por ejemplo cuando se salva un objeto de tipo Orden, este objeto puede tener campos adicionales a los definidos en el Object Type (o schema), lo que brinda flexibilidad en los mapeos,  estos atributos dinámicos pueden ser incluso anidados.
-
-**Mapeo de Shared Collection con los modelos de Ecommerce**
 La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de los modelos del namespace Ecommerce quedan disponible por transitividad a otros modelos que se puedan mapear a los de Ecommerce.
 
+Por ejemplo en las integraciones con Storefront o Marketplace usualmente interesa enviar las órdenes que se generan a Cenit. Mientras que los servicios de entrega de paquetes las Órdenes salen de cenit hacia el servicio.
 
-**Caso de Estudio de Satechi:**
 
-En el caso de Sathechi, las órdenes de cada uno de los marketplace es traducida a una Orden de Shipstation. lo ideal es que exista integraciones de:
+Veamos el siguiente ejemplo:
 
-* Order OverStock ⇔ Order Cenit-Ecommerce
-* Order Fancy ⇔ Order Cenit-Ecommerce
-* Order Houzz ⇔ Order Cenit-Ecommerce
+**Order Flow in Fancy Integration:**
 
-además
+- To each 20 minutes Cenit trigger a flow to get orders from Fancy Marketplace.
+- When new or updated orders are received and persisted in Cenit in a Fancy Order record.
+- When a created or updated Fancy Order record is saved then is trigger a Flow to transform to Order Ecommerce record in Cenit, the channel field in the record is set with the value ‘fancy’.
 
-* Order Shipstation ⇔ Order Cenit-Ecommerce
+**Shipping Flow in Shipstation Integration**:
 
-Cada una de estas integraciones se pueden empaquetar en las shared collections respectivas:
+- When a created or updated Ecommerce Order record is saved then is trigger a Flow to transform to Shipment Shipstation record in Cenit.
 
-* OverStock ⇔ Cenit Ecommerce 
-* Fancy ⇔ Cenit Ecommerce
-* Houzz ⇔ Cenit Ecommerce
-* Shipstation ⇔ Cenit Ecommerce
+- When a created or updated Shipment Shipstation record is saved then is trigger a Flow to send a shipment to Shipstation.
 
-El shared collection OverStock ⇔ Cenit Ecommerce, para evitar duplicaciones dependerá de las shared collections básicas OverStock y Ecommerce. De igual modo el resto de las shared collections.
+Las Integraciones E Commerce se deben poder adicionar tanto desde las Shared collection como desde el tab de eCommerce en el menú de navegación lateral.
 
-De esta manera se podrían hacer los flujos:
-
-* Order OverStock ⇔ Order Ecommerce ⇔ Order Shipstation
-* Order Fancy ⇔ Order Ecommerce ⇔ Order Shipstation
-* Order Houzz  ⇔ Order Ecommerce ⇔ Order Shipstation
-
-Con estos nuevos flujos se pueden crear nuevas  shared collections:
-
-* OverStock ⇔ Cenit Ecommerce ⇔ Shipstation
-* Fancy ⇔ Cenit Ecommerce ⇔ Shipstation
-* Houzz ⇔ Cenit Ecommerce ⇔ Shipstation
-
-Para evitar duplicaciones en estas nuevas shared collections a su vez dependerán de las anteriores, por ejemplo  
-
-* OverStock ⇔ Cenit Ecommerce ⇔ Shipstation, 
-
-dependerá de las shared collections: 
-
-* OverStock ⇔ Cenit Ecommerce y Shipstation ⇔ Cenit Ecommerce.
-
-Si en lugar de enviar a Shipstation, lo que interesa es hacer el envio a Shipwire, el esfuerzo se debe reducir al mapeo de los modelos de Ecommerce a Shipwire.
 
 **Caso de Estudio de Odoo:**
 
