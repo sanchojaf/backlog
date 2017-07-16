@@ -10,6 +10,31 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+### 93. Graphic Mapping Transformations
+
+![graphic mapping transformations](https://user-images.githubusercontent.com/4213488/28247899-45ea812a-6a08-11e7-9010-6eba18dede10.jpg)
+
+* Use an style similar to this project http://www.jsoneditoronline.org the source code is here https://github.com/josdejong/jsoneditor 
+
+* Create one by one mapping
+
+* Each map take several fields from the source json schema and define an optional handlebar expression
+
+* The target json schema should be optional
+
+* If the target json schema is present then validate the result with the schema.
+
+* Advance option for auto-generate a mapping, maybe only for a subset of the fields, this feature require the presence of the target json schema.
+
+* Auto-generate a complete JS Handlebars (read only)
+
+* Validate Result with the target json schema.
+
+* Generate a fake source data (similar to http://json-schema-faker.js.org/#gist/eb11f16c9edccf040c028dc8bd2b1756 )
+
+* Allow load a json source.
+
+
 ### 92. Adicionar NIMIO para la gestion de los ficheros estaticos. [Pacheco]
 
 https://docs.minio.io/
@@ -205,7 +230,7 @@ Con la creación del Data Type, tenemos hoy:
 * Interfaces de Usuario (UI) que cubre un CRUD.
 * Las otras funcionalidades de rails_admin, para buscar, filtrar.
 * Los translator, de import y export que se pueden mejorar (incluyendo por ejemplo CSV).
-* Funcionalidades en el API.
+* La generacion automatica de un REST API.
 * Documentación del API, con el boton REST API.
 * Opcionalmente la posibilidad de incluir un link en el menú de navegación. 
 
@@ -215,18 +240,15 @@ Qué otras cosas podemos adicionar de forma automática.
 * Crear automáticamente los eventos de datos para el create_at y el update_at
 * Podemos adicionar un template de webhooks, para los dos eventos create_at y update_at .
 * La documentación de los webhooks se puede incluir dentro de la descripción automática del api que aparece en el botón REST * API, similar a como se hace en la especificación 3.0 de Swagger donde ellos adicionaron la especificación de webhooks.
-* Deberíamos tener unos templates sencillos de notificaciones, para de forma similar a los webhooks poder notificar el cambio por diferentes vías, por ejemplo: email,  notificación interna (Cenit), u otros canales de notificación que se puedan activar por medio de una integración, como twitter, twilio
+*  Templates sencillos de notificaciones, para de forma similar a los webhooks poder notificar el cambio por diferentes vías, por ejemplo: email,  notificación interna (Cenit), u otros canales de notificación que se puedan activar por medio de una integración, como twitter, twilio
  
-
 Al botón REST API, podemos añadirle la posibilidad de abrir un swagger spec con el visor correspondiente, mas adelante podemos agregar una spec en RAML.
 
 Asociados a los rest API también se está trabajando en poder abrirlos con un Notebook para poder interactuar con el API e invocar los métodos.
 
 Para demostrar mejor estas funcionalidades a un usuario nuevo, podemos crear desde el dashboard, un link ‘Add Object Type’
 
-Ese link debe posibilitar crear un Object Type, o seleccionar uno, y desde ahí poder decidir si lo visualizamos o no  en la navegación.
-
-Con ese shortcut para crear un Object Type podemos hacer un animación de los pasos en js, donde se muestren los pasos, de la creación del Object Type, y como quedan out the box las diferentes funcionalidades alrededor de data type.
+Ese link debe posibilitar crear un JSON Object Type, o seleccionar uno, y desde ahí poder decidir si lo visualizamos o no  en la navegación.
 
 
 ### 87. Adicionar las integrations a las API's de IBM Watshon. [Mary]
