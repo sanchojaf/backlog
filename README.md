@@ -10,6 +10,128 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+### 94 Planes y Subscripciones 
+
+
+Mantener la posibilida de usar cenit free, con la mayor parte de las funcionalidades, pero con limites en el uso de los recursos.
+
+Crear suscripciones por planes para tener un modelo de precios sencillo.
+
+Tener costos variables que permitan extender las posibilidades de un plan.
+
+Crear un Marketplace para las Shared Collection, donde puedan haber Free o Paid.
+
+**PLANES**
+
+**For Free**
+
+2 tenants
+By each tenant: 
+- 5 installed shared collections
+- 25 commercial flows
+- 100 flow execution or notifications
+
+
+**Developer**  ($8 USD/Month)
+
+Personal account
+support
+3 tenants
+By each tenant:
+- 10 installed shared collections
+- 50 commercial flows
+- 250 notifications or standard flow executions
+
+
+**Team** ($10 USD/per user month)
+
+Team account
+Support
+5 tenants
+By each tenant:
+- 25 installed shared collections
+- 100 commercial flows
+- 500 notifications or standard flow executions
+
+Started in 25 that include the first 5 users
+
+
+**Business** ($20 USD/per user month)
+
+Organization account
+SAML Single sign-on
+Support
+10 tenants
+By each tenant: 
+- unlimited shared collections
+- 200 commercial flows
+- 1 000 notifications or standard flow executions
+
+
+**Variable Cost** (in addition to included features in each plan)
+
+$ 0.50 per commercial flows
+$ 0.10 per 100 notifications or standard flow executions
+$ 2.50 USD per extra shared collection
+$ 5.0 USD per extra tenant
+
+
+**MARKETPLACE** 
+
+
+Shared Collection Could be free or Paid
+Could be possible download to Cenit.io or any other Cenit server
+Anyone can publish a shared collections
+- But publish Paid shared collection only if has a subscription plan
+
+
+
+**IMPLEMENTACION**
+
+En la primera etapa, vamos a crear una lógica de suscripción dentro de cenit, para realizar cobros recurrentes.
+
+Es posible que a mediano plazo sea conveniente tener por detrás algo como Spree, para poder manejar las compras en el marketplace, y poder aplicar promociones y logicas de marketing mas complejas  
+
+
+Sobre la lógica de suscripción con pagos recurrente la propuesta es seguir el proyecto de Rails Composer para Suscripción con Stripe.
+
+Ver mas detalles en el reamde
+
+https://github.com/RailsApps/rails-stripe-membership-saas
+
+
+**Rails Stripe SaaS**
+
+ensure that you have rails 4.2 like environment
+
+`git clone git://github.com/RailsApps/rails-stripe-membership-saas.git`
+
+`cd rails-stripe-membership-saas`
+
+`bundle`
+
+`rake db:migrate`
+
+open Gemfile and add: `gem 'figaro'`
+
+`bundle`
+
+`rake db:migrate`
+
+`vim config/application.yml`
+
+add
+
+```
+STRIPE_API_KEY:  kkkkkkkkkkkkkkkkk
+STRIPE_PUBLISHABLE_KEY: ffffffffffffffff
+```
+
+`rake db:seed`
+
+`rails s`
+
+
 ### 93. Graphic Mapping Transformations
 
 ![graphic mapping transformations](https://user-images.githubusercontent.com/4213488/28247899-45ea812a-6a08-11e7-9010-6eba18dede10.jpg)
