@@ -17,6 +17,8 @@ Orden recomendado:
 - **Domain Applications**: Integrations, APPs, Ecommerce, Marketing, Billing
 - **Auxiliaries**: Monitors, Configuration, Administration
 
+================= PRIMARIES===================
+
 #### DATA
 
 - **Definitions** 
@@ -58,6 +60,111 @@ Orden recomendado:
 	* Parser (type importer)
 	* Convert
 	* Updater
+
+#### GATEWAY
+
+- **Connectors**
+	* API Connections
+	* Resources
+	* Operations
+	* Connection Roles  (eliminar de la navegación)
+- **API Spec**
+	* Add API Spec + (Action)
+	* OpenAPI Directory
+- **Security**
+	* Clients
+		+ OAuth
+		+ AWS
+	* Providers
+		+ OAuth 1.0
+		+ OAuth 2.0
+	* Scopes
+		+ OAuth 2.0
+		+ OAuth Grant Access 
+	* Authorizations
+		+ Basic
+		+ Digest
+		+ OAuth 1.0
+		+ OAuth 2.0
+
+
+#### COMPUTE
+
+- **Snippets**
+- **Algorithms**
+- **Cloud functions** (estos son los algoritmos remotos que hizo pacheco)
+- **Serverless**
+- **Background Jobs**
+
+
+================= DOMAIN APPLICATIONS===================
+
+#### INTEGRATIONS
+
+- **My Collections**
+- **Shared Collections**
+
+#### APPs
+
+#### ECOMMERCE
+
+- **eCommerce**
+	* Customers
+	* Products
+	* Orders
+	* Payments
+	* Shipments
+- **Sale Channels**
+	* Connect Store +
+	* Fancy
+	* Mangeto
+	* Custom Store
+
+- **Integrations**
+	* Odoo
+	* Shipstation
+
+
+#### MARKETING
+
+- **Customers**
+- **Leads**
+- **Email Automation**
+- **Social Posting**
+
+
+
+================= AUXILIARIES===================
+
+
+- **Monitors**
+	* System Notifications
+	* Running Jobs (rename Tasks)
+	* Storages
+- **Configurations**
+	* Namespaces
+	* Connection Configs
+	* Data Type Configs
+	* Flow Configs
+	* Email Config
+	* SMS Config
+	* Pings
+	* Bindings
+	* Parameters
+- **Administration**
+	* Users
+	* Accounts
+	* Roles
+	* Application IDs
+	* Scripts
+	* Script executions
+	* Rabbit Consumers
+	* Delayed Messages
+	* Shared Names
+	* System notifications
+	* Tokens
+
+
 
 
 ### 94. Planes y Subscripciones. [Pacheco] 
