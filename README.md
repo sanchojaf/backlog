@@ -43,7 +43,7 @@ Orden recomendado:
 #### WORKFLOWS
 
 - **Flows**
-	* Triggers
+- **Triggers**
 	* Data Events 
 	* Schedulers
 - **Notifications**
