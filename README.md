@@ -10,6 +10,56 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
+### 95.Refactorizacion de la Navegacion.
+
+
+- **Primaries**: Data, Compute, Gateway, Workflows
+- **Domain Applications**: Integrations, APPs, Ecommerce, Marketing, Billing
+- **Auxiliaries**: Monitors, Configuration, Administration
+
+#### DATA
+
+- **Definitions** 
+	* Data Types
+		+ Object Types
+		+ File Types
+	* Validators
+		+ Schemas
+		+ EDI Validators
+		+ XSLT
+		+ Algorithm Validators
+- **Objects**
+	* Add Object Type + 
+- **Files**
+	* Add File Type + 
+
+
+#### WORKFLOWS
+
+- **Flows**
+	* Triggers
+	* Data Events 
+	* Schedulers
+- **Notifications**
+	* Mobile Apps
+	* Email
+	* SMS
+	* Web-hook
+- **Channels**
+- **Transformations** 
+	* Render (type exporter)
+		+ HTML (html.erb, liquid)
+		+ JSON (json.rabl)
+		+ XML (xml.rabl, xslt)
+		+ JS (js.erb)
+		+ PDF (pdf.prawn)
+		+ CSV (csv.erb)
+		+ Text (txt.erb)
+	* Parser (type importer)
+	* Convert
+	* Updater
+
+
 ### 94. Planes y Subscripciones. [Pacheco] 
 
 
