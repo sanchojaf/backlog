@@ -26,6 +26,7 @@ Crear un Marketplace para las Shared Collection, donde puedan haber Free o Paid.
 **For Free**
 
 2 tenants
+
 By each tenant: 
 - 5 installed shared collections
 - 25 commercial flows
@@ -35,8 +36,11 @@ By each tenant:
 **Developer**  ($8 USD/Month)
 
 Personal account
+
 support
+
 3 tenants
+
 By each tenant:
 - 10 installed shared collections
 - 50 commercial flows
@@ -46,8 +50,11 @@ By each tenant:
 **Team** ($10 USD/per user month)
 
 Team account
+
 Support
+
 5 tenants
+
 By each tenant:
 - 25 installed shared collections
 - 100 commercial flows
@@ -59,9 +66,13 @@ Started in 25 that include the first 5 users
 **Business** ($20 USD/per user month)
 
 Organization account
+
 SAML Single sign-on
+
 Support
+
 10 tenants
+
 By each tenant: 
 - unlimited shared collections
 - 200 commercial flows
@@ -70,18 +81,21 @@ By each tenant:
 
 **Variable Cost** (in addition to included features in each plan)
 
-$ 0.50 per commercial flows
-$ 0.10 per 100 notifications or standard flow executions
-$ 2.50 USD per extra shared collection
-$ 5.0 USD per extra tenant
+- $ 0.50 per commercial flows
+- $ 0.10 per 100 notifications or standard flow executions
+- $ 2.50 USD per extra shared collection
+- $ 5.0 USD per extra tenant
 
 
 **MARKETPLACE** 
 
 
 Shared Collection Could be free or Paid
+
 Could be possible download to Cenit.io or any other Cenit server
+
 Anyone can publish a shared collections
+
 - But publish Paid shared collection only if has a subscription plan
 
 
