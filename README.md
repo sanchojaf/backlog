@@ -17,6 +17,10 @@ Orden recomendado:
 - **Domain Applications**: Integrations, APPs, Ecommerce, Marketing, Billing
 - **Auxiliaries**: Monitors, Configuration, Administration
 
+![new_home](https://user-images.githubusercontent.com/4213488/28572386-de5a455e-7114-11e7-909e-de9e22cf92bf.png)
+
+![data](https://user-images.githubusercontent.com/4213488/28572427-043dca84-7115-11e7-9410-5cba5db00631.png)
+
 ================= PRIMARIES===================
 
 #### DATA
