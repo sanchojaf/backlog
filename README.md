@@ -10,7 +10,7 @@ Orden recomendado:
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
 
-### 95.Refactorizacion de la Navegacion.
+### 95. Refactorizacion de la Navegacion.[Aneli]
 
 
 - **Primaries**: Data, Compute, Gateway, Workflows
