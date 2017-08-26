@@ -6,9 +6,37 @@ Orden recomendado:
 
 - Mary: 29, 50, 37, 56, 57, 46, 28, 45, 27, 30, 85, 86, 87
 
-- Aneli:  71, 54, 64, 81
+- Aneli: 71, 54, 64, 81
 
 - Mac: 72, 73, 34, 58, 21, 60, 52, 51, 5, 12, 9, 15, 14, 44, 26, 16, 39, 41, 43, 47, 79, 78, 77, 76
+
+### 97. Crear un nuevo Data Type mediante una interfaz visual.
+
+En cenit podemos tener tipos predefinidos, que sean una extencion a los tipos que tiene rails admin, y que nos permitan en un editor crear un data type agregando los atributos, y por cada atributo, seleccionado el tipo.
+
+File Types: 
+
+Text field, Password field, Text area, Telephone field, Url field, Email field, Number field, Range field, Date field, Time field, Datetime field, Month field, Week field, Check box, Radio button, Color field, Select box
+
+Cuando el file type no corresponda con un file type basico de JSON Schema, entonces definirlo por detras como un JSON Schema.
+
+Cuando se adicione un atributo, definir: 
+
+- si es requerido o no
+- si tiene valor por default
+- place order.
+- opciones si es un enumerator, etc.
+
+
+### 96. UML to XML Schema(XSD).
+
+XSD permite representar relaciones entre clases, y en Cenit permite carrgar un XSD y generar los modelos por detras.
+
+En esta misma idea, seria interesante poder tener un Editor de UML, que a partir de una presentacion visual de UML, genere todos los modelos y las asociaciones relacionadas.
+
+En el link siguiente se describe una herramienta similar.
+
+[reference](http://www.sparxsystems.com/resources/xml_schema_generation.html)
 
 ### 95. Refactorizacion de la Navegacion.[Aneli]
 
