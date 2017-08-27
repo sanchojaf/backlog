@@ -12,9 +12,11 @@ Orden recomendado:
 
 ### 97. Crear un nuevo Data Type mediante una interfaz visual.
 
-En cenit podemos tener tipos predefinidos, que sean una extencion a los tipos que tiene rails admin, y que nos permitan en un editor crear un data type agregando los atributos, y por cada atributo, seleccionado el tipo.
+[Similar al desarrollo de Pacheco para OMNA]
 
-File Types: 
+En cenit podemos tener Field Types, que sean una extencion a los tipos que tiene rails admin, y que nos permitan en un editor crear un data type agregando los atributos, y por cada atributo, seleccionado el tipo. Es importante notar que un Data Type no es solo para definir el modelo para salvar en la base de datos, sino que tambien se genera la interfaz visual, de modo que si tenemos una manera visual de crear los atributos del Data Type podemos tener una semantica mas rica, para que la interfaz visual sea mas amigable, por ejemplo Password field, o Telephone field. Podemos ademas permitir que se definan nuevos Field Types(cada una estas extenciones debe quedar refresentado como un JSON Schema.)
+
+Field Types: 
 
 Text field, Password field, Text area, Telephone field, Url field, Email field, Number field, Range field, Date field, Time field, Datetime field, Month field, Week field, Check box, Radio button, Color field, Select box
 
