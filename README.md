@@ -32,7 +32,10 @@ Cuando se adicione un atributo, definir:
 
 ### 96. UML to XML Schema(XSD).
 
-XSD permite representar relaciones entre clases, y en Cenit permite carrgar un XSD y generar los modelos por detras.
+XSD permite representar relaciones entre clases, y en Cenit se permite cargar un XSD y generar los modelos por detras.
+
+
+La instalación de Generación XSD convierte un modelo de clase UML en un Esquema XML W3C (XSD). Esto permite empezar a trabajar a nivel conceptual en UML.
 
 En esta misma idea, seria interesante poder tener un Editor de UML, que a partir de una presentacion visual de UML, genere todos los modelos y las asociaciones relacionadas.
 
