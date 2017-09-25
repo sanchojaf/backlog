@@ -1268,9 +1268,16 @@ https://signin.mytriptomoon.com
 
 ### 2. Especializacion de Cenit en el dominio Ecommerce. [Mary]
 
-EEstos cambios buscan la especialización de Cenit en el dominio Ecommerce. Cenit es una plataforma genérica de integración, técnicamente las funcionalidades para Ecommerce son similares a otros dominios de aplicación, pero es importante posicionarnos en este segmento. En el menú lateral de navegación ya tenemos explícitamente los items para Ecommerce.
+* Integrations
+* Basic Objects
+* Sale Channels
+* Shipping
+* ERP
+* E.D.I
 
-* Ecommerce
+Estos cambios buscan la especialización de Cenit en el dominio Ecommerce. Cenit es una plataforma genérica de integración, técnicamente las funcionalidades para Ecommerce son similares a otros dominios de aplicación, pero es importante posicionarnos en este segmento. En el menú lateral de navegación ya tenemos explícitamente los items para Ecommerce. Estos debemos moverlo dentro de un item que se llame 'Basic Objects'
+
+* Basic Objects
   * Customers
   * Products
   * Inventory
@@ -1278,14 +1285,15 @@ EEstos cambios buscan la especialización de Cenit en el dominio Ecommerce. Ceni
   * Orders
   * Shipments
   
-Aunque es posible cargar otros modelos relacionados con Ecommerce esta es nuestra biblioteca "oficial", para estos modelos contaremos con funcionalidades predeterminadas en los tenants.
-Las integraciones E-Commerce serán shared collections predefinidas en Cenit para servicios de Storefronts, Marketplaces, Fulfilments y Accounting.
+Aunque es posible cargar otros modelos relacionados con Ecommerce esta es nuestra biblioteca "basica", para estos modelos contaremos con funcionalidades predeterminadas en los tenants.
+
+Las integraciones E-Commerce serán shared collections predefinidas en Cenit para servicios de Sale Channels, Shipping,  ERP, ...
 
 Como elemento común tendrán el hecho que contengan un mapeo con modelos del namespace ECommerce de Cenit. Esto es importante para poder orquestar con facilidad varias integración de tipo ecommerce.
 
-La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de los modelos del namespace Ecommerce quedan disponible por transitividad a otros modelos que se puedan mapear a los de Ecommerce.
+La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de los modelos del namespace Ecommerce quedaran disponibles por transitividad a otros modelos que se puedan mapear a los de Ecommerce.
 
-Por ejemplo en las integraciones con Storefront o Marketplace usualmente interesa enviar las órdenes que se generan a Cenit. Mientras que los servicios de entrega de paquetes las Órdenes salen de cenit hacia el servicio.
+Por ejemplo en las, integraciones con Sale Channels usualmente interesa enviar las órdenes que se generan a Cenit. Mientras que los servicios de entrega de paquetes (Shipping) las Órdenes salen de cenit hacia el servicio.
 
 
 Veamos el siguiente ejemplo:
