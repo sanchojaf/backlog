@@ -36,6 +36,8 @@ Cuando se adicione un atributo, definir:
 - opciones si es un enumerator, etc.
 
 
+ejemplo en Stamplay https://youtu.be/aG5HKecexs8
+
 ### 96. UML to XML Schema(XSD).
 
 XSD permite representar relaciones entre clases, y en Cenit se permite cargar un XSD y generar los modelos por detras.
