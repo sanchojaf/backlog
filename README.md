@@ -719,10 +719,6 @@ El API es una aplicacion independiente que hay que instalar
 https://github.com/django-oscar/django-oscar-api
 
 
-### 54. Migrar a rails_admin 1.0. [Aneli]
-
-Rails Admin hizo el release de la version 1.0, por lo que es un buen momento para hacer un upgrade de Cenit. Es importante revisar todas las vistas que tenemos customizadas en Cenit.
-
 ### 52. Concepto de Notificación (paradigma Push/Notification). [Mac]
  
 Nota: A lo que llamamos actualmente como Notifications, le debemos llamar System Notifications, de modo que este Notification es otro concepto
@@ -1481,6 +1477,10 @@ print result
 	* Tokens
 
 
+
+### 54. ~~Migrar a rails_admin 1.0~~. [Aneli]
+
+Rails Admin hizo el release de la version 1.0, por lo que es un buen momento para hacer un upgrade de Cenit. Es importante revisar todas las vistas que tenemos customizadas en Cenit.
 
 
 ### 56. ~~Crear Shared Collection de Spree.~~ [Mary]
