@@ -979,37 +979,6 @@ Para la transformacion a Swagger se uso
 
 - https://github.com/APIs-guru/api-spec-converter
 
-### 24. API Connection ⇔  Swagger Spec [Pacheco]
-
-La propuesta es que un Swagger Spec se pueda corresponder con un API Connection y sus conceptos relacionados de Resources y Webhooks
-
-Revisar la siguiente presentacion para tener mas elementos relacionados con esta tarea
-
-https://docs.google.com/presentation/d/1U7npFSNCPMDZDrDZyPNuP9blxEZmcxFGkDDvTFm2nqw/edit?usp=sharing
-
-* Connectors
-  * API Connections 
-    * Resources
-      * Webhooks
-
-Lo que es lo mismo que:
-* Webhook *belogs_to* Resource
-* Resource *belogs_to* API Connection 
-
-nota: el nombre de webhooks no es el mas apropiado, pero de momento seguiremos usandolo, se puede enteder como Metodo o Operacion e incluye la especificaicon del Metodo HTTP y ademas la posibilidad de especificar parametros.
-
-En lo posible vamos a tratar de tener resultados parciales que podamos ir desplegando.
-
-1. Tener una nueva accion (tag) que sea *Swagger*, que muestre la conversion a swagger del API Connection en modo de solo lectura. 
-
-2. Mas adelante, debemos poder editar el Swagger y su edicion debe modificar la configuracion del API Connection correspondiente, o sea debe haber una sincronizacion entre el modelo API Connection (y sus referencias a Resources y Webhoks)  con el fichero Swagger.
-
-3. Agregar a la vista del Swagger la opcion de visualizar el Swagger similar a Swagger Editor (http://editor.swagger.io/). Una variante es ver si es posible embeber el Swagger Editor en Cenit, en ese caso Cenit deberia tener una variable de configuracion con la URL de la aplicacion del swagger editor, si no se especifica valor, debe funcionar con fue descrito en 1) y 2).
-
-### 23. Adicionar en el menú superior indicador para storages. [Aneli]
-
-Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por adicionar a los storage.
-
 
 ### 21. Activar el modelo de Confirmable. [Mac]
 
@@ -1575,6 +1544,37 @@ Cada uno con el codigo correspondiente.
 Agregar como una ultima seccion un boton run, que permita ejecutar el request y mostrar el response debajo, con un scroll.
 
 
+
+### 24. ~~API Connection ⇔  Swagger Spec~~. [Pacheco]
+
+La propuesta es que un Swagger Spec se pueda corresponder con un API Connection y sus conceptos relacionados de Resources y Webhooks
+
+Revisar la siguiente presentacion para tener mas elementos relacionados con esta tarea
+
+https://docs.google.com/presentation/d/1U7npFSNCPMDZDrDZyPNuP9blxEZmcxFGkDDvTFm2nqw/edit?usp=sharing
+
+* Connectors
+  * API Connections 
+    * Resources
+      * Webhooks
+
+Lo que es lo mismo que:
+* Webhook *belogs_to* Resource
+* Resource *belogs_to* API Connection 
+
+nota: el nombre de webhooks no es el mas apropiado, pero de momento seguiremos usandolo, se puede enteder como Metodo o Operacion e incluye la especificaicon del Metodo HTTP y ademas la posibilidad de especificar parametros.
+
+En lo posible vamos a tratar de tener resultados parciales que podamos ir desplegando.
+
+1. Tener una nueva accion (tag) que sea *Swagger*, que muestre la conversion a swagger del API Connection en modo de solo lectura. 
+
+2. Mas adelante, debemos poder editar el Swagger y su edicion debe modificar la configuracion del API Connection correspondiente, o sea debe haber una sincronizacion entre el modelo API Connection (y sus referencias a Resources y Webhoks)  con el fichero Swagger.
+
+3. Agregar a la vista del Swagger la opcion de visualizar el Swagger similar a Swagger Editor (http://editor.swagger.io/). Una variante es ver si es posible embeber el Swagger Editor en Cenit, en ese caso Cenit deberia tener una variable de configuracion con la URL de la aplicacion del swagger editor, si no se especifica valor, debe funcionar con fue descrito en 1) y 2).
+
+### 23. ~~Adicionar en el menú superior indicador para storages~~. [Aneli]
+
+Cuando se esta logueado se muestran los monitors en ese grupo esta pendiente por adicionar a los storage.
 
 
 ### 75. ~~Diferenciar visualmente los shared cross del resto de los objectos~~. [Mac]
