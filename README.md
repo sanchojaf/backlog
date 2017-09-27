@@ -1034,17 +1034,6 @@ En cuanto a la logica actual, donde el namespace es lo que permite identificar q
 
 Ya en Cenit se soportan las URL con Slug y ademas de las id -que son la URL que contruye Rails Admin por default-, en adicion seria conveniente que las url predeterminadas en la documentacion sean con slug. Esto ademas ayudaria a que sean indexadas por los motores de busqueda.
 
-
-### 9. Cambiar el nombre del modelo Account por Tennant. [Mac].
-
-Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant" 
- 
-### 5. El email y el pdf de OSSE no soporta tildes. [Mac]
- 
-Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
-
-
-
 ### 3. Subdominios para las aplicaciones. [Pacheco]
 
 Para que las aplicaciones tegan mayor valor de uso, es importante que se pueda asociar un dominio o subdominio propios.
@@ -1264,14 +1253,6 @@ print result
 ####################################################################################################
 
 # done
-
-- Pacheco: 40, 25
-
-- Mary: 55, 48, 32, 50
-
-- Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
-
-- Mac: 2, 8, 35, 49, 7, 62, 53, 33
 
 ## 95. ~~Refactorizacion de la Navegacion~~.[Aneli]
 
@@ -1542,6 +1523,16 @@ De modo que la seccion donde ahora se muestra el cURL, podriamos tener 4 tabs: c
 Cada uno con el codigo correspondiente.
 
 Agregar como una ultima seccion un boton run, que permita ejecutar el request y mostrar el response debajo, con un scroll.
+
+
+### 9. ~~Cambiar el nombre del modelo Account por Tennant~~. [Mac].
+
+Ahora en Cenit es posible tener asociado a un usario varias "Accounts" con lo cual es mejor renombrar el concepto de "Account" por "Tennant" 
+ 
+### 5. ~~El email y el pdf de OSSE no soporta tildes~~. [Mac]
+ 
+Al parecer porque es UTF-8, hay que revisar la posibilidad de seleccionar el enconde
+
 
 
 
