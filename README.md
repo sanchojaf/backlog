@@ -1,3 +1,38 @@
+# errores
+
+- el campo de datatype en los formularios de cenit, sigue sin filtrar
+
+- en cenit cdo se edita un transformation pierde el Namespace
+
+- Al modificar el codigo de un algoritmo en la Vista de Edicion del Flow, el codigo se salva pero no se modifica
+
+- Al editar algoritmos, webhooks, etc, se pierde el namespace.
+
+- Da error al crear /editar un scheduler
+
+- hay un scren shot q me envio Mary de los filtros, donde hay 3 select en la misma pagina, se hace un filtro por el tercer select el de mas abajo y sale la animacion de cargargo en el primero de mas arriba
+
+
+- no encuentro en el admin, link como task token.
+
+- en ocaciones cuando se inspecciona tenant, el selection que sale arriba en menu para cambiar a otro tenant no se abre, hay que refrescar la pagina para que este nuevamente disponible.
+
+- El menu de de Gateway no esta funcionando apropiadamente, por ejemplo cuando se da click en API Specs. Sin embargo si se da click directamente en el link de Gateway si sale correctamente.
+
+- Algo similar a lo anterior pasa cuando se da click en Customer dentro del subdominio Ecommerce, el menu lateral no se muestra correctamente. Sin embargo si se da click directamente en el link de Ecommerce si sale correctamente. 
+
+- Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios (Monitors, Configuration, Administration)
+
+- mejorar algunos breadcrums salen como el de https://cenit.io/rabbit_consumer que sale como: Rabbit_consumers / Rabbit consumers / Dashboard
+
+- en el caso de los notebooks, se debe mostrar a la derecha el icon de lista (similar a shared collections y OpenAPI directory)
+
+- en Shared collection, cuando se listan las categorias en el menu lateral, y se da click a una de las categorias, por ejemplo a eCommerce, no esta filtrado, salen todas las shared collections
+
+- cuando se instala Spree Hooks, y luego de importar los productos, se va a index de producto, no aparece ahi boton de Rest API a la derecha del breadcrum.
+
+- ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi 
+
 # backlog
 
 ### 98. simplificar como hacer una integracion entre dos aplicaciones.
