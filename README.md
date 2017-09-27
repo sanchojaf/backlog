@@ -12,9 +12,15 @@ Orden recomendado:
 
 ### 98. simplificar como hacer una integracion entre dos aplicaciones.
 
-ver este ejemplo 
+ver este ejemplos
+
+Integrator.io
 
 https://www.youtube.com/watch?v=nu5PkSt9FkM
+
+Stamplay
+
+https://www.youtube.com/watch?v=UDC8oN9mtmc&t=10s
 
 ### 97. Crear un nuevo Data Type mediante una interfaz visual.
 
