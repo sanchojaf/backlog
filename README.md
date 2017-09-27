@@ -948,10 +948,6 @@ puts declarative(15)#=> FizzBuzz
 ```
 Las dos versiones dan error
 
-### 30. Crear el Shared Collection de Cenit a partir del spec en el directorio de Guru API. [Mary]
-
-Actualizar el script que lee las especificaciones del directorio de Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit, con la misma logica que se genera cualquier otro spec.
-
 ### 28. Crear una integracion de Magento basada en el Swagger. [Mary]
 
 El Swagger de Magento y fue adicionado al directorio de Guru API, de modo que debemos actualizar la sincronizazcion de las shard collections para poder adicionar el shared collection de Magento a Cenit basado en esa spec. 
@@ -1472,6 +1468,10 @@ print result
 
 Rails Admin hizo el release de la version 1.0, por lo que es un buen momento para hacer un upgrade de Cenit. Es importante revisar todas las vistas que tenemos customizadas en Cenit.
 
+
+### 30. ~~Crear el Shared Collection de Cenit a partir del spec en el directorio de Guru API~~. [Mary]
+
+Actualizar el script que lee las especificaciones del directorio de Guru API que ya incluyen el spec de Swagger de Cenit IO y generar el Shared Collection de Cenit, con la misma logica que se genera cualquier otro spec.
 
 ### 56. ~~Crear Shared Collection de Spree.~~ [Mary]
 
