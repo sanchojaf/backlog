@@ -57,167 +57,6 @@ En el link siguiente se describe una herramienta similar.
 
 [reference](http://www.sparxsystems.com/resources/xml_schema_generation.html)
 
-### 95. Refactorizacion de la Navegacion.[Aneli]
-
-
-- **Primaries**: Data, Compute, Gateway, Workflows
-- **Domain Applications**: Integrations, APPs, Ecommerce, Marketing, Billing
-- **Auxiliaries**: Monitors, Configuration, Administration
-
-![new_home](https://user-images.githubusercontent.com/4213488/28572386-de5a455e-7114-11e7-909e-de9e22cf92bf.png)
-
-![data](https://user-images.githubusercontent.com/4213488/28572427-043dca84-7115-11e7-9410-5cba5db00631.png)
-
-================= PRIMARIES===================
-
-#### DATA
-
-- **Definitions** 
-	* Data Types
-		+ Object Types
-		+ File Types
-	* Validators
-		+ Schemas
-		+ EDI Validators
-		+ XSLT
-		+ Algorithm Validators
-- **Objects**
-	* Add Object Type + 
-- **Files**
-	* Add File Type + 
-
-
-#### WORKFLOWS
-
-- **Flows**
-- **Triggers**
-	* Data Events 
-	* Schedulers
-- **Notifications**
-	* Mobile Apps
-	* Email
-	* SMS
-	* Web-hook
-- **Channels**
-- **Transformations** 
-	* Render (type exporter)
-		+ HTML (html.erb, liquid)
-		+ JSON (json.rabl)
-		+ XML (xml.rabl, xslt)
-		+ JS (js.erb)
-		+ PDF (pdf.prawn)
-		+ CSV (csv.erb)
-		+ Text (txt.erb)
-	* Parser (type importer)
-	* Convert
-	* Updater
-
-#### GATEWAY
-
-- **Connectors**
-	* API Connections
-	* Resources
-	* Operations
-	* Connection Roles  (eliminar de la navegación)
-- **API Spec**
-	* Add API Spec + (Action)
-	* OpenAPI Directory
-- **Security**
-	* Clients
-		+ OAuth
-		+ AWS
-	* Providers
-		+ OAuth 1.0
-		+ OAuth 2.0
-	* Scopes
-		+ OAuth 2.0
-		+ OAuth Grant Access 
-	* Authorizations
-		+ Basic
-		+ Digest
-		+ OAuth 1.0
-		+ OAuth 2.0
-
-
-#### COMPUTE
-
-- **Snippets**
-- **Algorithms**
-- **Cloud functions** (estos son los algoritmos remotos que hizo pacheco)
-- **Serverless**
-- **Background Jobs**
-
-
-================= DOMAIN APPLICATIONS===================
-
-#### INTEGRATIONS
-
-- **My Collections**
-- **Shared Collections**
-
-#### APPs
-
-#### ECOMMERCE
-
-- **eCommerce**
-	* Customers
-	* Products
-	* Orders
-	* Payments
-	* Shipments
-- **Sale Channels**
-	* Connect Store +
-	* Fancy
-	* Mangeto
-	* Custom Store
-
-- **Integrations**
-	* Odoo
-	* Shipstation
-
-
-#### MARKETING
-
-- **Customers**
-- **Leads**
-- **Email Automation**
-- **Social Posting**
-
-
-
-================= AUXILIARIES===================
-
-
-- **Monitors**
-	* System Notifications
-	* Running Jobs (rename Tasks)
-	* Storages
-- **Configurations**
-	* Namespaces
-	* Connection Configs
-	* Data Type Configs
-	* Flow Configs
-	* Email Config
-	* SMS Config
-	* Pings
-	* Bindings
-	* Parameters
-- **Administration**
-	* Users
-	* Accounts
-	* Roles
-	* Application IDs
-	* Scripts
-	* Script executions
-	* Rabbit Consumers
-	* Delayed Messages
-	* Shared Names
-	* System notifications
-	* Tokens
-
-
-
-
 ### 94. Planes y Subscripciones. [Pacheco] 
 
 
@@ -1482,6 +1321,167 @@ print result
 - Aneli: 42, 6, 19, 38, 4, 18, 17, 11, 10, 23, 67, 22, 65, 68, 66, 63, 62, 70
 
 - Mac: 2, 8, 35, 49, 7, 62, 53, 33
+
+## 95. ~~Refactorizacion de la Navegacion~~.[Aneli]
+
+
+- **Primaries**: Data, Compute, Gateway, Workflows
+- **Domain Applications**: Integrations, APPs, Ecommerce, Marketing, Billing
+- **Auxiliaries**: Monitors, Configuration, Administration
+
+![new_home](https://user-images.githubusercontent.com/4213488/28572386-de5a455e-7114-11e7-909e-de9e22cf92bf.png)
+
+![data](https://user-images.githubusercontent.com/4213488/28572427-043dca84-7115-11e7-9410-5cba5db00631.png)
+
+================= PRIMARIES===================
+
+#### DATA
+
+- **Definitions** 
+	* Data Types
+		+ Object Types
+		+ File Types
+	* Validators
+		+ Schemas
+		+ EDI Validators
+		+ XSLT
+		+ Algorithm Validators
+- **Objects**
+	* Add Object Type + 
+- **Files**
+	* Add File Type + 
+
+
+#### WORKFLOWS
+
+- **Flows**
+- **Triggers**
+	* Data Events 
+	* Schedulers
+- **Notifications**
+	* Mobile Apps
+	* Email
+	* SMS
+	* Web-hook
+- **Channels**
+- **Transformations** 
+	* Render (type exporter)
+		+ HTML (html.erb, liquid)
+		+ JSON (json.rabl)
+		+ XML (xml.rabl, xslt)
+		+ JS (js.erb)
+		+ PDF (pdf.prawn)
+		+ CSV (csv.erb)
+		+ Text (txt.erb)
+	* Parser (type importer)
+	* Convert
+	* Updater
+
+#### GATEWAY
+
+- **Connectors**
+	* API Connections
+	* Resources
+	* Operations
+	* Connection Roles  (eliminar de la navegación)
+- **API Spec**
+	* Add API Spec + (Action)
+	* OpenAPI Directory
+- **Security**
+	* Clients
+		+ OAuth
+		+ AWS
+	* Providers
+		+ OAuth 1.0
+		+ OAuth 2.0
+	* Scopes
+		+ OAuth 2.0
+		+ OAuth Grant Access 
+	* Authorizations
+		+ Basic
+		+ Digest
+		+ OAuth 1.0
+		+ OAuth 2.0
+
+
+#### COMPUTE
+
+- **Snippets**
+- **Algorithms**
+- **Cloud functions** (estos son los algoritmos remotos que hizo pacheco)
+- **Serverless**
+- **Background Jobs**
+
+
+================= DOMAIN APPLICATIONS===================
+
+#### INTEGRATIONS
+
+- **My Collections**
+- **Shared Collections**
+
+#### APPs
+
+#### ECOMMERCE
+
+- **eCommerce**
+	* Customers
+	* Products
+	* Orders
+	* Payments
+	* Shipments
+- **Sale Channels**
+	* Connect Store +
+	* Fancy
+	* Mangeto
+	* Custom Store
+
+- **Integrations**
+	* Odoo
+	* Shipstation
+
+
+#### MARKETING
+
+- **Customers**
+- **Leads**
+- **Email Automation**
+- **Social Posting**
+
+
+
+================= AUXILIARIES===================
+
+
+- **Monitors**
+	* System Notifications
+	* Running Jobs (rename Tasks)
+	* Storages
+- **Configurations**
+	* Namespaces
+	* Connection Configs
+	* Data Type Configs
+	* Flow Configs
+	* Email Config
+	* SMS Config
+	* Pings
+	* Bindings
+	* Parameters
+- **Administration**
+	* Users
+	* Accounts
+	* Roles
+	* Application IDs
+	* Scripts
+	* Script executions
+	* Rabbit Consumers
+	* Delayed Messages
+	* Shared Names
+	* System notifications
+	* Tokens
+
+
+
 
 ### 56. ~~Crear Shared Collection de Spree.~~ [Mary]
 
