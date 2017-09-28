@@ -43,8 +43,51 @@ algo similar hacer en integrator.io.
 
 este es un articulo viejo de programable.web donde se listan APIs que implementan webhooks
 
-https://www.programmableweb.com/news/33-webhook-apis-assembla-mailchimp-and-podio/2013/09/04
-
+- AciveCampaign
+- Aha!
+- Assembla API: Online project collaboration service
+- Atlassian Bitbucket API: Online distributed version control service
+- Box
+- Dispatch API: Event automation service
+- Dropbox
+- Errorception
+- Facebook API: Social networking service
+- Facebook Real-time Updates API: Real-Time Updates from Facebook
+- GitHub API: Source code repository
+- Google App Engine API: Developer platform
+- Google Buzz API: Social sharing service
+- Help Scout
+- Human.io API: Micro-Apps for Android and iOS
+- IMified API: Instant messenger buddy
+- Intercom
+- Inflectus API: Webhooks implementation service
+- Instagram Real-time API: Real-time image sharing service
+- Jira
+- Kynetx API: Event-driven application platform
+- MailChimp API: Email List and Campaign management service
+- Metwit Weather and Forecast API: Real-time crowdsourced weather application
+- Mozes API: SMS messaging service
+- PagerDuty
+- Papertrail API: Hosted cloud log management for server and app logs
+- Postmark
+- OpenMedia.io API: Entertainment content service
+- PayPal API: Online payments
+- Podio API: Online workplace platform
+- RequestBin API: HTTP request analysis service
+- Scalr API: Cloud hosting platform
+- Segment
+- SendGrid API: Cloud based email service
+- Shopify API: Online shopping cart service- 
+- Signal API: Interactive mobile and email marketing platform
+- Slack
+- Stripe API: Online payment service
+- Surveygizmo API: Online survey service
+- Torpio API: Cloud Application Extension Service
+- Travis
+- Twilio API: Telephony service
+- UltraHook API: Webhook management service
+- Wufoo API: Online forms creation service
+- Zendesk API: Help desk service
 
 ### 98. simplificar como hacer una integracion entre dos aplicaciones.
 
