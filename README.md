@@ -35,6 +35,17 @@
 
 # backlog
 
+### 99. Integracion especial con las APIs que tienen webhooks.
+
+Con estas APIs podriamos tener actualizaciones en cenit en tiempo real, con lo cual deben tener un tratamiendo diferenciado.
+
+algo similar hacer en integrator.io.
+
+este es un articulo viejo de programable.web donde se listan APIs que implementan webhooks
+
+https://www.programmableweb.com/news/33-webhook-apis-assembla-mailchimp-and-podio/2013/09/04
+
+
 ### 98. simplificar como hacer una integracion entre dos aplicaciones.
 
 ver este ejemplos
