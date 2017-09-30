@@ -1,5 +1,7 @@
 # errores
 
+- [New] En los modelos de Ecommerce no sale visible el boton de REST API
+
 - [New] cuando se da click en Customer desde el menu, aparece arriba como nombre de subdominio `Data` y no `Ecommerce`
 
 - [New] problemas filtrando webhooks en algunos tenants
