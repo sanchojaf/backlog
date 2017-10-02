@@ -1,5 +1,7 @@
 # errores
 
+- [new] en el menu del home page 'channels' se debe poner la primera en mayuscula. 
+
 - [new] Quitarle la animacion al icon al lado de Cenit IO que abre el popup del menu, creo que ahi la animacion no es necesaria.
 
 - [new] La seccion del home page, que muestra las 3 imagenes representando un flujo ecommerce, usar el mismo tamanno que los las imagenes que aparecen debajo. Esto entre otras cosas, porque en mi laptop (miguel) se ve un poco distorcionado el tamanno de las imgenes en la horizontal, mientras los de abajo salen bien.
