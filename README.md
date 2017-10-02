@@ -1,38 +1,18 @@
 # errores
 
+- [New] En los modelos de Ecommerce no sale visible el boton de REST API
+
+- [New] cuando se da click en Customer desde el menu, aparece arriba como nombre de subdominio `Data` y no `Ecommerce`
+
+- [New] problemas filtrando webhooks en algunos tenants
+
+- [New] Si se da click en Security, sale un menu diferente que si se da click en Gateway. no se si es que la idea sea extraer Security como un subdominio, pero no me queda claro el uso que tenga fuera de Gateway
+
 - ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
 - Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios (Monitors, Configuration, Administration)
 
 - [Solved] ~~problemas filtrando webhooks en algunos tenants~~
-
-- [Solved] ~~el campo de datatype en los formularios de cenit, sigue sin filtrar~~
-
-- [Solved] ~~en cenit cdo se edita un transformation pierde el Namespace~~
-
-- [Solved] ~~Al modificar el codigo de un algoritmo en la Vista de Edicion del Flow, el codigo se salva pero no se modifica~~
-
-- [Solved] ~~Al editar algoritmos, webhooks, etc, se pierde el namespace.~~
-
-- [Solved] ~~Da error al crear /editar un scheduler~~
-
-- [Solved] ~~hay un scren shot q me envio Mary de los filtros, donde hay 3 select en la misma pagina, se hace un filtro por el tercer select el de mas abajo y sale la animacion de cargargo en el primero de mas arriba~~
-
-- [Solved] ~~no encuentro en el admin, link como task token.~~
-
-- [Solved] ~~en ocaciones cuando se inspecciona tenant, el selection que sale arriba en menu para cambiar a otro tenant no se abre, hay que refrescar la pagina para que este nuevamente disponible.~~
-
-- [Solved] ~~El menu de de Gateway no esta funcionando apropiadamente, por ejemplo cuando se da click en API Specs. Sin embargo si se da click directamente en el link de Gateway si sale correctamente.~~
-
-- [Solved] ~~Algo similar a lo anterior pasa cuando se da click en Customer dentro del subdominio Ecommerce, el menu lateral no se muestra correctamente. Sin embargo si se da click directamente en el link de Ecommerce si sale correctamente.~~ 
-
-- [Solved] ~~mejorar algunos breadcrums salen como el de https://cenit.io/rabbit_consumer que sale como: Rabbit_consumers / Rabbit consumers / Dashboard~~
-
-- [Solved] ~~en el caso de los notebooks, se debe mostrar a la derecha el icon de lista (similar a shared collections y OpenAPI directory)~~
-
-- [Solved] ~~en Shared collection, cuando se listan las categorias en el menu lateral, y se da click a una de las categorias, por ejemplo a eCommerce, no esta filtrado, salen todas las shared collections~~
-
-- [Solved] ~~cuando se instala Spree Hooks, y luego de importar los productos, se va a index de producto, no aparece ahi boton de Rest API a la derecha del breadcrum.~~ 
 
 # backlog
 
