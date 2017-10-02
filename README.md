@@ -1,5 +1,9 @@
 # errores
 
+- [new] Quitarle la animacion al icon al lado de Cenit IO que abre el popup del menu, creo que ahi la animacion no es necesaria.
+
+- [new] La seccion del home page, que muestra las 3 imagenes representando un flujo ecommerce, usar el mismo tamanno que los las imagenes que aparecen debajo. Esto entre otras cosas, porque en mi laptop (miguel) se ve un poco distorcionado el tamanno de las imgenes en la horizontal, mientras los de abajo salen bien.
+
 - ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
 - Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios (Monitors, Configuration, Administration)
