@@ -1,18 +1,16 @@
 # errores
 
-- [New] En los modelos de Ecommerce no sale visible el boton de REST API
-
-- [New] cuando se da click en Customer desde el menu, aparece arriba como nombre de subdominio `Data` y no `Ecommerce`
-
-- [New] problemas filtrando webhooks en algunos tenants
-
-- [New] Si se da click en Security, sale un menu diferente que si se da click en Gateway. no se si es que la idea sea extraer Security como un subdominio, pero no me queda claro el uso que tenga fuera de Gateway
-
 - ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
 - Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios (Monitors, Configuration, Administration)
 
 - [Solved] ~~problemas filtrando webhooks en algunos tenants~~
+
+- [Solved] ~~En los modelos de Ecommerce no sale visible el boton de REST API~~
+
+- [Solved] ~~cuando se da click en Customer desde el menu, aparece arriba como nombre de subdominio `Data` y no `Ecommerce`~~
+
+- [Solved] ~~Si se da click en Security, sale un menu diferente que si se da click en Gateway. no se si es que la idea sea extraer Security como un subdominio, pero no me queda claro el uso que tenga fuera de Gateway~~
 
 # backlog
 
