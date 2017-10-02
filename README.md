@@ -1,4 +1,5 @@
 # errores
+- [new] si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.
 
 - [new] en el menu del home page 'channels' se debe poner la primera en mayuscula. 
 
