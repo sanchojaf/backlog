@@ -1,5 +1,7 @@
 # errores
 
+- [new] Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.
+
 - [new] Valorar en el menu el nombre del submenu al lado de Cenit IO, por ejemplo 'Cenit IO | Data' eliminar el pipe '|' y cambiar el tamanno de letra del subdominio a 18.
 
 - [new] si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.
