@@ -2,15 +2,15 @@
 
 - [new] Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.
 
-- [new] Valorar en el menu el nombre del submenu al lado de Cenit IO, por ejemplo 'Cenit IO | Data' eliminar el pipe '|' y cambiar el tamanno de letra del subdominio a 18.
+- [solved] ~~Valorar en el menu el nombre del submenu al lado de Cenit IO, por ejemplo 'Cenit IO | Data' eliminar el pipe '|' y cambiar el tamanno de letra del subdominio a 18.~~
 
 - [new] si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.
 
-- [new] en el menu del home page 'channels' se debe poner la primera en mayuscula. 
+- [solved] ~~en el menu del home page 'channels' se debe poner la primera en mayuscula. ~~
 
-- [new] Quitarle la animacion al icon al lado de Cenit IO que abre el popup del menu, creo que ahi la animacion no es necesaria.
+- [solved] ~~Quitarle la animacion al icon al lado de Cenit IO que abre el popup del menu, creo que ahi la animacion no es necesaria.~~
 
-- [new] La seccion del home page, que muestra las 3 imagenes representando un flujo ecommerce, usar el mismo tamanno que los las imagenes que aparecen debajo. Esto entre otras cosas, porque en mi laptop (miguel) se ve un poco distorcionado el tamanno de las imgenes en la horizontal, mientras los de abajo salen bien.
+- [solved] ~~La seccion del home page, que muestra las 3 imagenes representando un flujo ecommerce, usar el mismo tamanno que los las imagenes que aparecen debajo. Esto entre otras cosas, porque en mi laptop (miguel) se ve un poco distorcionado el tamanno de las imgenes en la horizontal, mientras los de abajo salen bien.~~
 
 - ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
