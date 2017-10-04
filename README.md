@@ -1125,12 +1125,9 @@ https://signin.mytriptomoon.com
 
 ### 2. Especializacion de Cenit en el dominio Ecommerce. [Mary]
 
-* Integrations
 * Basic Objects
 * Sale Channels
-* Shipping
-* ERP
-* E.D.I
+* Integrations
 
 Estos cambios buscan la especialización de Cenit en el dominio Ecommerce. Cenit es una plataforma genérica de integración, técnicamente las funcionalidades para Ecommerce son similares a otros dominios de aplicación, pero es importante posicionarnos en este segmento. En el menú lateral de navegación ya tenemos explícitamente los items para Ecommerce. Estos debemos moverlo dentro de un item que se llame 'Basic Objects'
 
@@ -1147,6 +1144,8 @@ Aunque es posible cargar otros modelos relacionados con Ecommerce esta es nuestr
 Las integraciones E-Commerce serán shared collections predefinidas en Cenit para servicios de Sale Channels, Shipping,  ERP, ...
 
 Como elemento común tendrán el hecho que contengan un mapeo con modelos del namespace ECommerce de Cenit. Esto es importante para poder orquestar con facilidad varias integración de tipo ecommerce.
+
+![ecommerce_mapping](https://user-images.githubusercontent.com/4213488/31176216-e9ecaf8a-a8c6-11e7-8501-67375b2218a3.png)
 
 La ventaja de este enfoque es que cualquier funcionalidad que se haga a partir de los modelos del namespace Ecommerce quedaran disponibles por transitividad a otros modelos que se puedan mapear a los de Ecommerce.
 
