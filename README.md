@@ -26,17 +26,17 @@
 
 # backlog
 
-### 100. Mejorar como presentar los Flows dentro del readme de las shared collections. [Mac]
+### 100. Mejorar como presentar los Flows dentro del show de las shared collections. [Mac]
 
-Algo mas simple que el trabajo en las nuevas aplicaciones, y que en alguna medida es posible aplicar a todas las  shared collection es que en el readme sea mas comodo interactuar con los flows, donde se pueda activar o desactivar el flow (si es un flows de tipo scheduler qeu la accion de activar/desactivar se apique con una sola accion tambien al scheduler).
+Algo mas simple que el trabajo en las nuevas aplicaciones, y que en alguna medida es posible aplicar a todas las  shared collection es que en el show sea mas comodo interactuar con los flows, donde se pueda activar o desactivar el flow (si es un flows de tipo scheduler qeu la accion de activar/desactivar se apique con una sola accion tambien al scheduler). O quizas en lugar de modificar en el show, sea una nueva action Flows
 
 Quizas los flujos podemos presentarlos en dos bloques, uno los de data event, y otro los scheduler.
 
 lo ideal es que para activar tengan algo asi como un interruptor.
 
-En lugar de la tabla por default quizas se puede mostrar una tabla algo mas customizada. Del mismo modo puuede salir por ejemplo arriba, justo detras del readme.
+En lugar de la tabla por default actual del show quizas se puede mostrar una tabla algo mas customizada. Y Ponerla en un lugar mas relevante justo detras del readme si en el show, o en un action aparte al show.
 
-Tambien podemos agregar un action al shared collection qeu sea un popup, con los flujos.
+Si un action aparte en el shared collection puede ser un popup, con los flujos.
 
 ![flows](https://user-images.githubusercontent.com/4213488/31229162-a89d6c44-a994-11e7-8073-eebb30ba2d05.png)
 
