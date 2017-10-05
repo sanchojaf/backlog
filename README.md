@@ -1,5 +1,7 @@
 # errores
 
+- [new] los elementos animados de ecomerce en el home page, no comparten del todo el mismo stylo css que los elementos fijos que aparecen debajo, esto se ve por ejemplo si se estrcha el tamanno de la pantalla, esos elementos dinamicos apareen entonces muy pequennos a diferencias de los de abajo que conservan el tamanno.
+
 - [new] Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.
 
 - [new] si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.
