@@ -1,30 +1,18 @@
 # errores
 
+- [new] Objects y Security: siguen saliendo en el menu diferente a cuando se da click en Data y Gateway. Como principio, deberia siempre ser el mismo resultado si tenemos en el menu superior Cenit IO Data y Cenit IO Gateway. De modo qeu debemos valorar por ejemplo en el caso de Security, extraerlo como un nuevo subminio y mostrarlo en el menu fuera de Gateway, o mostrar el menu similar al de Gateway. En cuando Object, en ese caso no aplica lo de extraerlo fuera de data. La otra Opcion es modificar el menu superior en correspondencia a Cenit IO Objects y Cenit IO Security (Pero no me queca claro que sea la mejor opcion).
+
 - [new] los elementos animados de ecomerce en el home page, no comparten del todo el mismo stylo css que los elementos fijos que aparecen debajo, esto se ve por ejemplo si se estrcha el tamanno de la pantalla, esos elementos dinamicos apareen entonces muy pequennos a diferencias de los de abajo que conservan el tamanno.
 
 - [new] Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.
 
 - [new] si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.
 
-- ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
+-  ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
+
 
 - Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios (Monitors, Configuration, Administration)
 
-- [solved] ~~Valorar en el menu el nombre del submenu al lado de Cenit IO, por ejemplo 'Cenit IO | Data' eliminar el pipe '|' y cambiar el tamanno de letra del subdominio a 18.~~
-
-- [solved] ~~en el menu del home page 'channels' se debe poner la primera en mayuscula. ~~
-
-- [solved] ~~Quitarle la animacion al icon al lado de Cenit IO que abre el popup del menu, creo que ahi la animacion no es necesaria.~~
-
-- [solved] ~~La seccion del home page, que muestra las 3 imagenes representando un flujo ecommerce, usar el mismo tamanno que los las imagenes que aparecen debajo. Esto entre otras cosas, porque en mi laptop (miguel) se ve un poco distorcionado el tamanno de las imgenes en la horizontal, mientras los de abajo salen bien.~~
-
-- [Solved] ~~problemas filtrando webhooks en algunos tenants~~
-
-- [Solved] ~~En los modelos de Ecommerce no sale visible el boton de REST API~~
-
-- [Solved] ~~cuando se da click en Customer desde el menu, aparece arriba como nombre de subdominio `Data` y no `Ecommerce`~~
-
-- [Solved] ~~Si se da click en Security, sale un menu diferente que si se da click en Gateway. no se si es que la idea sea extraer Security como un subdominio, pero no me queda claro el uso que tenga fuera de Gateway~~
 
 # backlog
 
