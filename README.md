@@ -26,6 +26,22 @@
 
 # backlog
 
+### 100. Mejorar como presentar los Flows dentro del readme de las shared collections. [Mac]
+
+Algo mas simple que el trabajo en las nuevas aplicaciones, y que en alguna medida es posible aplicar a todas las  shared collection es que en el readme sea mas comodo interactuar con los flows, donde se pueda activar o desactivar el flow (si es un flows de tipo scheduler qeu la accion de activar/desactivar se apique con una sola accion tambien al scheduler).
+
+Quizas los flujos podemos presentarlos en dos bloques, uno los de data event, y otro los scheduler.
+
+lo ideal es que para activar tengan algo asi como un interruptor.
+
+En lugar de la tabla por default quizas se puede mostrar una tabla algo mas customizada. Del mismo modo puuede salir por ejemplo arriba, justo detras del readme.
+
+Tambien podemos agregar un action al shared collection qeu sea un popup, con los flujos.
+
+![flows](https://user-images.githubusercontent.com/4213488/31229162-a89d6c44-a994-11e7-8073-eebb30ba2d05.png)
+
+Lo bueno es que si este cambio mejora la usabilidad podemos aplicarlo a todas las shared collections.
+
 ### 99. Integracion especial con las APIs que tienen webhooks.
 
 Con estas APIs podriamos tener actualizaciones en cenit en tiempo real, con lo cual deben tener un tratamiendo diferenciado.
