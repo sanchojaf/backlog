@@ -12,6 +12,7 @@
 
 -  ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
+- [error] El filtro "target_data_type" en los translators y el filtro "target_data_type" en los flows no esta funcionando. Intento filtrar por el namepsace Ecommerce o por el nombre del data type "Order" y no se muestra el datatype "Order" de Ecommerce. Independientemente de la palabra por la que se filtre se sigue mostrando la misma lista de resultados. El algoritmo before_submit de dicho flow devuelve un error: "undefined records_model for nil class", imagino que al no tener asociado el target_data no sabe quien es task.sources.
 
 - Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios (Monitors, Configuration, Administration)
 
