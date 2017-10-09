@@ -4,6 +4,8 @@
 
 - [new] Mary se logueo con la cuenta hello@omna.io, y de ahi inspeciono un nuevo tenant recien creado, desde ahi cuando  entra a los modelos de ecommerce le da un error `Model Ecommerce::Product could not be found`
 
+- [new] Mejorar filtros de la vista Binding. Actualmente solo deja filtrar por "Update At", cuando seria bueno poder filtrar ya por "Binder Model" o "Binder name".
+
 - [new] Objects y Security: siguen saliendo en el menu diferente a cuando se da click en Data y Gateway. Como principio, deberia siempre ser el mismo resultado si tenemos en el menu superior Cenit IO Data y Cenit IO Gateway. De modo qeu debemos valorar por ejemplo en el caso de Security, extraerlo como un nuevo subminio y mostrarlo en el menu fuera de Gateway, o mostrar el menu similar al de Gateway. En cuando Object, en ese caso no aplica lo de extraerlo fuera de data. La otra Opcion es modificar el menu superior en correspondencia a Cenit IO Objects y Cenit IO Security (Pero no me queca claro que sea la mejor opcion).
 
 - [new] los elementos animados de ecomerce en el home page, no comparten del todo el mismo stylo css que los elementos fijos que aparecen debajo, esto se ve por ejemplo si se estrcha el tamanno de la pantalla, esos elementos dinamicos apareen entonces muy pequennos a diferencias de los de abajo que conservan el tamanno.
