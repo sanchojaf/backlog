@@ -1,5 +1,7 @@
 # errores
 
+- [new] FLow en el menu de workflow tiene un icon, que es diferentes que el que aparece en las actions, del index los redord de un Data Type, creo que en los dos lados debe ser `fa-map-signs`
+
 - [new] Compute en el menu tiene mal  el icon, debe ser `fa-cog`
 
 - [new] cuando se colapsa el menu lateral izquierdo, el elemento seleccionado cambia para el dashboard, deberia mantenerse el mismo elemento seleccionado.
