@@ -1,5 +1,7 @@
 # errores
 
+- [new] cuando se colapsa el menu lateral izq y se exande nuevaemente, el area de la derecha no esta reajustando correctamente el tamanno.
+
 - [new] El filtro "target_data_type" en los translators y el filtro "target_data_type" en los flows no esta funcionando. Intento filtrar por el namepsace Ecommerce o por el nombre del data type "Order" y no se muestra el datatype "Order" de Ecommerce. Independientemente de la palabra por la que se filtre se sigue mostrando la misma lista de resultados. El algoritmo before_submit de dicho flow devuelve un error: "undefined records_model for nil class", imagino que al no tener asociado el target_data no sabe quien es task.sources.
 
 - [new] Mary se logueo con la cuenta hello@omna.io, y de ahi inspeciono un nuevo tenant recien creado, desde ahi cuando  entra a los modelos de ecommerce le da un error `Model Ecommerce::Product could not be found`
