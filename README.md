@@ -1,6 +1,8 @@
 # errores
 
-- [new] en el breadcrum, debemos agregar link a todos los elemenos que se puedan, como es el caso de los subdominios, por ejemplo en el siguiente caso `Workflows` debe ser un link, por ejemplo en `Workflows / Email channels / Email flows`
+- [new] todos los nombres de items en menu izq si tienen mas de una palabra, cada palabra debe empezar en Mayuscula, ejemplo: `Email flows` debe ser `Email Flows`, `Email channels` debe ser `Email Channels`, `Json data tyle` debe ser `JSON Data Type`. En administration la mayoria se deben actualizar con esta convencion. 
+
+- [new] en el breadcrum, debemos agregar link a todos los elemenos que se puedan, como es el caso de los subdominios, por ejemplo en el siguiente caso `Workflows` debe ser un link, por ejemplo en `Workflows / Email channels / Email flows`. 
 
 - [new] FLow en el menu de workflow tiene un icon, que es diferentes que el que aparece en las actions, del index los redord de un Data Type, creo que en los dos lados debe ser `fa-map-signs`
 
