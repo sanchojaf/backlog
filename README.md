@@ -1,5 +1,7 @@
 # errores
 
+- [new] en el breadcrum, debemos agregar link a todos los elemenos que se puedan, como es el caso de los subdominios, por ejemplo en el siguiente caso `Workflows` debe ser un link, por ejemplo en `Workflows / Email channels / Email flows`
+
 - [new] FLow en el menu de workflow tiene un icon, que es diferentes que el que aparece en las actions, del index los redord de un Data Type, creo que en los dos lados debe ser `fa-map-signs`
 
 - [new] Compute en el menu tiene mal  el icon, debe ser `fa-cog`
