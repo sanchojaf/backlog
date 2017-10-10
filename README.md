@@ -1,5 +1,7 @@
 # errores
 
+- [new] Para los icons que aparece en el dashboard debemos usar `font-size: 22px;` actualmente lucen muy grandes.
+
 - [new] todos los nombres de items en menu izq si tienen mas de una palabra, cada palabra debe empezar en Mayuscula, ejemplo: `Email flows` debe ser `Email Flows`, `Email channels` debe ser `Email Channels`, `Json data tyle` debe ser `JSON Data Type`. En administration la mayoria se deben actualizar con esta convencion. 
 
 - [new] en el breadcrum, debemos agregar link a todos los elemenos que se puedan, como es el caso de los subdominios, por ejemplo en el siguiente caso `Workflows` debe ser un link, por ejemplo en `Workflows / Email channels / Email flows`. 
