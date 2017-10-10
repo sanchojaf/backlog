@@ -1,5 +1,7 @@
 # errores
 
+- [new] Compute en el menu tiene mal  el icon, debe ser `fa-cog`
+
 - [new] cuando se colapsa el menu lateral izquierdo, el elemento seleccionado cambia para el dashboard, deberia mantenerse el mismo elemento seleccionado.
 
 - [new] entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.
