@@ -1,5 +1,7 @@
 # errores
 
+- [new] Donde dice `+ Connect Store` en `Ecommerce` valorar `+ Integration` la idea es poder instalar cualquier Shared Collection de Ecommerce, no solo los que sean Store o Marketplace. En adicion a lo anterior, cuando se da click en ese item, no deberia redireccionar al Subdominio de Integration, sino que deberia mantenerse dentro del Subdominio Ecommerce.
+
 - [new] Para los icons que aparece en el dashboard debemos usar `font-size: 22px;` actualmente lucen muy grandes.
 
 - [new] todos los nombres de items en menu izq si tienen mas de una palabra, cada palabra debe empezar en Mayuscula, ejemplo: `Email flows` debe ser `Email Flows`, `Email channels` debe ser `Email Channels`, `Json data tyle` debe ser `JSON Data Type`. En administration la mayoria se deben actualizar con esta convencion. 
