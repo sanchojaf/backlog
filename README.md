@@ -1,5 +1,7 @@
 # errores
 
+- [new] entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.
+
 - [new] cuando se colapsa el menu lateral izq y se exande nuevaemente, el area de la derecha no esta reajustando correctamente el tamanno.
 
 - [new] El filtro "target_data_type" en los translators y el filtro "target_data_type" en los flows no esta funcionando. Intento filtrar por el namepsace Ecommerce o por el nombre del data type "Order" y no se muestra el datatype "Order" de Ecommerce. Independientemente de la palabra por la que se filtre se sigue mostrando la misma lista de resultados. El algoritmo before_submit de dicho flow devuelve un error: "undefined records_model for nil class", imagino que al no tener asociado el target_data no sabe quien es task.sources.
