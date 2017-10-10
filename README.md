@@ -24,7 +24,7 @@
 
 -  ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
-- Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios (Monitors, Configuration, Administration)
+- ~~Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios~~ (Monitors, Configuration, Administration)
 
 
 # backlog
