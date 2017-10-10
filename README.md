@@ -41,6 +41,14 @@
 
 # backlog
 
+### 101. Paginas de Documentacion. [Mac]
+
+Valorar mover el repo de documentacion, dentro del propio repo de Cenit, similar a como lo tiene gitlab, o spree.
+
+Mantener la posibilidad de que las paginas de documentacion podamos continuar escribiendolas en Markdown. 
+
+Podemos tener una primera version de documentacion, que sea al menos una pag por cada Subdominio: Data, Workflow, Gateway, Compute, Ecommerce. Pensar como y donde podemos mostrar los link de la navegacion para que sea parte inherente de Cenit y no algo externo, hoy tenemos un link en acciones.
+
 ### 100. Mejorar como presentar los Flows dentro del show de las shared collections. [Mac]
 
 Algo mas simple que el trabajo en las nuevas aplicaciones, y que en alguna medida es posible aplicar a todas las  shared collection es que en el show sea mas comodo interactuar con los flows, donde se pueda activar o desactivar el flow (si es un flows de tipo scheduler qeu la accion de activar/desactivar se apique con una sola accion tambien al scheduler). O quizas en lugar de modificar en el show, sea una nueva action Flows
