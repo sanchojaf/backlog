@@ -1,5 +1,7 @@
 # errores
 
+- [new] En vista "Collections", cualquier accion Bulk que se seleccione da error 500.
+
 - [new] Donde dice `+ Connect Store` en `Ecommerce` valorar `+ Integration` la idea es poder instalar cualquier Shared Collection de Ecommerce, no solo los que sean Store o Marketplace. En adicion a lo anterior, cuando se da click en ese item, no deberia redireccionar al Subdominio de Integration, sino que deberia mantenerse dentro del Subdominio Ecommerce.
 
 - [new] Para los icons que aparece en el dashboard debemos usar `font-size: 22px;` actualmente lucen muy grandes.
