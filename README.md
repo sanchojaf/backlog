@@ -1,5 +1,7 @@
 # errores
 
+- [new] Accion de Filtrar flows por Namespace no filtra.
+
 - [new] Modelos de Ecomerce no se ven en el Main Popup.
 
 - [new] Pestanna "Configure" de las aplicaciones da error.
