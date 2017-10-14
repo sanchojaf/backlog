@@ -49,6 +49,35 @@
 
 # backlog
 
+### 102. Sincronizar los shared collections y collections con un repo de gitlab. [Mac]
+
+Cuando las integraciones son grandes se hace complejo poder seguir la evolucion de los cambios, revisar el historial, y auditar quien hizo el cambio.
+
+cuando hemos tenido errores por ejemplo een las cosas de OSSE, siempre tenemos la duda si pudo ser un cambio que se hizo por parte del equipo de OSSE.
+
+Hay un modulo de audit que tenemos pediente extender y que puede en alguna medida ayudar a monitoriar los cambios. 
+
+Pero en el caso de los Shared Collection y las Collections lo ideal es poder sincronizar con un repo.
+
+Si contamos con una `version oficial` del JSON Schema de una Colleccion, podemos sincronizar los shared collections y los collections, con un gist de github, los shared collections con un gist publico, y los collections con un gist privado.
+
+Una variante mas avanzada es poderlo sincronizar con un repo git, donde podriamos utilizar Gitlab, esto tendria otros beneficios extras:
+
+- gitlab soporta repos publicos y privados,
+
+- seria facil comparar usando las funcionalidades del git las versiones de la coleccion.
+
+- se podria definir con que rama trabajar, de modo que si alguien esta haciendo un trabajo complejo, podria cambiar entre una rama master y una develop donde este probando funcionalidades.
+
+- del lado de cenit, cuando se haga un cambio en un elemento que pertenezca a una colleccion, eso podria disparar una tarea que se engargue de subir el cambio correspondiente, a la rama asociado con la colleccion.
+
+- seria mas sencillo el proceso de hacer un clone a una colleccion, cabiar algo e importarla como una nueva coleccion.
+
+- persistir el shared collection mas alla de la base de datos, de modo que ante una situacion critica, se pierden los datos, pero la configuracion de la integracion se puede recuperar con el collection.
+
+- Gitalab al igual que cenit puede ser intalado en una red cerrada, lo qeu puede ser una solucion atractiva en ambientes empresariales.
+
+
 ### 101. Paginas de Documentacion. [Mac]
 
 Valorar mover el repo de documentacion, dentro del propio repo de Cenit, similar a como lo tiene gitlab, o spree.
