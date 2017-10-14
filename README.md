@@ -67,7 +67,9 @@ Una variante mas avanzada es poderlo sincronizar con un repo git, donde podriamo
 
 - seria facil comparar usando las funcionalidades del git las versiones de la coleccion.
 
-- se podria definir con que rama trabajar, de modo que si alguien esta haciendo un trabajo complejo, podria cambiar entre una rama master y una develop donde este probando funcionalidades.
+- se podria definir con que rama trabajar, de modo que si alguien esta haciendo un trabajo complejo, podria cambiar entre una rama master, test o develop donde se puedan probar funcionalidades.
+
+- del mismo modo se podria revertir los cambios e ir a una version anterior.
 
 - del lado de cenit, cuando se haga un cambio en un elemento que pertenezca a una colleccion, eso podria disparar una tarea que se engargue de subir el cambio correspondiente, a la rama asociado con la colleccion.
 
