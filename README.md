@@ -49,6 +49,16 @@
 
 # backlog
 
+### 103. backup y restore a nivel de tenant.
+
+Algo que podria ser bueno es poder  hacer backup y restore a nivel de tenant, pensando en clonar con la idea de ambientes de test y produccion, cenit remotos, etc
+
+Se podrian tener politicas de respaldo de los datos por tenant
+y cobrar el store, no se
+
+a mi (Asnioby) me gustaria poder hacer un backup de lo que tengo en un tenant de cenit y despues un restore en un cenit local Quizas no es tan simple pero como idea se puede pensar un poco
+
+
 ### 102. Sincronizar los shared collections y collections con un repo de gitlab. [Mac]
 
 Cuando las integraciones son grandes se hace complejo poder seguir la evolucion de los cambios, revisar el historial, y auditar quien hizo el cambio.
