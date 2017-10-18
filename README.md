@@ -1,5 +1,7 @@
 # errores
 
+- [new] No se puden editar records de data types que tienen determinado nivel de profundidad.
+
 - [new] Accion de Filtrar flows por Namespace no filtra.
 
 - [new] Modelos de Ecomerce no se ven en el Main Popup.
