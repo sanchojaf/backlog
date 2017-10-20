@@ -1,6 +1,6 @@
 # errores
 
-- [new] No se puden editar records de data types que tienen determinado nivel de profundidad.
+- [new] No se pueden editar records de data types que tienen determinado nivel de profundidad.
 
 - [new] Accion de Filtrar flows por Namespace no filtra.
 
