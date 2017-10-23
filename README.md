@@ -18,13 +18,9 @@
 
 - [new] cuando se colapsa el menu lateral izq y se exande nuevaemente, el area de la derecha no esta reajustando correctamente el tamanno.
 
-- [new] El filtro "target_data_type" en los translators y el filtro "target_data_type" en los flows no esta funcionando. Intento filtrar por el namepsace Ecommerce o por el nombre del data type "Order" y no se muestra el datatype "Order" de Ecommerce. Independientemente de la palabra por la que se filtre se sigue mostrando la misma lista de resultados. El algoritmo before_submit de dicho flow devuelve un error: "undefined records_model for nil class", imagino que al no tener asociado el target_data no sabe quien es task.sources.
-
 - [new] Mary se logueo con la cuenta hello@omna.io, y de ahi inspeciono un nuevo tenant recien creado, desde ahi cuando  entra a los modelos de ecommerce le da un error `Model Ecommerce::Product could not be found`
 
 - [new] Accion de exportar un grupo de collections seleccionadas, da error 500.
-
-- [new] Mejorar filtros de la vista Binding. Actualmente solo deja filtrar por "Update At". Lo ideal seria poder filtrar por "Binder Model" o "Binder name".
 
 - [new] Objects y Security: siguen saliendo en el menu diferente a cuando se da click en Data y Gateway. Como principio, deberia siempre ser el mismo resultado si tenemos en el menu superior Cenit IO Data y Cenit IO Gateway. De modo qeu debemos valorar por ejemplo en el caso de Security, extraerlo como un nuevo subminio y mostrarlo en el menu fuera de Gateway, o mostrar el menu similar al de Gateway. En cuando Object, en ese caso no aplica lo de extraerlo fuera de data. La otra Opcion es modificar el menu superior en correspondencia a Cenit IO Objects y Cenit IO Security (Pero no me queca claro que sea la mejor opcion).
 
@@ -34,9 +30,13 @@
 
 - [new] si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.
 
--  ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
+- [solved] ~~ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi~~
 
-- ~~Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios~~ (Monitors, Configuration, Administration)
+- [solved] ~~Mejorar filtros de la vista Binding. Actualmente solo deja filtrar por "Update At". Lo ideal seria poder filtrar por "Binder Model" o "Binder name".~~
+
+- [solved] ~~Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios~~ (Monitors, Configuration, Administration)
+
+- [solved] ~~El filtro "target_data_type" en los translators y el filtro "target_data_type" en los flows no esta funcionando. Intento filtrar por el namepsace Ecommerce o por el nombre del data type "Order" y no se muestra el datatype "Order" de Ecommerce. Independientemente de la palabra por la que se filtre se sigue mostrando la misma lista de resultados. El algoritmo before_submit de dicho flow devuelve un error: "undefined records_model for nil class", imagino que al no tener asociado el target_data no sabe quien es task.sources.~~
 
 
 # backlog
