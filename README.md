@@ -1,5 +1,7 @@
 # errores
 
+- [new] entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.
+
 - [new] Donde dice `+ Connect Store` en `Ecommerce` valorar `+ Integration` la idea es poder instalar cualquier Shared Collection de Ecommerce, no solo los que sean Store o Marketplace. En adicion a lo anterior, cuando se da click en ese item, no deberia redireccionar al Subdominio de Integration, sino que deberia mantenerse dentro del Subdominio Ecommerce.
 
 - [new] Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.
@@ -21,8 +23,6 @@
 - [solved] ~~Compute en el menu tiene mal  el icon, debe ser `fa-cog`~~
 
 - [solved] ~~cuando se colapsa el menu lateral izquierdo, el elemento seleccionado cambia para el dashboard, deberia mantenerse el mismo elemento seleccionado.~~
-
-- [solved] ~~entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.~~
 
 - [solved] ~~cuando se colapsa el menu lateral izq y se exande nuevaemente, el area de la derecha no esta reajustando correctamente el tamanno.~~
 
