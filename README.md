@@ -1,5 +1,7 @@
 # errores
 
+- [new] Valorar posibilidad de agregar filtros en las notificaciones. Permitir por ejemplo filtrar por flow.
+
 - [new] No se pueden editar records de data types que tienen determinado nivel de profundidad.
 
 - [new] Accion de Filtrar Data types por Namespace no filtra!.
