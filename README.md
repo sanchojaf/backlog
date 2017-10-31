@@ -16,21 +16,21 @@
 
 - [new] Donde dice `+ Connect Store` en `Ecommerce` valorar `+ Integration` la idea es poder instalar cualquier Shared Collection de Ecommerce, no solo los que sean Store o Marketplace. En adicion a lo anterior, cuando se da click en ese item, no deberia redireccionar al Subdominio de Integration, sino que deberia mantenerse dentro del Subdominio Ecommerce.
 
-- [new] Para los icons que aparece en el dashboard debemos usar `font-size: 22px;` actualmente lucen muy grandes.
+- [solved] Para los icons que aparece en el dashboard debemos usar `font-size: 22px;` actualmente lucen muy grandes.
 
-- [new] todos los nombres de items en menu izq si tienen mas de una palabra, cada palabra debe empezar en Mayuscula, ejemplo: `Email flows` debe ser `Email Flows`, `Email channels` debe ser `Email Channels`, `Json data tyle` debe ser `JSON Data Type`. En administration la mayoria se deben actualizar con esta convencion. 
+- [solved] todos los nombres de items en menu izq si tienen mas de una palabra, cada palabra debe empezar en Mayuscula, ejemplo: `Email flows` debe ser `Email Flows`, `Email channels` debe ser `Email Channels`, `Json data tyle` debe ser `JSON Data Type`. En administration la mayoria se deben actualizar con esta convencion. 
 
-- [new] en el breadcrum, debemos agregar link a todos los elemenos que se puedan, como es el caso de los subdominios, por ejemplo en el siguiente caso `Workflows` debe ser un link, por ejemplo en `Workflows / Email channels / Email flows`. 
+- [solved] en el breadcrum, debemos agregar link a todos los elemenos que se puedan, como es el caso de los subdominios, por ejemplo en el siguiente caso `Workflows` debe ser un link, por ejemplo en `Workflows / Email channels / Email flows`. 
 
-- [new] FLow en el menu de workflow tiene un icon, que es diferentes que el que aparece en las actions, del index los redord de un Data Type, creo que en los dos lados debe ser `fa-map-signs`
+- [solved] FLow en el menu de workflow tiene un icon, que es diferentes que el que aparece en las actions, del index los redord de un Data Type, creo que en los dos lados debe ser `fa-map-signs`
 
-- [new] Compute en el menu tiene mal  el icon, debe ser `fa-cog`
+- [solved] Compute en el menu tiene mal  el icon, debe ser `fa-cog`
 
-- [new] cuando se colapsa el menu lateral izquierdo, el elemento seleccionado cambia para el dashboard, deberia mantenerse el mismo elemento seleccionado.
+- [solved] cuando se colapsa el menu lateral izquierdo, el elemento seleccionado cambia para el dashboard, deberia mantenerse el mismo elemento seleccionado.
 
-- [new] entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.
+- [solved] entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.
 
-- [new] cuando se colapsa el menu lateral izq y se exande nuevaemente, el area de la derecha no esta reajustando correctamente el tamanno.
+- [solved] cuando se colapsa el menu lateral izq y se exande nuevaemente, el area de la derecha no esta reajustando correctamente el tamanno.
 
 - [new] El filtro "target_data_type" en los translators y el filtro "target_data_type" en los flows no esta funcionando. Intento filtrar por el namepsace Ecommerce o por el nombre del data type "Order" y no se muestra el datatype "Order" de Ecommerce. Independientemente de la palabra por la que se filtre se sigue mostrando la misma lista de resultados. El algoritmo before_submit de dicho flow devuelve un error: "undefined records_model for nil class", imagino que al no tener asociado el target_data no sabe quien es task.sources.
 
@@ -42,7 +42,7 @@
 
 - [new] Objects y Security: siguen saliendo en el menu diferente a cuando se da click en Data y Gateway. Como principio, deberia siempre ser el mismo resultado si tenemos en el menu superior Cenit IO Data y Cenit IO Gateway. De modo qeu debemos valorar por ejemplo en el caso de Security, extraerlo como un nuevo subminio y mostrarlo en el menu fuera de Gateway, o mostrar el menu similar al de Gateway. En cuando Object, en ese caso no aplica lo de extraerlo fuera de data. La otra Opcion es modificar el menu superior en correspondencia a Cenit IO Objects y Cenit IO Security (Pero no me queca claro que sea la mejor opcion).
 
-- [new] los elementos animados de ecomerce en el home page, no comparten del todo el mismo stylo css que los elementos fijos que aparecen debajo, esto se ve por ejemplo si se estrcha el tamanno de la pantalla, esos elementos dinamicos apareen entonces muy pequennos a diferencias de los de abajo que conservan el tamanno.
+- [solved] los elementos animados de ecomerce en el home page, no comparten del todo el mismo stylo css que los elementos fijos que aparecen debajo, esto se ve por ejemplo si se estrcha el tamanno de la pantalla, esos elementos dinamicos apareen entonces muy pequennos a diferencias de los de abajo que conservan el tamanno.
 
 - [new] Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.
 
@@ -50,7 +50,7 @@
 
 -  ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
-- ~~Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios~~ (Monitors, Configuration, Administration)
+- [solved] Buscar una manera elegante, en que el menu lateral izq donde quede dividido en una parte superior, con los conceptos primarios, y una parte inferior con los items secundarios~~ (Monitors, Configuration, Administration)
 
 
 # backlog
