@@ -1,6 +1,6 @@
 # errores
 
-- [new] revisar el resposive del footer del homepage, quizas dejando solo un elemento por fila en la vista xs.
+- [solved] revisar el resposive del footer del homepage, quizas dejando solo un elemento por fila en la vista xs.
 
 - [new] Valorar posibilidad de agregar filtros en las notificaciones. Permitir por ejemplo filtrar por flow.
 
