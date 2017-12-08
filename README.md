@@ -189,6 +189,8 @@ Cuando se adicione un atributo, definir:
 
 ejemplo en Stamplay https://youtu.be/aG5HKecexs8
 
+Adcionar la posibilidad de asociar el rich editor con un field en particular, preferentemente los text area.
+
 ### 96. UML to XML Schema(XSD).
 
 XSD permite representar relaciones entre clases, y en Cenit se permite cargar un XSD y generar los modelos por detras.
