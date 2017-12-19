@@ -1,5 +1,7 @@
 # errores
 
+- [new] Permitir en algunas cuentas que el hitorial de notifaciones se de mas tiempo, en particular las cuentas de clientes como OSSE, seria bueno tener notificaciones de al menos 30 dias, ahora  solo tienen dos dias de antiguedad.
+
 - [new] No se permite editar providers y remote clients despues de haberles hecho pull en un tenant.
 
 - [new] Al filtrar el filtro calquier dato el filtro aplicado a veces desaparece.
