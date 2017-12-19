@@ -8,7 +8,7 @@
 
 - [new] Cuando se salva una cross collection que tiene como pull parameter un remote cliente, dice que no lo encuentra. Por ejemplo en la cross de Magento 1.9.
 
- -[new] Cross Colleccion de Magento 2.2 da error 500 al intentar editarla.
+- [new] Cross Colleccion de Magento 2.2 da error 500 al intentar editarla.
 
 - [new] Valorar posibilidad de agregar filtros en las notificaciones. Permitir por ejemplo filtrar por flow.
 
