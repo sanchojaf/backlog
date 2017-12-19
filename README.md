@@ -1,7 +1,5 @@
 # errores
 
-- [solved] revisar el resposive del footer del homepage, quizas dejando solo un elemento por fila en la vista xs.
-
 - [new] No se permite editar providers y remote clients despues de haberles hecho pull en un tenant.
 
 - [new] Al filtrar el filtro calquier dato el filtro aplicado a veces desaparece.
@@ -39,6 +37,7 @@
 - [new] Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.
 
 - [new] si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.
+
 
 -  ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
