@@ -2,6 +2,14 @@
 
 - [solved] revisar el resposive del footer del homepage, quizas dejando solo un elemento por fila en la vista xs.
 
+- [new] No se permite editar providers y remote clients despues de haberles hecho pull en un tenant.
+
+- [new] Al filtrar el filtro calquier dato el filtro aplicado a veces desaparece.
+
+- [new] Cuando se salva una cross collection que tiene como pull parameter un remote cliente, dice que no lo encuentra. Por ejemplo en la cross de Magento 1.9.
+
+ -[new] Cross Colleccion de Magento 2.2 da error 500 al intentar editarla.
+
 - [new] Valorar posibilidad de agregar filtros en las notificaciones. Permitir por ejemplo filtrar por flow.
 
 - [new] No se pueden editar records de data types que tienen determinado nivel de profundidad.
