@@ -1,5 +1,7 @@
 # errores
 
+- [new] cuando se ejecuta en el search box de un data type, aparece en la parte inferior un `loading...` seria  bueno ver si se puede mostrar este `loading..` siempre que cenit este cargando una pagina, o sea tratar de extenderlo a otros casos.
+
 - [new] Permitir en algunas cuentas que el hitorial de notifaciones se de mas tiempo, en particular las cuentas de clientes como OSSE, seria bueno tener notificaciones de al menos 30 dias, ahora  solo tienen dos dias de antiguedad.
 
 - [new] No se permite editar providers y remote clients despues de haberles hecho pull en un tenant.
