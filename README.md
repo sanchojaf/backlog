@@ -1,5 +1,7 @@
 # errores
 
+- [new] Valorar,  dejar estático la parte de las acciones en los formularios, y en el caso de los vistas index ademas  dejar estático la primera fila de los nombres de las columnas.
+
 - [new] en el dashboard donde aparecen las trazas,  valor tener un tab por cada origin, asi por ejemplo serias mas sencillo distinguir la actividad de los cross shared, de las actividades propias del tenant.
 
 
