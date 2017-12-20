@@ -1,5 +1,8 @@
 # errores
 
+- [new] en el dashboard donde aparecen las trazas,  valor tener un tab por cada origin, asi por ejemplo serias mas sencillo distinguir la actividad de los cross shared, de las actividades propias del tenant.
+
+
 - [new] En el Dashboard, usar solo los numeros en rojos, para cosas negativas, ejemplo: running task failed o Authorization Unauthorized. Pero no usarlo para cosas como el numero de un data types.
 
 - [new] cuando se ejecuta en el search box de un data type, aparece en la parte inferior un `loading...` seria  bueno ver si se puede mostrar este `loading..` siempre que cenit este cargando una pagina, o sea tratar de extenderlo a otros casos.
