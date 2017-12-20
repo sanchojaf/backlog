@@ -1,5 +1,7 @@
 # errores
 
+- [new] Known critical severity security vulnerability detected in nokogiri < 1.8.1 defined in Gemfile.lock.
+
 - [new] Al activar un flow compartido, despues de ejcutarlo, vuelve a desactivarse.
 
 - [new] Valorar,  dejar estático la parte de las acciones en los formularios, y en el caso de los vistas index ademas  dejar estático la primera fila de los nombres de las columnas.
