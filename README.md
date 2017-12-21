@@ -1,4 +1,6 @@
-# errores
+# errores/mejoras
+
+- [new] valorar en el menu de navegacion general izquierdo, que tanto el icon como el nombre del subdominio puedan ser clicleable y redirigir al dashboard de ese subdominio.
 
 - [new] Known critical severity security vulnerability detected in nokogiri < 1.8.1 defined in Gemfile.lock.
 
