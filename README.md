@@ -1,5 +1,32 @@
 # errores
 
+- [new] Permitir en algunas cuentas que el hitorial de notifaciones se de mas tiempo, en particular las cuentas de clientes como OSSE, seria bueno tener notificaciones de al menos 30 dias, ahora  solo tienen dos dias de antiguedad.
+
+- [new] No se permite editar providers y remote clients despues de haberles hecho pull en un tenant.
+
+- [new] Al filtrar el filtro calquier dato el filtro aplicado a veces desaparece.
+
+- [new] Cuando se salva una cross collection que tiene como pull parameter un remote cliente, dice que no lo encuentra. Por ejemplo en la cross de Magento 1.9.
+
+- [new] Cross Colleccion de Magento 2.2 da error 500 al intentar editarla.
+
+- [new] Valorar posibilidad de agregar filtros en las notificaciones. Permitir por ejemplo filtrar por flow.
+
+- [new] No se pueden editar records de data types que tienen determinado nivel de profundidad.
+
+- [new] Accion de Filtrar Data types por Namespace no filtra!.
+
+- [new] Accion de Filtrar flows por Namespace no filtra.
+
+- [new] Modelos de Ecomerce no se ven en el Main Popup.
+
+- [new] Pestanna "Configure" de las aplicaciones da error.
+
+- [new] En vista "Collections", cualquier accion Bulk que se seleccione da error 500.
+
+- [new] Donde dice `+ Connect Store` en `Ecommerce` valorar `+ Integration` la idea es poder instalar cualquier Shared Collection de Ecommerce, no solo los que sean Store o Marketplace. En adicion a lo anterior, cuando se da click en ese item, no deberia redireccionar al Subdominio de Integration, sino que deberia mantenerse dentro del Subdominio Ecommerce.
+
+- [new] El filtro "target_data_type" en los translators y el filtro "target_data_type" en los flows no esta funcionando. Intento filtrar por el namepsace Ecommerce o por el nombre del data type "Order" y no se muestra el datatype "Order" de Ecommerce. Independientemente de la palabra por la que se filtre se sigue mostrando la misma lista de resultados. El algoritmo before_submit de dicho flow devuelve un error: "undefined records_model for nil class", imagino que al no tener asociado el target_data no sabe quien es task.sources.
 - [new] entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.
 
 - [new] Donde dice `+ Connect Store` en `Ecommerce` valorar `+ Integration` la idea es poder instalar cualquier Shared Collection de Ecommerce, no solo los que sean Store o Marketplace. En adicion a lo anterior, cuando se da click en ese item, no deberia redireccionar al Subdominio de Integration, sino que deberia mantenerse dentro del Subdominio Ecommerce.
@@ -17,10 +44,13 @@
 - [solved] ~~todos los nombres de items en menu izq si tienen mas de una palabra, cada palabra debe empezar en Mayuscula, ejemplo: `Email flows` debe ser `Email Flows`, `Email channels` debe ser `Email Channels`, `Json data tyle` debe ser `JSON Data Type`. En administration la mayoria se deben actualizar con esta convencion.~~ 
 
 - [solved] ~~en el breadcrum, debemos agregar link a todos los elemenos que se puedan, como es el caso de los subdominios, por ejemplo en el siguiente caso `Workflows` debe ser un link, por ejemplo en `Workflows / Email channels / Email flows`.~~ 
+- [new] Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.
 
 - [solved] ~~FLow en el menu de workflow tiene un icon, que es diferentes que el que aparece en las actions, del index los redord de un Data Type, creo que en los dos lados debe ser `fa-map-signs`~~
 
 - [solved] ~~Compute en el menu tiene mal  el icon, debe ser `fa-cog`~~
+
+-  ademas del problema con el schedule de Houzz que persite, tenemos tambien  problema con el de Fancy, en la cuenta de Satechi
 
 - [solved] ~~cuando se colapsa el menu lateral izquierdo, el elemento seleccionado cambia para el dashboard, deberia mantenerse el mismo elemento seleccionado.~~
 
@@ -40,6 +70,55 @@
 
 
 # backlog
+
+### 103. backup y restore a nivel de tenant.
+
+Algo que podria ser bueno es poder  hacer backup y restore a nivel de tenant, pensando en clonar con la idea de ambientes de test y produccion, cenit remotos, etc
+
+Se podrian tener politicas de respaldo de los datos por tenant
+y cobrar el store, no se
+
+a mi (Asnioby) me gustaria poder hacer un backup de lo que tengo en un tenant de cenit y despues un restore en un cenit local Quizas no es tan simple pero como idea se puede pensar un poco
+
+
+### 102. Sincronizar los shared collections y collections con un repo de gitlab. [Mac]
+
+Cuando las integraciones son grandes se hace complejo poder seguir la evolucion de los cambios, revisar el historial, y auditar quien hizo el cambio.
+
+cuando hemos tenido errores por ejemplo een las cosas de OSSE, siempre tenemos la duda si pudo ser un cambio que se hizo por parte del equipo de OSSE.
+
+Hay un modulo de audit que tenemos pediente extender y que puede en alguna medida ayudar a monitoriar los cambios. 
+
+Pero en el caso de los Shared Collection y las Collections lo ideal es poder sincronizar con un repo.
+
+Si contamos con una `version oficial` del JSON Schema de una Colleccion, podemos sincronizar los shared collections y los collections, con un gist de github, los shared collections con un gist publico, y los collections con un gist privado.
+
+Una variante mas avanzada es poderlo sincronizar con un repo git, donde podriamos utilizar Gitlab, esto tendria otros beneficios extras:
+
+- gitlab soporta repos publicos y privados,
+
+- seria facil comparar usando las funcionalidades del git las versiones de la coleccion.
+
+- se podria definir con que rama trabajar, de modo que si alguien esta haciendo un trabajo complejo, podria cambiar entre una rama master, test o develop donde se puedan probar funcionalidades.
+
+- del mismo modo se podria revertir los cambios e ir a una version anterior.
+
+- del lado de cenit, cuando se haga un cambio en un elemento que pertenezca a una colleccion, eso podria disparar una tarea que se engargue de subir el cambio correspondiente, a la rama asociado con la colleccion.
+
+- seria mas sencillo el proceso de hacer un clone a una colleccion, cabiar algo e importarla como una nueva coleccion.
+
+- persistir el shared collection mas alla de la base de datos, de modo que ante una situacion critica, se pierden los datos, pero la configuracion de la integracion se puede recuperar con el collection.
+
+- Gitalab al igual que cenit puede ser intalado en una red cerrada, lo qeu puede ser una solucion atractiva en ambientes empresariales.
+
+
+### 101. Paginas de Documentacion. [Mac]
+
+Valorar mover el repo de documentacion, dentro del propio repo de Cenit, similar a como lo tiene gitlab, o spree.
+
+Mantener la posibilidad de que las paginas de documentacion podamos continuar escribiendolas en Markdown. 
+
+Podemos tener una primera version de documentacion, que sea al menos una pag por cada Subdominio: Data, Workflow, Gateway, Compute, Ecommerce. Pensar como y donde podemos mostrar los link de la navegacion para que sea parte inherente de Cenit y no algo externo, hoy tenemos un link en acciones.
 
 ### 100. Mejorar como presentar los Flows dentro del show de las shared collections. [Mac]
 
@@ -144,6 +223,8 @@ Cuando se adicione un atributo, definir:
 
 
 ejemplo en Stamplay https://youtu.be/aG5HKecexs8
+
+Adcionar la posibilidad de asociar el rich editor con un field en particular, preferentemente los text area.
 
 ### 96. UML to XML Schema(XSD).
 
@@ -1905,247 +1986,4 @@ Cambiar la vista por default de index de rails_admin, para que las columnas que 
 
 Similar la solucion que se hizo en la tarea #38 para dashboard 
 
-En el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes, pensar ademas como mostrar como un subnivel si una apcion se define como un pop-up.
-
-### 33. ~~Añadir el concepto de Resource en la categoria de Connectors~~. [Mac]
-
-Para poder lograr una mayor correspondencia entre los conceptos de Connectors y una especificacion formal de API (como Sagger) es importante introducir el concepto de Resource
-
-Se debe concluir la implementacion iniciada en la rama
-
-add_new_model_resource
-
-Queda pendiente:
-
-* Los Webhooks no necesitan tener asociado un Data Type, en su lugar los webhooks pertencen a un Resource y el Resource tiene un data type.
-
-* Los Webhooks no necesitan tener asociado un path, en su lugar los webhooks pertencen a un Resource y el Resource tiene un path.
-
-* Crear el Script para la migracion de los datos.
-
-
-### 55. ~~Publicar shared collections de Store~~. [Mary]
-
-Es importante poder publicar todas las shared collection de Store que sea posible, aunque la implementacion del API no sea completa.
-
-* Houzz
-* Walmart
-* Odoo
-* Magento
-
-### 42. ~~Mejorar la interfaz de los wizards~~. [Aneli]
-
-Los Wizard debemos usarlo solo donde sea impresindible, ya que se aleja de la forma comun de los EDIT que es la propuesta por RailsAdmin.
-
-Donde se justifique el uso de Wizards podemos mejorar la forma en que lo estamos presentando.
-
-- Es conveniente tener un nombre por cada paso, 
-- que pueda mostrar los pasos (arriba o abajo)
-- que se muestre cual es el paso activo
-
-En este link se puede ver un ejemplo:
-
-- https://drive.google.com/file/d/0B-ltzH-m3LxTZXpvaFM4N18xZUk/view?usp=sharing
-
-### 40. ~~Accion que genere cURL para acciones que existen en el API~~. [Pacheco]
-
-Similar a algoritmia.com, que tiene varios link para usar la api según el sdk, de momento para nosotros es suficiente con tener cURL, la idea es tener una accion en el admin de cenit (para aquellas accionees que corresponden a metodos que existen en el API), donde al dar click la accion aparezca el codigo cURL y se pueda copiar y pegar en una consola y funcione, para esto el curl incluira las credenciales correspondiente al tenant.
-
-Por ejemplo vean el curl en
-
-- https://algorithmia.com/algorithms/nlp/Summarizer
-
-```shell
-curl -X POST -d '<INPUT>' -H 'Content-Type: application/json' -H 'Authorization: Simple YOUR_API_KEY' https://api.algorithmia.com/v1/algo/nlp/Summarizer/0.1.3
-```
-
-### 19. ~~Mejorar el tour~~. [Aneli]
-
-Del tour se hizo una primera implementacion en el portal anterior de Cenit por parte de Daniel, se puede ver aqui
-
-- https://cenit-portal.herokuapp.com/
-
-Y en repo
-
-- https://github.com/cenit-io/cenit-portal
-
-Luego esa implementacion se paso ha Cenit, se puede ver un link en el menu lateral derecho, pero en estos momento no esta funcional.
-
-La propuesta es ir abriendo los elementos hojas del sidebar lateral de navegación, e ir expandiendo los niveles y colapsando en la medida que el tour avanza.
-
-
-### 6. ~~Mejorar navegación e interfaz de las Transformaciones~~. [Aneli, Mac]
-
-Las transformaciones es uno de los conceptos principales que hemos desarrollado y en expresividad es comparable con los algoritmo u otros conceptos que tenemos.
-Aun pueden ser usado como una parte impotante en los Flujos, la idea es que tengan valor en si mismo, y puedan ser usando de forma independiente.
-
-I ) Incluir este concepto como un primer nivel en la navegación
-
-* Transformations 
-  * Render (type exporter)
-    * HTML (html.erb, liquid)
-    * JSON (json.rabl)
-    * XML (xml.rabl, xslt)
-    * JS (js.erb)
-    * PDF (pdf.prawn)
-    * CSV (csv.erb)
-    * Text (txt.erb)
-  * Parser (type importer)
-  * Convert
-  * Updater
-
-IV) Mejorar la UI a partir del hecho que cada una corresponderá a un tipo particular de transformations  a diferencia de como estábamos trabajando hasta ahora.
-
-III) Incluir la ventana de test que se implemento al principio
-
-### 7. ~~Los Récords por default deben ser visibles en la navegación~~. [Mac]
-
-I)  En lugar de tener *Records* en la navegación sustituirlo por dos conceptos *Objects* y *Files*, correspondiendo a *JSON Data Types* y *File Data Types* respectivamente.
-
-II) Cuando no se este logueado que puedan aparecer *Objects* y *Files*.
-
-III) Debajo de *Objects* un action que sea 'link a JSON Data Type', y debajo de Files un action que sea 'link a File Data Type', se mostraria tanto cuando se este logueado que cuando no se este logueado, de modo que se pueda usar como parte del tours, cuando se este logueado si aparecen mas sub-niveles, siempre la accion seria el primer elemento en la lista de sub-niveles.
-
-### 8. ~~Definir un Segmento en los Datos asociado a un Data Event.~~ [Mac]
-
-Por ejemplo si se define un evento de Placed Order para las ordenes con status Placed
-Que automáticamente en la navegacion del menu lateral se cree un subnivel para Placed Orders
-
-Donde podamos inspeccionar este subconjunto de las ordenes, y tenga solamente los flujos asociados con ellas (en caso que existan flujos definidos)
-
-Una misma orden puede estar en varios segmentos.
-
-### 48. ~~validar la rama snippet_code con las cosas de OSSE.~~ [Mary]
-
-Esta nueva rama snippet_code tiene cambios de fondo que debemos revisar bien con las coass de OSSE y Satechi, para evitar romper algo en produccion.
-
-### 50. ~~Validar la herramienta cenit2odoo~~. [Mary]
-
-Pacheco hizo una reimplementacion de a la herramienta de generacion de addons de Odoo a partir de un shared collection en Cenit.
-
-Revisar en detalle la generacion de los addons y compararla con los que estan actualmente.
-
-Abajo una primera prueba con twitter, para comprobar el resultado de la generacion automatica, se puede ver en una nueva rama compare_auto_generate_twitter_integration del repo de cenit-io/odoo-integrations, la comparacion de esa rama con la version 9.0 se puede ver en el siguiente link
-
-https://github.com/cenit-io/odoo-integrations/pull/16
-
-Se puede ver las diferencia, es importante notar que este twitter original se le hizo ajustes manuales, con lo cual no podemos esperar que todo este en la generacion automatica, pero si ver de las cosas que no estan que otra cosa puede ser generada a partir de la informacion que hay en el shared collection de cenit.
-
-https://github.com/cenit-io/odoo-integrations/pull/16/files?diff=split
-
-Lo mas importante a revisar son las cosas que se eliminan en el pull request, o sea todo lo qeu esta en rojo, porque no fue generado automaticamente.
-
-Ademas aparecen algunos comentarios.
-
-Lo mismo de Twitter esta para shipstacion, en la rama
-
-compare_auto_generated_mailchimp_integration
-
-el diff se puede ver en 
-
-https://github.com/cenit-io/odoo-integrations/pull/17/files?diff=split
-
-### 38. ~~En el dashboard sustituir el listado de acciones de cada modelo por 3 puntos verticals~~. [Aneli]
-
-En el dashboard asociado con cada modelo, aparece el listado de acciones, que han ido creciendo con el tiempo. La propuesta es sustituir este listado de acciones por un icon de 3 puntos verticales, que al dar click despliegue un menu con el listado de acciones correspondientes.
-
-### 25. ~~Usando el API de Cenit generar los modulos de integracion de Odoo.~~ [Pacheco]
-
-Actualmente en Cenit tenemos mas de 2270 integraciones, de estas integraciones unas 10 las hemos adecuado a modulos de integracion Cenit Odoo, lo cual permite a Odoo integrarse con terceros sistemas a traves de Cenit.
-
-La mayoria de los clientes que han llegado a Cenit han sido a partir de conocer estas integraciones en Odoo.
-
-En esta URL se pueden ver los modulos publicados en Odoo Apps
-
-- https://www.odoo.com/apps/modules/browse?search=cenit
-
-Daniel incio un proyecto en Python que de forma programatica permite generar un addons de Odoo correspondiente a un shared collection en Cenit.
-
-- https://github.com/cenit-io/odoo-cenit-collection-bundler
-
-Esta generacion automatica se puede hacer a partir de la informacion que se obtiene de Shared Collection a traves del API. El proyecto no se ha actualizado en mas de un anno, durante ese tiempo se ha modificado el API.
-
-En este repo estan los modulos actuales de las integraciones en Odoo.
-
-- https://github.com/cenit-io/odoo-integrations
-
-Por ejemplo, la integracion particular de Twilio, se puede encontrar en
-
-- https://github.com/cenit-io/odoo-integrations/tree/8.0/cenit_twilio
-
-y es un sub-directorio con la siguiente estructura
-
-- cenit_twilio/
-  - models/
-    * __init__.py
-    * config.py
-  - secuirity/
-    * ir.model.access.csv
-  - static/
-    * description/
-      - index.html
-      - ...
-  - view/
-    - config.xml
-    - wizard.xml
-  - __init__.py
-  - __openerp__.py
-
-### 32. ~~Actualizar la pagina actual de la documentacion del API.~~ [Mary] 
-
-Actualizar la documentacion del API, en correspondencia con el Swagger.
-
-La URL de documentacion del API es:
-
-- http://cenit-io.github.io/docs/api/
-
-La URL del Swagger es:
-
-- https://cenit.io/openapi/v1/swagger.json
-
-Para actualizar la pagina de documentacion se debe modificar dos ficheros JS:
-
-- https://github.com/cenit-io/docs/blob/gh-pages/api/api_project.js
-- https://github.com/cenit-io/docs/blob/gh-pages/api/api_data.js
-
-Esta actualizacion debe ser temporal porque debemos lograr que la pagina de documentacion del API se genere automaticamente a partir del fichero Swagger.
-
-### 31. ~~Crear tarea que genere el swagger.json a partir del swagger.yml~~ [Mary]
-
-La generacion del swagger.json debe ser programatica de modo que cada vez que se modifique el swagger.yml sea posible ejecutar un *rake task* como
-
-    rake openapi:ymltojson
-
-Que lea el yaml:
-
-    /public/openapi/v1/swagger.yaml
-
-y sobreescriba el json:
-
-    /public/openapi/v1/swagger.json
-    
-### 29. ~~Probar y actualizar las integracion de Cenit con Odoo 9~~. [Mary]
-
-Instalar Odoo 9 y probar cada una de las integraciones con Odoo 9.
-
-Como parte de la actualizacion revisar la documentacion.
-
-### 35. :bug: ~~Cenit local no esta salvando correctamente los objetos.~~ [Mac]
-
-En mi instancia local de Cenit, cuando creo los namespace no aparecen luego en el listado del index
-
-Lo mismo me paso creando un JSON Data Type, cuando doy save aparentemente salva satisfactoriamente, pero luego el listado aparece vacio.
-
-Cree una cuenta nueva y paso lo mismo, previendo que mi cuenta estuviese corrupta.
-
-### 49. ~~Actualizar los conceptos que aparecen en el API.~~ [Mac]
-
-La documentacion del API esta publica en 
-
-https://cenit-io.github.io/openapi/
-
-lo que corresponde al repo de github 
-
-https://github.com/cenit-io/openapi
-
-Ahi cada concepto tiene una definicion, que se debe actualizar.
+En el listado de acciones, que han
