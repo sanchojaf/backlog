@@ -17,42 +17,6 @@
 
 - [pendig] Permitir en algunas cuentas que el hitorial de notifaciones se de mas tiempo, en particular las cuentas de clientes como OSSE, seria bueno tener notificaciones de al menos 30 dias, ahora  solo tienen dos dias de antiguedad.
 
-- [rejected] ~~Cuando se salva una cross collection que tiene como pull parameter un remote cliente, dice que no lo encuentra. Por ejemplo en la cross de Magento 1.9.~~
-
-- [rejected] ~~No se permite editar providers y remote clients despues de haberles hecho pull en un tenant.~~
-
-- [rejected] ~~Modelos de Ecomerce no se ven en el Main Popup.~~
-
-- [rejected] ~~Mary se logueo con la cuenta hello@omna.io, y de ahi inspeciono un nuevo tenant recien creado, desde ahi cuando  entra a los modelos de ecommerce le da un error `Model Ecommerce::Product could not be found`~~
-
-- [rejected] ~~Pestanna "Configure" de las aplicaciones da error.~~
-
-- [rejected] ~~No se pueden editar records de data types que tienen determinado nivel de profundidad.~~
-
-- [rejected] ~~Objects y Security: siguen saliendo en el menu diferente a cuando se da click en Data y Gateway. Como principio, deberia siempre ser el mismo resultado si tenemos en el menu superior Cenit IO Data y Cenit IO Gateway. De modo qeu debemos valorar por ejemplo en el caso de Security, extraerlo como un nuevo subminio y mostrarlo en el menu fuera de Gateway, o mostrar el menu similar al de Gateway. En cuando Object, en ese caso no aplica lo de extraerlo fuera de data. La otra Opcion es modificar el menu superior en correspondencia a Cenit IO Objects y Cenit IO Security (Pero no me queca claro que sea la mejor opcion).~~
-
-- [rejected] ~~si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.~~
-
-- [rejected] ~~Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.~~
-
-- [solved] ~~Al filtrar el filtro calquier dato el filtro aplicado a veces desaparece.~~
-
-- [solved] ~~Accion de Filtrar Data types por Namespace no filtra!.~~
-
-- [solved] ~~Accion de Filtrar flows por Namespace no filtra.~~
-
-- [solved] ~~En vista "Collections", cualquier accion Bulk que se seleccione da error 500.~~
-
-- [solved] ~~entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.~~
-
-- [solved] ~~Donde dice `+ Connect Store` en `Ecommerce` valorar `+ Integration` la idea es poder instalar cualquier Shared Collection de Ecommerce, no solo los que sean Store o Marketplace. En adicion a lo anterior, cuando se da click en ese item, no deberia redireccionar al Subdominio de Integration, sino que deberia mantenerse dentro del Subdominio Ecommerce.~~
-
-- [solved] ~~Accion de exportar un grupo de collections seleccionadas, da error 500.~~
-
-- [solved] ~~Valorar posibilidad de agregar filtros en las notificaciones. Permitir por ejemplo filtrar por flow.~~
-
-- [solved] ~~Cross Colleccion de Magento 2.2 da error 500 al intentar editarla.~~
-
 # backlog
 
 ### 103. backup y restore a nivel de tenant.
@@ -1327,6 +1291,43 @@ print result
 ####################################################################################################
 
 # done
+
+
+- [rejected] ~~Cuando se salva una cross collection que tiene como pull parameter un remote cliente, dice que no lo encuentra. Por ejemplo en la cross de Magento 1.9.~~
+
+- [rejected] ~~No se permite editar providers y remote clients despues de haberles hecho pull en un tenant.~~
+
+- [rejected] ~~Modelos de Ecomerce no se ven en el Main Popup.~~
+
+- [rejected] ~~Mary se logueo con la cuenta hello@omna.io, y de ahi inspeciono un nuevo tenant recien creado, desde ahi cuando  entra a los modelos de ecommerce le da un error `Model Ecommerce::Product could not be found`~~
+
+- [rejected] ~~Pestanna "Configure" de las aplicaciones da error.~~
+
+- [rejected] ~~No se pueden editar records de data types que tienen determinado nivel de profundidad.~~
+
+- [rejected] ~~Objects y Security: siguen saliendo en el menu diferente a cuando se da click en Data y Gateway. Como principio, deberia siempre ser el mismo resultado si tenemos en el menu superior Cenit IO Data y Cenit IO Gateway. De modo qeu debemos valorar por ejemplo en el caso de Security, extraerlo como un nuevo subminio y mostrarlo en el menu fuera de Gateway, o mostrar el menu similar al de Gateway. En cuando Object, en ese caso no aplica lo de extraerlo fuera de data. La otra Opcion es modificar el menu superior en correspondencia a Cenit IO Objects y Cenit IO Security (Pero no me queca claro que sea la mejor opcion).~~
+
+- [rejected] ~~si se inspecciona una cuenta y luego en el popup de menu se da click en object, sale un menu lateral diferente al de data.~~
+
+- [rejected] ~~Cuando se da click en el link objects desde el home, sale un menu diferente al Data, no se si sea intencionalmente.~~
+
+- [solved] ~~Al filtrar el filtro calquier dato el filtro aplicado a veces desaparece.~~
+
+- [solved] ~~Accion de Filtrar Data types por Namespace no filtra!.~~
+
+- [solved] ~~Accion de Filtrar flows por Namespace no filtra.~~
+
+- [solved] ~~En vista "Collections", cualquier accion Bulk que se seleccione da error 500.~~
+
+- [solved] ~~entre el menu lateral izq y el menu superior, debe haber una linea blanca de 1px, revisar como esta hecho en el menu lateral derecho para tratar de usar el mismo estilo css.~~
+
+- [solved] ~~Donde dice `+ Connect Store` en `Ecommerce` valorar `+ Integration` la idea es poder instalar cualquier Shared Collection de Ecommerce, no solo los que sean Store o Marketplace. En adicion a lo anterior, cuando se da click en ese item, no deberia redireccionar al Subdominio de Integration, sino que deberia mantenerse dentro del Subdominio Ecommerce.~~
+
+- [solved] ~~Accion de exportar un grupo de collections seleccionadas, da error 500.~~
+
+- [solved] ~~Valorar posibilidad de agregar filtros en las notificaciones. Permitir por ejemplo filtrar por flow.~~
+
+- [solved] ~~Cross Colleccion de Magento 2.2 da error 500 al intentar editarla.~~
 
 ### 61. Salvar los ficheros en AWS S3. [Pacheco]
  
