@@ -1,4 +1,19 @@
-# Hot Fixing
+# errores/mejoras
+
+- [new] valorar en el menu de navegacion general izquierdo, que tanto el icon como el nombre del subdominio puedan ser clicleable y redirigir al dashboard de ese subdominio.
+
+- [new] Known critical severity security vulnerability detected in nokogiri < 1.8.1 defined in Gemfile.lock.
+
+- [new] Al activar un flow compartido, despues de ejcutarlo, vuelve a desactivarse.
+
+- [new] Valorar,  dejar estático la parte de las acciones en los formularios, y en el caso de los vistas index ademas  dejar estático la primera fila de los nombres de las columnas.
+
+- [new] en el dashboard donde aparecen las trazas,  valor tener un tab por cada origin, asi por ejemplo serias mas sencillo distinguir la actividad de los cross shared, de las actividades propias del tenant.
+
+
+- [new] En el Dashboard, usar solo los numeros en rojos, para cosas negativas, ejemplo: running task failed o Authorization Unauthorized. Pero no usarlo para cosas como el numero de un data types.
+
+- [new] cuando se ejecuta en el search box de un data type, aparece en la parte inferior un `loading...` seria  bueno ver si se puede mostrar este `loading..` siempre que cenit este cargando una pagina, o sea tratar de extenderlo a otros casos.
 
 - [pendig] Permitir en algunas cuentas que el hitorial de notifaciones se de mas tiempo, en particular las cuentas de clientes como OSSE, seria bueno tener notificaciones de al menos 30 dias, ahora  solo tienen dos dias de antiguedad.
 
