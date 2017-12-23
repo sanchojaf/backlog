@@ -1,5 +1,7 @@
 # errores/mejoras
 
+- [new] en las trazas del dashboard cuado se da click en more, una alternativa es cargar una cantidad adicional y mostrar un scroll, y asi sucesivamente.
+
 - [new] cuando se cambia la estructura de un datatype, luego no se pueden realizar las acciones de eliminar o editar los records que estan con la vieja estructura del mismo datatype, se ve el record en el show y en el formulario de editar, pero cuando se realizan los submit(delete|edit) Cenit da error... sin embargo por el api si se permite realizar estas acciones.
 
 - [new] valorar en el menu de navegacion general izquierdo, que tanto el icon como el nombre del subdominio puedan ser clicleable y redirigir al dashboard de ese subdominio.
