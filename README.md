@@ -6,7 +6,7 @@
 
 - [done] Valorar eliminar del menú de subdominio el ítem Dashboard, usar el propio link con el nombre del subdominio para mostrar la página actual dashboard del subdominio. Para esto hay que permitir que en el menú del subdominio el nombre de arriba sea clickeable, igualmente en el breadcrumb 
 
-- [new] en las trazas del dashboard cuado se da click en more, una alternativa es cargar una cantidad adicional y mostrar un scroll, y asi sucesivamente.
+- [solved] en las trazas del dashboard cuado se da click en more, una alternativa es cargar una cantidad adicional y mostrar un scroll, y asi sucesivamente.
 
 - [new] cuando se cambia la estructura de un datatype, luego no se pueden realizar las acciones de eliminar o editar los records que estan con la vieja estructura del mismo datatype, se ve el record en el show y en el formulario de editar, pero cuando se realizan los submit(delete|edit) Cenit da error... sin embargo por el api si se permite realizar estas acciones.
 
@@ -18,7 +18,7 @@
 
 - [new] Valorar,  dejar estático la parte de las acciones en los formularios, y en el caso de los vistas index ademas  dejar estático la primera fila de los nombres de las columnas.
 
-- [new] en el dashboard donde aparecen las trazas,  valor tener un tab por cada origin, asi por ejemplo serias mas sencillo distinguir la actividad de los cross shared, de las actividades propias del tenant.
+- [solved] en el dashboard donde aparecen las trazas,  valor tener un tab por cada origin, asi por ejemplo serias mas sencillo distinguir la actividad de los cross shared, de las actividades propias del tenant.
 
 - [done] En el Dashboard, usar solo los numeros en rojos, para cosas negativas, ejemplo: running task failed o Authorization Unauthorized. Pero no usarlo para cosas como el numero de un data types.
 
