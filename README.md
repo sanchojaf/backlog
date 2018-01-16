@@ -1,6 +1,8 @@
 # errores/mejoras
 
-- [solved] Al crear un flow con source_scope "Filter", Cenit no permite annadir Scope Filters. Sale la opcion pero no annade nada.
+- [new] cuando se crea un filter desde users da error.
+
+- [new] tener una opcion donde se muestro el JSON plain del Object, de modo que se pueda editar o visualizar, a veces ya sea por el tamanno o por el tipo de documento que es  mas sencillo trabajar directammente con el JSON que con las vistas edit y Show.
 
 - [new] cuando se cambia la estructura de un datatype, luego no se pueden realizar las acciones de eliminar o editar los records que estan con la vieja estructura del mismo datatype, se ve el record en el show y en el formulario de editar, pero cuando se realizan los submit(delete|edit) Cenit da error... sin embargo por el api si se permite realizar estas acciones.
 
@@ -12,21 +14,6 @@
 
 - [new] cuando se ejecuta en el search box de un data type, aparece en la parte inferior un `loading...` seria  bueno ver si se puede mostrar este `loading..` siempre que cenit este cargando una pagina, o sea tratar de extenderlo a otros casos.
 
-- [done] ~~En el menú extremo izquierdo, valorar agregar a la parte superior un icon de Dashboard.~~
-
-- [done] ~~En eel Dashboard principal, valorar agregar la información de los demás dashboards (o al menos la información principal), podria ser con Tabs o uno debajo de otro.~~
-
-- [done] ~~Valorar eliminar del menú de subdominio el ítem Dashboard, usar el propio link con el nombre del subdominio para mostrar la página actual dashboard del subdominio. Para esto hay que permitir que en el menú del subdominio el nombre de arriba sea clickeable, igualmente en el breadcrumb~~ 
-
-- [done] ~~valorar en el menu de navegacion general izquierdo, que tanto el icon como el nombre del subdominio puedan ser clicleable y redirigir al dashboard de ese subdominio.~~
-
-- [done] ~~En el Dashboard, usar solo los numeros en rojos, para cosas negativas, ejemplo: running task failed o Authorization Unauthorized. Pero no usarlo para cosas como el numero de un data types.~~
-
-- [solved] ~~Permitir en algunas cuentas que el hitorial de notifaciones se de mas tiempo, en particular las cuentas de clientes como OSSE, seria bueno tener notificaciones de al menos 30 dias, ahora  solo tienen dos dias de antiguedad.~~
-
-- [solved] ~~en las trazas del dashboard cuado se da click en more, una alternativa es cargar una cantidad adicional y mostrar un scroll, y asi sucesivamente.~~
-
-- [solved] ~~en el dashboard donde aparecen las trazas,  valor tener un tab por cada origin, asi por ejemplo serias mas sencillo distinguir la actividad de los cross shared, de las actividades propias del tenant.~~
 
 # backlog
 
@@ -1302,6 +1289,22 @@ print result
 ####################################################################################################
 
 # done
+
+- [done] ~~En el menú extremo izquierdo, valorar agregar a la parte superior un icon de Dashboard.~~
+
+- [done] ~~En eel Dashboard principal, valorar agregar la información de los demás dashboards (o al menos la información principal), podria ser con Tabs o uno debajo de otro.~~
+
+- [done] ~~Valorar eliminar del menú de subdominio el ítem Dashboard, usar el propio link con el nombre del subdominio para mostrar la página actual dashboard del subdominio. Para esto hay que permitir que en el menú del subdominio el nombre de arriba sea clickeable, igualmente en el breadcrumb~~ 
+
+- [done] ~~valorar en el menu de navegacion general izquierdo, que tanto el icon como el nombre del subdominio puedan ser clicleable y redirigir al dashboard de ese subdominio.~~
+
+- [done] ~~En el Dashboard, usar solo los numeros en rojos, para cosas negativas, ejemplo: running task failed o Authorization Unauthorized. Pero no usarlo para cosas como el numero de un data types.~~
+
+- [solved] ~~Permitir en algunas cuentas que el hitorial de notifaciones se de mas tiempo, en particular las cuentas de clientes como OSSE, seria bueno tener notificaciones de al menos 30 dias, ahora  solo tienen dos dias de antiguedad.~~
+
+- [solved] ~~en las trazas del dashboard cuado se da click en more, una alternativa es cargar una cantidad adicional y mostrar un scroll, y asi sucesivamente.~~
+
+- [solved] ~~en el dashboard donde aparecen las trazas,  valor tener un tab por cada origin, asi por ejemplo serias mas sencillo distinguir la actividad de los cross shared, de las actividades propias del tenant.~~
 
 
 - [rejected] ~~Cuando se salva una cross collection que tiene como pull parameter un remote cliente, dice que no lo encuentra. Por ejemplo en la cross de Magento 1.9.~~
