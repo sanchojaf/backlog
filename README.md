@@ -2,7 +2,7 @@
 
 - [new] cuando se crea un filter desde users da error.
 
-- [new] tener una opcion donde se muestro el JSON plain del Object, de modo que se pueda editar o visualizar, a veces ya sea por el tamanno o por el tipo de documento que es  mas sencillo trabajar directammente con el JSON que con las vistas edit y Show.
+- [new] tener una opcion donde se muestro el JSON plain del Object, de modo que se pueda editar o visualizar, a veces ya sea por el tamanno o por el tipo de documento que es  mas sencillo trabajar directammente con el JSON que con las vistas edit y Show. Ademas debe ayudar a visualizar records mas largos que hoy no es posible visualizar con el show o el edit, o cuando tienen muchos nested. A lo mejor se puede mostrar como un tap que puede aparecer arriba cando se entre al show o el edit
 
 - [new] cuando se cambia la estructura de un datatype, luego no se pueden realizar las acciones de eliminar o editar los records que estan con la vieja estructura del mismo datatype, se ve el record en el show y en el formulario de editar, pero cuando se realizan los submit(delete|edit) Cenit da error... sin embargo por el api si se permite realizar estas acciones.
 
