@@ -17,6 +17,61 @@
 
 # backlog
 
+### 104. Tormenta de ideas con Maykel Mtnez.
+
+Ideas sobre los dos últimos encuentros con Maykel Mrtz
+
+
+Tipos de Shared Collections
+- Connectors
+- Logic App (2 o mas connectors con flows)
+
+
+Maykel Mrtz ha estado comparando los conceptos de Cenit con los de Microsoft con una herramienta que se llama Logic App. Por mi parte le he estado mostrando Cenit y  otras soluciones como referencias. 
+
+Varias de las ideas coinciden con elementos que hemos analizados, con algunas variaciones.
+
+1) Connectors: lo que puede ser el wrapper de un api, y si es posible con flujos básicos asociados a las operaciones del API. 
+
+Le comente que la mayoría de los conectores actuales, son generados automáticamente a partir de un Swager (Open API)
+
+Una propuesta es adicionar a la generación automática de los conectores actuales flujos por default, por ejemplo para los GETs un calendar event que por default sea 1hr, y el flujo correspondiente al data type. Los flujos estarían inicialmente desactivados, Un usuario luego de hacer pull si lo quiere usar como esta, lo unico que tendria que hacer es activar el flow.
+
+Dentro del Subdomain de Connectors, tener un link de ‘shared collection’ en el menú, donde se vean solo los shared collection de tipo Connector.
+
+2) Logic Apps, un Data Flow entre dos Connectors (quizás mas de dos, pero por el momento dos).
+
+Para construirlos seria con la idea que hemos manejado de hacerlo con wizard similar al de Celigo (integrator.io), aprovechando lo mas posible la información de los swagger.
+
+Este wizard de Logic App, podria estar dentro de Workflows.
+
+Dentro del Subdomain de Workflows, tener un link de ‘shared collection’ en el menú, donde se vean solo los shared collection de tipo Logic App.
+
+
+
+Tipos de trigger
+Action Send, este disponible via API por  HTTP POST 
+Los webhooks externos como trigger.
+
+Similar a la acción manual que tenemos hoy para ejecutar un flow, tener un endpoint del api, al que desde una aplicacion tercera se pueda invocar la ejecución de un flujo
+
+
+Similar a lo anterior, en cenit se podria tener una componente, que permita selccionar y autorizar un webhook soportado por una aplicacion tercera, por ejemplo github. Por ejemplo supongamos que hay un webhook de github que notifica cuando hay un commit. El api de Github permite configurar un webhook via api, con lo cual programáticamente se podria hacer un componente en cenit para conectar a ese webhook. 
+
+En el backlog en 
+
+https://github.com/sanchojaf/backlog/blob/master/README.md#99-integracion-especial-con-las-apis-que-tienen-webhooks
+
+Se listan un grupo de api que soportan definir un webhook a traves del API.
+
+
+Javascript 
+
+Teniendo en cuenta que JS es el lenguaje script mas universal, podría ayudar mucho a la adopción que los algoritmos y translators puedan tener la opcion de definirlos con JS. 
+
+Seria bueno que la mayorias de las cosas en cenit se hicieran con JS. Para el tema de la seguridad podría ser bueno, si en lugar de acceder a la db solamente se permite el acceso al json del record. En el caso de los translators seria bueno revisar las opciones de templates en JS para los diferentes estilos.
+
+
 ### 103. backup y restore a nivel de tenant.
 
 Algo que podria ser bueno es poder  hacer backup y restore a nivel de tenant, pensando en clonar con la idea de ambientes de test y produccion, cenit remotos, etc
