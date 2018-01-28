@@ -1,5 +1,7 @@
 # errores/mejoras
 
+- [new] Los items debajo de security en el menu general, no se corresponden del todos con los que aparecen en el primer nivel del menu del dominio especifico. Por ejemplo dentro del menu general de Security no sale 'Authorizations', la palabra provider aparece duplicada.
+
 - [new] cuando se crea un filter desde la vista de Users da error.
 
 - [new] cuando se cambia la estructura de un datatype, luego no se pueden realizar las acciones de eliminar o editar los records que estan con la vieja estructura del mismo datatype, se ve el record en el show y en el formulario de editar, pero cuando se realizan los submit(delete|edit) Cenit da error... sin embargo por el api si se permite realizar estas acciones.
