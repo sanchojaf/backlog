@@ -1,8 +1,6 @@
 # errores/mejoras
 
-- [new] cuando se crea un filter desde users da error.
-
-- [new] tener una opcion donde se muestro el JSON plain del Object, de modo que se pueda editar o visualizar, a veces ya sea por el tamanno o por el tipo de documento que es  mas sencillo trabajar directammente con el JSON que con las vistas edit y Show. Ademas debe ayudar a visualizar records mas largos que hoy no es posible visualizar con el show o el edit, o cuando tienen muchos nested. A lo mejor se puede mostrar como un tap que puede aparecer arriba cando se entre al show o el edit
+- [new] cuando se crea un filter desde la vista de Users da error.
 
 - [new] cuando se cambia la estructura de un datatype, luego no se pueden realizar las acciones de eliminar o editar los records que estan con la vieja estructura del mismo datatype, se ve el record en el show y en el formulario de editar, pero cuando se realizan los submit(delete|edit) Cenit da error... sin embargo por el api si se permite realizar estas acciones.
 
@@ -13,6 +11,8 @@
 - [new] Valorar,  dejar estático la parte de las acciones en los formularios, y en el caso de los vistas index ademas  dejar estático la primera fila de los nombres de las columnas.
 
 - [new] cuando se ejecuta en el search box de un data type, aparece en la parte inferior un `loading...` seria  bueno ver si se puede mostrar este `loading..` siempre que cenit este cargando una pagina, o sea tratar de extenderlo a otros casos.
+
+- Del subdominio Ecommerce solo sale visible 'carts' y 'customers'
 
 
 # backlog
@@ -1344,6 +1344,9 @@ print result
 ####################################################################################################
 
 # done
+
+- [new] ~~tener una opcion donde se muestro el JSON plain del Object, de modo que se pueda editar o visualizar, a veces ya sea por el tamanno o por el tipo de documento que es  mas sencillo trabajar directammente con el JSON que con las vistas edit y Show. Ademas debe ayudar a visualizar records mas largos que hoy no es posible visualizar con el show o el edit, o cuando tienen muchos nested. A lo mejor se puede mostrar como un tap que puede aparecer arriba cando se entre al show o el edit~~
+
 
 - [done] ~~En el menú extremo izquierdo, valorar agregar a la parte superior un icon de Dashboard.~~
 
