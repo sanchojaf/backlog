@@ -1,5 +1,7 @@
 # errores/mejoras
 
+- en el JSON Editor, que la parte de abajo de los botones sea similar al EDIT, agregando un boton que sea el propio 'Edit'. En caso de la accion Edit, agregar un boton que sea 'JSON Editor'. En el JSON Editor agregar una accion para importar un JSON.
+
 - Shrared Collection de tipo Connectors: los que sean un wrapper de un api Dentro del Subdomain de Connectors, tener un link de 'shared collection' en el menú, donde se vean solo los shared collection de tipo Connector.
 
 - Shared Collection de Flow Apps: un Data Flow entre dos Connectors (quizás mas de dos, pero por el momento dos).
